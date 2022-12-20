@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../../assets/logo1.png";
+import logo from "../../../assets/images/logo1.png";
 import DropDown from "./dropdown/dropdown";
 
 const Navbar = () => {
