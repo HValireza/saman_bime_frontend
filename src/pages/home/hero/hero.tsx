@@ -74,8 +74,6 @@ export default Hero;
 
 const Wrapper = styled.div`
   width: 100%;
-  display: inline;
-  position: absolute;
 `;
 
 const Slogan = styled.h1`
