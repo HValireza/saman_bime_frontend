@@ -13,7 +13,6 @@ interface PropsDropDownI {
 const DropDown = ({ links }: PropsDropDownI) => {
   return (
     <Wrapper className="drop-down">
-      {/* <ul>{links && links.map((p) => <li>{p.title}</li>)}</ul> */}
       <Items>
         {links.map((l) => (
           <Link to={l.path}>

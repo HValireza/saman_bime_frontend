@@ -70,16 +70,16 @@ const Navbar = () => {
             <DropDown links={media} />
           </Item>
 
+          <Item>گزارش</Item>
+
+          <Item>آیین‌نامه‌ها</Item>
+
+          <Item>تماس با ما</Item>
+
           <Item id="drop-down">
             درباره ما
             <DropDown links={about} />
           </Item>
-
-          <Item>تماس با ما</Item>
-
-          <Item>گزارشگری و افشای اطلاعات</Item>
-
-          <Item>آیین‌نامه‌های بیمه مرکزی</Item>
         </Items>
 
         <Tools />
@@ -91,9 +91,18 @@ const Navbar = () => {
 export default Navbar;
 
 const Wrapper = styled.header`
+  width: 100vw;
   display: flex;
   justify-content: center;
-  position: sticky;
+  position: absolute;
+
+  font-family: "BRoyaBold";
+  font-weight: bolder;
+  font-family: 1.2rem;
+  background-color: white;
+  opacity: 0.9;
+
+  z-index: 10;
 `;
 
 const Container = styled.div`
@@ -146,7 +155,7 @@ const Item = styled.li`
   min-width: max-content;
   padding: 10px 5px;
 
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #585f66;
   list-style: none;
