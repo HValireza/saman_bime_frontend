@@ -9,6 +9,7 @@ interface IReport {
   date: string;
   description: string;
   details: string;
+  id: number;
 }
 export interface INews {
   title: string;
@@ -34,7 +35,12 @@ const NewsTemplate: React.FC<IData> = ({ data }) => {
       </Subject>
       <NewsList>
         {data.news.map((n) => (
-          <Link to={"n1"} style={LinkStyle}>
+          <Link
+            to={n.details ? n.details : "post" + n.id}
+            style={LinkStyle}
+            target={n.details ? "_blank" : ""}
+            download
+          >
             <NewsItem>
               <NewsThumbnail
                 src={n.thumbnail ? n.thumbnail : logo}
