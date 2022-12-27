@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NewsData } from "./components/templates/News/data/NewsTemplateData";
-import NewsTemplate from "./components/templates/News/NewsTemplate";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
 import Home from "./pages/home/home";
