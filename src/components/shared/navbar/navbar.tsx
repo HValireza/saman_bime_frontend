@@ -91,7 +91,7 @@ const Navbar = () => {
 export default Navbar;
 
 const Wrapper = styled.header`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   position: absolute;
