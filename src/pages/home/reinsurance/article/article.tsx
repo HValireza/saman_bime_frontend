@@ -59,6 +59,7 @@ const Content = styled.div`
   padding: 0rem 2rem 1.7rem 2rem;
   color: #f3f3f3;
   border-radius: 0.5rem;
+  box-shadow: inset 0 0 10px 0 black;
 
   overflow-y: scroll;
   overflow-x: hidden;
