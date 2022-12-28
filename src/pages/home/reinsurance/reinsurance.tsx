@@ -1,16 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Article from "./article/article";
-
-//contents
-import ink0 from "../../../assets/images/ink0.png";
-import ink1 from "../../../assets/images/ink1.png";
-import ink2 from "../../../assets/images/ink2.png";
-import ink3 from "../../../assets/images/ink3.png";
-import ink4 from "../../../assets/images/ink4.png";
-import { txt0, txt1, txt2, txt3, txt4 } from "./article/contents";
+import contents from "./article/contents.json";
 
 const Reinsurance = () => {
+  const [currentIndex, setCurrnetIndex] = useState(0);
+
   const titles = [
     "بیمه اتکایی چیست؟",
     "معرفی صنعت بیمه اتکایی",
@@ -19,21 +14,11 @@ const Reinsurance = () => {
     "مزایای شرکت های بیمه اتکایی",
   ];
 
-  const contents = [
-    { src: ink0, txt: txt0 },
-    { src: ink1, txt: txt1 },
-    { src: ink2, txt: txt2 },
-    { src: ink3, txt: txt3 },
-    { src: ink4, txt: txt4 },
-  ];
-
-  const [currentContentIndex, setCurrnetContentIndex] = useState(0);
-
   return (
     <Wrapper>
       {titles.map((title, index) => (
         <Card
-          onClick={() => setCurrnetContentIndex(index)}
+          onClick={() => setCurrnetIndex(index)}
           left={Boolean(index % 2)}
           key={index}
         >
@@ -41,7 +26,7 @@ const Reinsurance = () => {
         </Card>
       ))}
 
-      <Article content={contents[currentContentIndex]} />
+      <Article content={contents[currentIndex]} />
     </Wrapper>
   );
 };
@@ -53,12 +38,11 @@ const Wrapper = styled.div`
   height: 100vh;
   padding: 1.5rem 0;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-
-  /* background-color: #c1ebfa; */
+  justify-content: space-around;
 `;
 
 interface ArrowProps {
@@ -73,7 +57,7 @@ const Card = styled.div<ArrowProps>`
 `;
 
 const Arrow = styled.div<ArrowProps>`
-  width: 25%;
+  width: 18%;
   height: 18vh;
   position: relative;
 

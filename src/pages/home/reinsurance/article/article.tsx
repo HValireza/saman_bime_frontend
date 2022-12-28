@@ -1,19 +1,30 @@
 import styled from "styled-components";
 
 interface ContentI {
-  src: string;
-  txt: string;
+  src?: string;
+  alt?: string;
+  title?: string;
+  txt: string[];
 }
 
 interface PropsArticleI {
-  content: ContentI;
+  content: ContentI[];
 }
 
 const Article = ({ content }: PropsArticleI) => {
   return (
     <Wrapper>
-      <img src={content.src} alt="" />
-      <p>{content.txt}</p>
+      <Content>
+        {content.map((c, index) => (
+          <div key={index}>
+            {c.src && <img src={c.src} alt={c.alt} />}
+            {c.title && <h2>{c.title}</h2>}
+            {c.txt.map((t) => (
+              <p>{t}</p>
+            ))}
+          </div>
+        ))}
+      </Content>
     </Wrapper>
   );
 };
@@ -26,36 +37,75 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 2rem 7vw;
+  gap: 1rem;
+  padding: 1rem 0;
 
   position: absolute;
+  top: 0;
+  transition: all 1s ease-in-out;
+`;
 
-  background-color: rgba(236, 236, 236, 0.525);
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-  p {
-    width: 30%;
-    font-size: 1.6rem;
-    line-height: 1.9rem;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 1.7rem 3rem;
-    color: #f3f3f3;
+  width: 50%;
+  height: 95vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0rem 2rem 1.7rem 2rem;
+  color: #f3f3f3;
+  border-radius: 0.5rem;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar-track {
+    width: 0.4rem;
+    border-radius: 5px;
+    background-color: gray;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+
+    :hover {
+      background-color: black;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-shadow: 1px 1px 5px black;
-    border-radius: 0.5rem;
-  }
+    font-size: 1.5rem;
+    line-height: 1.75rem;
 
-  :hover img {
-    filter: grayscale(40%);
-    transform: scale(1.03);
-    opacity: 0.7;
-  }
+    img {
+      height: 30vh;
+      margin: 1rem;
+    }
 
-  img {
-    width: 45vw;
-    opacity: 0.5;
-    filter: grayscale(60%);
-    transition: all 0.3s ease-in-out;
+    h2 {
+      align-self: flex-start;
+      line-height: 3.8rem;
+    }
+
+    p {
+      align-self: flex-start;
+    }
+
+    :nth-child(3) img {
+      height: 54vh;
+    }
   }
 `;
