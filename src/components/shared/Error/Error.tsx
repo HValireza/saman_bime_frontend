@@ -58,7 +58,7 @@ const Container = styled.div`
 const Image = styled.div`
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
   height: 400px;
-  width: 100%;
+  width: 90vw;
   background-position: center;
   background-repeat: no-repeat;
 
