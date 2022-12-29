@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       <Container>
-        <Link to={"#"}>
+        <Link to={"/"}>
           <Logo src={logo} />
         </Link>
 
