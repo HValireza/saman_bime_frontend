@@ -47,8 +47,18 @@ const Navbar = () => {
     { title: "اساسنامه", path: "#" },
   ];
 
+  const nav: any = document.getElementById("navbar");
+
+  //sticky navbar functionality
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    nav.style.top = prevScrollpos > currentScrollPos ? "0" : "-4rem";
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
-    <Wrapper>
+    <Wrapper id="navbar">
       <Container>
         <Link to={"/"}>
           <Logo src={logo} />
@@ -94,13 +104,15 @@ const Wrapper = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  transition: top 0.3s ease-in-out;
 
   font-family: "BRoyaBold";
   font-weight: bolder;
   font-family: 1.2rem;
-  background-color: white;
-  opacity: 0.9;
+  background-color: #d3d3d2;
+  opacity: 0.95;
 
   z-index: 10;
 `;
@@ -157,7 +169,7 @@ const Item = styled.li`
 
   font-size: 1.2rem;
   font-weight: 600;
-  color: #585f66;
+  color: #1a1c1d;
   list-style: none;
   transition: 100ms ease-in-out;
   cursor: pointer;
