@@ -17,6 +17,7 @@ export const AboutUsTemplate = ({
         <img src={pic} alt={title} />
         <h1>{title}</h1>
       </div>
+
       <div className="description-wrapper">
         <p className="description">{description}</p>
       </div>
@@ -25,13 +26,15 @@ export const AboutUsTemplate = ({
 };
 
 const Wrapper = styled.div`
+  width: 100%;
+
   .banner {
     position: relative;
     text-align: center;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100vh;
       filter: brightness(50%);
     }
 
