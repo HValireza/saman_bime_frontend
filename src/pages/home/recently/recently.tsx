@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "./recently.scss";
 
 const Recently = () => {
   const articles = [
