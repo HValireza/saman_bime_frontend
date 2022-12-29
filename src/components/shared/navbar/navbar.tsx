@@ -5,7 +5,7 @@ import DropDown from "./dropdown/dropdown";
 
 const Navbar = () => {
   const services = [
-    { title: "خدمات بیمه‌های اتکایی", path: "#" },
+    { title: "خدمات بیمه‌های اتکایی", path: "" },
     { title: "طراحی و راهبری قراردادهای اتکایی", path: "#" },
     { title: "پوشش اتکایی بیمه‌های مهندسی و انرژی", path: "#" },
     { title: "پوشش اتکایی بیمه‌های باربری، کشتی و هواپیما", path: "#" },
@@ -37,10 +37,10 @@ const Navbar = () => {
   ];
 
   const about = [
-    { title: "تاریخچه شرکت بیمه اتکایی سامان", path: "#" },
-    { title: "اهداف راهبردی، مأموریت و چشم‌انداز", path: "#" },
-    { title: "رهنمود ارزش‌های بنیادی", path: "#" },
-    { title: "‌هیئت مدیره", path: "#" },
+    { title: "تاریخچه شرکت بیمه اتکایی سامان", path: "/about/history" },
+    { title: "اهداف راهبردی، مأموریت و چشم‌انداز", path: "about/goals" },
+    { title: "رهنمود ارزش‌های بنیادی", path: "about/avail" },
+    { title: "‌هیئت مدیره", path: "about/worldview" },
     { title: "مدیران", path: "#" },
     { title: "نمودار سازمانی", path: "#" },
     { title: "ساختار سهامداران", path: "#" },
