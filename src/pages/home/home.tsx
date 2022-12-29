@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Hero from "./hero/hero";
+import Recently from "./recently/recently";
 import Reinsurance from "./reinsurance/reinsurance";
 import Services from "./services/services";
 
@@ -14,6 +15,9 @@ function Home() {
 
       <Services />
       <Hr />
+
+      <Recently />
+      <Hr />
     </Wrapper>
   );
 }
@@ -27,12 +31,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-color: #d2dbdd;
 `;
 
 const Hr = styled.hr`
   width: 100%;
   background-color: black;
-  height: 3px;
-
-  box-shadow: 5px 0 20px black;
+  height: 1px;
 `;
