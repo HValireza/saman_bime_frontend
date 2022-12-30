@@ -19,7 +19,6 @@ const PostTemplate: React.FC = () => {
 
   const onDocumentLoadSuccess = (pdf: any) => {
     setNumPages(pdf?.numPages);
-    console.log(numPages);
   };
 
   const nextPage = () => {
