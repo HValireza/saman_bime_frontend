@@ -3,6 +3,7 @@ import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
 import Home from "./pages/home/home";
 import News from "./pages/news/News";
+import PostPage from "./pages/Post/Post";
 import Layout from "./pages/templates/layout";
 import "./styles/App.scss";
 
@@ -30,6 +31,7 @@ function App() {
             />
             <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
           </Route>
+          <Route path="post/:id" element={<PostPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
