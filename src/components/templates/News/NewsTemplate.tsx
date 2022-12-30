@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../../assets/images/logo2.png";
 import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
+import Error from "../../shared/Error/Error";
+import Loading from "../../shared/Loading/Loading";
 
 interface IReport {
   id: number;
@@ -23,9 +25,17 @@ interface IData {
   data: Array<IReport>;
   lastElement: any;
   pageData: INews;
+  loading: boolean;
+  error: boolean;
 }
 
-const NewsTemplate: React.FC<IData> = ({ data, lastElement, pageData }) => {
+const NewsTemplate: React.FC<IData> = ({
+  data,
+  lastElement,
+  pageData,
+  loading,
+  error,
+}) => {
   return (
     <Container>
       <Title>
@@ -70,6 +80,8 @@ const NewsTemplate: React.FC<IData> = ({ data, lastElement, pageData }) => {
             </NewsItem>
           </Link>
         ))}
+        {loading ? <Loading /> : <></>}
+        {error ? <Error /> : <></>}
       </NewsList>
     </Container>
   );

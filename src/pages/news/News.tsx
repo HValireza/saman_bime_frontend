@@ -1,7 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import NewsTemplate, {
-  INews,
-} from "../../components/templates/News/NewsTemplate";
+import NewsTemplate from "../../components/templates/News/NewsTemplate";
 import { NewsEnum } from "../../global/news.enum";
 import HeaderData from "./Data/HeadersData";
 import GetNews from "./GetNews/GetNews";
@@ -17,7 +15,7 @@ const News: React.FC<INewsPage> = ({ state }) => {
   const news = GetNews(field, pageNumber);
   const headers = HeaderData(state);
 
-  const observer = useRef<any>(null);
+  const observer = useRef<any>();
   const lastElement = useCallback(
     (node: any): any => {
       if (news.loading) {
@@ -43,6 +41,8 @@ const News: React.FC<INewsPage> = ({ state }) => {
       data={news.data}
       lastElement={lastElement}
       pageData={headers}
+      loading={news.loading}
+      error={news.error}
     ></NewsTemplate>
   );
 };
