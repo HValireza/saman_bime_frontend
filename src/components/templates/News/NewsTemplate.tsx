@@ -1,40 +1,45 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../../assets/images/logo2.png";
+import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
 
 interface IReport {
+  id: number;
+  created_at: string;
+  updated_at: string;
   title: string;
-  thumbnail: string;
-  picture: string;
-  date: string;
   description: string;
   details: string;
-  id: number;
+  picture_thumbnail: string;
+  picture: string;
+  field: null;
+  keywords: null;
 }
 export interface INews {
   title: string;
   subject: string;
-  news: Array<IReport>;
 }
 interface IData {
-  data: INews;
+  data: Array<IReport>;
+  lastElement: any;
+  pageData: INews;
 }
 
-const NewsTemplate: React.FC<IData> = ({ data }) => {
+const NewsTemplate: React.FC<IData> = ({ data, lastElement, pageData }) => {
   return (
     <Container>
       <Title>
         <PrevLine></PrevLine>
-        {data.title}
+        {pageData.title}
         <AfterLine></AfterLine>
       </Title>
       <Subject>
         <PrevLine></PrevLine>
-        {data.subject}
+        {pageData.subject}
         <AfterLine></AfterLine>
       </Subject>
       <NewsList>
-        {data.news.map((n) => (
+        {data.map((n, index) => (
           <Link
             to={n.details ? n.details : "post" + n.id}
             style={LinkStyle}
@@ -43,12 +48,20 @@ const NewsTemplate: React.FC<IData> = ({ data }) => {
           >
             <NewsItem>
               <NewsThumbnail
-                src={n.thumbnail ? n.thumbnail : logo}
+                src={
+                  n.picture_thumbnail
+                    ? axiosFilesApi + n.picture_thumbnail
+                    : logo
+                }
                 alt={n.title}
               />
               <NewsInfoBox>
-                <NewsTitle>{n.title}</NewsTitle>
-                <NewsDate>{n.date}</NewsDate>
+                {data.length === index + 1 ? (
+                  <NewsTitle ref={lastElement}>{n.title}</NewsTitle>
+                ) : (
+                  <NewsTitle>{n.title}</NewsTitle>
+                )}
+                <NewsDate>{n.updated_at}</NewsDate>
                 <NewsInfo>{n.description}</NewsInfo>
                 <ReadMore>
                   {n.details ? "مشاهده فایل" : "بیشتر بخوانید..."}
@@ -163,9 +176,10 @@ const NewsItem = styled.li`
 `;
 
 const NewsThumbnail = styled.img`
-  height: 95%;
+  height: 93%;
   width: auto;
-  margin: auto 10px;
+  margin: auto 6px auto 10px;
+  border-radius: 10px;
 `;
 
 const NewsInfoBox = styled.div`

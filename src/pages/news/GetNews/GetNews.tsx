@@ -7,7 +7,7 @@ const GetNews = (field: NewsEnum | null, pageNumber: number) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errorStatus, setErrorStatus] = useState(0);
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState<any>([]);
   const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
@@ -20,11 +20,10 @@ const GetNews = (field: NewsEnum | null, pageNumber: number) => {
     axios({
       method: "GET",
       url: axiosUrl + "/api/news",
-      params: { field, pageNumber },
+      params: { field: "field1", pageNumber },
     })
       .then((res) => {
-        console.log(res.data);
-        setData((prevData) => [...prevData, ...res.data.data]);
+        setData([...data, ...res.data.data]);
         setHasMore(res.data.length > 0);
         setLoading(false);
       })

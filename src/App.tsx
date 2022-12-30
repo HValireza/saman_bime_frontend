@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NewsData } from "./components/templates/News/data/NewsTemplateData";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
 import Home from "./pages/home/home";
@@ -20,22 +19,16 @@ function App() {
             <Route path="worldview" element={<About state={"worldview"} />} />
           </Route>
           <Route path="news">
-            <Route
-              path="company"
-              element={<News data={NewsData} state={NewsEnum.COMPANY} />}
-            />
+            <Route path="company" element={<News state={NewsEnum.COMPANY} />} />
             <Route
               path="insurance"
-              element={<News data={NewsData} state={NewsEnum.INSURANCE} />}
+              element={<News state={NewsEnum.INSURANCE} />}
             />
             <Route
               path="shareholder"
-              element={<News data={NewsData} state={NewsEnum.SHAREHOLDER} />}
+              element={<News state={NewsEnum.SHAREHOLDER} />}
             />
-            <Route
-              path="article"
-              element={<News data={NewsData} state={NewsEnum.ARTICLE} />}
-            />
+            <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
           </Route>
         </Route>
       </Routes>
