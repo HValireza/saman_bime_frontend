@@ -51,7 +51,7 @@ const NewsTemplate: React.FC<IData> = ({
       <NewsList>
         {data.map((n, index) => (
           <Link
-            to={n.details ? n.details : "post" + n.id}
+            to={{ pathname: "/post/" + n.id }}
             style={LinkStyle}
             target={n.details ? "_blank" : ""}
             download

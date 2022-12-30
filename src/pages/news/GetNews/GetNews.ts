@@ -20,7 +20,7 @@ const GetNews = (field: NewsEnum | null, pageNumber: number) => {
     axios({
       method: "GET",
       url: axiosUrl + "/api/news",
-      params: { field: "field1", page: pageNumber },
+      params: { field, page: pageNumber },
     })
       .then((res) => {
         setData([...data, ...res.data.data]);
