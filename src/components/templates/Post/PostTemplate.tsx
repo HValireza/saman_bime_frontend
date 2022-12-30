@@ -5,15 +5,28 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import Loading from "../../shared/Loading/Loading";
 import Error from "../../shared/Error/Error";
+import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
 
-const PostTemplate: React.FC = () => {
-  const [post, setPost] = useState({
-    file: "",
-    createdAt: "1499/12/24",
-    updatedAt: "",
-    keywords: ["کلمه کلیدی ۱"],
-  });
+interface IPost {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  title: string;
+  description: string;
+  details: string;
+  picture_thumbnail: string;
+  picture: string;
+  field: string[];
+  keywords: string[];
+}
 
+interface IPostTemplate {
+  post: IPost;
+  loading: boolean;
+  error: boolean;
+}
+
+const PostTemplate: React.FC<IPostTemplate> = ({ post, loading, error }) => {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -35,52 +48,56 @@ const PostTemplate: React.FC = () => {
 
   return (
     <Container>
-      <Post>
-        <PDFWrapper>
-          <Document
-            file={post.file}
-            onLoadSuccess={onDocumentLoadSuccess}
-            renderMode="canvas"
-            loading={<Loading />}
-            error={
-              <Error persianMessage="متاسفانه فایل مورد نظر بارگزاری نشد..." />
-            }
-            noData={
-              <Error persianMessage="متاسفانه فایل مورد نظر یافت نشد..." />
-            }
-          >
-            <Page pageNumber={pageNumber} renderTextLayer={false}></Page>
-          </Document>
-        </PDFWrapper>
-        {numPages === 1 || numPages === 0 ? (
-          <></>
-        ) : (
-          <PageChanger>
-            <div className="pagination">
-              <ul>
-                <li onClick={nextPage}>
-                  <div></div>
-                </li>
-                <li>
-                  <div>{pageNumber}</div>
-                </li>
-                <li onClick={prevPage}>
-                  <div></div>
-                </li>
-              </ul>
-            </div>
-          </PageChanger>
-        )}
-        <Date>
-          تاریخ انتشار : {post.updatedAt ? post.updatedAt : post.createdAt}
-        </Date>
-        <KeywordWrapper>
-          <KeywordTitle>کلمات کلیدی:</KeywordTitle>
-          {post.keywords.map((w) => (
-            <Keyword>{w}</Keyword>
-          ))}
-        </KeywordWrapper>
-      </Post>
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <Error />
+      ) : (
+        <Post>
+          <PDFWrapper>
+            <Document
+              file={axiosFilesApi + post.details}
+              onLoadSuccess={onDocumentLoadSuccess}
+              renderMode="canvas"
+              loading={<Loading />}
+              error={
+                <Error persianMessage="متاسفانه فایل مورد نظر بارگزاری نشد..." />
+              }
+              noData={
+                <Error persianMessage="متاسفانه فایل مورد نظر یافت نشد..." />
+              }
+            >
+              <Page pageNumber={pageNumber} renderTextLayer={false}></Page>
+            </Document>
+          </PDFWrapper>
+          {numPages === 1 || numPages === 0 ? (
+            <></>
+          ) : (
+            <PageChanger>
+              <div className="pagination">
+                <ul>
+                  <li onClick={nextPage}>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div>{pageNumber}</div>
+                  </li>
+                  <li onClick={prevPage}>
+                    <div></div>
+                  </li>
+                </ul>
+              </div>
+            </PageChanger>
+          )}
+          <Date>تاریخ انتشار : {post.updated_at}</Date>
+          <KeywordWrapper>
+            <KeywordTitle>کلمات کلیدی:</KeywordTitle>
+            {post.keywords.map((w) => (
+              <Keyword>{w}</Keyword>
+            ))}
+          </KeywordWrapper>
+        </Post>
+      )}
     </Container>
   );
 };
