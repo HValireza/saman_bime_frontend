@@ -4,6 +4,7 @@ import logo from "../../../assets/images/logo2.png";
 import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
 import Error from "../../shared/Error/Error";
 import Loading from "../../shared/Loading/Loading";
+import * as moment from "jalali-moment";
 
 interface IReport {
   id: number;
@@ -71,7 +72,9 @@ const NewsTemplate: React.FC<IData> = ({
                 ) : (
                   <NewsTitle>{n.title}</NewsTitle>
                 )}
-                <NewsDate>{n.updated_at}</NewsDate>
+                <NewsDate>
+                  {moment(n.updated_at).locale("fa").format("YYYY/MM/DD")}
+                </NewsDate>
                 <NewsInfo>{n.description}</NewsInfo>
                 <ReadMore>
                   {n.details ? "مشاهده فایل" : "بیشتر بخوانید..."}

@@ -6,6 +6,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 import Loading from "../../shared/Loading/Loading";
 import Error from "../../shared/Error/Error";
 import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
+import * as moment from "jalali-moment";
 
 interface IPost {
   id: number;
@@ -89,7 +90,10 @@ const PostTemplate: React.FC<IPostTemplate> = ({ post, loading, error }) => {
               </div>
             </PageChanger>
           )}
-          <Date>تاریخ انتشار : {post.updated_at}</Date>
+          <Date>
+            تاریخ انتشار :{" "}
+            {moment(post.updated_at).locale("fa").format("YYYY/MM/DD")}
+          </Date>
           <KeywordWrapper>
             <KeywordTitle>کلمات کلیدی:</KeywordTitle>
             {post.keywords.map((w) => (
