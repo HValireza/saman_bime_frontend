@@ -20,11 +20,11 @@ const GetNews = (field: NewsEnum | null, pageNumber: number) => {
     axios({
       method: "GET",
       url: axiosUrl + "/api/news",
-      params: { field: "field1", pageNumber },
+      params: { field: "field1", page: pageNumber },
     })
       .then((res) => {
         setData([...data, ...res.data.data]);
-        setHasMore(res.data.length > 0);
+        setHasMore(res.data.data.length > 0);
         setLoading(false);
       })
       .catch((e) => {
