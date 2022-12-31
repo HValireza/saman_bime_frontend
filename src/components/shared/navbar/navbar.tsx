@@ -67,17 +67,29 @@ const Navbar = () => {
         <Items>
           <Item id="drop-down">
             خدمات
-            <DropDown links={services} />
+            <DropDown
+              links={services}
+              vector="/src/assets/images/vectors/services.png"
+              alt="services"
+            />
           </Item>
 
           <Item id="drop-down">
             امور سهام
-            <DropDown links={affairs} />
+            <DropDown
+              links={affairs}
+              vector="/src/assets/images/vectors/deal.png"
+              alt="deal"
+            />
           </Item>
 
           <Item id="drop-down">
             رسانه
-            <DropDown links={media} />
+            <DropDown
+              links={media}
+              vector="/src/assets/images/vectors/media.png"
+              alt="media"
+            />
           </Item>
 
           <Item>گزارش</Item>
@@ -88,7 +100,11 @@ const Navbar = () => {
 
           <Item id="drop-down">
             درباره ما
-            <DropDown links={about} />
+            <DropDown
+              links={about}
+              vector="/src/assets/images/vectors/about-us.png"
+              alt="about-us"
+            />
           </Item>
         </Items>
 
@@ -111,8 +127,10 @@ const Wrapper = styled.header`
   font-family: "BRoyaBold";
   font-weight: bolder;
   font-family: 1.2rem;
-  background-color: #d3d3d2;
-  opacity: 0.95;
+  background-color: white;
+  opacity: 0.96;
+
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.5);
 
   z-index: 10;
 `;
@@ -154,6 +172,10 @@ const Items = styled.ul`
 
   #drop-down:hover .drop-down ul {
     padding: 1rem;
+  }
+
+  #drop-down:hover .drop-down .logo {
+    display: block;
   }
 `;
 
