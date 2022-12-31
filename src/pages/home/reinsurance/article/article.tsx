@@ -89,7 +89,6 @@ const Content = styled.div`
     align-items: center;
     text-shadow: 1px 1px 5px black;
     font-size: 1.5rem;
-    line-height: 1.75rem;
 
     img {
       height: 30vh;
@@ -102,6 +101,9 @@ const Content = styled.div`
     }
 
     p {
+      line-height: 2rem;
+      text-align: justify;
+      white-space: pre-wrap;
       align-self: flex-start;
     }
 
