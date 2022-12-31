@@ -88,14 +88,6 @@ const Items = styled.ul`
       height: 100%;
     }
   }
-
-  .jdisJX {
-    li {
-      :first-of-type {
-        background-color: red;
-      }
-    }
-  }
 `;
 
 const Logo = styled.img`
