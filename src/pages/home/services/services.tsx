@@ -4,6 +4,13 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Card from "./cards/card";
 
+import pic1 from "../../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
+import pic4 from "../../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
+import pic5 from "../../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
+import pic3 from "../../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
+import pic2 from "../../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
+import pic6 from "../../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
@@ -71,36 +78,35 @@ const Services = () => {
     animate2(card5Ref, 0.14);
   });
 
-  //! replace mock data
   const mock = [
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths1",
-      desc: "sjfoifsjfuwjf ",
+      thum: pic1,
+      title: "طراحی و راهبری قراردادهای اتکایی",
+      desc: "طراحی قراردادهای اتکایی شامل تعیین مفاد و شرایط و همچنین قیمتگذاری )تعیین نرخ یا کارمزد( قرارداد است که توسطراهبر این قراردادها صورت می گیرد. شرکت بیمه اتکایی سامان ...",
     },
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths2",
+      thum: pic2,
+      title: "پوشش اتکایی بیمه های آتش سوزی",
       desc: "ajsfweur jfjsduf ",
     },
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths3",
+      thum: pic3,
+      title: "پوشش اتکایی بیمه های اشخاص",
       desc: "jsfkljsjfiou jkfjjfu jfkjosf",
     },
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths4",
+      thum: pic4,
+      title: "پوشش اتکایی بیمه های باربری، کشتی و هواپیما",
       desc: " jksjwrjufvsf iuf",
     },
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths5",
+      thum: pic5,
+      title: "پوشش اتکایی بیمه های مهندسی و انرژی",
       desc: "sdfklsjvusf90wur oufus",
     },
     {
-      thum: "https://via.placeholder.com/300",
-      title: "ths6",
+      thum: pic6,
+      title: "پوشش های اتکایی بین المللی",
       desc: "kdlsfjkljss iffklsjfu",
     },
   ];
@@ -135,6 +141,27 @@ const Wrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    ::before {
+      transform: scale(1.1);
+    }
+  }
+
+  ::before {
+    transition: all ease-in-out 600ms;
+    content: "";
+    background-image: url("/src/assets/images/services/services-background.jpg");
+    background-size: cover;
+    filter: blur(4px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Container = styled.div`

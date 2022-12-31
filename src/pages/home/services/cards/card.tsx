@@ -21,43 +21,45 @@ const Card = ({ thumSrc, title, desc }: CardPropsI) => {
 export default Card;
 
 const Wrapper = styled.div`
-  width: 20%;
+  width: 20rem;
   min-width: 4rem;
   height: 45vh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  background-color: black;
+  background-color: white;
+  opacity: 0.9;
   border-radius: 1rem;
+  color: black;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 
   transition: all 0.3s ease-in-out;
 
   :hover {
     transform: scale(1.08);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset;
+    transition: all 0.3s ease-in-out;
   }
 `;
 
 const Thumbnail = styled.img`
-  width: 100%;
-  object-fit: contain;
-  border-radius: 1rem;
-
-  background-color: yellow;
+  width: 20rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-shadow: 0 2px 7px #0000002c;
 `;
 
 const Title = styled.h3`
   font-size: 1.2rem;
-
-  background-color: skyblue;
 `;
 
 const Desc = styled.p`
+  width: 20rem;
+  padding: 0 1rem;
   font-size: 1rem;
-  color: black;
   line-height: 1.5rem;
-  color: white;
 `;
