@@ -60,7 +60,7 @@ const Wrapper = styled.div`
       margin: 2rem;
       color: #000;
       text-align: justify;
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       line-height: 1.5;
       white-space: pre-wrap;
     }
