@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Board from "./components/templates/about-us/board/board-members";
+import Managers from "./components/templates/about-us/board/managers";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
 import Home from "./pages/home/home";
@@ -18,6 +20,8 @@ function App() {
             <Route path="goals" element={<About state={"goals"} />} />
             <Route path="avail" element={<About state={"avail"} />} />
             <Route path="worldview" element={<About state={"worldview"} />} />
+            <Route path="managers" element={<Managers />} />
+            <Route path="board-member" element={<Board />} />
           </Route>
           <Route path="news">
             <Route path="company" element={<News state={NewsEnum.COMPANY} />} />

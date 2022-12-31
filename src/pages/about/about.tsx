@@ -1,9 +1,9 @@
-import { AboutUsTemplate } from "../../components/templates/AboutUsTemplate";
-import Texts from "../../assets/texts/about_us.json";
-import History from "../../assets/images/about_us/history.jpg";
-import Goals from "../../assets/images/about_us/goals.jpg";
 import Avail from "../../assets/images/about_us/avail.jpg";
+import Goals from "../../assets/images/about_us/goals.jpg";
+import History from "../../assets/images/about_us/history.jpg";
 import Worldview from "../../assets/images/about_us/worldview.jpg";
+import Texts from "../../assets/texts/about_us.json";
+import AboutUs from "../../components/templates/about-us/about-us";
 
 interface AboutPropsI {
   state: "history" | "goals" | "avail" | "worldview";
@@ -39,7 +39,7 @@ const About = ({ state }: AboutPropsI) => {
 
   const item = data.find((x) => x.state === state);
   return (
-    <AboutUsTemplate
+    <AboutUs
       pic={item!.pic}
       title={item!.title}
       description={item!.description}

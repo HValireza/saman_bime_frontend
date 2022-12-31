@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../../assets/images/logo1.png";
@@ -50,11 +51,11 @@ const Navbar = () => {
   const nav: any = document.getElementById("navbar");
 
   //sticky navbar functionality
-  let prevScrollpos = window.pageYOffset;
+  const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
     nav.style.top = prevScrollpos > currentScrollPos ? "0" : "-4rem";
-    prevScrollpos = currentScrollPos;
+    setPrevScrollPos(currentScrollPos);
   };
 
   return (
