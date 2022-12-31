@@ -8,9 +8,11 @@ interface LinkI {
 
 interface PropsDropDownI {
   links: LinkI[];
+  vector?: string;
+  alt?: string;
 }
 
-const DropDown = ({ links }: PropsDropDownI) => {
+const DropDown = ({ links, vector, alt }: PropsDropDownI) => {
   return (
     <Wrapper className="drop-down">
       <Items>
@@ -20,21 +22,28 @@ const DropDown = ({ links }: PropsDropDownI) => {
           </Link>
         ))}
       </Items>
+
+      <Logo className="logo" src={vector} alt={alt} />
     </Wrapper>
   );
 };
 
+export default DropDown;
+
 const Wrapper = styled.div`
+  display: flex;
+
   width: 35vw;
   height: 0;
-  background-color: red;
+  background-color: white;
   position: absolute;
-  top: 4rem;
-  right: -2rem;
+  top: 3.9rem;
+  right: -4rem;
 
   opacity: 0;
   font-size: 0.5rem;
   border-radius: 0.5rem;
+  box-shadow: -5px 5px 1rem rgba(0, 0, 0, 0.5);
   cursor: auto;
 
   transition: opacity 0.3s ease-in-out, height 0.1s ease-in-out,
@@ -42,10 +51,11 @@ const Wrapper = styled.div`
 `;
 
 const Items = styled.ul`
-  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 50%;
   height: 100%;
-  background-color: orange;
-  gap: 0.7rem;
   font-weight: bolder;
   border-radius: 0.5rem;
 
@@ -55,6 +65,7 @@ const Items = styled.ul`
     color: black;
     transition: all 0.2s ease-in-out;
     display: none;
+    font-size: 1.05rem;
 
     :hover {
       transform: scale(1.03);
@@ -70,7 +81,7 @@ const Items = styled.ul`
     }
 
     :hover::after {
-      right: -4px;
+      right: -6px;
       transform: unset;
       width: 3px;
       height: 100%;
@@ -78,4 +89,9 @@ const Items = styled.ul`
   }
 `;
 
-export default DropDown;
+const Logo = styled.img`
+  width: 55%;
+  margin: auto;
+
+  display: none;
+`;
