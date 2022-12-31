@@ -14,7 +14,7 @@ interface IPost {
   updated_at: string;
   title: string;
   description: string;
-  details: string;
+  detail: string;
   picture_thumbnail: string;
   picture: string;
   field: string[];
@@ -57,7 +57,7 @@ const PostTemplate: React.FC<IPostTemplate> = ({ post, loading, error }) => {
         <Post>
           <PDFWrapper>
             <Document
-              file={axiosFilesApi + post.details}
+              file={axiosFilesApi + post.detail}
               onLoadSuccess={onDocumentLoadSuccess}
               renderMode="canvas"
               loading={<Loading />}
