@@ -34,11 +34,12 @@ const Wrapper = styled.div`
   display: flex;
 
   width: 35vw;
+  min-width: 40rem;
   height: 0;
   background-color: white;
   position: absolute;
   top: 3.9rem;
-  right: -4rem;
+  right: -12rem;
 
   opacity: 0;
   font-size: 0.5rem;
