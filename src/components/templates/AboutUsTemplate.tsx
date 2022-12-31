@@ -49,7 +49,7 @@ const Wrapper = styled.div`
       transform: translate(-50%, -50%);
       color: #f3f3f3;
       font-family: "BRoyaBold";
-      font-size: 2rem;
+      font-size: 2vw;
     }
 
     h2 {
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
       transform: translate(-50%, -50%);
       color: #f3f3f3;
       font-family: "BRoyaBold";
-      font-size: 2.6rem;
+      font-size: 2.6vw;
     }
   }
 
