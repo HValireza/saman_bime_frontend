@@ -15,7 +15,8 @@ export const AboutUsTemplate = ({
     <Wrapper>
       <div className="banner">
         <img src={pic} alt={title} />
-        <h1>{title}</h1>
+        <h1>درباره ما</h1>
+        <h2>{title}</h2>
       </div>
 
       <div className="description-wrapper">
@@ -33,8 +34,11 @@ const Wrapper = styled.div`
     text-align: center;
 
     img {
-      width: 100%;
-      height: 100vh;
+      width: 70%;
+      height: 70vh;
+      margin-top: 6rem;
+      border-radius: 0.6rem;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
       filter: brightness(50%);
     }
 
@@ -45,7 +49,17 @@ const Wrapper = styled.div`
       transform: translate(-50%, -50%);
       color: #f3f3f3;
       font-family: "BRoyaBold";
-      font-size: 2.5rem;
+      font-size: 2rem;
+    }
+
+    h2 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f3f3f3;
+      font-family: "BRoyaBold";
+      font-size: 2.6rem;
     }
   }
 
@@ -60,7 +74,7 @@ const Wrapper = styled.div`
       margin: 2rem;
       color: #000;
       text-align: justify;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       line-height: 1.5;
       white-space: pre-wrap;
     }
