@@ -60,6 +60,7 @@ const Items = styled.ul`
   border-radius: 0.5rem;
 
   li {
+    width: max-content;
     height: 0;
     list-style: none;
     color: black;
@@ -85,6 +86,14 @@ const Items = styled.ul`
       transform: unset;
       width: 3px;
       height: 100%;
+    }
+  }
+
+  .jdisJX {
+    li {
+      :first-of-type {
+        background-color: red;
+      }
     }
   }
 `;
