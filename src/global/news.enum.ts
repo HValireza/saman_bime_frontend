@@ -1,0 +1,6 @@
+export enum NewsEnum {
+  COMPANY = "COMPANY",
+  INSURANCE = "INSURANCE",
+  SHAREHOLDER = "SHAREHOLDER",
+  ARTICLE = "ARTICLE",
+}
