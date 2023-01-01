@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../../assets/images/logo1.png";
@@ -6,14 +5,17 @@ import DropDown from "./dropdown/dropdown";
 
 const Navbar = () => {
   const services = [
-    { title: "خدمات بیمه‌های اتکایی", path: "" },
-    { title: "طراحی و راهبری قراردادهای اتکایی", path: "#" },
-    { title: "پوشش اتکایی بیمه‌های مهندسی و انرژی", path: "#" },
-    { title: "پوشش اتکایی بیمه‌های باربری، کشتی و هواپیما", path: "#" },
-    { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "#" },
-    { title: "پوشش اتکایی بیمه‌های اشخاص", path: "#" },
-    { title: "پوشش‌های اتکایی بین‌المللی", path: "#" },
-    { title: "خدمات مشاوره اتکایی", path: "#" },
+    { title: "خدمات بیمه‌های اتکایی", path: "/services/1" },
+    { title: "طراحی و راهبری قراردادهای اتکایی", path: "/services/1" },
+    { title: "پوشش اتکایی بیمه‌های مهندسی و انرژی", path: "/services/2" },
+    {
+      title: "پوشش اتکایی بیمه‌های باربری، کشتی و هواپیما",
+      path: "/services/3",
+    },
+    { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "/services/4" },
+    { title: "پوشش اتکایی بیمه‌های اشخاص", path: "/services/5" },
+    { title: "پوشش‌های اتکایی بین‌المللی", path: "/services/6" },
+    { title: "خدمات مشاوره اتکایی", path: "/services/7" },
   ];
 
   const affairs = [
