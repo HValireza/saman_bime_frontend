@@ -7,13 +7,13 @@ const Navbar = () => {
   const services = [
     { title: "خدمات بیمه‌های اتکایی", path: "/services/1" },
     { title: "طراحی و راهبری قراردادهای اتکایی", path: "/services/1" },
-    { title: "پوشش اتکایی بیمه‌های مهندسی و انرژی", path: "/services/5" },
+    { title: "پوشش اتکایی بیمه‌های مهندسی و انرژی", path: "/services/2" },
     {
       title: "پوشش اتکایی بیمه‌های باربری، کشتی و هواپیما",
-      path: "/services/4",
+      path: "/services/3",
     },
-    { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "/services/2" },
-    { title: "پوشش اتکایی بیمه‌های اشخاص", path: "/services/3" },
+    { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "/services/4" },
+    { title: "پوشش اتکایی بیمه‌های اشخاص", path: "/services/5" },
     { title: "پوشش‌های اتکایی بین‌المللی", path: "/services/6" },
     { title: "خدمات مشاوره اتکایی", path: "/services/7" },
   ];
@@ -41,10 +41,12 @@ const Navbar = () => {
 
   const about = [
     { title: "تاریخچه شرکت بیمه اتکایی سامان", path: "/about/history" },
-    { title: "اهداف راهبردی، مأموریت و چشم‌انداز", path: "about/goals" },
-    { title: "رهنمود ارزش‌های بنیادی", path: "about/avail" },
-    { title: "‌هیئت مدیره", path: "about/worldview" },
-    { title: "مدیران", path: "#" },
+    { title: "اهداف راهبردی، مأموریت و چشم‌انداز", path: "/about/goals" },
+    { title: "رهنمود ارزش‌های بنیادی", path: "/about/avail" },
+    { title: " ارزش‌های محوری", path: "/about/avail" },
+    { title: " بیانیه مأموریت و جهان‌بینی", path: "/about/worldview" },
+    { title: "‌هیئت مدیره", path: "/about/board-member" },
+    { title: "مدیران", path: "/about/managers" },
     { title: "نمودار سازمانی", path: "#" },
     { title: "ساختار سهامداران", path: "#" },
     { title: "اساسنامه", path: "#" },
@@ -52,12 +54,12 @@ const Navbar = () => {
 
   const nav: any = document.getElementById("navbar");
 
-  //sticky navbar functionality
-  // const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
+  // sticky navbar functionality
+  // let prevScrollpos = window.pageYOffset;
   // window.onscroll = () => {
-  //   let currentScrollPos = window.pageYOffset;
-  //   nav.style.top = prevScrollpos > currentScrollPos ? "0" : "-4rem";
-  //   setPrevScrollPos(currentScrollPos);
+  //   let currentScrollpos = window.pageYOffset;
+  //   nav.style.top = prevScrollpos > currentScrollpos ? "0" : "-4rem";
+  //   prevScrollpos = currentScrollpos;
   // };
 
   return (
@@ -124,8 +126,8 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
-  transition: top 0.3s ease-in-out;
+  /* top: 0; */
+  transition: all 0.3s ease-in-out;
 
   font-family: "BRoyaBold";
   font-weight: bolder;
@@ -220,3 +222,6 @@ const Tools = styled.div`
   width: 10rem;
   height: 100%;
 `;
+function useState(pageYOffset: number): [any, any] {
+  throw new Error("Function not implemented.");
+}

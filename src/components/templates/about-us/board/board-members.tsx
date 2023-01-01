@@ -8,7 +8,7 @@ import pic3 from "../../../../assets/profiles/مینا صدیق نوحی.jpg";
 const data = [
   {
     pic: pic1,
-    name: "آقای بهزاد گلکار",
+    name: "علی ضیائی اردکانی",
     position: "رئیس هیئت مدیره",
     resume: [],
     degrees: [],
@@ -16,7 +16,7 @@ const data = [
   },
   {
     pic: pic2,
-    name: "آقای جواد گوهرزاد",
+    name: "آقای بهزاد گلکار",
     position: "نائب رئیس هیئت مدیره",
     resume: [],
     degrees: [],
@@ -24,7 +24,7 @@ const data = [
   },
   {
     pic: pic3,
-    name: "حسینعلی علیمی",
+    name: "مینا صدیق نوحی",
     position: "مدیر عامل و عضو اصلی هیئت مدیره",
     resume: [],
     degrees: [],
@@ -32,7 +32,7 @@ const data = [
   },
   {
     pic: pic4,
-    name: "علی ضیائی اردکانی",
+    name: "حسینعلی علیمی",
     position: "عضو اصلی هیئت مدیره",
     resume: [],
     degrees: [],
@@ -40,7 +40,7 @@ const data = [
   },
   {
     pic: pic5,
-    name: "مینا صدیق نوحی",
+    name: "آقای جواد گوهرزاد",
     position: "عضو اصلی هیئت مدیره",
     resume: [],
     degrees: [],
