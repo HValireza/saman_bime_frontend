@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Board from "./components/templates/about-us/board/board-members";
 import Managers from "./components/templates/about-us/board/managers";
+import OrganizationChart from "./components/templates/about-us/OrganizationChart/OrganizationChart";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
 import Home from "./pages/home/home";
@@ -31,6 +32,8 @@ function App() {
             <Route path="managers" element={<Managers />} />
 
             <Route path="board-member" element={<Board />} />
+
+            <Route path="org-chart" element={<OrganizationChart />} />
           </Route>
 
           <Route path="news">
