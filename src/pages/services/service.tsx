@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import pic7 from "../../assets/images/services/خدمات مشاوره اتکایی.jpg";
 import pic1 from "../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
 import pic4 from "../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
 import pic5 from "../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
@@ -7,36 +8,43 @@ import pic3 from "../../assets/images/services/پوشش اتکایی بیمه ه
 import pic2 from "../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
 import pic6 from "../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
 
+import texts from "../../assets/texts/services.json";
+
 const data = [
   {
     pic: pic1,
     title: "طراحی و راهبری قراردادهای اتکایی",
-    desc: "طراحی قراردادهای اتکایی شامل تعیین مفاد و شرایط و همچنین قیمتگذاری )تعیین نرخ یا کارمزد( قرارداد است که توسطراهبر این قراردادها صورت می گیرد. شرکت بیمه اتکایی سامان ...",
+    desc: texts.plan,
   },
   {
     pic: pic2,
-    title: "پوشش اتکایی بیمه های آتش سوزی",
-    desc: "ajsfweur jfjsduf ",
+    title: "پوشش اتکایی بیمه های مهندسی و انرژی",
+    desc: texts.engineer,
   },
   {
     pic: pic3,
-    title: "پوشش اتکایی بیمه های اشخاص",
-    desc: "jsfkljsjfiou jkfjjfu jfkjosf",
+    title: "پوشش اتکایی بیمه های باربری، کشتی و هواپیما",
+    desc: texts.freight,
   },
   {
     pic: pic4,
-    title: "پوشش اتکایی بیمه های باربری، کشتی و هواپیما",
-    desc: " jksjwrjufvsf iuf",
+    title: "پوشش اتکایی بیمه های آتش سوزی",
+    desc: texts.fire,
   },
   {
     pic: pic5,
-    title: "پوشش اتکایی بیمه های مهندسی و انرژی",
-    desc: "sdfklsjvusf90wur oufus",
+    title: "پوشش اتکایی بیمه های اشخاص",
+    desc: texts.people,
   },
   {
     pic: pic6,
     title: "پوشش های اتکایی بین المللی",
-    desc: "kdlsfjkljss iffklsjfu",
+    desc: texts.international,
+  },
+  {
+    pic: pic7,
+    title: "خدمات مشاوره اتکایی",
+    desc: texts.counseling,
   },
 ];
 
