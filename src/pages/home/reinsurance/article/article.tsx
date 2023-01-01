@@ -95,6 +95,8 @@ const Content = styled.div`
     img {
       height: 30vh;
       margin: 1rem;
+
+      border-radius: 4px;
     }
 
     h2 {
