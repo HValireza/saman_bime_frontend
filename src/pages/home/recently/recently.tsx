@@ -64,7 +64,7 @@ const Wrapper = styled.div`
     content: "";
     background-image: url("/src/assets/images/recently-background.jpg");
     background-size: cover;
-    filter: blur(7px);
+    filter: blur(5px);
     position: absolute;
     top: 0;
     left: 0;
