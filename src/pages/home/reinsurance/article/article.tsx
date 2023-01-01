@@ -55,7 +55,7 @@ const Content = styled.div`
   width: 50%;
   height: 95vh;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 0rem 2rem 1.7rem 2rem;
   color: #f3f3f3;
   border-radius: 0.5rem;
@@ -65,21 +65,23 @@ const Content = styled.div`
   overflow-x: hidden;
 
   ::-webkit-scrollbar-track {
-    width: 0.4rem;
-    border-radius: 5px;
-    background-color: gray;
+    width: 0.5rem;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   ::-webkit-scrollbar {
-    width: 0.4rem;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 0.5rem;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
 
     :hover {
-      background-color: black;
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 
