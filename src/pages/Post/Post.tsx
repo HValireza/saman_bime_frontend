@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import PostTemplate from "../../components/templates/Post/PostTemplate";
-import GetPost from "./GetPost/GetPost";
+import GetPost from "./Data/GetPost";
 
 const PostPage: React.FC = () => {
   const postId: any = useParams();
