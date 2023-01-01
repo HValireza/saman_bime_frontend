@@ -21,8 +21,8 @@ const Partners = () => {
       <h1>سازمان ها و نهاد ها</h1>
 
       <Container>
-        {logos.map((logo) => (
-          <a href={logo.link} target="_blank">
+        {logos.map((logo, index) => (
+          <a href={logo.link} target="_blank" key={index}>
             <Item src={logo.src} width={logo.size} />
           </a>
         ))}

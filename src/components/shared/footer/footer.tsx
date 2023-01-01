@@ -1,6 +1,9 @@
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../../../assets/images/logo2.png";
+import {
+  faInstagram,
+  faTelegram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import {
   faEnvelope,
   faEnvelopesBulk,
@@ -8,12 +11,9 @@ import {
   faMapLocationDot,
   faPhoneVolume,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCopyright } from "@fortawesome/free-regular-svg-icons";
-import {
-  faInstagram,
-  faTelegram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
+import logo from "../../../assets/images/logo2.png";
 
 function Footer() {
   return (
@@ -225,7 +225,7 @@ const InfoText = styled.p`
   padding: 0px 10px;
 `;
 
-const CopyRight = styled.p`
+const CopyRight = styled.div`
   width: auto;
   height: auto;
   display: flex;

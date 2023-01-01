@@ -16,8 +16,8 @@ const DropDown = ({ links, vector, alt }: PropsDropDownI) => {
   return (
     <Wrapper className="drop-down">
       <Items>
-        {links.map((l) => (
-          <Link to={l.path}>
+        {links.map((l, index) => (
+          <Link to={l.path} key={index}>
             <li>{l.title}</li>
           </Link>
         ))}

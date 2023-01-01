@@ -19,8 +19,8 @@ const Article = ({ content }: PropsArticleI) => {
           <div key={index}>
             {c.src && <img src={c.src} alt={c.alt} />}
             {c.title && <h2>{c.title}</h2>}
-            {c.txt.map((t) => (
-              <p>{t}</p>
+            {c.txt.map((t, index) => (
+              <p key={index}>{t}</p>
             ))}
           </div>
         ))}

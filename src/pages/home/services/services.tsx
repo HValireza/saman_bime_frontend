@@ -122,7 +122,7 @@ const Services = () => {
     <Wrapper>
       <Container ref={cards1Ref}>
         {mock.slice(0, 3).map((m, index) => (
-          <Link to={m.link}>
+          <Link to={m.link} key={index}>
             <div ref={refs[index]}>
               <Card thumSrc={m.thum} title={m.title} desc={m.desc} />
             </div>
@@ -132,7 +132,7 @@ const Services = () => {
 
       <Container ref={cards2Ref}>
         {mock.slice(3, 6).map((m, index) => (
-          <Link to={m.link}>
+          <Link to={m.link} key={index + 3}>
             <div ref={refs[index + 3]}>
               <Card thumSrc={m.thum} title={m.title} desc={m.desc} />
             </div>
