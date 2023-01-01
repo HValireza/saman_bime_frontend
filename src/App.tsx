@@ -26,6 +26,8 @@ function App() {
 
             <Route path="worldview" element={<About state={"worldview"} />} />
 
+            <Route path="structure" element={<About state={"structure"} />} />
+
             <Route path="managers" element={<Managers />} />
 
             <Route path="board-member" element={<Board />} />

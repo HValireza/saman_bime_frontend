@@ -2,10 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { axiosUrl } from "../../../global/defaultAxiosUrl";
 
-const GetStructure = () => {
-    const [loading, setLoading] = useState(true);
+const GetShareholders = () => {
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [data, setData] = useState<any>([]);
+  const [shareHolders, setShareHolders] = useState<any>([]);
 
   useEffect(() => {
     setLoading(true);
@@ -13,11 +13,10 @@ const GetStructure = () => {
 
     axios({
       method: "GET",
-      url: axiosUrl + "/api/news",
-      params: { page: 1, count: 4 },
+      url: axiosUrl + "/api/shareholders",
     })
       .then((res) => {
-        setData(res.data.data);
+        setShareHolders(res.data.data);
         setLoading(false);
       })
       .catch((e) => {
@@ -25,10 +24,9 @@ const GetStructure = () => {
         setError(true);
         console.log(e);
       });
-  },[]);
+  }, []);
 
-  return { loading, data, error };
-
+  return { loading, shareHolders, error };
 };
 
-export default GetStructure;
+export default GetShareholders;

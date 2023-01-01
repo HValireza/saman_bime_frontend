@@ -1,16 +1,28 @@
+import AboutUs from "../../components/templates/about-us/about-us";
+import Texts from "../../assets/texts/about_us.json";
 import Avail from "../../assets/images/about_us/avail.jpg";
 import Goals from "../../assets/images/about_us/goals.jpg";
 import History from "../../assets/images/about_us/history.jpg";
 import Worldview from "../../assets/images/about_us/worldview.jpg";
-import Texts from "../../assets/texts/about_us.json";
-import AboutUs from "../../components/templates/about-us/about-us";
+import shareholders from "../../assets/images/about_us/shareholders.jpg";
+import { useState } from "react";
+import AboutStructure from "../../components/templates/about-us/Sructure/AboutStructure";
+import GetShareholders from "./Data/GetShareHolder";
+import GetStructure from "./Data/GetStructure";
 
-interface AboutPropsI {
-  state: "history" | "goals" | "avail" | "worldview";
+export interface IAboutData {
+  state: string;
+  pic: string;
+  title: string;
+  description?: string;
 }
 
-const About = ({ state }: AboutPropsI) => {
-  const data = [
+interface IAboutProps {
+  state: string;
+}
+
+const About: React.FC<IAboutProps> = ({ state }) => {
+  const [AboutPagesData, setAboutPagesData] = useState<IAboutData[]>([
     {
       state: "history",
       description: Texts.history,
@@ -35,15 +47,34 @@ const About = ({ state }: AboutPropsI) => {
       pic: Worldview,
       title: " بیانیه مأموریت و جهان‌بینی",
     },
-  ];
+    {
+      state: "structure",
+      pic: shareholders,
+      title: "ساختار سهامداران",
+    },
+  ]);
 
-  const item = data.find((x) => x.state === state);
+  const structure = GetStructure();
+  const shareholder = GetShareholders();
+
+  const item = AboutPagesData.find((x) => x.state === state);
   return (
-    <AboutUs
-      pic={item!.pic}
-      title={item!.title}
-      description={item!.description}
-    />
+    <>
+      {state === "structure" ? (
+        <AboutStructure
+          pic={item!.pic}
+          title={item!.title}
+          shareholder={shareholder}
+          structure={structure}
+        />
+      ) : (
+        <AboutUs
+          pic={item!.pic}
+          title={item!.title}
+          description={item?.description}
+        />
+      )}
+    </>
   );
 };
 
