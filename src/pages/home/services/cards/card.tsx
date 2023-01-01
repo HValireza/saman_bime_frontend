@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   color: black;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -70px 40px -30px inset;
 
   transition: all 0.3s ease-in-out;
 
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     transform: scale(1.08);
     opacity: 1;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset;
+      rgba(0, 0, 0, 0.3) 0px -70px 40px -30px inset;
     transition: all 0.3s ease-in-out;
   }
 `;
