@@ -9,6 +9,7 @@ interface IContainer {
 
 const Recently = () => {
   const { data, loading, error } = GetRecentNews();
+  console.log(data, loading, error);
 
   return (
     <Wrapper>
@@ -31,7 +32,7 @@ export default Recently;
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 2rem 0;
+  padding: 6rem 0 0 0;
 
   display: flex;
   justify-content: center;
@@ -44,32 +45,33 @@ const Wrapper = styled.div`
 
   h2 {
     position: absolute;
-    top: 3rem;
+    top: 6.5rem;
     font-size: 3rem;
     font-family: "BRoyaBold";
     text-shadow: 3px 0 7px rgba(0, 0, 0, 0.7);
   }
+  background-image: url("/src/assets/images/recently-background.jpg");
+  transition: all ease-in-out 600ms;
+  content: "";
+  background-size: cover;
 
   overflow: hidden;
 
-  &:hover {
+  /* fix me later */
+  /* &:hover {
     ::before {
       transform: scale(1.1);
     }
   }
 
   ::before {
-    transition: all ease-in-out 600ms;
-    content: "";
-    background-image: url("/src/assets/images/recently-background.jpg");
-    background-size: cover;
     filter: blur(5px);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
+  } */
 `;
 
 const Container = styled.article<IContainer>`
