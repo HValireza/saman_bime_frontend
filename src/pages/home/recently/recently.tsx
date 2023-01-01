@@ -9,7 +9,7 @@ interface IContainer {
 
 const Recently = () => {
   const { data, loading, error } = GetRecentNews();
-  console.log(data, error, loading);
+  // console.log(data, error, loading);
 
   return (
     <Wrapper>

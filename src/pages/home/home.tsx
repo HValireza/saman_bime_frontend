@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import useScrollSnap from "react-use-scroll-snap";
 import styled from "styled-components";
 import Hero from "./hero/hero";
 import Partners from "./partners/partners";
@@ -6,8 +8,11 @@ import Reinsurance from "./reinsurance/reinsurance";
 import Services from "./services/services";
 
 function Home() {
+  const scrollRef = useRef(null);
+  useScrollSnap({ ref: scrollRef, duration: 70, delay: 10 });
+
   return (
-    <Wrapper>
+    <Wrapper ref={scrollRef}>
       <Hero />
       <Hr />
 
