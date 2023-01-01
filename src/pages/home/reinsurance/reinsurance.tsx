@@ -43,6 +43,28 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    ::before {
+      transform: scale(1.1);
+    }
+  }
+
+  ::before {
+    content: "";
+    background-image: url("/src/assets/images/reinsurance/reinsurance-background.jpg");
+    background-size: cover;
+    filter: blur(7px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 600ms;
+  }
 `;
 
 interface ArrowProps {
@@ -64,7 +86,7 @@ const Arrow = styled.div<ArrowProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "BroyaBold";
+  font-family: "BRoyaBold";
   font-size: 1.5vw;
   z-index: 5;
 

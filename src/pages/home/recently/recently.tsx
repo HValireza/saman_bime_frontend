@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
 import GetRecentNews from "../Data/GetRecentNews";
@@ -50,6 +49,27 @@ const Wrapper = styled.div`
     font-size: 3rem;
     font-family: "BRoyaBold";
     text-shadow: 3px 0 7px rgba(0, 0, 0, 0.7);
+  }
+
+  overflow: hidden;
+
+  &:hover {
+    ::before {
+      transform: scale(1.1);
+    }
+  }
+
+  ::before {
+    transition: all ease-in-out 600ms;
+    content: "";
+    background-image: url("/src/assets/images/recently-background.jpg");
+    background-size: cover;
+    filter: blur(7px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 `;
 
