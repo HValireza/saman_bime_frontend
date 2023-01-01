@@ -50,6 +50,14 @@ function App() {
             />
 
             <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
+            <Route
+              path="invitations"
+              element={<News state={NewsEnum.ARTICLE} />}
+            />
+            <Route
+              path="learnings"
+              element={<News state={NewsEnum.LEARNING} />}
+            />
           </Route>
 
           <Route path="services">

@@ -19,12 +19,12 @@ const Navbar = () => {
   ];
 
   const affairs = [
-    { title: "اخبار و اطلاعیه", path: "#" },
-    { title: "صورت‌های مالی", path: "#" },
-    { title: "آگهی‌های دعوت به مجمع", path: "#" },
+    { title: "اخبار و اطلاعیه", path: "/news/article" },
+    { title: "صورت‌های مالی", path: "/news/company" },
+    { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations" },
     { title: "کدال شرکت بیمه اتکایی سامان", path: "#" },
     { title: "شرکت بیمه اتکایی سامان در TSETMC", path: "#" },
-    { title: "ترکیب سهامداران", path: "#" },
+    { title: "ترکیب سهامداران", path: "/about/structure" },
     { title: "پرتال سهامداران", path: "#" },
     { title: "تماس با امور سهام", path: "#" },
     { title: "مجامع", path: "#" },
@@ -33,10 +33,10 @@ const Navbar = () => {
   ];
 
   const media = [
-    { title: "اخبار شرکت", path: "#" },
-    { title: "خبار صنعت بیمه", path: "#" },
-    { title: "انتشارات", path: "#" },
-    { title: "همایش آموزش", path: "#" },
+    { title: "اخبار شرکت", path: "/news/company" },
+    { title: "خبار صنعت بیمه", path: "/news/insurance" },
+    { title: "انتشارات", path: "/news/article" },
+    { title: "همایش آموزش", path: "/news/learning" },
   ];
 
   const about = [
@@ -47,9 +47,9 @@ const Navbar = () => {
     { title: " بیانیه مأموریت و جهان‌بینی", path: "/about/worldview" },
     { title: "‌هیئت مدیره", path: "/about/board-member" },
     { title: "مدیران", path: "/about/managers" },
-    { title: "نمودار سازمانی", path: "#" },
-    { title: "ساختار سهامداران", path: "#" },
-    { title: "اساسنامه", path: "#" },
+    { title: "نمودار سازمانی", path: "/about/org-chart" },
+    { title: "ساختار سهامداران", path: "/about/structure" },
+    { title: "اساسنامه", path: "/news/company" },
   ];
 
   const nav: any = document.getElementById("navbar");
