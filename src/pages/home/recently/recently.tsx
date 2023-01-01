@@ -1,31 +1,23 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
+import GetRecentNews from "../Data/GetRecentNews";
+
+interface IContainer {
+  key: number;
+  thumbnail: string;
+}
 
 const Recently = () => {
-  const articles = [
-    {
-      title: "۱خبر جدید",
-      description: "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-    },
-    {
-      title: "۲خبر جدید",
-      description: "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-    },
-    {
-      title: "۳خبر جدید",
-      description: "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-    },
-    {
-      title: "۴خبر جدید",
-      description: "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-    },
-  ];
+  const { data, loading, error } = GetRecentNews();
+  console.log(data, error, loading);
 
   return (
     <Wrapper>
       <h2>آخرین مطالب</h2>
 
-      {articles.map((a, index) => (
-        <Container key={index}>
+      {data.map((a: any, index: number) => (
+        <Container key={index} thumbnail={a.picture_thumbnail}>
           <Content className="content">
             <h3>{a.title}</h3>
             <p>{a.description}</p>
@@ -61,7 +53,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Container = styled.article`
+const Container = styled.article<IContainer>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -74,7 +66,10 @@ const Container = styled.article`
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-image: url("https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-image: url(${(props) => axiosFilesApi + props.thumbnail});
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center top;
 
   :hover {
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
