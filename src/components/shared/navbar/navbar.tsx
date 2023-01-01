@@ -51,12 +51,12 @@ const Navbar = () => {
   const nav: any = document.getElementById("navbar");
 
   //sticky navbar functionality
-  const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
-  window.onscroll = () => {
-    let currentScrollPos = window.pageYOffset;
-    nav.style.top = prevScrollpos > currentScrollPos ? "0" : "-4rem";
-    setPrevScrollPos(currentScrollPos);
-  };
+  // const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
+  // window.onscroll = () => {
+  //   let currentScrollPos = window.pageYOffset;
+  //   nav.style.top = prevScrollpos > currentScrollPos ? "0" : "-4rem";
+  //   setPrevScrollPos(currentScrollPos);
+  // };
 
   return (
     <Wrapper id="navbar">
