@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import NewsTemplate from "../../components/templates/News/NewsTemplate";
 import { NewsEnum } from "../../global/news.enum";
 import HeaderData from "./Data/HeadersData";
-import GetNews from "./GetNews/GetNews";
+import GetNews from "./Data/GetNews";
 
 interface INewsPage {
   state: NewsEnum;

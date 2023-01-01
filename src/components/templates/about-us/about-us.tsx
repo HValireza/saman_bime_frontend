@@ -1,81 +1,96 @@
 import styled from "styled-components";
 
-interface AboutUsTemplatePropsI {
+export interface IAboutUsTemplateProps {
   title: string;
   pic: string;
-  description: string;
+  description?: string;
 }
 
-const AboutUs = ({ title, pic, description }: AboutUsTemplatePropsI) => {
+const AboutUs: React.FC<IAboutUsTemplateProps> = ({
+  title,
+  pic,
+  description,
+}) => {
   return (
-    <Wrapper>
-      {}
-      <div className="banner">
-        <img src={pic} alt={title} />
-        <h1>درباره ما</h1>
-        <h2>{title}</h2>
-      </div>
+    <Container>
+      <BannerContainer>
+        <Banner src={pic} alt={title} />
+        <BannerTitle>درباره ما</BannerTitle>
+        <BannerDescription>{title}</BannerDescription>
+      </BannerContainer>
 
-      <div className="description-wrapper">
-        <p className="description">{description}</p>
-      </div>
-    </Wrapper>
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+    </Container>
   );
 };
 
 export default AboutUs;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   width: 100%;
+  height: auto;
+`;
 
-  .banner {
-    position: relative;
-    text-align: center;
+const BannerContainer = styled.div`
+  position: relative;
+  text-align: center;
+`;
 
-    img {
-      width: 70%;
-      height: 70vh;
-      margin-top: 6rem;
-      border-radius: 0.6rem;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-      filter: brightness(50%);
-    }
+const Banner = styled.img`
+  width: 70%;
+  height: 70vh;
+  margin-top: 6rem;
+  border-radius: 0.6rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+  filter: brightness(50%);
+`;
 
-    h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f3f3f3;
-      font-family: "BRoyaBold";
-      font-size: 2vw;
-    }
+const BannerTitle = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f3f3f3;
+  font-family: "BRoyaBold";
+  font-size: 2vw;
+`;
 
-    h2 {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f3f3f3;
-      font-family: "BRoyaBold";
-      font-size: 2.6vw;
-    }
-  }
+const BannerDescription = styled.h2`
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f3f3f3;
+  font-family: "BRoyaBold";
+  font-size: 2.6vw;
+`;
 
-  .description-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+const DescriptionContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-    .description {
-      width: clamp(20rem, 75%, 64rem);
-      margin: 2rem;
-      color: #000;
-      text-align: justify;
-      font-size: 1.3rem;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-  }
+const DescriptionTitle = styled.h3`
+  font-family: "BRoyaBold";
+  width: clamp(20rem, 75%, 64rem);
+  margin: 1rem;
+  color: #000;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+`;
+
+const Description = styled.p`
+  width: clamp(20rem, 75%, 64rem);
+  margin: 2rem;
+  color: #000;
+  text-align: justify;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
 `;
