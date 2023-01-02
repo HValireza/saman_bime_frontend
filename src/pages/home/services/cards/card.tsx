@@ -55,11 +55,13 @@ const Thumbnail = styled.img`
 
 const Title = styled.h3`
   font-size: 1.2rem;
+  font-family: "BRoyaBold";
 `;
 
 const Desc = styled.p`
   width: 20rem;
   padding: 0 1rem;
   font-size: 1rem;
+  text-align: justify;
   line-height: 1.5rem;
 `;
