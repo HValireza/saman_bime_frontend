@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Board from "./components/templates/about-us/board/board-members";
 import Managers from "./components/templates/about-us/board/managers";
+import Profile from "./components/templates/about-us/board/profile";
 import OrganizationChart from "./components/templates/about-us/OrganizationChart/OrganizationChart";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
@@ -34,6 +35,15 @@ function App() {
             <Route path="board-member" element={<Board />} />
 
             <Route path="org-chart" element={<OrganizationChart />} />
+
+            {/* profiles */}
+            <Route path="/about/0" element={<Profile index={0} />} />
+            <Route path="/about/1" element={<Profile index={1} />} />
+            <Route path="2" element={<Profile index={2} />} />
+            <Route path="3" element={<Profile index={3} />} />
+            <Route path="4" element={<Profile index={4} />} />
+            <Route path="5" element={<Profile index={5} />} />
+            <Route path="6" element={<Profile index={6} />} />
           </Route>
 
           <Route path="news">

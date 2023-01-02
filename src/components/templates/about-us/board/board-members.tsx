@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import pic2 from "../../../../assets/profiles/آقای بهزاد گلکار.jpg";
 import pic5 from "../../../../assets/profiles/آقای جواد گوهرزاد.jpg";
@@ -58,12 +59,14 @@ const Board = () => {
       </Title>
 
       <Container>
-        {data.map((d) => (
-          <Item>
-            <img src={d.pic} alt={d.name} />
-            <h3>{d.name}</h3>
-            <h4>{d.position}</h4>
-          </Item>
+        {data.map((d, index) => (
+          <Link to={`/about/${index + 3}`} key={index}>
+            <Item>
+              <img src={d.pic} alt={d.name} />
+              <h3>{d.name}</h3>
+              <h4>{d.position}</h4>
+            </Item>
+          </Link>
         ))}
       </Container>
     </Wrapper>

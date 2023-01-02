@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import pic3 from "../../../../assets/profiles/محمد مهرابی.jpg";
 import pic2 from "../../../../assets/profiles/مریم فرزادی نیا.jpg";
@@ -66,12 +67,14 @@ const Managers = () => {
       </Title>
 
       <Container>
-        {data.map((d) => (
-          <Item>
-            <img src={d.pic} alt={d.name} />
-            <h3>{d.name}</h3>
-            <h4>{d.position}</h4>
-          </Item>
+        {data.map((d, index) => (
+          <Link to={`/about/${index}`} key={index}>
+            <Item>
+              <img src={d.pic} alt={d.name} />
+              <h3>{d.name}</h3>
+              <h4>{d.position}</h4>
+            </Item>
+          </Link>
         ))}
       </Container>
     </Wrapper>
