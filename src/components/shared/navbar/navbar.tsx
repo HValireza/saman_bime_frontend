@@ -69,7 +69,7 @@ const Navbar = () => {
         </Link>
 
         <Items>
-          <Item id="drop-down">
+          <Item id="drop-down" className="ali">
             خدمات
             <DropDown
               links={services}
@@ -180,6 +180,14 @@ const Items = styled.ul`
 
   #drop-down:hover .drop-down .logo {
     display: block;
+  }
+
+  // dropdown tiltes size
+  .ali > div > ul > :nth-child(1),
+  .ali > div > ul > :nth-child(8) {
+    * {
+      font-size: 1.3rem;
+    }
   }
 `;
 
