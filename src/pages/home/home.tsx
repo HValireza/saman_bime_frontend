@@ -14,16 +14,12 @@ function Home() {
   return (
     <Wrapper ref={scrollRef}>
       <Hero />
-      <Hr />
 
       <Reinsurance />
-      <Hr />
 
       <Services />
-      <Hr />
 
       <Recently />
-      <Hr />
 
       <Partners />
     </Wrapper>
@@ -41,10 +37,4 @@ const Wrapper = styled.div`
   align-items: center;
 
   background-color: #d2dbdd;
-`;
-
-const Hr = styled.hr`
-  width: 100%;
-  background-color: black;
-  height: 1px;
 `;
