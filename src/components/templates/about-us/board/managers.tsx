@@ -123,12 +123,15 @@ const Container = styled.div`
 
 const Item = styled.div`
   width: 30rem;
-  height: 40rem;
+  /* height: 40rem; */
+
+  padding-bottom: 2rem;
   border: 1px solid black;
   margin: 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 
   border-radius: 1rem;
   background-color: #fefefe;
@@ -147,5 +150,13 @@ const Item = styled.div`
     margin: 0.7rem;
     border-radius: 1rem;
     object-fit: cover;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
   }
 `;
