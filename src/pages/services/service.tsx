@@ -1,67 +1,81 @@
 import styled from "styled-components";
 
-import pic7 from "../../assets/images/services/خدمات مشاوره اتکایی.jpg";
-import pic1 from "../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
-import pic4 from "../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
-import pic5 from "../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
-import pic3 from "../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
-import pic2 from "../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
-import pic6 from "../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
+import path_img from "../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
+import engineering_img from "../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
+import transport_img from "../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
+import fire_img from "../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
+import person_img from "../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
+import international_img from "../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
+import consult_img from "../../assets/images/services/خدمات مشاوره اتکایی.jpg";
 
 import texts from "../../assets/texts/services.json";
 
 const data = [
   {
-    pic: pic1,
+    pic: "",
+    title: "خدمات بیمه های اتکایی",
+    desc: "",
+    state: "services",
+  },
+  {
+    pic: path_img,
     title: "طراحی و راهبری قراردادهای اتکایی",
-    desc: texts.plan,
+    desc: texts.path,
+    state: "path",
   },
   {
-    pic: pic2,
+    pic: engineering_img,
     title: "پوشش اتکایی بیمه های مهندسی و انرژی",
-    desc: texts.engineer,
+    desc: texts.engineering,
+    state: "engineering",
   },
   {
-    pic: pic3,
+    pic: transport_img,
     title: "پوشش اتکایی بیمه های باربری، کشتی و هواپیما",
-    desc: texts.freight,
+    desc: texts.transport,
+    state: "transport",
   },
   {
-    pic: pic4,
+    pic: fire_img,
     title: "پوشش اتکایی بیمه های آتش سوزی",
     desc: texts.fire,
+    state: "fire",
   },
   {
-    pic: pic5,
+    pic: person_img,
     title: "پوشش اتکایی بیمه های اشخاص",
-    desc: texts.people,
+    desc: texts.person,
+    state: "person",
   },
   {
-    pic: pic6,
+    pic: international_img,
     title: "پوشش های اتکایی بین المللی",
     desc: texts.international,
+    state: "international",
   },
   {
-    pic: pic7,
+    pic: consult_img,
     title: "خدمات مشاوره اتکایی",
-    desc: texts.counseling,
+    desc: texts.consult,
+    state: "consult",
   },
 ];
 
 interface serviceI {
-  index: number;
+  state: string;
 }
 
-const Service = ({ index }: serviceI) => {
+const Service: React.FC<serviceI> = ({ state }) => {
+  const item = data.find((x) => x.state === state);
   return (
     <Wrapper>
       <div className="banner">
-        <img src={data[index].pic} alt={data[index].title} />
-        <h1>{data[index].title}</h1>
+        <img src={item!.pic} alt={item!.title} />
+        <h1>{item!.title}</h1>
       </div>
 
       <div className="description-wrapper">
-        <p className="description">{data[index].desc}</p>
+        <p className="description">{item!.desc}</p>
       </div>
     </Wrapper>
   );

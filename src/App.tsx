@@ -71,13 +71,20 @@ function App() {
           </Route>
 
           <Route path="services">
-            <Route path="1" element={<Service index={0} />} />
-            <Route path="2" element={<Service index={1} />} />
-            <Route path="3" element={<Service index={2} />} />
-            <Route path="4" element={<Service index={3} />} />
-            <Route path="5" element={<Service index={4} />} />
-            <Route path="6" element={<Service index={5} />} />
-            <Route path="7" element={<Service index={6} />} />
+            <Route path="services" element={<Service state="services" />} />
+            <Route path="path" element={<Service state="path" />} />
+            <Route
+              path="engineering"
+              element={<Service state="engineering" />}
+            />
+            <Route path="transport" element={<Service state="transport" />} />
+            <Route path="fire" element={<Service state="fire" />} />
+            <Route path="person" element={<Service state="person" />} />
+            <Route
+              path="international"
+              element={<Service state="international" />}
+            />
+            <Route path="consult" element={<Service state="consult" />} />
           </Route>
 
           <Route path="post/:id" element={<PostPage />} />
