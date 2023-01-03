@@ -9,6 +9,7 @@ import international_img from "../../assets/images/services/پوشش های ات
 import consult_img from "../../assets/images/services/خدمات مشاوره اتکایی.jpg";
 
 import texts from "../../assets/texts/services.json";
+import Services from "../home/services/services";
 
 const data = [
   {
@@ -69,14 +70,20 @@ const Service: React.FC<serviceI> = ({ state }) => {
   const item = data.find((x) => x.state === state);
   return (
     <Wrapper>
-      <div className="banner">
-        <img src={item!.pic} alt={item!.title} />
-        <h1>{item!.title}</h1>
-      </div>
+      {item!.state === "services" ? (
+        <Services />
+      ) : (
+        <>
+          <div className="banner">
+            <img src={item!.pic} alt={item!.title} />
+            <h1>{item!.title}</h1>
+          </div>
 
-      <div className="description-wrapper">
-        <p className="description">{item!.desc}</p>
-      </div>
+          <div className="description-wrapper">
+            <p className="description">{item!.desc}</p>
+          </div>
+        </>
+      )}
     </Wrapper>
   );
 };
@@ -85,6 +92,7 @@ export default Service;
 
 const Wrapper = styled.div`
   width: 100%;
+  margin-top: 4rem;
 
   .banner {
     position: relative;
@@ -93,10 +101,10 @@ const Wrapper = styled.div`
     img {
       width: 70%;
       height: 70vh;
-      margin-top: 6rem;
       border-radius: 0.6rem;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
       filter: brightness(50%);
+      margin-top: 2rem;
     }
 
     h1 {

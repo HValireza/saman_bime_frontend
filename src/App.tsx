@@ -8,7 +8,7 @@ import About from "./pages/about/about";
 import Home from "./pages/home/home";
 import News from "./pages/news/News";
 import PostPage from "./pages/Post/Post";
-import Service from "./pages/services/service";
+import Service from "./pages/services/Service";
 import Layout from "./pages/templates/layout";
 import "./styles/App.scss";
 
