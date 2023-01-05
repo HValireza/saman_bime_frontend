@@ -127,7 +127,7 @@ const Wrapper = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: fixed;
+  /* position: fixed; */
   /* top: 0; */
   transition: all 0.3s ease-in-out;
 
