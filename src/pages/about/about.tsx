@@ -9,12 +9,15 @@ import { useState } from "react";
 import AboutStructure from "../../components/templates/about-us/Sructure/AboutStructure";
 import GetShareholders from "./Data/GetShareHolder";
 import GetStructure from "./Data/GetStructure";
+import statute_img from "../../assets/images/about_us/statute.jpg";
+import statue_pdf from "../../assets/pdf/statute.pdf";
 
 export interface IAboutData {
   state: string;
   pic: string;
   title: string;
   description?: string;
+  detail?: string;
 }
 
 interface IAboutProps {
@@ -52,6 +55,12 @@ const About: React.FC<IAboutProps> = ({ state }) => {
       pic: shareholders,
       title: "ساختار سهامداران",
     },
+    {
+      state: "statute",
+      pic: statute_img,
+      title: "اساس نامه",
+      detail: statue_pdf,
+    },
   ]);
 
   const structure = GetStructure();
@@ -72,6 +81,7 @@ const About: React.FC<IAboutProps> = ({ state }) => {
           pic={item!.pic}
           title={item!.title}
           description={item?.description}
+          detail={item?.detail}
         />
       )}
     </>
