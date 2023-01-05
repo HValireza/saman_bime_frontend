@@ -88,7 +88,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 6rem;
+  margin-top: 2rem;
   font-family: "BRoyaBold";
   text-align: center;
 

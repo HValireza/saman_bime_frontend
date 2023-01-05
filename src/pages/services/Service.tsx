@@ -92,7 +92,6 @@ export default Service;
 
 const Wrapper = styled.div`
   width: 100%;
-  margin-top: 4rem;
 
   .banner {
     position: relative;

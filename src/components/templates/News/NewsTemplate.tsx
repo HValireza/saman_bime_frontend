@@ -93,7 +93,6 @@ const NewsTemplate: React.FC<IData> = ({
 const Container = styled.div`
   width: 100%;
   height: auto;
-  margin-top: 4rem;
 
   display: flex;
   flex-direction: column;

@@ -109,7 +109,6 @@ const PostTemplate: React.FC<IPostTemplate> = ({ post, loading, error }) => {
 export default PostTemplate;
 
 const Container = styled.div`
-  margin-top: 4rem;
   width: 100%;
   height: auto;
   color: black;

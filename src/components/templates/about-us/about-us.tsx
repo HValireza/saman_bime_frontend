@@ -110,7 +110,7 @@ const BannerContainer = styled.div`
 const Banner = styled.img`
   width: 70%;
   height: 70vh;
-  margin-top: 6rem;
+  margin-top: 2rem;
   border-radius: 0.6rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
   filter: brightness(50%);

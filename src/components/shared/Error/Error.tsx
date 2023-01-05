@@ -65,7 +65,6 @@ const Image = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 4rem;
 `;
 
 const StatusTitle = styled.h1`
