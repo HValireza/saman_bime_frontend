@@ -22,8 +22,8 @@ const Navbar = () => {
   ];
 
   const affairs = [
-    { title: "اخبار و اطلاعیه", path: "/news/article" },
-    { title: "صورت‌های مالی", path: "/news/company" },
+    { title: "اخبار و اطلاعیه", path: "/news/share" },
+    { title: "صورت‌های مالی", path: "/news/finance" },
     { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations" },
     { title: "کدال شرکت بیمه اتکایی سامان", path: "#" },
     { title: "شرکت بیمه اتکایی سامان در TSETMC", path: "#" },
@@ -31,8 +31,8 @@ const Navbar = () => {
     { title: "پرتال سهامداران", path: "#" },
     { title: "تماس با امور سهام", path: "#" },
     { title: "مجامع", path: "#" },
-    { title: "مجمع مؤسس", path: "#" },
-    { title: "مجمع عمومی و فوق‌العاده", path: "#" },
+    { title: "مجمع مؤسس", path: "news/constituent" },
+    { title: "مجمع عمومی و فوق‌العاده", path: "news/general" },
   ];
 
   const media = [
