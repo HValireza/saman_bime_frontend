@@ -53,7 +53,11 @@ const Hero = () => {
 
   return (
     <Wrapper>
-      <HeroSlider height={"100vh"} autoplay controller={controller}>
+      <HeroSlider
+        height={"calc(100vh - 4rem)"}
+        autoplay
+        controller={controller}
+      >
         {pictures.map((pic) => (
           <Slide
             key={pictures.indexOf(pic)}
