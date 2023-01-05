@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const media = [
     { title: "اخبار شرکت", path: "/news/company" },
-    { title: "خبار صنعت بیمه", path: "/news/insurance" },
+    { title: "اخبار صنعت بیمه", path: "/news/insurance" },
     { title: "انتشارات", path: "/news/article" },
     { title: "همایش آموزش", path: "/news/learning" },
   ];
