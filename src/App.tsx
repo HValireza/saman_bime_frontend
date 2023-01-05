@@ -51,26 +51,34 @@ function App() {
 
           <Route path="news">
             <Route path="company" element={<News state={NewsEnum.COMPANY} />} />
-
             <Route
               path="insurance"
               element={<News state={NewsEnum.INSURANCE} />}
             />
-
             <Route
               path="shareholder"
               element={<News state={NewsEnum.SHAREHOLDER} />}
             />
-
             <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
-            <Route
-              path="invitations"
-              element={<News state={NewsEnum.ARTICLE} />}
-            />
             <Route
               path="learnings"
               element={<News state={NewsEnum.LEARNING} />}
             />
+            <Route path="share" element={<News state={NewsEnum.SHARE} />} />
+
+            <Route path="finance" element={<News state={NewsEnum.FINANCE} />} />
+
+            <Route
+              path="invitations"
+              element={<News state={NewsEnum.ARTICLE} />}
+            />
+
+            <Route
+              path="constituent"
+              element={<News state={NewsEnum.CONSTITUENT} />}
+            />
+
+            <Route path="general" element={<News state={NewsEnum.GENERAL} />} />
           </Route>
 
           <Route path="services">
