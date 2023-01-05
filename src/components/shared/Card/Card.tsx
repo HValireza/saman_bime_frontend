@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import dum from "../../../assets/images/about_us/org-img.jpg";
 
 interface ICard {
   title: string;
