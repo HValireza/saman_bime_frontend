@@ -56,13 +56,13 @@ const Navbar = () => {
   ];
 
   // sticky navbar functionality
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = () => {
-    let nav: any = document.getElementById("navbar");
-    let currentScrollpos = window.pageYOffset;
-    nav.style.top = prevScrollpos > currentScrollpos ? "-0.2rem" : "-4rem";
-    prevScrollpos = currentScrollpos;
-  };
+  // let prevScrollpos = window.pageYOffset;
+  // window.onscroll = () => {
+  //   let nav: any = document.getElementById("navbar");
+  //   let currentScrollpos = window.pageYOffset;
+  //   nav.style.top = prevScrollpos > currentScrollpos ? "-0.2rem" : "-4rem";
+  //   prevScrollpos = currentScrollpos;
+  // };
 
   return (
     <Wrapper id="navbar">
