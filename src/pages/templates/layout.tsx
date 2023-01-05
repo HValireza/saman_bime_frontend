@@ -4,21 +4,28 @@ import Footer from "../../components/shared/footer/footer";
 import Navbar from "../../components/shared/navbar/navbar";
 const Layout = () => {
   return (
-    <Wrapper>
+    <Container>
       <Navbar />
-      <Outlet />
+      <Wrapper>
+        <Outlet />
+      </Wrapper>
       <Footer />
-    </Wrapper>
+    </Container>
   );
 };
 
 export default Layout;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: auto;
+  margin-top: 6rem;
 `;
