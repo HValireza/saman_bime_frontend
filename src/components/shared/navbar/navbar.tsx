@@ -30,9 +30,9 @@ const Navbar = () => {
     { title: "ترکیب سهامداران", path: "/about/structure" },
     { title: "پرتال سهامداران", path: "#" },
     { title: "تماس با امور سهام", path: "#" },
-    { title: "مجامع", path: "#" },
-    { title: "مجمع مؤسس", path: "news/constituent" },
-    { title: "مجمع عمومی و فوق‌العاده", path: "news/general" },
+    { title: "مجامع", path: "/group/assemblies" },
+    { title: "مجمع مؤسس", path: "/news/constituent" },
+    { title: "مجمع عمومی و فوق‌العاده", path: "/news/general" },
   ];
 
   const media = [
