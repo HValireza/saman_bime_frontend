@@ -5,6 +5,7 @@ import Profile from "./components/templates/about-us/board/profile";
 import OrganizationChart from "./components/templates/about-us/OrganizationChart/OrganizationChart";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
+import Groups from "./pages/Groups/Groups";
 import Home from "./pages/home/home";
 import News from "./pages/news/News";
 import PostPage from "./pages/Post/Post";
@@ -17,8 +18,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* Home */}
           <Route index element={<Home />} />
 
+          {/* About Pages */}
           <Route path="about">
             <Route path="history" element={<About state={"history"} />} />
 
@@ -49,6 +52,7 @@ function App() {
             <Route path="7" element={<Profile index={7} />} />
           </Route>
 
+          {/* News Pages */}
           <Route path="news">
             <Route path="company" element={<News state={NewsEnum.COMPANY} />} />
             <Route
@@ -81,6 +85,7 @@ function App() {
             <Route path="general" element={<News state={NewsEnum.GENERAL} />} />
           </Route>
 
+          {/* Services Pages */}
           <Route path="services">
             <Route path="services" element={<Service state="services" />} />
             <Route path="path" element={<Service state="path" />} />
@@ -98,6 +103,14 @@ function App() {
             <Route path="consult" element={<Service state="consult" />} />
           </Route>
 
+          {/* Group Pages */}
+          <Route path="group">
+            <Route
+              path="assemblies"
+              element={<Groups state={"assemblies"} />}
+            />
+          </Route>
+          {/* Post Pages */}
           <Route path="post/:id" element={<PostPage />} />
         </Route>
       </Routes>
