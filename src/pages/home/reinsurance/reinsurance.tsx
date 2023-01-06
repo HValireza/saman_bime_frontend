@@ -34,6 +34,13 @@ const Reinsurance = () => {
 export default Reinsurance;
 
 const Wrapper = styled.div`
+  @media (max-width: 900px) {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    padding: 0 0 3rem 0;
+  }
+
   width: 100%;
   height: 100vh;
   padding: 1.5rem 0;
@@ -72,13 +79,25 @@ interface ArrowProps {
 }
 
 const Card = styled.div<ArrowProps>`
-  width: 100%;
+  width: 90%;
 
   display: flex;
   justify-content: ${(p) => (p.left ? "start" : "end")};
 `;
 
 const Arrow = styled.div<ArrowProps>`
+  @media (max-width: 900px) {
+    width: 90%;
+    height: unset;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+    box-shadow: 2px 1px 8px rgba(0, 0, 0, 0.4);
+
+    :hover {
+      transform: scale(1.03);
+    }
+  }
+
   width: 18%;
   height: 18vh;
   position: relative;
@@ -87,7 +106,7 @@ const Arrow = styled.div<ArrowProps>`
   align-items: center;
   justify-content: center;
   font-family: "BRoyaBold";
-  font-size: 1.5vw;
+  font-size: clamp(1.2rem, 1.5vh, 3rem);
   z-index: 5;
 
   user-select: none;
@@ -105,6 +124,10 @@ const Arrow = styled.div<ArrowProps>`
       : "background-color: #2B3467;"}
 
   ::after {
+    @media (max-width: 900px) {
+      display: none;
+    }
+
     content: "";
     width: 0;
     height: 0;
