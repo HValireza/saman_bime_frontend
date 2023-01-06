@@ -101,6 +101,54 @@ function App() {
             />
 
             <Route path="general" element={<News state={NewsEnum.GENERAL} />} />
+
+            {/* news - regulations */}
+
+            <Route
+              path="reliance"
+              element={<News state={NewsEnum.RELIANCE} />}
+            />
+            <Route path="fire" element={<News state={NewsEnum.FIRE} />} />
+            <Route
+              path="transport"
+              element={<News state={NewsEnum.TRANSPORT} />}
+            />
+            <Route
+              path="responsibility"
+              element={<News state={NewsEnum.RESPONSIBILITY} />}
+            />
+            <Route path="cars" element={<News state={NewsEnum.CARS} />} />
+            <Route path="life" element={<News state={NewsEnum.LIFE} />} />
+            <Route path="cure" element={<News state={NewsEnum.CURE} />} />
+            <Route
+              path="accident"
+              element={<News state={NewsEnum.ACCIDENT} />}
+            />
+            <Route path="money" element={<News state={NewsEnum.MONEY} />} />
+            <Route path="credit" element={<News state={NewsEnum.CREDIT} />} />
+            <Route path="travel" element={<News state={NewsEnum.TRAVEL} />} />
+            <Route path="animal" element={<News state={NewsEnum.ANIMAL} />} />
+            <Route
+              path="actuarial"
+              element={<News state={NewsEnum.ACTUARIAL} />}
+            />
+            <Route path="insurer" element={<News state={NewsEnum.INSURER} />} />
+            <Route
+              path="accounting"
+              element={<News state={NewsEnum.ACCOUNTING} />}
+            />
+            <Route path="damage" element={<News state={NewsEnum.DAMAGE} />} />
+            <Route path="save" element={<News state={NewsEnum.SAVE} />} />
+            <Route path="wage" element={<News state={NewsEnum.WAGE} />} />
+            <Route
+              path="employer"
+              element={<News state={NewsEnum.EMPLOYER} />}
+            />
+            <Route
+              path="currency"
+              element={<News state={NewsEnum.CURRENCY} />}
+            />
+            <Route path="common" element={<News state={NewsEnum.COMMON} />} />
           </Route>
 
           {/* Services Pages */}
