@@ -22,7 +22,6 @@ export default Card;
 
 const Wrapper = styled.div`
   width: 20rem;
-  min-width: 4rem;
   height: 45vh;
   display: flex;
   flex-direction: column;
@@ -50,7 +49,9 @@ const Wrapper = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  width: 20rem;
+  height: 45%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0 2px 7px #0000002c;
 `;
