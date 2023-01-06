@@ -50,7 +50,8 @@ const Wrapper = styled.div`
   );
 
   @media (max-width: 900px) {
-    padding-top: 3rem;
+    padding-top: 1rem;
+    height: 30vh;
   }
 
   h1 {
@@ -59,7 +60,7 @@ const Wrapper = styled.div`
     text-shadow: 3px 0 7px rgba(0, 0, 0, 1);
 
     @media (max-width: 900px) {
-      font-size: 2.1rem;
+      font-size: 2rem;
     }
   }
 `;
@@ -88,6 +89,6 @@ const Item = styled.img<ItemI>`
   }
 
   @media (max-width: 900px) {
-    width: calc(${(p) => p.width} * 0.6);
+    width: calc(${(p) => p.width} * 0.5);
   }
 `;
