@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../../assets/images/logo1.png";
-import DropDown from "./dropdown/dropdown";
-import MobaileNavbar from "./mobile-navbar/mobaile-navbar";
+import logo from "../../../../assets/images/logo1.png";
+import MDropDown from "./mobile-dropdown";
 
-const Navbar = () => {
+const MobaileNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [icon, setIcon] = useState("=");
+
   const services = [
     { title: "خدمات بیمه‌های اتکایی", path: "/services/services" },
     { title: "طراحی و راهبری قراردادهای اتکایی", path: "/services/path" },
@@ -56,121 +59,111 @@ const Navbar = () => {
     { title: "اساسنامه", path: "/news/company" },
   ];
 
-  // sticky navbar functionality
-  // let prevScrollpos = window.pageYOffset;
-  // window.onscroll = () => {
-  //   let nav: any = document.getElementById("navbar");
-  //   let currentScrollpos = window.pageYOffset;
-  //   nav.style.top = prevScrollpos > currentScrollpos ? "-0.2rem" : "-4rem";
-  //   prevScrollpos = currentScrollpos;
-  // };
-
   return (
     <Wrapper>
-      <Container>
-        <Link to={"/"}>
-          <Logo src={logo} />
-        </Link>
+      <Link to={"/"}>
+        <Logo src={logo} />
+      </Link>
 
-        <Items>
-          <Item id="drop-down" className="ali">
-            خدمات
-            <DropDown
-              links={services}
-              vector="/src/assets/images/vectors/services.png"
-              alt="services"
-            />
-          </Item>
+      <span
+        onClick={() => {
+          setIsOpen(isOpen ? false : true);
+          setIcon(isOpen ? "=" : "×");
+        }}
+      >
+        {icon}
+      </span>
 
-          <Item id="drop-down">
-            امور سهام
-            <DropDown
-              links={affairs}
-              vector="/src/assets/images/vectors/deal.png"
-              alt="deal"
-            />
-          </Item>
+      {isOpen && (
+        <Container>
+          <Items>
+            <Item id="drop-down" className="services">
+              خدمات
+              <MDropDown links={services} />
+            </Item>
 
-          <Item id="drop-down">
-            رسانه
-            <DropDown
-              links={media}
-              vector="/src/assets/images/vectors/media.png"
-              alt="media"
-            />
-          </Item>
+            <Item id="drop-down">
+              امور سهام
+              <MDropDown links={affairs} />
+            </Item>
 
-          <Item>گزارش</Item>
+            <Item id="drop-down">
+              رسانه
+              <MDropDown links={media} />
+            </Item>
 
-          <Item>آیین‌نامه‌ها</Item>
+            <Item>گزارش</Item>
 
-          <Item>تماس با ما</Item>
+            <Item>آیین‌نامه‌ها</Item>
 
-          <Item id="drop-down">
-            درباره ما
-            <DropDown
-              links={about}
-              vector="/src/assets/images/vectors/about-us.png"
-              alt="about-us"
-            />
-          </Item>
-        </Items>
+            <Item>تماس با ما</Item>
 
-        <Tools />
-      </Container>
+            <Item id="drop-down">درباره ما</Item>
+          </Items>
 
-      <MobaileNavbar />
+          <Tools />
+        </Container>
+      )}
     </Wrapper>
   );
 };
 
-export default Navbar;
+export default MobaileNavbar;
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
   width: 100%;
   height: 4rem;
-  display: flex;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
 
-  font-family: "BRoyaBold";
-  font-weight: bolder;
-  font-family: 1.2rem;
   background-color: white;
-  opacity: 0.96;
-
-  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.5);
-
-  z-index: 10;
-`;
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 72rem;
-
-  direction: rtl;
 
   @media (max-width: 900px) {
-    display: none;
-    height: 100vh;
+    display: flex;
+  }
+
+  span {
+    padding: 1.5rem;
+    color: black;
+    font-size: 4rem;
+    user-select: none;
+    transition: all 400ms ease-in-out;
+
+    :hover {
+      transform: scale(1.03);
+      text-shadow: (3px 3px 10px black);
+    }
   }
 `;
 
 const Logo = styled.img`
   height: 2.7rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
   cursor: pointer;
-  margin-left: 3rem;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: white;
 `;
 
 const Items = styled.ul`
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   #drop-down:hover .drop-down {
     height: max-content;
@@ -180,7 +173,6 @@ const Items = styled.ul`
 
   #drop-down:hover .drop-down li {
     height: unset;
-    transition: all 0.2s ease-in-out;
     display: block;
   }
 
@@ -188,13 +180,9 @@ const Items = styled.ul`
     padding: 1rem;
   }
 
-  #drop-down:hover .drop-down .logo {
-    display: block;
-  }
-
   // dropdown tiltes size
-  .ali > div > ul > :nth-child(1),
-  .ali > div > ul > :nth-child(8) {
+  .services > div > ul > :nth-child(1),
+  .services > div > ul > :nth-child(8) {
     * {
       font-size: 1.3rem;
     }
@@ -203,35 +191,31 @@ const Items = styled.ul`
 
 const Item = styled.li`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 
-  height: 4rem;
+  height: max-content;
   min-width: max-content;
-  padding: 10px 5px;
+  padding: 1.2rem;
 
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-family: "BRoyaBold";
   color: #1a1c1d;
   list-style: none;
   transition: 100ms ease-in-out;
   cursor: pointer;
+  transition: all 400ms ease-in-out;
 
   ::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    transform: scale(0.3);
     background-color: #213547;
-    transition: all 0.1s ease-in-out;
-  }
 
-  :hover::after {
-    bottom: 2px;
-    transform: unset;
-    width: 100%;
-    height: 2px;
+    bottom: 0;
+    width: 80%;
+    height: 1px;
   }
 `;
 
@@ -239,6 +223,6 @@ const Tools = styled.div`
   width: 10rem;
   height: 100%;
 `;
-function useState(pageYOffset: number): [any, any] {
-  throw new Error("Function not implemented.");
-}
+// function useState(pageYOffset: number): [any, any] {
+//   throw new Error("Function not implemented.");
+// }
