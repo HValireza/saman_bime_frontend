@@ -52,41 +52,6 @@ const OrgChartData = [
     detail: "",
     banner: "",
   },
-  {
-    state: "",
-    title: "",
-    subject: "",
-    detail: "",
-    banner: "",
-  },
-  {
-    state: "",
-    title: "",
-    subject: "",
-    detail: "",
-    banner: "",
-  },
-  {
-    state: "",
-    title: "",
-    subject: "",
-    detail: "",
-    banner: "",
-  },
-  {
-    state: "",
-    title: "",
-    subject: "",
-    detail: "",
-    banner: "",
-  },
-  {
-    state: "",
-    title: "",
-    subject: "",
-    detail: "",
-    banner: "",
-  },
 ];
 
 export default OrgChartData;
