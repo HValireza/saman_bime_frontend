@@ -34,6 +34,8 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   color: black;
 
+  overflow: hidden;
+
   box-shadow: rgba(0, 0, 0, 0.35) 0px -70px 40px -30px inset;
 
   transition: all 0.3s ease-in-out;
