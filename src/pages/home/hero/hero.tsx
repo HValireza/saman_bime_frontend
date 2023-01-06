@@ -54,7 +54,12 @@ const Hero = () => {
   return (
     <Wrapper>
       <HeroSlider
-        height={"calc(100vh - 4rem)"}
+        className="hero-slider"
+        height={
+          window.matchMedia("(max-width: 900px)").matches
+            ? "calc(100vh - 3.4rem)"
+            : "calc(100vh - 4rem)"
+        }
         autoplay
         controller={controller}
       >

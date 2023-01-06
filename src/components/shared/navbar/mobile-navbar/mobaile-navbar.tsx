@@ -181,7 +181,7 @@ const Logo = styled.img`
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 3.5rem);
   position: absolute;
   top: 100%;
 
