@@ -49,6 +49,7 @@ const NewsTemplate: React.FC<IData> = ({
         {pageData.subject}
         <AfterLine></AfterLine>
       </Subject>
+      {error ? <Error /> : <></>}
       <NewsList>
         {data.map((n, index) => (
           <Link
@@ -84,7 +85,6 @@ const NewsTemplate: React.FC<IData> = ({
           </Link>
         ))}
         {loading ? <Loading /> : <></>}
-        {error ? <Error /> : <></>}
       </NewsList>
     </Container>
   );
