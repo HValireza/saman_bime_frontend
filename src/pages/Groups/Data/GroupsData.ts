@@ -56,7 +56,7 @@ const GroupsData = [
       {
         title: "اقامتگاه و سایر مشخصات ثبتی",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/registration",
       },
       {
         title: "اساسنامه",
@@ -66,32 +66,32 @@ const GroupsData = [
       {
         title: "ترکیب سهامداران و مشخصات سهامدارن بیش از یک درصد",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/structure",
       },
       {
         title: "ساختار سازمانی",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/org-chart",
       },
       {
         title: "مشخصات مدیران",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/managers",
       },
       {
         title: "ترکیب سرمایه انسانی",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/hr",
       },
       {
         title: "چشم انداز ماموریت و اهداف راهبردی",
         img: logo,
-        linkTo: "",
+        linkTo: "/about/goals",
       },
       {
         title: " عملکرد بیمه گری اتکایی به تفکیک رشته های بیمه ای",
         img: logo,
-        linkTo: "",
+        linkTo: "news/finance",
       },
     ],
   },

@@ -39,8 +39,17 @@ function App() {
 
             <Route path="board-member" element={<Board />} />
 
-            <Route path="org-chart" element={<OrganizationChart />} />
+            <Route
+              path="org-chart"
+              element={<OrganizationChart state={"orgchart"} />}
+            />
 
+            <Route
+              path="registration"
+              element={<OrganizationChart state={"registration"} />}
+            />
+
+            <Route path="hr" element={<OrganizationChart state={"hr"} />} />
             {/* profiles */}
             <Route path="0" element={<Profile index={0} />} />
             <Route path="1" element={<Profile index={1} />} />

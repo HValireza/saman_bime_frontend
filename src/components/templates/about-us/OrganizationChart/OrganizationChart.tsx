@@ -1,14 +1,18 @@
 import { useState } from "react";
 import styled from "styled-components";
-import organizationImg from "../../../../assets/images/about_us/org-img.jpg";
 import { Document, Page } from "react-pdf/dist/esm/entry.vite";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import Loading from "../../../shared/Loading/Loading";
 import Error from "../../../shared/Error/Error";
-import chart from "../../../../assets/charts/org-chart.pdf";
+import OrgChartData from "./Data/OrgChartData";
 
-const OrganizationChart: React.FC = () => {
+interface IChart {
+  state: string;
+}
+
+const OrganizationChart: React.FC<IChart> = ({ state }) => {
+  const chart = OrgChartData.find((c) => c.state === state);
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -30,15 +34,15 @@ const OrganizationChart: React.FC = () => {
   return (
     <Container>
       <BannerContainer>
-        <Banner src={organizationImg} alt={"نمودار سازمانی"} />
-        <BannerTitle>درباره ما</BannerTitle>
-        <BannerDescription>{"نمودار سازمانی"}</BannerDescription>
+        <Banner src={chart?.banner} alt={chart?.subject} />
+        <BannerTitle>{chart?.title}</BannerTitle>
+        <BannerDescription>{chart?.subject}</BannerDescription>
       </BannerContainer>
 
       <DescriptionContainer>
         <PDFWrapper>
           <Document
-            file={chart}
+            file={chart?.detail}
             onLoadSuccess={onDocumentLoadSuccess}
             renderMode="canvas"
             loading={<Loading />}
