@@ -50,9 +50,6 @@ const AboutStructure: React.FC<IAboutStructure> = ({
     { text: "درصد", colWith: 12 },
   ];
 
-  console.log(tableData);
-  console.log(tableHeaders);
-
   return (
     <Container>
       <BannerContainer>
