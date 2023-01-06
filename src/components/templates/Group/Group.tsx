@@ -5,6 +5,7 @@ interface ICard {
   title: string;
   linkTo: string;
   img: string;
+  modal?: string;
 }
 
 interface IGroup {
@@ -22,7 +23,12 @@ const Group: React.FC<IGroup> = ({ title, cards }) => {
       </Title>
       <Wrapper>
         {cards.map((c) => (
-          <Card title={c.title} linkTo={c.linkTo} img={c.img}></Card>
+          <Card
+            title={c.title}
+            linkTo={c.linkTo}
+            img={c.img}
+            modal={c.modal}
+          ></Card>
         ))}
       </Wrapper>
     </Container>

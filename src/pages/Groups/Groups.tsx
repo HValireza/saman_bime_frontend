@@ -1,12 +1,6 @@
 import Group from "../../components/templates/Group/Group";
 import GroupsData from "./Data/GroupsData";
 
-interface ICard {
-  title: string;
-  linkTo: string;
-  img: string;
-}
-
 interface IGroup {
   state: string;
 }

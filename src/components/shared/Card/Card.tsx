@@ -1,19 +1,33 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Modal from "../Modal/Modal";
 
 interface ICard {
   title: string;
   linkTo: string;
   img: string;
+  modal?: string;
 }
 
-const Card: React.FC<ICard> = ({ title, linkTo, img }) => {
+const Card: React.FC<ICard> = ({ title, linkTo, img, modal }) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Link to={linkTo}>
-      <Container backgroundImg={img}>
-        <Title>{title}</Title>
-      </Container>
-    </Link>
+    <>
+      {modal ? (
+        <Container backgroundImg={img} onClick={() => setOpen(true)}>
+          <Title>{title}</Title>
+        </Container>
+      ) : (
+        <Link to={linkTo}>
+          <Container backgroundImg={img}>
+            <Title>{title}</Title>
+          </Container>
+        </Link>
+      )}
+      <Modal onClose={() => setOpen(false)} open={open} text={modal!}></Modal>
+    </>
   );
 };
 
@@ -33,6 +47,7 @@ const Container = styled.div<any>`
   align-items: center;
 
   position: relative;
+  cursor: pointer;
 
   ::before {
     content: "";
