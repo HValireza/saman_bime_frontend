@@ -25,6 +25,7 @@ const Container = styled.div<any>`
   margin-top: 2rem;
 
   border-radius: 20px;
+  border: 1px solid #d8d8d8;
 
   display: flex;
   flex-direction: column;
@@ -57,9 +58,15 @@ const Container = styled.div<any>`
 `;
 
 const Title = styled.h1`
-  color: white;
+  width: 80%;
+  color: #ffffff;
   position: relative;
-  text-shadow: 1px 1px 5px black;
+  text-shadow: 1px 1px 8px black;
   -webkit-text-stroke: 1px #f3f3f3;
   -webkit-text-fill-color: #f3f3f3;
+  text-align: center;
+  background-color: rgba(68, 68, 68, 0.725);
+  padding: 20px;
+  border-radius: 5px;
+  line-height: 30px;
 `;
