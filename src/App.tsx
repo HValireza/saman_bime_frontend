@@ -50,6 +50,11 @@ function App() {
             />
 
             <Route path="hr" element={<OrganizationChart state={"hr"} />} />
+            <Route path="cs" element={<OrganizationChart state={"cs"} />} />
+            <Route
+              path="actuarial"
+              element={<OrganizationChart state={"actuarial"} />}
+            />
             {/* profiles */}
             <Route path="0" element={<Profile index={0} />} />
             <Route path="1" element={<Profile index={1} />} />

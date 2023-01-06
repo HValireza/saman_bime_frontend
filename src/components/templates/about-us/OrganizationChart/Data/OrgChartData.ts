@@ -4,6 +4,10 @@ import reg from "../../../../../assets/pdf/registration.pdf";
 import registrationImg from "../../../../../assets/images/about_us/registration_img.jpg";
 import hr from "../../../../../assets/pdf/human_resource.pdf";
 import hrImg from "../../../../../assets/images/about_us/hr_img.jpg";
+import cs from "../../../../../assets/pdf/cs.pdf";
+import csImg from "../../../../../assets/images/about_us/cs_img.jpg";
+import actuarial from "../../../../../assets/pdf/actuarial.pdf";
+import actuarialImg from "../../../../../assets/images/about_us/actuarial_img.jpg";
 
 const OrgChartData = [
   {
@@ -26,6 +30,55 @@ const OrgChartData = [
     subject: "ترکیب سرمایه انسانی",
     detail: hr,
     banner: hrImg,
+  },
+  {
+    state: "cs",
+    title: "درباره ما",
+    subject: "کلیات سیستم کنترل داخلی و حسابرسی",
+    detail: cs,
+    banner: csImg,
+  },
+  {
+    state: "actuarial",
+    title: "درباره ما",
+    subject: "شرح وظایف و سطح سازمانی اکچوئری",
+    detail: actuarial,
+    banner: actuarialImg,
+  },
+  {
+    state: "",
+    title: "",
+    subject: "",
+    detail: "",
+    banner: "",
+  },
+  {
+    state: "",
+    title: "",
+    subject: "",
+    detail: "",
+    banner: "",
+  },
+  {
+    state: "",
+    title: "",
+    subject: "",
+    detail: "",
+    banner: "",
+  },
+  {
+    state: "",
+    title: "",
+    subject: "",
+    detail: "",
+    banner: "",
+  },
+  {
+    state: "",
+    title: "",
+    subject: "",
+    detail: "",
+    banner: "",
   },
   {
     state: "",
