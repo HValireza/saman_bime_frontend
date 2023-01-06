@@ -116,11 +116,23 @@ const MobaileNavbar = () => {
               />
             </Item>
 
-            <Link to={"/group/reports"}>
+            <Link
+              to={"/group/reports"}
+              onClick={() => {
+                setIsOpen(false);
+                setIcon("=");
+              }}
+            >
               <Item>گزارش</Item>
             </Link>
 
-            <Link to={"/group/regulations"}>
+            <Link
+              to={"/group/regulations"}
+              onClick={() => {
+                setIsOpen(false);
+                setIcon("=");
+              }}
+            >
               <Item>آیین‌نامه‌ها</Item>
             </Link>
 
