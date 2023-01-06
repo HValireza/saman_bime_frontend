@@ -61,7 +61,13 @@ const MobaileNavbar = () => {
 
   return (
     <Wrapper>
-      <Link to={"/"}>
+      <Link
+        to={"/"}
+        onClick={() => {
+          setIsOpen(false);
+          setIcon("=");
+        }}
+      >
         <Logo src={logo} />
       </Link>
 
@@ -79,17 +85,35 @@ const MobaileNavbar = () => {
           <Items>
             <Item id="drop-down" className="services">
               خدمات
-              <MDropDown links={services} />
+              <MDropDown
+                links={services}
+                clickHandler={() => {
+                  setIsOpen(false);
+                  setIcon("=");
+                }}
+              />
             </Item>
 
             <Item id="drop-down">
               امور سهام
-              <MDropDown links={affairs} />
+              <MDropDown
+                links={affairs}
+                clickHandler={() => {
+                  setIsOpen(false);
+                  setIcon("=");
+                }}
+              />
             </Item>
 
             <Item id="drop-down">
               رسانه
-              <MDropDown links={media} />
+              <MDropDown
+                links={media}
+                clickHandler={() => {
+                  setIsOpen(false);
+                  setIcon("=");
+                }}
+              />
             </Item>
 
             <Item>گزارش</Item>
@@ -98,7 +122,16 @@ const MobaileNavbar = () => {
 
             <Item>تماس با ما</Item>
 
-            <Item id="drop-down">درباره ما</Item>
+            <Item id="drop-down">
+              درباره ما
+              <MDropDown
+                links={about}
+                clickHandler={() => {
+                  setIsOpen(false);
+                  setIcon("=");
+                }}
+              />
+            </Item>
           </Items>
 
           <Tools />
@@ -117,7 +150,7 @@ const Wrapper = styled.div`
   position: relative;
 
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
 
   background-color: white;
 
@@ -126,7 +159,7 @@ const Wrapper = styled.div`
   }
 
   span {
-    padding: 1.5rem;
+    padding: 1.2rem;
     color: black;
     font-size: 4rem;
     user-select: none;
@@ -141,7 +174,8 @@ const Wrapper = styled.div`
 
 const Logo = styled.img`
   height: 2.7rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  margin-bottom: -5px;
   cursor: pointer;
 `;
 

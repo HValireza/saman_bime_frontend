@@ -131,17 +131,18 @@ const Wrapper = styled.header`
   height: 4rem;
   display: flex;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
 
   font-family: "BRoyaBold";
-  font-weight: bolder;
-  font-family: 1.2rem;
   background-color: white;
   opacity: 0.96;
 
   box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.5);
 
   z-index: 10;
+
+  @media (max-width: 900px) {
+    height: 3.5rem;
+  }
 `;
 
 const Container = styled.div`

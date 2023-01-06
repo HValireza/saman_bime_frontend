@@ -5,19 +5,17 @@ interface LinkI {
   title: string;
   path: string;
 }
-
 interface PropsDropDownI {
   links: LinkI[];
-  vector?: string;
-  alt?: string;
+  clickHandler: any;
 }
 
-const MDropDown = ({ links, vector, alt }: PropsDropDownI) => {
+const MDropDown = ({ links, clickHandler }: PropsDropDownI) => {
   return (
     <Wrapper className="drop-down">
       <Items>
         {links.map((l, index) => (
-          <Link to={l.path} key={index}>
+          <Link to={l.path} key={index} onClick={clickHandler}>
             <li>{l.title}</li>
           </Link>
         ))}
