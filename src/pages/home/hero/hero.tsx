@@ -67,8 +67,6 @@ const Hero = () => {
             <Slogan>{pic.txt}</Slogan>
           </Slide>
         ))}
-        //*this is for navigate between slides
-        {/* <MenuNav /> */}
       </HeroSlider>
     </Wrapper>
   );
