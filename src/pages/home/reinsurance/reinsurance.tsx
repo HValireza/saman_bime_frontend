@@ -79,7 +79,11 @@ interface ArrowProps {
 }
 
 const Card = styled.div<ArrowProps>`
-  width: 90%;
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  width: 100%;
 
   display: flex;
   justify-content: ${(p) => (p.left ? "start" : "end")};
@@ -106,7 +110,7 @@ const Arrow = styled.div<ArrowProps>`
   align-items: center;
   justify-content: center;
   font-family: "BRoyaBold";
-  font-size: clamp(1.2rem, 1.5vh, 3rem);
+  font-size: clamp(1.2rem, 1.5vw, 3rem);
   z-index: 5;
 
   user-select: none;
