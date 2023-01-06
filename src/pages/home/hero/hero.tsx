@@ -91,8 +91,18 @@ const Slogan = styled.h1`
   color: #f3f3f3;
   padding: 1.7rem 3rem;
   background-color: rgba(0, 0, 0, 0.4);
-  font-size: 3vw;
+  font-size: clamp(1.7rem, 3vw, 4rem);
   text-shadow: 1px 1px 5px black;
   -webkit-text-stroke: 1px #f3f3f3;
   -webkit-text-fill-color: #f3f3f3;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    top: 30%;
+    left: unset;
+    border-radius: unset;
+    padding: 1.5rem 1.2rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
 `;
