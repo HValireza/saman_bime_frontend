@@ -34,14 +34,14 @@ const MobaileNavbar = () => {
     { title: "ترکیب سهامداران", path: "/about/structure" },
     { title: "پرتال سهامداران", path: "#" },
     { title: "تماس با امور سهام", path: "#" },
-    { title: "مجامع", path: "#" },
-    { title: "مجمع مؤسس", path: "news/constituent" },
-    { title: "مجمع عمومی و فوق‌العاده", path: "news/general" },
+    { title: "مجامع", path: "/group/assemblies" },
+    { title: "مجمع مؤسس", path: "/news/constituent" },
+    { title: "مجمع عمومی و فوق‌العاده", path: "/news/general" },
   ];
 
   const media = [
     { title: "اخبار شرکت", path: "/news/company" },
-    { title: "خبار صنعت بیمه", path: "/news/insurance" },
+    { title: "اخبار صنعت بیمه", path: "/news/insurance" },
     { title: "انتشارات", path: "/news/article" },
     { title: "همایش آموزش", path: "/news/learning" },
   ];
@@ -116,9 +116,13 @@ const MobaileNavbar = () => {
               />
             </Item>
 
-            <Item>گزارش</Item>
+            <Link to={"/group/reports"}>
+              <Item>گزارش</Item>
+            </Link>
 
-            <Item>آیین‌نامه‌ها</Item>
+            <Link to={"/group/regulations"}>
+              <Item>آیین‌نامه‌ها</Item>
+            </Link>
 
             <Item>تماس با ما</Item>
 
