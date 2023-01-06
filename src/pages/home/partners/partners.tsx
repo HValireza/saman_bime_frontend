@@ -40,6 +40,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
   padding-top: 6rem;
 
   background: linear-gradient(
@@ -48,19 +49,27 @@ const Wrapper = styled.div`
     rgba(211, 211, 210, 1) 100%
   );
 
+  @media (max-width: 900px) {
+    padding-top: 3rem;
+  }
+
   h1 {
     font-size: 2.8rem;
     font-family: "BRoyaBold";
     text-shadow: 3px 0 7px rgba(0, 0, 0, 1);
+
+    @media (max-width: 900px) {
+      font-size: 2.1rem;
+    }
   }
 `;
 
 const Container = styled.div`
   width: 80%;
-  height: 25vh;
+  height: 27vh;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -76,5 +85,9 @@ const Item = styled.img<ItemI>`
   :hover {
     transform: scale(1.03);
     filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.4));
+  }
+
+  @media (max-width: 900px) {
+    width: calc(${(p) => p.width} * 0.6);
   }
 `;
