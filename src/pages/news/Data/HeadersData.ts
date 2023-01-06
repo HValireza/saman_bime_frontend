@@ -6,10 +6,16 @@ const HeaderData = (field: NewsEnum): INews => {
     return { title: "اخبار و اطلاعیه ها", subject: "مقالات" };
   }
   if (field === NewsEnum.COMPANY) {
-    return { title: "اخبار شرکت", subject: "اساس نامه ها" };
+    return { title: "رسانه", subject: "اخبار شرکت" };
   }
   if (field === NewsEnum.INSURANCE) {
-    return { title: "اخبار صنعت بیمه", subject: "آیین نامه ها" };
+    return { title: "رسانه", subject: "اخبار صنعت بیمه" };
+  }
+  if (field === NewsEnum.PUBLISHERS) {
+    return { title: "رسانه", subject: "انتشارات" };
+  }
+  if (field === NewsEnum.LEARNING) {
+    return { title: "رسانه", subject: "همایش آموزش" };
   }
   if (field === NewsEnum.SHAREHOLDER) {
     return { title: "امور سهام", subject: "اخبار سهامداران" };
@@ -28,9 +34,6 @@ const HeaderData = (field: NewsEnum): INews => {
   }
   if (field === NewsEnum.GENERAL) {
     return { title: "مجامع", subject: "مجمع عمومی و فوق العاده" };
-  }
-  if (field === NewsEnum.LEARNING) {
-    return { title: "آموزش ها", subject: "همایش آموزش" };
   }
   return { title: "مشکلی پیش آمده", subject: "لطفا دوباره تلاش کنید" };
 };
