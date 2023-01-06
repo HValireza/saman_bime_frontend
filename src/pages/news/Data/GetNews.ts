@@ -11,7 +11,7 @@ const GetNews = (field: NewsEnum | null, pageNumber: number) => {
   const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
-    setData([{}]);
+    setData([]);
   }, [field]);
 
   useEffect(() => {
