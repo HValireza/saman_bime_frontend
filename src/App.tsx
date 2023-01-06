@@ -54,19 +54,23 @@ function App() {
 
           {/* News Pages */}
           <Route path="news">
+            <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
             <Route path="company" element={<News state={NewsEnum.COMPANY} />} />
             <Route
               path="insurance"
               element={<News state={NewsEnum.INSURANCE} />}
             />
             <Route
-              path="shareholder"
-              element={<News state={NewsEnum.SHAREHOLDER} />}
+              path="publishers"
+              element={<News state={NewsEnum.PUBLISHERS} />}
             />
-            <Route path="article" element={<News state={NewsEnum.ARTICLE} />} />
             <Route
               path="learnings"
               element={<News state={NewsEnum.LEARNING} />}
+            />
+            <Route
+              path="shareholder"
+              element={<News state={NewsEnum.SHAREHOLDER} />}
             />
             <Route path="share" element={<News state={NewsEnum.SHARE} />} />
 
@@ -109,6 +113,15 @@ function App() {
               path="assemblies"
               element={<Groups state={"assemblies"} />}
             />
+            <Route path="reports" element={<Groups state={"reports"} />} />
+
+            <Route
+              path="introduction"
+              element={<Groups state={"introduction"} />}
+            />
+            <Route path="path" element={<Groups state={"path"} />} />
+            <Route path="risk" element={<Groups state={"reports"} />} />
+            <Route path="finance" element={<Groups state={"reports"} />} />
           </Route>
           {/* Post Pages */}
           <Route path="post/:id" element={<PostPage />} />
