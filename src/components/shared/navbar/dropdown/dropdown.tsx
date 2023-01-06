@@ -17,9 +17,19 @@ const DropDown = ({ links, vector, alt }: PropsDropDownI) => {
     <Wrapper className="drop-down">
       <Items>
         {links.map((l, index) => (
-          <Link to={l.path} key={index}>
-            <li>{l.title}</li>
-          </Link>
+          <>
+            {l.path.includes("http") && (
+              <a href={l.path} target="_blank">
+                <li>{l.title}</li>
+              </a>
+            )}
+
+            {!l.path.includes("http") && (
+              <Link to={l.path} key={index}>
+                <li>{l.title}</li>
+              </Link>
+            )}
+          </>
         ))}
       </Items>
 

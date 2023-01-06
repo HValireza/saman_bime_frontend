@@ -22,14 +22,22 @@ const Navbar = () => {
     { title: "خدمات مشاوره اتکایی", path: "/services/consult" },
   ];
 
+  const links = {
+    codal:
+      "https://codal.ir/ReportList.aspx?search&Symbol=%D8%A7%D8%AA%DA%A9%D8%A7%D8%B3%D8%A7&LetterType=-1&Isic=660363&AuditorRef=-1&PageNumber=1&Audited&NotAudited&IsNotAudited=false&Childs&Mains&Publisher=false&CompanyState=1&Category=-1&CompanyType=1&Consolidatable&NotConsolidatable",
+    tsetmc:
+      "http://www.tsetmc.com/Loader.aspx?ParTree=151311&i=68644622102682218",
+    portal: "https://stockapp.samanre.com/login",
+  };
+
   const affairs = [
     { title: "اخبار و اطلاعیه", path: "/news/share" },
     { title: "صورت‌های مالی", path: "/news/finance" },
     { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations" },
-    { title: "کدال شرکت بیمه اتکایی سامان", path: "#" },
-    { title: "شرکت بیمه اتکایی سامان در TSETMC", path: "#" },
+    { title: "کدال شرکت بیمه اتکایی سامان", path: links.codal },
+    { title: "شرکت بیمه اتکایی سامان در TSETMC", path: links.tsetmc },
     { title: "ترکیب سهامداران", path: "/about/structure" },
-    { title: "پرتال سهامداران", path: "#" },
+    { title: "پرتال سهامداران", path: links.portal },
     { title: "تماس با امور سهام", path: "#" },
     { title: "مجامع", path: "/group/assemblies" },
     { title: "مجمع مؤسس", path: "/news/constituent" },
