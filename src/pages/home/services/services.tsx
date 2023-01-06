@@ -6,10 +6,10 @@ import Card from "./cards/card";
 
 import { Link } from "react-router-dom";
 import path_img from "../../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
-import engineering_img from "../../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
-import transport_img from "../../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
 import fire_img from "../../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
 import person_img from "../../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
+import transport_img from "../../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
+import engineering_img from "../../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
 import international_img from "../../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -153,7 +153,12 @@ const Wrapper = styled.div`
   width: 100%;
   overflow-x: hidden;
   position: relative;
-  overflow: hidden;
+
+  @media (max-width: 900px) {
+    overflow-y: scroll;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
 
   &:hover {
     ::before {
@@ -179,11 +184,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   gap: 3rem;
 
   width: 100%;
   min-height: 50vh;
+
+  @media (max-width: 900px) {
+    gap: 2rem;
+  }
 
   div {
     width: max-content;

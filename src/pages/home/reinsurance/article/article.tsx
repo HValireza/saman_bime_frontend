@@ -44,9 +44,20 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   transition: all 1s ease-in-out;
+
+  @media (max-width: 900px) {
+    padding: 0;
+    height: calc(100vh - 275px);
+  }
 `;
 
 const Content = styled.div`
+  @media (max-width: 900px) {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,8 +106,12 @@ const Content = styled.div`
     img {
       height: 30vh;
       margin: 1rem;
-
       border-radius: 4px;
+
+      @media (max-width: 900px) {
+        height: unset;
+        width: 100%;
+      }
     }
 
     h2 {
@@ -113,6 +128,10 @@ const Content = styled.div`
 
     :nth-child(3) img {
       height: 54vh;
+
+      @media (max-width: 900px) {
+        height: unset;
+      }
     }
   }
 `;

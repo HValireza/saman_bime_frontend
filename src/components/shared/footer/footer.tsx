@@ -20,67 +20,88 @@ function Footer() {
     <Wrapper>
       <FlexRow>
         {/* first column */}
-        <FooterBox>
+        <FooterBox className="logos">
           <Logo src={logo} alt="بیمه اتکایی سامان" />
+
           <SocialMedia>
             <SocialIcon href="#">
               <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             </SocialIcon>
+
             <SocialIcon href="#">
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </SocialIcon>
+
             <SocialIcon href="#">
               <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
             </SocialIcon>
+
             <SocialIcon href="#">
               <FontAwesomeIcon icon={faTelegram}></FontAwesomeIcon>
             </SocialIcon>
           </SocialMedia>
         </FooterBox>
+
         {/* second column */}
-        <FooterBox>
+        <FooterBox className="detailes">
           <InfoBox>
             <InfoIcon>
               <FontAwesomeIcon icon={faMapLocationDot}></FontAwesomeIcon>
             </InfoIcon>
+
             <InfoLine />
+
             <InfoText>
               خیابان خالد اسلامبولی (وزرا) - نبش خیابان سیزدهم - پلاک ۱۲۳
             </InfoText>
           </InfoBox>
+
           <InfoBox>
             <InfoIcon>
               <FontAwesomeIcon icon={faEnvelopesBulk}></FontAwesomeIcon>
             </InfoIcon>
+
             <InfoLine />
+
             <InfoText>۱۵۱۳۸۱۳۱۱۸</InfoText>
           </InfoBox>
+
           <InfoBox>
             <InfoIcon>
               <FontAwesomeIcon icon={faPhoneVolume}></FontAwesomeIcon>
             </InfoIcon>
+
             <InfoLine />
+
             <InfoText>021-91008887</InfoText>
           </InfoBox>
+
           <InfoBox>
             <InfoIcon>
               <FontAwesomeIcon icon={faFax}></FontAwesomeIcon>
             </InfoIcon>
+
             <InfoLine />
+
             <InfoText>021-88552896</InfoText>
           </InfoBox>
+
           <InfoBox>
             <InfoIcon>
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </InfoIcon>
+
             <InfoLine />
+
             <InfoText>info@samanre.com</InfoText>
           </InfoBox>
         </FooterBox>
+
         {/* third column */}
         <FooterBox>
           <InfoBox>
             <InfoLine />
+
             <InfoText>
               شرکت بیمه اتکایی سامان فعالیت رسمی خود را در سال 1400 به عنوان
               سومین شرکت تخصصی بیمه اتکایی کشور آغاز نمود. این شرکت با اخذ
@@ -95,9 +116,11 @@ function Footer() {
           </InfoBox>
         </FooterBox>
       </FlexRow>
+
       <FlexRow>
         <CopyRight>
           <FontAwesomeIcon icon={faCopyright}></FontAwesomeIcon>
+
           <CopyRightText>
             تمامی حقوق وبسایت متعلق به بیمه اتکایی سامان میباشد
           </CopyRightText>
@@ -120,12 +143,32 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: space-around;
+
+  overflow: hidden;
 `;
 
 const FlexRow = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    height: max-content;
+
+    .logos {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 0 1rem;
+      height: 20rem;
+      margin-top: -50%;
+    }
+
+    .detailes {
+      height: 15rem;
+    }
+  }
 `;
 
 const FooterBox = styled.div`
@@ -141,6 +184,10 @@ const FooterBox = styled.div`
 const Logo = styled.img`
   width: 77%;
   height: auto;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const SocialMedia = styled.div`
@@ -150,6 +197,13 @@ const SocialMedia = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: unset;
+    gap: 10px;
+    margin-top: -47%;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -231,6 +285,10 @@ const CopyRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 900px) {
+    margin-top: -62%;
+  }
 `;
 
 const CopyRightText = styled.p`
