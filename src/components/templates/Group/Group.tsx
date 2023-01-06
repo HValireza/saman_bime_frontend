@@ -50,6 +50,10 @@ const Title = styled.h1`
   font-family: "BRoyaBold";
   font-size: 32px;
   padding: 2rem;
+  line-height: 32px;
+  min-width: 4rem;
+  width: 100%;
+  max-width: 100rem;
 
   display: flex;
   justify-content: center;
