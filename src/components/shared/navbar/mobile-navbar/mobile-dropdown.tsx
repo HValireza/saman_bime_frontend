@@ -15,9 +15,19 @@ const MDropDown = ({ links, clickHandler }: PropsDropDownI) => {
     <Wrapper className="drop-down">
       <Items>
         {links.map((l, index) => (
-          <Link to={l.path} key={index} onClick={clickHandler}>
-            <li>{l.title}</li>
-          </Link>
+          <>
+            {l.path.includes("http") && (
+              <a href={l.path} target="_blank">
+                <li>{l.title}</li>
+              </a>
+            )}
+
+            {!l.path.includes("http") && (
+              <Link to={l.path} key={index} onClick={clickHandler}>
+                <li>{l.title}</li>
+              </Link>
+            )}
+          </>
         ))}
       </Items>
     </Wrapper>
