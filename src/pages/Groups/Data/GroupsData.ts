@@ -24,6 +24,117 @@ const GroupsData = [
     ],
   },
   {
+    title: "آیین نامه های بیمه مرکزی",
+    state: "regulations",
+    cards: [
+      {
+        title: "آیین نامه های مربوط  به اتکایی",
+        img: logo,
+        linkTo: "/news/reliance",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه آتش‌سوزی",
+        img: logo,
+        linkTo: "/news/fire",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه باربری",
+        img: logo,
+        linkTo: "/news/transport",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه مسئولیت",
+        img: logo,
+        linkTo: "/news/responsibility",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه اتومبیل",
+        img: logo,
+        linkTo: "/news/cars",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه زندگی",
+        img: logo,
+        linkTo: "/news/life",
+      },
+      {
+        title: "آیین نامه مربوط به بیمه درمان",
+        img: logo,
+        linkTo: "/news/cure",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه حوادث",
+        img: logo,
+        linkTo: "/news/accident",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه پول",
+        img: logo,
+        linkTo: "/news/money",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه اعتباری",
+        img: logo,
+        linkTo: "/news/credit",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه مسافرتی",
+        img: logo,
+        linkTo: "/news/travel",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه دام و طیور",
+        img: logo,
+        linkTo: "/news/animal",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به اکچوئری",
+        img: logo,
+        linkTo: "/news/actuarial",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به بیمه‌گری و بیمه‌گذاران",
+        img: logo,
+        linkTo: "/news/insurer",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به حسابداری و صورت‌های مالی",
+        img: logo,
+        linkTo: "/news/accounting",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به خسارت",
+        img: logo,
+        linkTo: "/news/damage",
+      },
+      {
+        title: "آیین نامه مربوط به ذخیره و سرمایه گذاری",
+        img: logo,
+        linkTo: "/news/save",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به کارمزد و حق‌بیمه",
+        img: logo,
+        linkTo: "/news/wage",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به نمایندگان و کارگزاران",
+        img: logo,
+        linkTo: "/news/employer",
+      },
+      {
+        title: "آیین‌نامه‌های مربوط به نوسانات نرخ ارز",
+        img: logo,
+        linkTo: "/news/currency",
+      },
+      {
+        title: "آیین‌نامه‌های مشترک",
+        img: logo,
+        linkTo: "/news/common",
+      },
+    ],
+  },
+  {
     title: "گزارشگری و افشای اطلاعات",
     state: "reports",
     cards: [

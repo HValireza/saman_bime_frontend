@@ -175,6 +175,10 @@ function App() {
               path="assemblies"
               element={<Groups state={"assemblies"} />}
             />
+            <Route
+              path="regulations"
+              element={<Groups state={"regulations"} />}
+            />
             <Route path="reports" element={<Groups state={"reports"} />} />
 
             <Route
