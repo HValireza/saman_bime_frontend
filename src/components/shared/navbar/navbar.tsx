@@ -99,9 +99,13 @@ const Navbar = () => {
             />
           </Item>
 
-          <Item>گزارش</Item>
+          <Link to={"/group/reports"}>
+            <Item>گزارش</Item>
+          </Link>
 
-          <Item>آیین‌نامه‌ها</Item>
+          <Link to={"/group/regulations"}>
+            <Item>آیین‌نامه‌ها</Item>
+          </Link>
 
           <Item>تماس با ما</Item>
 
