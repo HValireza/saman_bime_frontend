@@ -83,12 +83,14 @@ const Wrapper = styled.div`
 `;
 
 const Slogan = styled.h1`
+  width: 100%;
+  height: 8rem;
+  line-height: 8rem;
   position: absolute;
-  top: 40%;
-  left: 25%;
-  border-radius: 0.5rem;
+  top: 30%;
+  text-align: center;
   color: #f3f3f3;
-  padding: 1.7rem 3rem;
+
   background-color: rgba(0, 0, 0, 0.4);
   font-size: clamp(1.7rem, 3vw, 4rem);
   text-shadow: 1px 1px 5px black;
@@ -96,10 +98,7 @@ const Slogan = styled.h1`
   -webkit-text-fill-color: #f3f3f3;
 
   @media (max-width: 900px) {
-    width: 100%;
-    top: 30%;
-    left: unset;
-    border-radius: unset;
+    height: unset;
     padding: 1.5rem 1.2rem;
     line-height: 2.5rem;
     text-align: center;
