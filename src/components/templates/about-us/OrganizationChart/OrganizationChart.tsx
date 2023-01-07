@@ -93,17 +93,14 @@ const BannerContainer = styled.div`
 `;
 
 const Banner = styled.img`
-  width: 70%;
-  height: 70vh;
-  margin-top: 2rem;
-  border-radius: 0.6rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: calc(100vh - 4rem);
   filter: brightness(50%);
 `;
 
 const BannerTitle = styled.h1`
   position: absolute;
-  top: 50%;
+  top: calc(50% - 4rem);
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f3f3f3;
@@ -113,7 +110,7 @@ const BannerTitle = styled.h1`
 
 const BannerDescription = styled.h2`
   position: absolute;
-  top: 60%;
+  top: calc(60% - 4rem);
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f3f3f3;
