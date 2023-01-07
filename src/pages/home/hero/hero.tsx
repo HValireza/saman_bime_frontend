@@ -97,6 +97,10 @@ const Wrapper = styled.div`
       filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
       transform: scale(1.03);
     }
+
+    @media (max-width: 900px) {
+      width: 8rem;
+    }
   }
 `;
 

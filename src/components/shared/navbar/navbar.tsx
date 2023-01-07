@@ -140,7 +140,7 @@ export default Navbar;
 
 const Wrapper = styled.header`
   width: 100%;
-  height: 4rem;
+  height: clamp(4rem, 4vw, 6rem);
   display: flex;
   justify-content: center;
 
