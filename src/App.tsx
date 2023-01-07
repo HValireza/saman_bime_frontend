@@ -186,8 +186,8 @@ function App() {
               element={<Groups state={"introduction"} />}
             />
             <Route path="path" element={<Groups state={"path"} />} />
-            <Route path="risk" element={<Groups state={"reports"} />} />
-            <Route path="finance" element={<Groups state={"reports"} />} />
+            <Route path="risk" element={<Groups state={"risk"} />} />
+            <Route path="finance" element={<Groups state={"finance"} />} />
           </Route>
           {/* Post Pages */}
           <Route path="post/:id" element={<PostPage />} />
