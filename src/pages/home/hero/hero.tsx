@@ -5,6 +5,7 @@ import pic2 from "/src/assets/images/2.jpg";
 import pic3 from "/src/assets/images/3.jpg";
 import pic4 from "/src/assets/images/4.jpg";
 import pic5 from "/src/assets/images/5.jpg";
+import logo1 from "/src/assets/images/logo1.png";
 
 interface IPic {
   src: string;
@@ -62,13 +63,16 @@ const Hero = () => {
         autoplay
         controller={controller}
       >
-        {pictures.map((pic) => (
+        {pictures.map((pic, index) => (
           <Slide
-            key={pictures.indexOf(pic)}
+            key={index}
             // shouldRenderMask
             background={{ backgroundImageSrc: pic.src }}
           >
             <Slogan>{pic.txt}</Slogan>
+            {index == 0 && (
+              <img className="logo" src={logo1} alt="بیمه اتکایی سامان" />
+            )}
           </Slide>
         ))}
         <MenuNav mobileThreshold={4200} />
@@ -81,6 +85,19 @@ export default Hero;
 
 const Wrapper = styled.div`
   width: 100%;
+
+  .logo {
+    position: fixed;
+    width: 13rem;
+    top: 2rem;
+    left: 3rem;
+    transition: all 300ms ease-in-out;
+
+    :hover {
+      filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
+      transform: scale(1.03);
+    }
+  }
 `;
 
 const Slogan = styled.h1`
