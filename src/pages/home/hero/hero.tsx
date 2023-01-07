@@ -54,7 +54,6 @@ const Hero = () => {
   return (
     <Wrapper>
       <HeroSlider
-        className="hero-slider"
         height={
           window.matchMedia("(max-width: 900px)").matches
             ? "calc(100vh - 3.4rem)"
@@ -66,7 +65,7 @@ const Hero = () => {
         {pictures.map((pic) => (
           <Slide
             key={pictures.indexOf(pic)}
-            shouldRenderMask
+            // shouldRenderMask
             background={{ backgroundImageSrc: pic.src }}
           >
             <Slogan>{pic.txt}</Slogan>
