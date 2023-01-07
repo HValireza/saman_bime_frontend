@@ -1,4 +1,4 @@
-import HeroSlider, { Slide } from "hero-slider";
+import HeroSlider, { MenuNav, Slide } from "hero-slider";
 import styled from "styled-components";
 import pic1 from "/src/assets/images/1.jpg";
 import pic2 from "/src/assets/images/2.jpg";
@@ -71,6 +71,7 @@ const Hero = () => {
             <Slogan>{pic.txt}</Slogan>
           </Slide>
         ))}
+        <MenuNav mobileThreshold={4200} />
       </HeroSlider>
     </Wrapper>
   );
