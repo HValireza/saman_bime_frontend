@@ -76,7 +76,8 @@ const Service: React.FC<serviceI> = ({ state }) => {
         <>
           <div className="banner">
             <img src={item!.pic} alt={item!.title} />
-            <h1>{item!.title}</h1>
+            <h1>خدمات</h1>
+            <h2>{item!.title}</h2>
           </div>
 
           <div className="description-wrapper">
@@ -98,17 +99,23 @@ const Wrapper = styled.div`
     text-align: center;
 
     img {
-      width: 70%;
-      height: 70vh;
-      border-radius: 0.6rem;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: calc(100vh - 4rem);
       filter: brightness(50%);
-      margin-top: 2rem;
     }
 
     h1 {
       position: absolute;
-      top: 50%;
+      top: calc(50% - 4rem);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f3f3f3;
+      font-family: "BRoyaBold";
+      font-size: 2vw;
+    }
+    h2 {
+      position: absolute;
+      top: calc(60% - 4rem);
       left: 50%;
       transform: translate(-50%, -50%);
       color: #f3f3f3;
