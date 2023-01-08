@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import ScrollToTop from "react-scroll-to-top";
 import useScrollSnap from "react-use-scroll-snap";
 import styled from "styled-components";
 import Hero from "./hero/hero";
@@ -17,6 +18,8 @@ function Home() {
 
   return (
     <Wrapper ref={scrollRef}>
+      <ScrollToTop smooth />
+
       <Hero />
 
       <Reinsurance />

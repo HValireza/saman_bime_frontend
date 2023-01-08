@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
+import ScrollToTop from "react-scroll-to-top";
 import styled from "styled-components";
 import Footer from "../../components/shared/footer/footer";
 import Navbar from "../../components/shared/navbar/navbar";
 const Layout = () => {
   return (
     <Container>
+      <ScrollToTop smooth />
       <Navbar />
       <Wrapper>
         <Outlet />

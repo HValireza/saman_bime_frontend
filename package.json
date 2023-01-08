@@ -25,6 +25,7 @@
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.0",
     "react-router-dom": "^6.5.0",
+    "react-scroll-to-top": "^3.0.0",
     "react-use-scroll-snap": "^0.0.4",
     "styled-components": "^5.3.6"
   },
