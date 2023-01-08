@@ -28,7 +28,7 @@ function Footer() {
               <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             </SocialIcon>
 
-            <SocialIcon href="#">
+            <SocialIcon href="mailto:info@samanre.com">
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </SocialIcon>
 
