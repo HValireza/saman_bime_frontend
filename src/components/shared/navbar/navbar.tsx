@@ -38,7 +38,7 @@ const Navbar = () => {
     { title: "شرکت بیمه اتکایی سامان در TSETMC", path: links.tsetmc },
     { title: "ترکیب سهامداران", path: "/about/structure" },
     { title: "پرتال سهامداران", path: links.portal },
-    { title: "تماس با امور سهام", path: "#" },
+    { title: "تماس با امور سهام", path: "/contact-us" },
     { title: "مجامع", path: "/group/assemblies" },
     { title: "مجمع مؤسس", path: "/news/constituent" },
     { title: "مجمع عمومی و فوق‌العاده", path: "/news/general" },
@@ -116,7 +116,9 @@ const Navbar = () => {
             <Item>آیین‌نامه‌ها</Item>
           </Link>
 
-          <Item>تماس با ما</Item>
+          <Link to={"/contact-us"}>
+            <Item>تماس با ما</Item>
+          </Link>
 
           <Item id="drop-down">
             درباره ما

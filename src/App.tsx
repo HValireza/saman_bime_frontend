@@ -5,6 +5,7 @@ import Profile from "./components/templates/about-us/board/profile";
 import OrganizationChart from "./components/templates/about-us/OrganizationChart/OrganizationChart";
 import { NewsEnum } from "./global/news.enum";
 import About from "./pages/about/about";
+import ContactUsPage from "./pages/ContactUs/ContactUsPage";
 import Groups from "./pages/Groups/Groups";
 import Home from "./pages/home/home";
 import News from "./pages/news/News";
@@ -191,6 +192,8 @@ function App() {
           </Route>
           {/* Post Pages */}
           <Route path="post/:id" element={<PostPage />} />
+          {/* contact us */}
+          <Route path="contact-us" element={<ContactUsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
