@@ -78,46 +78,6 @@ const ContactUs: React.FC<IContactUs> = ({ pic, title, description, data }) => {
             </InfoText>
           </InfoBox>
         ))}
-
-        <InfoBox>
-          <InfoTitle>موضوع فعالیت</InfoTitle>
-        </InfoBox>
-        <LittleInfoBox>
-          <Dot></Dot>
-          <InfoText>
-            قبول بیمه های اتکایی شامل اتکایی مجدد، در کلیه رشته های بیمهای از
-            مؤسسات بیمه داخلی یا خارجی بر اساس پروانه فعالیت صادره از سوی بیمه
-            مرکزی ج.ا.ایران با رعایت ظرفیت مجاز نگهداری شرکت و ضوابطی که بیمه
-            مرکزی ج.ا.ایران اعالم مینماید
-          </InfoText>
-        </LittleInfoBox>
-        <LittleInfoBox>
-          <Dot></Dot>
-          <InfoText>
-            مشارکت در تأسیس و یا اداره صندوق های بیمه اتکایی داخلی و خارجی پس از
-            اخذ موافقت بیمه مرکزی
-          </InfoText>
-        </LittleInfoBox>
-        <LittleInfoBox>
-          <Dot></Dot>
-          <InfoText>
-            تحصیل پوشش بیمه های اتکایى از داخل یا خارج از کشور در رابطه با
-            تعهدات بیمهای پذیرفته شده در چارچوب ضوابط بیمه مرکزی
-          </InfoText>
-        </LittleInfoBox>
-        <LittleInfoBox>
-          <Dot></Dot>
-          <InfoText>
-            سرمایه گذاری از محل سرمایه، اندوخته ها، ذخایر فنی و قانونی و سایر
-            منابع مالی شرکت در چارچوب ضوابط و مقررات مصوب شورایعالی بیمه
-          </InfoText>
-        </LittleInfoBox>
-        <LittleInfoBox>
-          <Dot></Dot>
-          <InfoText>
-            عرضه خدمات حرفهای و تکمیلی مرتبط با بیمه های اتکایی
-          </InfoText>
-        </LittleInfoBox>
       </InfoContainer>
     </Container>
   );
