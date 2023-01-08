@@ -9,7 +9,11 @@ import Services from "./services/services";
 
 function Home() {
   const scrollRef = useRef(null);
-  useScrollSnap({ ref: scrollRef, duration: 70, delay: 10 });
+  if (window.matchMedia("max-width: 900px").matches) {
+    useScrollSnap({ ref: scrollRef, duration: 70, delay: 10 });
+  }
+
+  console.log("render");
 
   return (
     <Wrapper ref={scrollRef}>
@@ -36,5 +40,5 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #d2dbdd;
+  background-color: white;
 `;

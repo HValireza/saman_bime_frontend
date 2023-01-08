@@ -69,15 +69,17 @@ const Services = () => {
       }
     );
 
-  useEffect(() => {
-    animate(card0Ref, 0);
-    animate(card1Ref, 0.07);
-    animate(card2Ref, 0.14);
+  if (window.matchMedia("max-width: 900px").matches) {
+    useEffect(() => {
+      animate(card0Ref, 0);
+      animate(card1Ref, 0.07);
+      animate(card2Ref, 0.14);
 
-    animate2(card3Ref, 0);
-    animate2(card4Ref, 0.07);
-    animate2(card5Ref, 0.14);
-  });
+      animate2(card3Ref, 0);
+      animate2(card4Ref, 0.07);
+      animate2(card5Ref, 0.14);
+    });
+  }
 
   const mock = [
     {
@@ -151,11 +153,10 @@ const Wrapper = styled.div`
 
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 
   @media (max-width: 900px) {
-    overflow-y: scroll;
     gap: 2rem;
     padding: 1rem 0;
   }
@@ -166,17 +167,19 @@ const Wrapper = styled.div`
     }
   }
 
-  ::before {
-    transition: all ease-in-out 600ms;
-    content: "";
-    background-image: url("/src/assets/images/services/services-background.jpg");
-    background-size: cover;
-    filter: blur(4px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  @media (min-width: 901px) {
+    ::before {
+      transition: all ease-in-out 600ms;
+      content: "";
+      background-image: url("/src/assets/images/services/services-background.jpg");
+      background-size: cover;
+      filter: blur(4px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
   }
 `;
 

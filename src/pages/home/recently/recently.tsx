@@ -39,7 +39,6 @@ const Wrapper = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
 
-  background-color: #d2dbdd;
   position: relative;
 
   h2 {
