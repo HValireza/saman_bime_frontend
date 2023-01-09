@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 
   overflow: hidden;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -70px 40px -30px inset;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px -70px 70px -30px inset;
 
   transition: all 0.3s ease-in-out;
 
@@ -43,17 +43,15 @@ const Wrapper = styled.div`
     transform: scale(1.08);
     opacity: 1;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.3) 0px -70px 40px -30px inset;
+      rgba(0, 0, 0, 0.4) 0px -70px 50px -30px inset;
     transition: all 0.3s ease-in-out;
   }
 `;
 
 const Thumbnail = styled.img`
-  height: 45%;
-  width: 100%;
-  object-fit: cover;
-  /* border-radius: 5px 5px 0 0; */
-  box-shadow: 0 2px 7px #0000002c;
+  height: 55%;
+  width: 20rem;
+  object-fit: contain;
 `;
 
 const Title = styled.h3`
