@@ -102,8 +102,6 @@ const Title = styled.div`
 `;
 
 const Container = styled.div`
-  /* width: 85%; */
-
   border-radius: 1rem;
   margin: 1rem 0;
 
@@ -114,8 +112,11 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
+  @media (max-width: 600px) {
+    width: 90vw;
+  }
+
   width: 30rem;
-  /* height: 40rem; */
   border: 1px solid black;
   margin: 3rem 0;
   display: flex;
