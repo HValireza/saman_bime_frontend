@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
   background-color: white;
   opacity: 0.9;
-  border-radius: 1rem;
+  border-radius: 10px;
   color: black;
 
   overflow: hidden;
@@ -52,7 +52,7 @@ const Thumbnail = styled.img`
   height: 45%;
   width: 100%;
   object-fit: cover;
-  border-radius: 0.5rem 0.5rem 0 0;
+  /* border-radius: 5px 5px 0 0; */
   box-shadow: 0 2px 7px #0000002c;
 `;
 

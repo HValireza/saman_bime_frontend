@@ -5,12 +5,12 @@ import styled from "styled-components";
 import Card from "./cards/card";
 
 import { Link } from "react-router-dom";
-import path_img from "../../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
-import fire_img from "../../../assets/images/services/پوشش اتکایی بیمه های آتش سوزی.jpg";
-import person_img from "../../../assets/images/services/پوشش اتکایی بیمه های اشخاص.jpg";
-import transport_img from "../../../assets/images/services/پوشش اتکایی بیمه های باربری، کشتی و هواپیما.jpg";
-import engineering_img from "../../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
-import international_img from "../../../assets/images/services/پوشش های اتکایی بین المللی.jpg";
+import engineering_img from "../../../assets/images/services/engineering.svg";
+import fire_img from "../../../assets/images/services/fire.svg";
+import international_img from "../../../assets/images/services/international.svg";
+import path_img from "../../../assets/images/services/path.svg";
+import person_img from "../../../assets/images/services/person.svg";
+import transport_img from "../../../assets/images/services/transport.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,7 +69,7 @@ const Services = () => {
       }
     );
 
-  if (window.matchMedia("max-width: 900px").matches) {
+  if (window.matchMedia("(min-width: 901px)").matches) {
     useEffect(() => {
       animate(card0Ref, 0);
       animate(card1Ref, 0.07);
