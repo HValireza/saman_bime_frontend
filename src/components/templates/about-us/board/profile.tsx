@@ -5,8 +5,8 @@ import pic1 from "../../../../assets/profiles/هادی کشاورزی شهربا
 
 //board-members pictures
 import pic5 from "../../../../assets/profiles/آقای بهزاد گلکار.jpg";
-import pic7 from "../../../../assets/profiles/آقای جواد گوهرزاد.jpg";
-import pic8 from "../../../../assets/profiles/حسینعلی علیمی.jpg";
+import pic8 from "../../../../assets/profiles/آقای جواد گوهرزاد.jpg";
+import pic7 from "../../../../assets/profiles/حسینعلی علیمی.jpg";
 import pic4 from "../../../../assets/profiles/علی ضیائی اردکانی.jpg";
 import pic6 from "../../../../assets/profiles/مینا صدیق نوحی.jpg";
 
@@ -156,7 +156,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 5rem;
 
   * {
@@ -166,25 +165,43 @@ const Wrapper = styled.div`
     h4 {
       font-family: "BRoyaBold";
     }
+
+    h1 {
+      width: max-content;
+      font-size: 2.2rem;
+
+      @media (max-width: 450px) {
+        width: unset;
+      }
+    }
   }
 `;
 
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
 
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 1rem;
-
+  align-items: flex-start;
+  gap: 2rem;
   color: black;
 
-  //tags
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   img {
     width: 50%;
     border-radius: 1rem;
     box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.4);
     margin: 1rem;
+
+    @media (max-width: 900px) {
+      width: 70%;
+    }
+    @media (max-width: 450px) {
+      width: 90%;
+    }
   }
 `;
 
@@ -193,9 +210,13 @@ const Content = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 3rem;
 
   line-height: 1.8rem;
 
   font-size: 1.4rem;
+
+  @media (max-width: 900px) {
+    width: 95%;
+  }
 `;
