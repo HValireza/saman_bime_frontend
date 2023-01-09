@@ -196,6 +196,9 @@ const NewsItem = styled.li`
   :hover {
     background-color: #f3f3f3;
   }
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;
 
 const NewsThumbnail = styled.img`

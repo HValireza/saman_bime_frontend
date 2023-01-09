@@ -70,6 +70,10 @@ const TableTitle = styled.td<any>`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 900px) {
+    width: ${(props) => props.colWith / 2 + "rem"};
+  }
 `;
 
 const TableRow = styled.tr`
@@ -93,4 +97,7 @@ const TableCell = styled.td<any>`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {
+    width: ${(props) => props.colWith / 2 + "rem"};
+  }
 `;
