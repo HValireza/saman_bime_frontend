@@ -74,11 +74,11 @@ const Service: React.FC<serviceI> = ({ state }) => {
         <Services />
       ) : (
         <>
-          <div className="banner">
-            <img src={item!.pic} alt={item!.title} />
-            <h1>خدمات</h1>
-            <h2>{item!.title}</h2>
-          </div>
+          <BannerContainer>
+            <Banner src={item!.pic} alt={item!.title} />
+            <BannerTitle>خدمات</BannerTitle>
+            <BannerDescription>{item!.title}</BannerDescription>
+          </BannerContainer>
 
           <div className="description-wrapper">
             <p className="description">{item!.desc}</p>
@@ -93,36 +93,6 @@ export default Service;
 
 const Wrapper = styled.div`
   width: 100%;
-
-  .banner {
-    position: relative;
-    text-align: center;
-
-    img {
-      width: 100%;
-      height: calc(100vh - 4rem);
-      filter: brightness(50%);
-    }
-
-    h1 {
-      position: absolute;
-      top: calc(50% - 4rem);
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f3f3f3;
-      font-family: "BRoyaBold";
-      font-size: 2vw;
-    }
-    h2 {
-      position: absolute;
-      top: calc(60% - 4rem);
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f3f3f3;
-      font-family: "BRoyaBold";
-      font-size: 2.6vw;
-    }
-  }
 
   .description-wrapper {
     width: 100%;
@@ -139,5 +109,54 @@ const Wrapper = styled.div`
       line-height: 1.5;
       white-space: pre-wrap;
     }
+  }
+`;
+
+const BannerContainer = styled.div`
+  position: relative;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  @media (max-width: 900px) {
+    height: auto;
+  }
+`;
+
+const Banner = styled.img`
+  width: 100%;
+  height: calc(100vh - 4rem);
+  filter: brightness(50%);
+
+  @media (max-width: 900px) {
+    height: auto;
+  }
+`;
+
+const BannerTitle = styled.h1`
+  position: absolute;
+  top: calc(50% - 4rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f3f3f3;
+  font-family: "BRoyaBold";
+  font-size: 2vw;
+  @media (max-width: 900px) {
+    font-size: 1.75rem;
+  }
+`;
+
+const BannerDescription = styled.h2`
+  position: absolute;
+  top: calc(60% - 4rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f3f3f3;
+  font-family: "BRoyaBold";
+  font-size: 2.6vw;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    top: calc(60% - 1rem);
   }
 `;

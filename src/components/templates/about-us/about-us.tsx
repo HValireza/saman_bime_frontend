@@ -105,12 +105,23 @@ const Container = styled.div`
 const BannerContainer = styled.div`
   position: relative;
   text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;
 
 const Banner = styled.img`
   width: 100%;
   height: calc(100vh - 4rem);
   filter: brightness(50%);
+
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;
 
 const BannerTitle = styled.h1`
@@ -121,6 +132,9 @@ const BannerTitle = styled.h1`
   color: #f3f3f3;
   font-family: "BRoyaBold";
   font-size: 2vw;
+  @media (max-width: 900px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const BannerDescription = styled.h2`
@@ -131,6 +145,10 @@ const BannerDescription = styled.h2`
   color: #f3f3f3;
   font-family: "BRoyaBold";
   font-size: 2.6vw;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    top: calc(60% - 1rem);
+  }
 `;
 
 const DescriptionContainer = styled.div`
