@@ -6,12 +6,12 @@ import Navbar from "../../components/shared/navbar/navbar";
 const Layout = () => {
   return (
     <Container>
-      <ScrollToTop smooth />
       <Navbar />
       <Wrapper>
         <Outlet />
       </Wrapper>
       <Footer />
+      <ScrollToTop smooth style={{ zIndex: "100" }} />
     </Container>
   );
 };

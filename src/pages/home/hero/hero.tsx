@@ -52,14 +52,12 @@ const Hero = () => {
       console.debug("onAfterSliding(nextSlide): ", nextSlide),
   };
 
+  const navbarHeight = "clamp(4rem, 4vw, 6rem)";
+
   return (
     <Wrapper>
       <HeroSlider
-        height={
-          window.matchMedia("(max-width: 900px)").matches
-            ? "calc(100vh - 3.4rem)"
-            : "calc(100vh - 4rem)"
-        }
+        height={`calc(100vh - ${navbarHeight})`}
         autoplay
         controller={controller}
       >

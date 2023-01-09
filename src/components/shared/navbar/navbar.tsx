@@ -64,7 +64,7 @@ const Navbar = () => {
     { title: "اساسنامه", path: "/news/company" },
   ];
 
-  // sticky navbar functionality
+  //* sticky navbar
   // let prevScrollpos = window.pageYOffset;
   // window.onscroll = () => {
   //   let nav: any = document.getElementById("navbar");
