@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
 
 interface IContactData {
   title: string;
@@ -104,6 +104,7 @@ const BannerContainer = styled.div`
 
 const Banner = styled.img`
   width: 100%;
+  object-fit: cover;
   height: calc(100vh - 4rem);
   filter: brightness(50%);
 
