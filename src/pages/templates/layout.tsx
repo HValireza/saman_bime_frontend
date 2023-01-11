@@ -29,4 +29,5 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
+  min-height: calc(100vh - 29.18rem);
 `;
