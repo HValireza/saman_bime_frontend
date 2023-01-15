@@ -47,7 +47,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 900px) {
     padding: 0;
-    height: calc(100vh - 275px);
+    height: calc(100vh - 7rem);
   }
 `;
 

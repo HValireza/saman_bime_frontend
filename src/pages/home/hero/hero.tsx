@@ -52,7 +52,7 @@ const Hero = () => {
       console.debug("onAfterSliding(nextSlide): ", nextSlide),
   };
 
-  const navbarHeight = "clamp(4rem, 4vw, 6rem)";
+  const navbarHeight = "4rem";
 
   return (
     <Wrapper>

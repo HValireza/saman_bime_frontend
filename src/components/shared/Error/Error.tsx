@@ -45,7 +45,7 @@ export default Error;
 const Container = styled.div`
   width: 100%;
   height: auto;
-  margin: 4rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
 
   display: flex;
   flex-direction: column;

@@ -96,7 +96,7 @@ const BannerContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 7rem);
   @media (max-width: 900px) {
     height: auto;
   }
@@ -105,7 +105,7 @@ const BannerContainer = styled.div`
 const Banner = styled.img`
   width: 100%;
   object-fit: cover;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 7rem);
   filter: brightness(50%);
 
   @media (max-width: 900px) {
