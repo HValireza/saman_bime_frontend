@@ -58,8 +58,8 @@ const dummyData = [
   },
 ];
 
-const { loading, data, error } = GetManagers();
 const Managers = () => {
+  const { loading, data, error } = GetManagers();
   return (
     <Wrapper>
       <Title>

@@ -50,9 +50,8 @@ const dummyData = [
   },
 ];
 
-const { loading, data, error } = GetBoardMembers();
-
 const Board = () => {
+  const { loading, data, error } = GetBoardMembers();
   return (
     <Wrapper>
       <Title>
