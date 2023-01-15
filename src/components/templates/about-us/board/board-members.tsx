@@ -5,8 +5,9 @@ import pic5 from "../../../../assets/profiles/آقای جواد گوهرزاد.j
 import pic4 from "../../../../assets/profiles/حسینعلی علیمی.jpg";
 import pic1 from "../../../../assets/profiles/علی ضیائی اردکانی.jpg";
 import pic3 from "../../../../assets/profiles/مینا صدیق نوحی.jpg";
+import { GetBoardMembers } from "./Data/GetMemebers";
 
-const data = [
+const dummyData = [
   {
     pic: pic1,
     name: "علی ضیائی اردکانی",
@@ -49,6 +50,8 @@ const data = [
   },
 ];
 
+const { loading, data, error } = GetBoardMembers();
+
 const Board = () => {
   return (
     <Wrapper>
@@ -59,12 +62,11 @@ const Board = () => {
       </Title>
 
       <Container>
-        {data.map((d, index) => (
-          <Link to={`/about/${index + 3}`} key={index}>
+        {data.map((d: any, index: number) => (
+          <Link to={`/about/board/${d.id}`} key={index}>
             <Item>
-              <img src={d.pic} alt={d.name} />
+              <img src={d.picture_thumbnail} alt={d.name} />
               <h3>{d.name}</h3>
-              <h4>{d.position}</h4>
             </Item>
           </Link>
         ))}

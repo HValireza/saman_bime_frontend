@@ -3,8 +3,9 @@ import styled from "styled-components";
 import pic3 from "../../../../assets/profiles/محمد مهرابی.jpg";
 import pic2 from "../../../../assets/profiles/مریم فرزادی نیا.jpg";
 import pic1 from "../../../../assets/profiles/هادی کشاورزی شهربابکی.jpg";
+import { GetManagers } from "./Data/GetMemebers";
 
-const data = [
+const dummyData = [
   {
     pic: pic1,
     name: "هادی کشاورزی شهربابکی",
@@ -57,6 +58,7 @@ const data = [
   },
 ];
 
+const { loading, data, error } = GetManagers();
 const Managers = () => {
   return (
     <Wrapper>
@@ -67,12 +69,11 @@ const Managers = () => {
       </Title>
 
       <Container>
-        {data.map((d, index) => (
-          <Link to={`/about/${index}`} key={index}>
+        {data.map((d: any, index: number) => (
+          <Link to={`/about/managers/${d.id}`} key={index}>
             <Item>
-              <img src={d.pic} alt={d.name} />
+              <img src={d.picture_thumbnail} alt={d.name} />
               <h3>{d.name}</h3>
-              <h4>{d.position}</h4>
             </Item>
           </Link>
         ))}

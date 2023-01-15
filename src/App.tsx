@@ -57,14 +57,8 @@ function App() {
               element={<OrganizationChart state={"actuarial"} />}
             />
             {/* profiles */}
-            <Route path="0" element={<Profile index={0} />} />
-            <Route path="1" element={<Profile index={1} />} />
-            <Route path="2" element={<Profile index={2} />} />
-            <Route path="3" element={<Profile index={3} />} />
-            <Route path="4" element={<Profile index={4} />} />
-            <Route path="5" element={<Profile index={5} />} />
-            <Route path="6" element={<Profile index={6} />} />
-            <Route path="7" element={<Profile index={7} />} />
+            <Route path="managers/:id" element={<Profile state="managers" />} />
+            <Route path="board/:id" element={<Profile state="board" />} />
           </Route>
 
           {/* News Pages */}
@@ -100,7 +94,6 @@ function App() {
               path="constituent"
               element={<News state={NewsEnum.CONSTITUENT} />}
             />
-
 
             {/* news - regulations */}
 
