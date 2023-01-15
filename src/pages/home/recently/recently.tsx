@@ -12,7 +12,7 @@ const Recently = () => {
 
   return (
     <Wrapper>
-      <h2>آخرین مطالب</h2>
+      <h2>مقالات، اخبار و رویداد ها</h2>
 
       {data.map((a: any, index: number) => (
         <Container key={index} thumbnail={a.picture_thumbnail}>
