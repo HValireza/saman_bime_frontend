@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface LinkI {
   title: string;
   path: string;
+  bold?: boolean;
 }
 
 interface PropsDropDownI {
@@ -20,13 +21,13 @@ const DropDown = ({ links, vector, alt }: PropsDropDownI) => {
           <>
             {l.path.includes("http") && (
               <a href={l.path} target="_blank">
-                <li>{l.title}</li>
+                <li className={l.bold ? "bolded" : "simple"}>{l.title}</li>
               </a>
             )}
 
             {!l.path.includes("http") && (
               <Link to={l.path} key={index}>
-                <li>{l.title}</li>
+                <li className={l.bold ? "bolded" : "simple"}>{l.title}</li>
               </Link>
             )}
           </>
@@ -98,6 +99,11 @@ const Items = styled.ul`
       width: 3px;
       height: 100%;
     }
+  }
+
+  .bolded {
+    font-size: 1.25rem;
+    font-family: "BRoyaBold";
   }
 `;
 

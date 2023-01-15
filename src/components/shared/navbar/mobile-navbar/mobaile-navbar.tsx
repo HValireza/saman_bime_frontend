@@ -9,7 +9,7 @@ const MobaileNavbar = () => {
   const [icon, setIcon] = useState("=");
 
   const services = [
-    { title: "خدمات بیمه‌های اتکایی", path: "/services/services" },
+    { title: "خدمات بیمه‌های اتکایی", path: "/services/services", bold: true },
     { title: "طراحی و راهبری قراردادهای اتکایی", path: "/services/path" },
     {
       title: "پوشش اتکایی بیمه‌های مهندسی و انرژی",
@@ -22,7 +22,7 @@ const MobaileNavbar = () => {
     { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "/services/fire" },
     { title: "پوشش اتکایی بیمه‌های اشخاص", path: "/services/person" },
     { title: "پوشش‌های اتکایی بین‌المللی", path: "/services/international" },
-    { title: "خدمات مشاوره اتکایی", path: "/services/consult" },
+    { title: "خدمات مشاوره اتکایی", path: "/services/consult", bold: true },
   ];
 
   const links = {
@@ -55,16 +55,24 @@ const MobaileNavbar = () => {
   ];
 
   const about = [
-    { title: "تاریخچه شرکت بیمه اتکایی سامان", path: "/about/history" },
-    { title: "اهداف راهبردی، مأموریت و چشم‌انداز", path: "/about/goals" },
-    { title: "رهنمود ارزش‌های بنیادی", path: "/about/avail" },
+    {
+      title: "تاریخچه شرکت بیمه اتکایی سامان",
+      path: "/about/history",
+      bold: true,
+    },
+    {
+      title: "اهداف راهبردی، مأموریت و چشم‌انداز",
+      path: "/about/goals",
+      bold: true,
+    },
+    { title: "رهنمود ارزش‌های بنیادی", path: "/about/avail", bold: true },
     { title: " ارزش‌های محوری", path: "/about/avail" },
     { title: " بیانیه مأموریت و جهان‌بینی", path: "/about/worldview" },
-    { title: "‌هیئت مدیره", path: "/about/board-member" },
-    { title: "مدیران", path: "/about/managers" },
-    { title: "نمودار سازمانی", path: "/about/org-chart" },
-    { title: "ساختار سهامداران", path: "/about/structure" },
-    { title: "اساسنامه", path: "/news/company" },
+    { title: "‌هیئت مدیره", path: "/about/board-member", bold: true },
+    { title: "مدیران", path: "/about/managers", bold: true },
+    { title: "نمودار سازمانی", path: "/about/org-chart", bold: true },
+    { title: "ساختار سهامداران", path: "/about/structure", bold: true },
+    { title: "اساسنامه", path: "/news/company", bold: true },
   ];
 
   return (
@@ -101,7 +109,7 @@ const MobaileNavbar = () => {
                 }}
               />
             </Item>
-            <Item id="drop-down" className="services">
+            <Item id="drop-down">
               خدمات
               <MDropDown
                 links={services}
@@ -236,14 +244,6 @@ const Items = styled.ul`
 
   #drop-down:hover .drop-down ul {
     padding: 1rem;
-  }
-
-  // dropdown tiltes size
-  .services > div > ul > :nth-child(1),
-  .services > div > ul > :nth-child(8) {
-    * {
-      font-size: 1.3rem;
-    }
   }
 `;
 
