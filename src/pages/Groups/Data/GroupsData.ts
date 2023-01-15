@@ -8,22 +8,6 @@ import logo from "../../../assets/images/logo2.png";
 
 const GroupsData = [
   {
-    title: "مجامع",
-    state: "assemblies",
-    cards: [
-      {
-        title: "مجمع موسس",
-        img: privateImg,
-        linkTo: "/news/constituent",
-      },
-      {
-        title: "مجمع عمومی و فوق العاده",
-        img: publicImg,
-        linkTo: "/news/general",
-      },
-    ],
-  },
-  {
     title: "آیین نامه های بیمه مرکزی",
     state: "regulations",
     cards: [

@@ -30,10 +30,7 @@ const HeaderData = (field: NewsEnum): INews => {
     return { title: "امور سهام", subject: "آگهی های دعوت به مجمع" };
   }
   if (field === NewsEnum.CONSTITUENT) {
-    return { title: "مجامع", subject: "مجمع موسس" };
-  }
-  if (field === NewsEnum.GENERAL) {
-    return { title: "مجامع", subject: "مجمع عمومی و فوق العاده" };
+    return { title: "امور سهام", subject: "مجامع" };
   }
   if (field === NewsEnum.RELIANCE) {
     return {

@@ -42,9 +42,7 @@ const MobaileNavbar = () => {
     { title: "ترکیب سهامداران", path: "/about/structure" },
     { title: "پرتال سهامداران", path: links.portal },
     { title: "تماس با امور سهام", path: "/contact-us" },
-    { title: "مجامع", path: "/group/assemblies" },
-    { title: "مجمع مؤسس", path: "/news/constituent" },
-    { title: "مجمع عمومی و فوق‌العاده", path: "/news/general" },
+    { title: "مجامع", path: "/news/constituent" },
   ];
 
   const media = [

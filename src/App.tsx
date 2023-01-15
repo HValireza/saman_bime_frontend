@@ -101,7 +101,6 @@ function App() {
               element={<News state={NewsEnum.CONSTITUENT} />}
             />
 
-            <Route path="general" element={<News state={NewsEnum.GENERAL} />} />
 
             {/* news - regulations */}
 
@@ -172,10 +171,6 @@ function App() {
 
           {/* Group Pages */}
           <Route path="group">
-            <Route
-              path="assemblies"
-              element={<Groups state={"assemblies"} />}
-            />
             <Route
               path="regulations"
               element={<Groups state={"regulations"} />}
