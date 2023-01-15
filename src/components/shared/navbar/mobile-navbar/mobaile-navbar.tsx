@@ -91,6 +91,16 @@ const MobaileNavbar = () => {
       {isOpen && (
         <Container>
           <Items>
+            <Item id="drop-down">
+              درباره ما
+              <MDropDown
+                links={about}
+                clickHandler={() => {
+                  setIsOpen(false);
+                  setIcon("=");
+                }}
+              />
+            </Item>
             <Item id="drop-down" className="services">
               خدمات
               <MDropDown
@@ -113,6 +123,26 @@ const MobaileNavbar = () => {
               />
             </Item>
 
+            <Link
+              to={"/group/reports"}
+              onClick={() => {
+                setIsOpen(false);
+                setIcon("=");
+              }}
+            >
+              <Item>گزارشگری و افشای اطلاعات</Item>
+            </Link>
+
+            <Link
+              to={"/group/regulations"}
+              onClick={() => {
+                setIsOpen(false);
+                setIcon("=");
+              }}
+            >
+              <Item>آیین‌نامه‌های بیمه مرکزی</Item>
+            </Link>
+
             <Item id="drop-down">
               رسانه
               <MDropDown
@@ -123,41 +153,9 @@ const MobaileNavbar = () => {
                 }}
               />
             </Item>
-
-            <Link
-              to={"/group/reports"}
-              onClick={() => {
-                setIsOpen(false);
-                setIcon("=");
-              }}
-            >
-              <Item>گزارش</Item>
-            </Link>
-
-            <Link
-              to={"/group/regulations"}
-              onClick={() => {
-                setIsOpen(false);
-                setIcon("=");
-              }}
-            >
-              <Item>آیین‌نامه‌ها</Item>
-            </Link>
-
             <Link to={"/contact-us"}>
               <Item>تماس با ما</Item>
             </Link>
-
-            <Item id="drop-down">
-              درباره ما
-              <MDropDown
-                links={about}
-                clickHandler={() => {
-                  setIsOpen(false);
-                  setIcon("=");
-                }}
-              />
-            </Item>
           </Items>
 
           <Tools />

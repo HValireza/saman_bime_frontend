@@ -81,6 +81,15 @@ const Navbar = () => {
         </Link>
 
         <Items>
+          <Item id="drop-down">
+            درباره ما
+            <DropDown
+              links={about}
+              vector="/src/assets/images/vectors/about-us.png"
+              alt="about-us"
+            />
+          </Item>
+
           <Item id="drop-down" className="ali">
             خدمات
             <DropDown
@@ -99,6 +108,14 @@ const Navbar = () => {
             />
           </Item>
 
+          <Link to={"/group/reports"}>
+            <Item>گزارشگری و افشای اطلاعات</Item>
+          </Link>
+
+          <Link to={"/group/regulations"}>
+            <Item>آیین‌نامه‌های بیمه مرکزی</Item>
+          </Link>
+
           <Item id="drop-down">
             رسانه
             <DropDown
@@ -108,26 +125,9 @@ const Navbar = () => {
             />
           </Item>
 
-          <Link to={"/group/reports"}>
-            <Item>گزارش</Item>
-          </Link>
-
-          <Link to={"/group/regulations"}>
-            <Item>آیین‌نامه‌ها</Item>
-          </Link>
-
           <Link to={"/contact-us"}>
             <Item>تماس با ما</Item>
           </Link>
-
-          <Item id="drop-down">
-            درباره ما
-            <DropDown
-              links={about}
-              vector="/src/assets/images/vectors/about-us.png"
-              alt="about-us"
-            />
-          </Item>
         </Items>
 
         <Tools />
@@ -226,7 +226,7 @@ const Item = styled.li`
   min-width: max-content;
   padding: 10px 5px;
 
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #1a1c1d;
   list-style: none;
