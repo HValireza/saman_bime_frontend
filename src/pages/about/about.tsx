@@ -11,6 +11,11 @@ import GetShareholders from "./Data/GetShareHolder";
 import GetStructure from "./Data/GetStructure";
 import statute_img from "../../assets/images/about_us/statute.jpg";
 import statue_pdf from "../../assets/pdf/statute.pdf";
+import goals_pdf from "../../assets/pdf/goals.pdf";
+import what_pdf from "../../assets/pdf/what.pdf";
+import introduction_pdf from "../../assets/pdf/intrudoction.pdf";
+import importance_pdf from "../../assets/pdf/importance.pdf";
+import pros_pdf from "../../assets/pdf/pros.pdf";
 
 export interface IAboutData {
   state: string;
@@ -60,6 +65,36 @@ const About: React.FC<IAboutProps> = ({ state }) => {
       pic: statute_img,
       title: "اساس نامه",
       detail: statue_pdf,
+    },
+    {
+      state: "goal",
+      pic: History,
+      title: "اهداف و کارکرد بیمه اتکایی",
+      detail: goals_pdf,
+    },
+    {
+      state: "introduction",
+      pic: History,
+      title: "معرفی صنعت بیمه اتکایی",
+      detail: introduction_pdf,
+    },
+    {
+      state: "importance",
+      pic: History,
+      title: "فلسفه و اهمیت شرکت بیمه اتکایی",
+      detail: importance_pdf,
+    },
+    {
+      state: "what",
+      pic: History,
+      title: "بیمه اتکایی چیست؟",
+      detail: what_pdf,
+    },
+    {
+      state: "pros",
+      pic: History,
+      title: "مزایای شرکت های بیمه اتکایی",
+      detail: pros_pdf,
     },
   ]);
 

@@ -36,6 +36,19 @@ function App() {
 
             <Route path="statute" element={<About state={"statute"} />} />
 
+            <Route path="pros" element={<About state={"pros"} />} />
+
+            <Route path="what" element={<About state={"what"} />} />
+
+            <Route path="importance" element={<About state={"importance"} />} />
+
+            <Route
+              path="introduction"
+              element={<About state={"introduction"} />}
+            />
+
+            <Route path="goal" element={<About state={"goal"} />} />
+
             <Route path="managers" element={<Managers />} />
 
             <Route path="board-member" element={<Board />} />
