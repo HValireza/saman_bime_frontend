@@ -159,6 +159,8 @@ const Wrapper = styled.header`
   box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.5);
 
   z-index: 10;
+  position: fixed;
+  top: 3rem;
 
   @media (max-width: 900px) {
     height: 3.5rem;
