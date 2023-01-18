@@ -52,7 +52,7 @@ const Hero = () => {
       console.debug("onAfterSliding(nextSlide): ", nextSlide),
   };
 
-  const navbarHeight = "4rem";
+  const navbarHeight = "7rem";
 
   return (
     <Wrapper>
@@ -82,7 +82,12 @@ const Hero = () => {
 export default Hero;
 
 const Wrapper = styled.div`
+  /* margin-top: 7rem; */
   width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 7rem;
 
   .logo {
     position: fixed;
