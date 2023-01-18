@@ -7,11 +7,11 @@ import Navbar from "../../components/shared/navbar/navbar";
 const Layout = () => {
   return (
     <Container>
-      <Header />
-      <Navbar />
       <Wrapper>
         <Outlet />
       </Wrapper>
+      <Header />
+      <Navbar />
       <Footer />
       <ScrollToTop smooth style={{ zIndex: "100" }} />
     </Container>
@@ -29,6 +29,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  /* padding-top: 7rem; */
   width: 100%;
   height: auto;
   min-height: calc(100vh - 29.18rem);
