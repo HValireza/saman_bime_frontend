@@ -210,7 +210,7 @@ export default Profile;
 const Wrapper = styled.div`
   width: 100%;
 
-  padding-top: 6rem;
+  padding-top: 7rem;
 
   display: flex;
   flex-direction: column;

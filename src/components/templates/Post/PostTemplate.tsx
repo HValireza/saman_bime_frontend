@@ -154,6 +154,7 @@ const PageChanger = styled.div`
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
   height: 4.5rem;
+  padding-top: 6rem;
 
   &:after {
     clear: both;

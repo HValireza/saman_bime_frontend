@@ -100,6 +100,7 @@ export default AboutUs;
 const Container = styled.div`
   width: 100%;
   height: auto;
+  padding-top: 6rem;
 `;
 
 const BannerContainer = styled.div`

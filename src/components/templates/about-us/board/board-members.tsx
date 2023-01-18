@@ -83,6 +83,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 2rem;
   color: black;
+  padding-top: 7rem;
 `;
 
 const Title = styled.div`
