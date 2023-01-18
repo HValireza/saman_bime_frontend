@@ -31,7 +31,6 @@ export default Recently;
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 6rem 0 0 0;
 
   display: flex;
   justify-content: center;
@@ -42,6 +41,7 @@ const Wrapper = styled.div`
   position: relative;
 
   h2 {
+    padding-top: 7rem;
     position: absolute;
     top: 6.5rem;
     font-size: 3rem;
