@@ -22,7 +22,7 @@ export default Card;
 
 const Wrapper = styled.div`
   width: 20rem;
-  height: 45vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
