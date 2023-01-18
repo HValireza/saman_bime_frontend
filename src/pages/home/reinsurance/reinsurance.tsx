@@ -38,12 +38,12 @@ const Wrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
     gap: 5px;
-    padding: 0 0 3rem 0;
+    padding: 8.5rem 0 3rem 0;
   }
 
   width: 100%;
   height: 100vh;
-  padding: 1.5rem 0;
+  padding: 8.5rem 0 1.5rem 0;
 
   position: relative;
 
