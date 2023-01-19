@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { axiosFilesApi } from "../../../global/defaultAxiosUrl";
 import GetRecentNews from "../Data/GetRecentNews";
@@ -14,14 +15,18 @@ const Recently = () => {
     <Wrapper>
       <h2>مقالات، اخبار و رویداد ها</h2>
 
-      {data.map((a: any, index: number) => (
-        <Container key={index} thumbnail={a.picture_thumbnail}>
-          <Content className="content">
-            <h3>{a.title}</h3>
-            <p>{a.description}</p>
-          </Content>
-        </Container>
-      ))}
+      <DataWrapper>
+        {data.map((a: any, index: number) => (
+          <Link to={"/post/" + a.id}>
+            <Container key={index} thumbnail={a.picture_thumbnail}>
+              <Content className="content">
+                <h3>{a.title}</h3>
+                <p>{a.description}</p>
+              </Content>
+            </Container>
+          </Link>
+        ))}
+      </DataWrapper>
     </Wrapper>
   );
 };
@@ -31,19 +36,22 @@ export default Recently;
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 6rem 0 0 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
 
   position: relative;
 
+  @media (max-width: 900px) {
+    height: auto;
+  }
+
   h2 {
-    position: absolute;
-    top: 6.5rem;
+    margin-top: 4rem;
+    padding-top: 7rem;
     font-size: 3rem;
     font-family: "BRoyaBold";
     text-shadow: 3px 0 7px rgba(0, 0, 0, 0.7);
@@ -56,7 +64,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   /* fix me later */
-  /* &:hover {
+  &:hover {
     ::before {
       transform: scale(1.1);
     }
@@ -69,7 +77,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-  } */
+  }
 `;
 
 const Container = styled.article<IContainer>`
@@ -89,6 +97,11 @@ const Container = styled.article<IContainer>`
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center top;
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    margin: 2rem auto;
+  }
 
   :hover {
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
@@ -112,6 +125,19 @@ const Container = styled.article<IContainer>`
   }
 `;
 
+const DataWrapper = styled.div`
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin: 3rem auto;
+  }
+`;
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -122,7 +148,7 @@ const Content = styled.div`
   height: 22%;
 
   border-radius: 0 0 12px 12px;
-  font-family: "Broya";
+  font-family: "BRoya";
   font-size: 1.3rem;
   color: black;
 

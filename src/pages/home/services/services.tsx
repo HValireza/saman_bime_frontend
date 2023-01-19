@@ -189,10 +189,12 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
+  margin-top: 13rem;
+
   gap: 3rem;
 
   width: 100%;
-  min-height: 50vh;
+  min-height: 30vh;
 
   @media (max-width: 900px) {
     gap: 2rem;

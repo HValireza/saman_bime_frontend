@@ -33,8 +33,14 @@ const Container = styled.div`
   width: 100%;
   margin: 0;
 
+  z-index: 10;
+  position: fixed;
+  top: 0;
+
   display: flex;
   justify-content: space-between;
+
+  background-color: white;
 `;
 
 const Gray = styled.div`

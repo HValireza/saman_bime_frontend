@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface ContentI {
@@ -5,6 +6,7 @@ interface ContentI {
   alt?: string;
   title?: string;
   txt: string[];
+  link: string;
 }
 
 interface PropsArticleI {
@@ -22,6 +24,7 @@ const Article = ({ content }: PropsArticleI) => {
             {c.txt.map((t, index) => (
               <p key={index}>{t}</p>
             ))}
+            <Link to={c.link}>بیشتر بخوانید...</Link>
           </div>
         ))}
       </Content>
@@ -33,7 +36,9 @@ export default Article;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 10rem);
+
+  margin-top: 8rem;
 
   display: flex;
   flex-direction: column;

@@ -35,7 +35,9 @@ export default Partners;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 40vh;
+  height: calc(40vh - 7rem);
+
+  padding-top: 7rem;
 
   display: flex;
   flex-direction: column;

@@ -88,6 +88,7 @@ export default ContactUs;
 const Container = styled.div`
   width: 100%;
   height: auto;
+  padding-top: 7rem;
 `;
 
 const BannerContainer = styled.div`

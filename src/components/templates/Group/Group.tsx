@@ -45,6 +45,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 6rem;
 `;
 const Title = styled.h1`
   font-family: "BRoyaBold";
