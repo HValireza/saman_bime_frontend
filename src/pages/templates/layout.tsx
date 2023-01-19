@@ -21,8 +21,6 @@ const Layout = () => {
 
   return (
     <Container time={time}>
-      <Header />
-      <Navbar />
       <Wrapper>
         <Outlet />
       </Wrapper>
