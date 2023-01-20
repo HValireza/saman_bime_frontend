@@ -7,11 +7,11 @@ import Footer from "../../components/shared/footer/footer";
 import Header from "../../components/shared/Header/Header";
 import Navbar from "../../components/shared/navbar/navbar";
 const Layout = () => {
-  let prevDate = moment().diff(moment("2023/21/1", "YYYY/D/M"), "d") / 10;
+  let prevDate = moment().diff(moment("2023/22/1", "YYYY/D/M"), "d") / 10;
   const [time, setTime] = useState(prevDate);
   useEffect(() => {
     const intervalId = setInterval(() => {
-      prevDate = moment().diff(moment("2023/21/1", "YYYY/D/M"), "d") / 10;
+      prevDate = moment().diff(moment("2023/22/1", "YYYY/D/M"), "d") / 10;
       setTime(time > 1 ? 1 : prevDate);
     }, 10000);
     return () => {
