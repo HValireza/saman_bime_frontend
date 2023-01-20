@@ -20,101 +20,6 @@ import Error from "../../../shared/Error/Error";
 import * as moment from "jalali-moment";
 import { axiosFilesApi } from "../../../../global/defaultAxiosUrl";
 
-const dummyData = [
-  {
-    pic: pic1,
-    name: "هادی کشاورزی شهربابکی",
-    position: "مدیر بیمه‌های اتکایی",
-    resume: [
-      "مشاور مدیرعامل در توسعه بازار و بین‌الملل شرکت سازه‌های آلومینیومی رادبه",
-      "مدیر بیمه‌های اتکایی شرکت بیمه آرمان",
-      "مدیر بیمه‌های اتکایی شرکت بیمه دی",
-      "مدیر دفاتر خارج از کشور بیمه دی",
-      "رئیس شعبه استان البرز شرکت بیمه سامان",
-      "مترجم و روزنامه‌نگار",
-    ],
-    degrees: ["کارشناسی مدیریت بیمه اکو", "کارشناسی ارشد MBA گرایش بازاریابی"],
-    contact: [
-      "شماره تماس (داخلی): (۴۱20)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل:  h.keshavarzi@samanre.com ",
-    ],
-  },
-  {
-    pic: pic2,
-    name: "مریم فرزادی نیا",
-    position: "مدیر امور مالی",
-    resume: [
-      "رئیس اداره حسابداری و بررسی اسناد مدیریت امور مالی بیمه نوین",
-      "رئیس اداره حسابداری اتکایی بیمه نوین",
-      "معاون اداره حسابداری اتکایی بیمه نوین",
-    ],
-    degrees: ["کارشناسی حسابداری", "کارشناسی‌ارشد مدیریت بازرگانی گرایش مالی"],
-    contact: [
-      "شماره تماس (داخلی): (3015)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل: m.farzadinia@samanre.com",
-    ],
-  },
-  {
-    pic: pic3,
-    name: "محمد مهرابی",
-    position: "مدیر منابع انسانی و پشتیبانی",
-    resume: [
-      "مدیر حوزه معاونت مالی و اداری شرکت بیمه بیمه سامان",
-      "مدیر مالی شرکت شیشه و گاز",
-      "معاونت مالی و اداری مهندسی پایا کنترل افزار",
-      "مدیر مالی و اداری تراشه پرداز پویا",
-      "مدیر مالی شرکت تولیدی ویستر",
-    ],
-    degrees: ["کارشناسی مدیریت بازرگانی"],
-    contact: [
-      "شماره تماس (داخلی): (3010)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل: m.mehrabi@samanre.com",
-    ],
-  },
-
-  //board-members
-  {
-    pic: pic4,
-    name: "علی ضیائی اردکانی",
-    position: "رئیس هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic5,
-    name: "آقای بهزاد گلکار",
-    position: "نائب رئیس هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic6,
-    name: "مینا صدیق نوحی",
-    position: "مدیر عامل و عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic7,
-    name: "حسینعلی علیمی",
-    position: "عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic8,
-    name: "آقای جواد گوهرزاد",
-    position: "عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-];
-
 interface profileI {
   state: string;
 }
@@ -123,7 +28,7 @@ const Profile = ({ state }: profileI) => {
   const userId: any = useParams();
 
   const { loading, data, error } =
-    state === "managers" ? GetManager(userId) : GetBoardMember(userId);
+    state === "managers" ? GetManager(userId.id) : GetBoardMember(userId.id);
 
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
@@ -147,7 +52,7 @@ const Profile = ({ state }: profileI) => {
   return (
     <Wrapper>
       <Container>
-        <img src={data.picture} alt={data.name} />
+        <img src={axiosFilesApi + data.picture} alt={data.name} />
 
         <Content>
           <h1>{data.name}</h1>
@@ -210,7 +115,7 @@ export default Profile;
 const Wrapper = styled.div`
   width: 100%;
 
-  padding-top: 7rem;
+  padding-top: 10rem;
 
   display: flex;
   flex-direction: column;

@@ -3,60 +3,8 @@ import styled from "styled-components";
 import pic3 from "../../../../assets/profiles/محمد مهرابی.jpg";
 import pic2 from "../../../../assets/profiles/مریم فرزادی نیا.jpg";
 import pic1 from "../../../../assets/profiles/هادی کشاورزی شهربابکی.jpg";
+import { axiosFilesApi } from "../../../../global/defaultAxiosUrl";
 import { GetManagers } from "./Data/GetMemebers";
-
-const dummyData = [
-  {
-    pic: pic1,
-    name: "هادی کشاورزی شهربابکی",
-    position: "مدیر بیمه‌های اتکایی",
-    resume: [
-      "مشاور مدیرعامل در توسعه بازار و بین‌الملل شرکت سازه‌های آلومینیومی رادبه",
-      "مدیر بیمه‌های اتکایی شرکت بیمه آرمان",
-      "مدیر بیمه‌های اتکایی شرکت بیمه دی",
-      "مدیر دفاتر خارج از کشور بیمه دی",
-      "رئیس شعبه استان البرز شرکت بیمه سامان",
-      "مترجم و روزنامه‌نگار",
-    ],
-    degrees: ["کارشناسی مدیریت بیمه اکو", "کارشناسی ارشد MBA گرایش بازاریابی"],
-    contact: [
-      "شماره تماس (داخلی): (۴۱20)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل:  h.keshavarzi@samanre.com ",
-    ],
-  },
-  {
-    pic: pic2,
-    name: "مریم فرزادی نیا",
-    position: "مدیر امور مالی",
-    resume: [
-      "رئیس اداره حسابداری و بررسی اسناد مدیریت امور مالی بیمه نوین",
-      "رئیس اداره حسابداری اتکایی بیمه نوین",
-      "معاون اداره حسابداری اتکایی بیمه نوین",
-    ],
-    degrees: ["کارشناسی حسابداری", "کارشناسی‌ارشد مدیریت بازرگانی گرایش مالی"],
-    contact: [
-      "شماره تماس (داخلی): (3015)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل: m.farzadinia@samanre.com",
-    ],
-  },
-  {
-    pic: pic3,
-    name: "محمد مهرابی",
-    position: "مدیر منابع انسانی و پشتیبانی",
-    resume: [
-      "مدیر حوزه معاونت مالی و اداری شرکت بیمه بیمه سامان",
-      "مدیر مالی شرکت شیشه و گاز",
-      "معاونت مالی و اداری مهندسی پایا کنترل افزار",
-      "مدیر مالی و اداری تراشه پرداز پویا",
-      "مدیر مالی شرکت تولیدی ویستر",
-    ],
-    degrees: ["کارشناسی مدیریت بازرگانی"],
-    contact: [
-      "شماره تماس (داخلی): (3010)۹۱۰۰۸۸۸۷ – ۰۲۱",
-      "ایمیل: m.mehrabi@samanre.com",
-    ],
-  },
-];
 
 const Managers = () => {
   const { loading, data, error } = GetManagers();
@@ -72,7 +20,7 @@ const Managers = () => {
         {data.map((d: any, index: number) => (
           <Link to={`/about/managers/${d.id}`} key={index}>
             <Item>
-              <img src={d.picture_thumbnail} alt={d.name} />
+              <img src={axiosFilesApi + d.picture_thumbnail} alt={d.name} />
               <h3>{d.name}</h3>
             </Item>
           </Link>

@@ -5,50 +5,8 @@ import pic5 from "../../../../assets/profiles/آقای جواد گوهرزاد.j
 import pic4 from "../../../../assets/profiles/حسینعلی علیمی.jpg";
 import pic1 from "../../../../assets/profiles/علی ضیائی اردکانی.jpg";
 import pic3 from "../../../../assets/profiles/مینا صدیق نوحی.jpg";
+import { axiosFilesApi } from "../../../../global/defaultAxiosUrl";
 import { GetBoardMembers } from "./Data/GetMemebers";
-
-const dummyData = [
-  {
-    pic: pic1,
-    name: "علی ضیائی اردکانی",
-    position: "رئیس هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic2,
-    name: "آقای بهزاد گلکار",
-    position: "نائب رئیس هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic3,
-    name: "مینا صدیق نوحی",
-    position: "مدیر عامل و عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic4,
-    name: "حسینعلی علیمی",
-    position: "عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-  {
-    pic: pic5,
-    name: "آقای جواد گوهرزاد",
-    position: "عضو اصلی هیئت مدیره",
-    resume: [],
-    degrees: [],
-    contact: [],
-  },
-];
 
 const Board = () => {
   const { loading, data, error } = GetBoardMembers();
@@ -64,7 +22,7 @@ const Board = () => {
         {data.map((d: any, index: number) => (
           <Link to={`/about/board/${d.id}`} key={index}>
             <Item>
-              <img src={d.picture_thumbnail} alt={d.name} />
+              <img src={axiosFilesApi + d.picture_thumbnail} alt={d.name} />
               <h3>{d.name}</h3>
             </Item>
           </Link>
