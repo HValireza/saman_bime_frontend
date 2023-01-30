@@ -284,6 +284,7 @@ const InfoLine = styled.div`
 const InfoText = styled.p`
   width: calc(100% - 60px);
   height: auto;
+  text-align: justify;
 
   padding: 0px 10px;
 `;
