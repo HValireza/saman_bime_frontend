@@ -73,7 +73,7 @@ const Blue = styled.div`
 const BlueRectangle = styled.div`
   width: 99%;
   height: 100%;
-  background-color: #00009c;
+  background-color: #26407a;
 
   display: flex;
   flex-direction: row-reverse;
@@ -86,7 +86,7 @@ const BlueRectangle = styled.div`
 const BlueTriangle = styled.div`
   width: 0;
   height: 0;
-  border-top: 3rem solid #00009c;
+  border-top: 3rem solid #26407a;
   border-right: 1rem solid transparent;
 `;
 
