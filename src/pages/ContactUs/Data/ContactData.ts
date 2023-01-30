@@ -37,4 +37,34 @@ const ContactData = [
   },
 ];
 
+export const ContactShareData = [
+  {
+    title: "نشانی",
+    text: "خیابان خالد اسلامبولی (وزرا) - نبش خیابان سیزدهم - پلاک ۱۲۳",
+  },
+  {
+    title: "کدپستی",
+    text: "۱۵۱۳۸۱۳۱۱۸",
+  },
+  {
+    title: "شماره تماس",
+    text: "۰۲۱-۹۱۰۰۸۸۸۷ (داخلی 8887)",
+  },
+  {
+    title: "شماره فکس",
+    text: "۰۲۱-۸۸۵۵۲۸۹۶",
+  },
+  {
+    title: "ایمیل",
+    text: "info@samanre.com",
+    icon: faEnvelope,
+    iconBgColor: "#fd841f",
+    isMail: true,
+  },
+  {
+    title: "ساعات کاری",
+    text: "شنبه تا چهارشنبه ساعت 07:45 الی 16:30",
+  },
+];
+
 export default ContactData;

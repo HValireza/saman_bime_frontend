@@ -1,16 +1,21 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Card from "./cards/card";
 
-import { Link } from "react-router-dom";
 import engineering_img from "../../../assets/images/services/engineering.svg";
 import fire_img from "../../../assets/images/services/fire.svg";
 import international_img from "../../../assets/images/services/international.svg";
 import path_img from "../../../assets/images/services/path.svg";
 import person_img from "../../../assets/images/services/person.svg";
 import transport_img from "../../../assets/images/services/transport.svg";
+import Modal from "../../../components/shared/Modal/Modal";
+
+interface IModalData {
+  text: string;
+  link: string;
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,39 +129,73 @@ const Services = () => {
       desc: "شرکتهای بیمه اتکایی با کسب مجوز های الزم قادر به ارائه خدمات به شرکتها در سطح بینالملل نیز هستند. واگذاری اتکایی به خارج از کشور، شرکت های بیمه را قادر می سازد تا ریسکهای بیمهشده را در سطح گستردهتری توزیع کنند و بدین ترتیب از ورشکستی و ازدستدادن تعادل مالی خود جلوگیری نمایند. ...",
       background: "#1381A6",
     },
+    {
+      link: "",
+      thum: international_img,
+      title: "loading",
+      desc: "loading",
+      background: "#1381a6",
+    },
   ];
+  const [modalId, setModalId] = useState(6);
+  const [modalData, setModalData] = useState<IModalData>({
+    text: "loading",
+    link: "",
+  });
+  const [openModal, setOpenModal] = useState(false);
+  useEffect(() => {
+    setModalData({
+      text: mock[modalId].desc,
+      link: mock[modalId].link,
+    });
+  }, [modalId]);
+
+  const useOpenModal = (index: number) => {
+    setModalId(index);
+    setOpenModal(true);
+  };
 
   return (
     <Wrapper>
       <Container ref={cards1Ref}>
         {mock.slice(0, 3).map((m, index) => (
-          <Link to={m.link} key={index}>
-            <div ref={refs[index]}>
-              <Card
-                thumSrc={m.thum}
-                title={m.title}
-                desc={m.desc}
-                background={m.background}
-              />
-            </div>
-          </Link>
+          <div
+            ref={refs[index]}
+            key={index}
+            onClick={() => useOpenModal(index)}
+          >
+            <Card
+              thumSrc={m.thum}
+              title={m.title}
+              desc={m.desc}
+              background={m.background}
+            />
+          </div>
         ))}
       </Container>
 
       <Container ref={cards2Ref}>
         {mock.slice(3, 6).map((m, index) => (
-          <Link to={m.link} key={index + 3}>
-            <div ref={refs[index + 3]}>
-              <Card
-                thumSrc={m.thum}
-                title={m.title}
-                desc={m.desc}
-                background={m.background}
-              />
-            </div>
-          </Link>
+          <div
+            ref={refs[index + 3]}
+            key={index + 3}
+            onClick={() => useOpenModal(index + 3)}
+          >
+            <Card
+              thumSrc={m.thum}
+              title={m.title}
+              desc={m.desc}
+              background={m.background}
+            />
+          </div>
         ))}
       </Container>
+      <Modal
+        onClose={() => setOpenModal(false)}
+        open={openModal}
+        text={modalData!.text}
+        link={modalData!.link}
+      />
     </Wrapper>
   );
 };
@@ -194,7 +233,9 @@ const Wrapper = styled.div`
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
+      height: auto;
+      padding-bottom: 4rem;
     }
   }
 `;
@@ -210,7 +251,7 @@ const Container = styled.div`
   gap: 3rem;
 
   width: 100%;
-  min-height: 30vh;
+  min-height: 31vh;
 
   @media (max-width: 900px) {
     margin-top: 2rem;

@@ -1,4 +1,14 @@
 import styled from "styled-components";
+import { Document, Page } from "react-pdf/dist/esm/entry.vite";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
+import Loading from "../../components/shared/Loading/Loading";
+import Error from "../../components/shared/Error/Error";
+import Services from "../home/services/services";
+import engineerIn from "../../assets/pdf/services/Engineering&EnergyInsurance.pdf";
+import fireIn from "../../assets/pdf/services/FireInsurance.pdf";
+import marineIn from "../../assets/pdf/services/MarineInsurance.pdf";
+import personalIn from "../../assets/pdf/services/PersonalInsurance.pdf";
 
 import path_img from "../../assets/images/services/طراحی و راهبری قراردادهای اتکایی.jpg";
 import engineering_img from "../../assets/images/services/پوشش اتکایی بیمه های مهندسی و انرژی.jpg";
@@ -9,7 +19,7 @@ import international_img from "../../assets/images/services/پوشش های ات
 import consult_img from "../../assets/images/services/خدمات مشاوره اتکایی.jpg";
 
 import texts from "../../assets/texts/services.json";
-import Services from "../home/services/services";
+import { useState } from "react";
 
 const data = [
   {
@@ -27,26 +37,26 @@ const data = [
   {
     pic: engineering_img,
     title: "پوشش اتکایی بیمه های مهندسی و انرژی",
-    desc: texts.engineering,
     state: "engineering",
+    detail: engineerIn,
   },
   {
     pic: transport_img,
     title: "پوشش اتکایی بیمه های باربری، کشتی و هواپیما",
-    desc: texts.transport,
     state: "transport",
+    detail: marineIn,
   },
   {
     pic: fire_img,
     title: "پوشش اتکایی بیمه های آتش سوزی",
-    desc: texts.fire,
     state: "fire",
+    detail: fireIn,
   },
   {
     pic: person_img,
     title: "پوشش اتکایی بیمه های اشخاص",
-    desc: texts.person,
     state: "person",
+    detail: personalIn,
   },
   {
     pic: international_img,
@@ -68,6 +78,26 @@ interface serviceI {
 
 const Service: React.FC<serviceI> = ({ state }) => {
   const item = data.find((x) => x.state === state);
+
+  const [numPages, setNumPages] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const onDocumentLoadSuccess = (pdf: any): any => {
+    setNumPages(pdf?.numPages);
+  };
+
+  const nextPage = () => {
+    if (pageNumber < numPages) {
+      setPageNumber(pageNumber + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1);
+    }
+  };
+
   return (
     <Wrapper>
       {item!.state === "services" ? (
@@ -79,6 +109,48 @@ const Service: React.FC<serviceI> = ({ state }) => {
             <BannerTitle>خدمات</BannerTitle>
             <BannerDescription>{item!.title}</BannerDescription>
           </BannerContainer>
+          {item!.detail ? (
+            <DescriptionContainer>
+              <PDFWrapper>
+                <Document
+                  file={item!.detail}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  renderMode="canvas"
+                  loading={<Loading />}
+                  error={
+                    <Error persianMessage="متاسفانه فایل مورد نظر بارگزاری نشد..." />
+                  }
+                  noData={
+                    <Error persianMessage="متاسفانه فایل مورد نظر یافت نشد..." />
+                  }
+                >
+                  <Page pageNumber={pageNumber} renderTextLayer={false}></Page>
+                </Document>
+              </PDFWrapper>
+
+              {numPages === 1 || numPages === 0 ? (
+                <></>
+              ) : (
+                <PageChanger>
+                  <div className="pagination">
+                    <ul>
+                      <li onClick={nextPage}>
+                        <div></div>
+                      </li>
+                      <li>
+                        <div>{pageNumber}</div>
+                      </li>
+                      <li onClick={prevPage}>
+                        <div></div>
+                      </li>
+                    </ul>
+                  </div>
+                </PageChanger>
+              )}
+            </DescriptionContainer>
+          ) : (
+            <></>
+          )}
 
           <div className="description-wrapper">
             <p className="description">{item!.desc}</p>
@@ -158,5 +230,121 @@ const BannerDescription = styled.h2`
   @media (max-width: 900px) {
     font-size: 2rem;
     top: calc(60% - 1rem);
+  }
+`;
+
+const DescriptionContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PDFWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ebebebaf;
+  Document {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    Page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: calc(100% - 2em);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+      margin: 1em;
+      &canvas {
+        max-width: calc(80vw - 16px);
+        height: auto !important;
+      }
+    }
+  }
+`;
+
+const PageChanger = styled.div`
+  width: 14rem;
+  background: #f0f0f0;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  height: 4.5rem;
+
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  ul {
+    width: 100%;
+    list-style: none;
+    display: inline;
+    padding-left: 0px;
+
+    li {
+      list-style: none;
+      display: none;
+      padding-left: 0px;
+      div {
+        text-decoration: none;
+        color: black;
+
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+      }
+      &:hover {
+        div {
+          color: #f0f0f0;
+          background-color: #1d1f20;
+          border: solid 1px #1d1f20;
+        }
+      }
+
+      &:first-child {
+        display: inline;
+        float: left;
+        div {
+          &:after {
+            content: "بعدی";
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        display: inline;
+
+        div {
+          color: #f0f0f0;
+          background-color: #1d1f20;
+          border: solid 1px #1d1f20;
+          cursor: default;
+        }
+      }
+
+      &:last-child {
+        display: inline;
+        float: right;
+        div {
+          &:after {
+            content: "قبلی";
+          }
+        }
+      }
+
+      div {
+        border: solid 1px #f0f0f0;
+        border-radius: 0.2rem;
+        color: #222222;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        padding: 0.5rem 0.9rem;
+      }
+    }
   }
 `;

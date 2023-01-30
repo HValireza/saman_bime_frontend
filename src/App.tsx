@@ -194,7 +194,11 @@ function App() {
           {/* Post Pages */}
           <Route path="post/:id" element={<PostPage />} />
           {/* contact us */}
-          <Route path="contact-us" element={<ContactUsPage />} />
+          <Route path="contact-us" element={<ContactUsPage state="us" />} />
+          <Route
+            path="contact-share"
+            element={<ContactUsPage state="share" />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

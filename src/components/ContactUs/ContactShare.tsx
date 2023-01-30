@@ -15,7 +15,12 @@ interface IContactUs {
   description: string;
   data: IContactData[];
 }
-const ContactUs: React.FC<IContactUs> = ({ pic, title, description, data }) => {
+const ContactShare: React.FC<IContactUs> = ({
+  pic,
+  title,
+  description,
+  data,
+}) => {
   return (
     <Container>
       <BannerContainer>
@@ -25,6 +30,41 @@ const ContactUs: React.FC<IContactUs> = ({ pic, title, description, data }) => {
       </BannerContainer>
 
       <InfoContainer>
+        <InfoBox>
+          <InfoText>
+            از کلیه سهامداران محترم خواهشمندیم در سامانه پرتال سهامداران به آدرس
+            زیر ثبت نام نمایند تا از خدمات آن بهره‌مند شوند:
+          </InfoText>
+        </InfoBox>
+
+        <LittleInfoBox>
+          <Dot></Dot>
+          <InfoText>
+            بازدید از آخرین اخبار و اطلاعیه‌های شرکت بیمه اتکایی سامان
+          </InfoText>
+        </LittleInfoBox>
+        <LittleInfoBox>
+          <Dot></Dot>
+          <InfoText>مشاهده لحظه‌ای و آنلاین لیست دارایی</InfoText>
+        </LittleInfoBox>
+        <LittleInfoBox>
+          <Dot></Dot>
+          <InfoText>ارتباط مستقیم با امور سهام</InfoText>
+        </LittleInfoBox>
+        <LittleInfoBox>
+          <Dot></Dot>
+          <InfoText>اعلام انتقادات و پیشنهادات</InfoText>
+        </LittleInfoBox>
+
+        <InfoBox>
+          <InfoButton
+            href="https://stockapp.samanre.com/login?lastUrl=%2Fhome"
+            target="blank"
+          >
+            ورود به سامانه سهامداران شرکت بیمه اتکایی سامان
+          </InfoButton>
+        </InfoBox>
+
         {data.map((d) => (
           <InfoBox>
             <InfoTitle>{d.title}</InfoTitle>
@@ -48,7 +88,7 @@ const ContactUs: React.FC<IContactUs> = ({ pic, title, description, data }) => {
   );
 };
 
-export default ContactUs;
+export default ContactShare;
 
 const Container = styled.div`
   width: 100%;

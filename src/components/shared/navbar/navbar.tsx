@@ -7,7 +7,11 @@ import contactVector from "../../../assets/images/vectors/contact.svg";
 
 const Navbar = () => {
   const services = [
-    { title: "خدمات بیمه‌های اتکایی", path: "/services/services", bold: true },
+    {
+      title: "خدمات بیمه‌های اتکایی",
+      path: "/services/services",
+      bold: true,
+    },
     { title: "طراحی و راهبری قراردادهای اتکایی", path: "/services/path" },
     {
       title: "پوشش اتکایی بیمه‌های مهندسی و انرژی",
@@ -17,9 +21,18 @@ const Navbar = () => {
       title: "پوشش اتکایی بیمه‌های باربری، کشتی و هواپیما",
       path: "/services/transport",
     },
-    { title: "پوشش اتکایی بیمه‌های آتش‌سوزی", path: "/services/fire" },
-    { title: "پوشش اتکایی بیمه‌های اشخاص", path: "/services/person" },
-    { title: "پوشش‌های اتکایی بین‌المللی", path: "/services/international" },
+    {
+      title: "پوشش اتکایی بیمه‌های آتش‌سوزی",
+      path: "/services/fire",
+    },
+    {
+      title: "پوشش اتکایی بیمه‌های اشخاص",
+      path: "/services/person",
+    },
+    {
+      title: "پوشش‌های اتکایی بین‌المللی",
+      path: "/services/international",
+    },
     { title: "خدمات مشاوره اتکایی", path: "/services/consult", bold: true },
   ];
 
@@ -33,8 +46,16 @@ const Navbar = () => {
 
   const affairs = [
     { title: "اخبار و اطلاعیه", path: "/news/share", bold: true },
-    { title: "صورت‌های مالی", path: "/news/finance", bold: true },
-    { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations", bold: true },
+    {
+      title: "صورت‌های مالی",
+      path: "/news/finance",
+      bold: true,
+    },
+    {
+      title: "آگهی‌های دعوت به مجمع",
+      path: "/news/invitations",
+      bold: true,
+    },
     { title: "کدال شرکت بیمه اتکایی سامان", path: links.codal, bold: true },
     {
       title: "شرکت بیمه اتکایی سامان در TSETMC",
@@ -43,7 +64,7 @@ const Navbar = () => {
     },
     { title: "ترکیب سهامداران", path: "/about/structure", bold: true },
     { title: "پرتال سهامداران", path: links.portal, bold: true },
-    { title: "تماس با امور سهام", path: "/contact-us", bold: true },
+    { title: "تماس با امور سهام", path: "/contact-share", bold: true },
     { title: "مجامع", path: "/news/constituent", bold: true },
   ];
 
@@ -65,10 +86,21 @@ const Navbar = () => {
       path: "/about/goals",
       bold: true,
     },
-    { title: "رهنمود ارزش‌های بنیادی", path: "/about/avail", bold: true },
+    {
+      title: "رهنمود ارزش‌های بنیادی",
+      path: "/about/avail",
+      bold: true,
+    },
     { title: " ارزش‌های محوری", path: "/about/avail" },
-    { title: " بیانیه مأموریت و جهان‌بینی", path: "/about/worldview" },
-    { title: "‌هیئت مدیره", path: "/about/board-member", bold: true },
+    {
+      title: " بیانیه مأموریت و جهان‌بینی",
+      path: "/about/worldview",
+    },
+    {
+      title: "‌هیئت مدیره",
+      path: "/about/board-member",
+      bold: true,
+    },
     { title: "مدیران", path: "/about/managers", bold: true },
     { title: "نمودار سازمانی", path: "/about/org-chart", bold: true },
     { title: "ساختار سهامداران", path: "/about/structure", bold: true },
@@ -76,7 +108,7 @@ const Navbar = () => {
   ];
 
   const contact = [
-    { title: "نشانی و مشخصات دفتر مرکزی", path: "/news/company", bold: true },
+    { title: "نشانی و مشخصات دفتر مرکزی", path: "/contact-us", bold: true },
     { title: "دعوت به همکاری", path: "/news/insurance", bold: true },
   ];
 

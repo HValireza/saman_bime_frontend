@@ -24,6 +24,24 @@
       font-weight: 300;
       position: relative;
 
+      .modal-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        width: auto;
+        height: auto;
+        cursor: pointer;
+
+        .modal-svg{
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: auto;
+          height: auto;
+        }
+      }
+
       p {
         color: black;
         font-size: 18px;
@@ -31,20 +49,17 @@
 
         padding: 1rem 0.5rem;
       }
-      .modal-svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 3px;
-        rect {
-          stroke: #fff;
-          stroke-width: 2px;
-          stroke-dasharray: 778;
-          stroke-dashoffset: 778;
+      .modal-read-more{
+        border: none;
+        outline: none;
+        text-decoration: none;
+        color: black;
+        transition: all 0.5s ease-in-out;
+        :hover{
+          color: rgb(35, 35, 35);
         }
       }
+
     }
   }
 
@@ -64,10 +79,8 @@
             cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
         .modal-svg {
-          rect {
             animation: sketchIn 0.5s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)
               forwards;
-          }
         }
       }
     }
@@ -84,10 +97,8 @@
               cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
           }
           .modal-svg {
-            rect {
               animation: sketchOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
                 forwards;
-            }
           }
         }
       }

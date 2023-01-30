@@ -16,6 +16,7 @@ import what_pdf from "../../assets/pdf/what.pdf";
 import introduction_pdf from "../../assets/pdf/intrudoction.pdf";
 import importance_pdf from "../../assets/pdf/importance.pdf";
 import pros_pdf from "../../assets/pdf/pros.pdf";
+import goal_details from "../../assets/pdf/goalsDetail.pdf";
 
 export interface IAboutData {
   state: string;
@@ -39,9 +40,9 @@ const About: React.FC<IAboutProps> = ({ state }) => {
     },
     {
       state: "goals",
-      description: Texts.goals,
       pic: Goals,
       title: "اهداف راهبردی، مأموریت و چشم‌انداز",
+      detail: goal_details,
     },
     {
       state: "avail",
