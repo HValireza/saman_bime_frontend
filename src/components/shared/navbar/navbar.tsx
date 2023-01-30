@@ -174,7 +174,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: 72rem;
+  width: 95%;
 
   direction: rtl;
 
