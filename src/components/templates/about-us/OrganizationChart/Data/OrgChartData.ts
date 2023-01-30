@@ -15,7 +15,6 @@ const OrgChartData = [
     title: "درباره ما",
     subject: "نمودار سازمانی",
     detail: chart,
-    banner: organizationImg,
   },
   {
     state: "registration",

@@ -33,11 +33,26 @@ const OrganizationChart: React.FC<IChart> = ({ state }) => {
   };
   return (
     <Container>
-      <BannerContainer>
-        <Banner src={chart?.banner} alt={chart?.subject} />
-        <BannerTitle>{chart?.title}</BannerTitle>
-        <BannerDescription>{chart?.subject}</BannerDescription>
-      </BannerContainer>
+      {chart?.banner ? (
+        <BannerContainer>
+          <Banner src={chart?.banner} alt={chart?.subject} />
+          <BannerTitle>{chart?.title}</BannerTitle>
+          <BannerDescription>{chart?.subject}</BannerDescription>
+        </BannerContainer>
+      ) : (
+        <>
+          <Title>
+            <PrevLine></PrevLine>
+            {chart?.title}
+            <AfterLine></AfterLine>
+          </Title>
+          <Subject>
+            <PrevLine></PrevLine>
+            {chart?.subject}
+            <AfterLine></AfterLine>
+          </Subject>
+        </>
+      )}
 
       <DescriptionContainer>
         <PDFWrapper>
@@ -135,6 +150,61 @@ const BannerDescription = styled.h2`
     font-size: 2rem;
     top: calc(60% - 1rem);
   }
+`;
+
+const Title = styled.h1`
+  font-family: "BRoyaBold";
+  font-size: 32px;
+  padding: 2rem;
+  min-width: 4rem;
+  width: 100%;
+  max-width: 100rem;
+
+  color: black;
+  line-height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Subject = styled.h2`
+  font-family: "BRoyaBold";
+  font-size: 22px;
+  padding: 0rem 3rem;
+  color: black;
+  line-height: 32px;
+  min-width: 4rem;
+  width: 100%;
+  max-width: 100rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PrevLine = styled.div`
+  width: 100px;
+  height: 2px;
+  margin-left: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(41, 41, 62, 1) 0%,
+    rgba(41, 41, 62, 0.8) 65%,
+    rgba(41, 41, 62, 0) 100%
+  );
+`;
+
+const AfterLine = styled.div`
+  width: 100px;
+  height: 2px;
+  margin-right: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(41, 41, 62, 0) 0%,
+    rgba(41, 41, 62, 0.8) 35%,
+    rgba(41, 41, 62, 1) 100%
+  );
 `;
 
 const DescriptionContainer = styled.div`
