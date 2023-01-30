@@ -5,7 +5,7 @@ import pic2 from "/src/assets/images/2.jpg";
 import pic3 from "/src/assets/images/3.jpg";
 import pic4 from "/src/assets/images/4.jpg";
 import pic5 from "/src/assets/images/5.jpg";
-import logo1 from "/src/assets/images/logo1.png";
+import logo1 from "/src/assets/images/logo2.png";
 
 interface IPic {
   src: string;
@@ -91,10 +91,12 @@ const Wrapper = styled.div`
 
   .logo {
     position: fixed;
-    width: 13rem;
-    top: 2rem;
+    width: 23rem;
+    height: auto;
+    top: -2rem;
     left: 3rem;
     transition: all 300ms ease-in-out;
+    /* background-color: white; */
 
     :hover {
       filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
