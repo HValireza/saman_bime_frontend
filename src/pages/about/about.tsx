@@ -63,7 +63,7 @@ const About: React.FC<IAboutProps> = ({ state }) => {
     {
       state: "statute",
       pic: statute_img,
-      title: "اساس نامه",
+      title: "اساسنامه",
       detail: statue_pdf,
     },
     {
