@@ -100,7 +100,7 @@ function App() {
 
             <Route
               path="invitations"
-              element={<News state={NewsEnum.ARTICLE} />}
+              element={<News state={NewsEnum.INVITATIONS} />}
             />
 
             <Route
