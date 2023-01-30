@@ -36,9 +36,9 @@ export default Article;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 6rem);
 
-  margin-top: 8rem;
+  margin-top: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -53,6 +53,7 @@ const Wrapper = styled.div`
   @media (max-width: 900px) {
     padding: 0;
     height: calc(100vh - 7rem);
+    margin-top: 20rem;
   }
 `;
 

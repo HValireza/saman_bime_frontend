@@ -17,11 +17,7 @@ const Reinsurance = () => {
   return (
     <Wrapper>
       {titles.map((title, index) => (
-        <Card
-          onClick={() => setCurrnetIndex(index)}
-          left={Boolean(index % 2)}
-          key={index}
-        >
+        <Card onClick={() => setCurrnetIndex(index)} left={false} key={index}>
           <Arrow left={Boolean(index % 2)}>{title}</Arrow>
         </Card>
       ))}
@@ -35,15 +31,16 @@ export default Reinsurance;
 
 const Wrapper = styled.div`
   @media (max-width: 900px) {
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     gap: 5px;
-    padding: 8.5rem 0 3rem 0;
+    padding: 3.5rem 0 3rem 0;
+    height: 135vh;
   }
 
   width: 100%;
   height: 100vh;
-  padding: 8.5rem 0 1.5rem 0;
+  padding: 3.5rem 0 1.5rem 0;
 
   position: relative;
 
@@ -79,27 +76,17 @@ interface ArrowProps {
 }
 
 const Card = styled.div<ArrowProps>`
-  @media (max-width: 900px) {
-    width: 90%;
-  }
-
   width: 100%;
 
   display: flex;
-  justify-content: ${(p) => (p.left ? "start" : "end")};
+  justify-content: end;
 `;
 
 const Arrow = styled.div<ArrowProps>`
   @media (max-width: 900px) {
-    width: 90%;
+    width: 85%;
     height: unset;
     padding: 0.5rem 0;
-    border-radius: 1rem;
-    box-shadow: 2px 1px 8px rgba(0, 0, 0, 0.4);
-
-    :hover {
-      transform: scale(1.03);
-    }
   }
 
   width: 18%;
@@ -129,7 +116,8 @@ const Arrow = styled.div<ArrowProps>`
 
   ::after {
     @media (max-width: 900px) {
-      display: none;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
     }
 
     content: "";
@@ -142,7 +130,7 @@ const Arrow = styled.div<ArrowProps>`
 
     ${(p) =>
       p.left
-        ? "border-right: 7vw solid #d3d3d2;right: 100%;"
+        ? "border-left: 7vw solid #d3d3d2;left: 100%;"
         : "border-left: 7vw solid #2B3467; left: 100%;"}
   }
 `;
