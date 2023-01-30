@@ -4,34 +4,34 @@ interface CardPropsI {
   thumSrc: string;
   title: string;
   desc: string;
+  background?: string;
 }
 
-const Card = ({ thumSrc, title, desc }: CardPropsI) => {
+const Card = ({ thumSrc, title, background }: CardPropsI) => {
   return (
-    <Wrapper>
+    <Wrapper background={background}>
       <Thumbnail src={thumSrc} />
-
       <Title>{title}</Title>
-
-      <Desc>{desc}</Desc>
     </Wrapper>
   );
 };
 
 export default Card;
 
-const Wrapper = styled.div`
-  width: 20rem;
-  height: 30vh;
+const Wrapper = styled.div<any>`
+  width: 13rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 
-  background-color: white;
+  background-color: ${(props) =>
+    props.background ? props.background : "white"};
   opacity: 0.9;
   border-radius: 10px;
-  color: black;
+  color: #ffffff;
 
   overflow: hidden;
 
@@ -49,20 +49,15 @@ const Wrapper = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  height: 55%;
-  width: 20rem;
+  height: 65%;
+  width: auto;
   object-fit: contain;
 `;
 
 const Title = styled.h3`
+  width: 13rem;
+  text-align: center;
   font-size: 1.2rem;
   font-family: "BRoyaBold";
-`;
-
-const Desc = styled.p`
-  width: 20rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  text-align: justify;
-  line-height: 1.5rem;
+  color: #bbbbbb;
 `;
