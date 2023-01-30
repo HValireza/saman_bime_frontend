@@ -1,5 +1,3 @@
-import { useRef } from "react";
-import useScrollSnap from "react-use-scroll-snap";
 import styled from "styled-components";
 import Hero from "./hero/hero";
 import Partners from "./partners/partners";
@@ -8,22 +6,8 @@ import Reinsurance from "./reinsurance/reinsurance";
 import Services from "./services/services";
 
 function Home() {
-  const scrollRef = useRef(null);
-  if (window.matchMedia("(min-width: 901px)").matches) {
-    useScrollSnap({ ref: scrollRef });
-  }
-
-  const height = window.innerHeight;
-  const triggerHandler = (num: number) => {
-    window.scrollTo({
-      left: 0,
-      top: num * height,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <Wrapper ref={scrollRef}>
+    <Wrapper>
       <Hero />
 
       <Reinsurance />
@@ -33,12 +17,6 @@ function Home() {
       <Recently />
 
       <Partners />
-
-      <ScrollTrigger>
-        {[0, 1, 2, 3, 4].map((num) => (
-          <button id={"num" + num} onClick={() => triggerHandler(num)} />
-        ))}
-      </ScrollTrigger>
     </Wrapper>
   );
 }
