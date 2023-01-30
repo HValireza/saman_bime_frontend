@@ -1,5 +1,6 @@
 import {
   faInstagram,
+  faLinkedin,
   faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -32,8 +33,8 @@ function Footer() {
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </SocialIcon>
 
-            <SocialIcon href="#">
-              <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
+            <SocialIcon href="https://www.linkedin.com/company/saman-re">
+              <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
             </SocialIcon>
 
             <SocialIcon href="#">
