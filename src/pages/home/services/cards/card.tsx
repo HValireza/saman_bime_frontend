@@ -19,8 +19,8 @@ const Card = ({ thumSrc, title, background }: CardPropsI) => {
 export default Card;
 
 const Wrapper = styled.div<any>`
-  width: 13rem;
-  height: 13rem;
+  width: 20rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@ const Wrapper = styled.div<any>`
     props.background ? props.background : "white"};
   opacity: 0.9;
   border-radius: 10px;
-  padding: 3rem 1rem;
+  padding: 3rem 3rem;
   color: #ffffff;
 
   overflow: hidden;
@@ -60,5 +60,6 @@ const Title = styled.h3`
   text-align: center;
   font-size: 1.2rem;
   font-family: "BRoyaBold";
-  color: #bbbbbb;
+  color: #f1f1f1;
+  padding-top: 1.5rem;
 `;
