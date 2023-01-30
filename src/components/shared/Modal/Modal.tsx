@@ -5,9 +5,11 @@ interface IModal {
   text: string;
   onClose: any;
   open: boolean;
+  width?: string;
+  height?: string;
 }
 
-const Modal: React.FC<IModal> = ({ text, onClose, open }) => {
+const Modal: React.FC<IModal> = ({ text, onClose, open, height, width }) => {
   return (
     <div id="modal-container" className={open ? "six" : "six out"}>
       <div className="modal-background" onClick={onClose}>
@@ -24,8 +26,8 @@ const Modal: React.FC<IModal> = ({ text, onClose, open }) => {
               x="0"
               y="0"
               fill="none"
-              width="526"
-              height="362"
+              width={width ? width : "526"}
+              height={height ? height : "362"}
               rx="3"
               ry="3"
             ></rect>
