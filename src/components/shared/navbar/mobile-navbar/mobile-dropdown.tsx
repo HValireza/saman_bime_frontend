@@ -91,7 +91,7 @@ const Items = styled.ul`
   }
 
   .bolded {
-    font-size: 1.25rem;
+    font-size: 1.55rem;
     font-family: "BRoyaBold";
   }
 `;

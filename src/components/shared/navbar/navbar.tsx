@@ -31,22 +31,26 @@ const Navbar = () => {
   };
 
   const affairs = [
-    { title: "اخبار و اطلاعیه", path: "/news/share" },
-    { title: "صورت‌های مالی", path: "/news/finance" },
-    { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations" },
-    { title: "کدال شرکت بیمه اتکایی سامان", path: links.codal },
-    { title: "شرکت بیمه اتکایی سامان در TSETMC", path: links.tsetmc },
-    { title: "ترکیب سهامداران", path: "/about/structure" },
-    { title: "پرتال سهامداران", path: links.portal },
-    { title: "تماس با امور سهام", path: "/contact-us" },
-    { title: "مجامع", path: "/news/constituent" },
+    { title: "اخبار و اطلاعیه", path: "/news/share", bold: true },
+    { title: "صورت‌های مالی", path: "/news/finance", bold: true },
+    { title: "آگهی‌های دعوت به مجمع", path: "/news/invitations", bold: true },
+    { title: "کدال شرکت بیمه اتکایی سامان", path: links.codal, bold: true },
+    {
+      title: "شرکت بیمه اتکایی سامان در TSETMC",
+      path: links.tsetmc,
+      bold: true,
+    },
+    { title: "ترکیب سهامداران", path: "/about/structure", bold: true },
+    { title: "پرتال سهامداران", path: links.portal, bold: true },
+    { title: "تماس با امور سهام", path: "/contact-us", bold: true },
+    { title: "مجامع", path: "/news/constituent", bold: true },
   ];
 
   const media = [
-    { title: "اخبار شرکت", path: "/news/company" },
-    { title: "اخبار صنعت بیمه", path: "/news/insurance" },
-    { title: "انتشارات", path: "/news/article" },
-    { title: "همایش آموزش", path: "/news/learning" },
+    { title: "اخبار شرکت", path: "/news/company", bold: true },
+    { title: "اخبار صنعت بیمه", path: "/news/insurance", bold: true },
+    { title: "انتشارات", path: "/news/article", bold: true },
+    { title: "همایش آموزش", path: "/news/learning", bold: true },
   ];
 
   const about = [
@@ -67,7 +71,7 @@ const Navbar = () => {
     { title: "مدیران", path: "/about/managers", bold: true },
     { title: "نمودار سازمانی", path: "/about/org-chart", bold: true },
     { title: "ساختار سهامداران", path: "/about/structure", bold: true },
-    { title: "اساسنامه", path: "/news/company", bold: true },
+    { title: "اساسنامه", path: "/about/statute", bold: true },
   ];
 
   return (

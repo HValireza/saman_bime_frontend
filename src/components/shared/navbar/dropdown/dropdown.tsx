@@ -44,7 +44,7 @@ export default DropDown;
 const Wrapper = styled.div`
   display: flex;
 
-  width: 35vw;
+  width: 47rem;
   min-width: 40rem;
   height: 0;
   background-color: white;
@@ -102,7 +102,7 @@ const Items = styled.ul`
   }
 
   .bolded {
-    font-size: 1.25rem;
+    font-size: 1.55rem;
     font-family: "BRoyaBold";
   }
 `;
