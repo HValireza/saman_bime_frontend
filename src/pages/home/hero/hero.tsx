@@ -97,14 +97,16 @@ const Wrapper = styled.div`
     left: 3rem;
     transition: all 300ms ease-in-out;
     /* background-color: white; */
+    @media (max-width: 900px) {
+      width: 12rem;
+      height: auto;
+      top: -1rem;
+      left: 2rem;
+    }
 
     :hover {
       filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
       transform: scale(1.03);
-    }
-
-    @media (max-width: 900px) {
-      width: 8rem;
     }
   }
 `;
