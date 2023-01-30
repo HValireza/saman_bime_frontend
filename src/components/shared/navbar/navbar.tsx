@@ -70,15 +70,6 @@ const Navbar = () => {
     { title: "اساسنامه", path: "/news/company", bold: true },
   ];
 
-  //* sticky navbar
-  // let prevScrollpos = window.pageYOffset;
-  // window.onscroll = () => {
-  //   let nav: any = document.getElementById("navbar");
-  //   let currentScrollpos = window.pageYOffset;
-  //   nav.style.top = prevScrollpos > currentScrollpos ? "-0.2rem" : "-4rem";
-  //   prevScrollpos = currentScrollpos;
-  // };
-
   return (
     <Wrapper>
       <Container>
@@ -156,7 +147,7 @@ const Wrapper = styled.header`
   background-color: white;
   opacity: 0.96;
 
-  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 10px 10px #33333342;
 
   z-index: 10;
   position: fixed;
