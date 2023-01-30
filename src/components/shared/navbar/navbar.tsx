@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../../../assets/images/logo1.png";
 import DropDown from "./dropdown/dropdown";
 import MobaileNavbar from "./mobile-navbar/mobaile-navbar";
+import contactVector from "../../../assets/images/vectors/contact.svg";
 
 const Navbar = () => {
   const services = [
@@ -74,6 +75,11 @@ const Navbar = () => {
     { title: "اساسنامه", path: "/about/statute", bold: true },
   ];
 
+  const contact = [
+    { title: "نشانی و مشخصات دفتر مرکزی", path: "/news/company", bold: true },
+    { title: "دعوت به همکاری", path: "/news/insurance", bold: true },
+  ];
+
   return (
     <Wrapper>
       <Container>
@@ -126,9 +132,10 @@ const Navbar = () => {
             />
           </Item>
 
-          <Link to={"/contact-us"}>
-            <Item>تماس با ما</Item>
-          </Link>
+          <Item id="drop-down">
+            تماس با ما
+            <DropDown links={contact} vector={contactVector} />
+          </Item>
         </Items>
 
         <Tools />
