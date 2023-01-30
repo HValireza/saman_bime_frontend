@@ -31,6 +31,7 @@ const Wrapper = styled.div<any>`
     props.background ? props.background : "white"};
   opacity: 0.9;
   border-radius: 10px;
+  padding: 3rem 1rem;
   color: #ffffff;
 
   overflow: hidden;
