@@ -1,0 +1,25 @@
+@import "./styles/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &:before {
+    box-sizing: border-box;
+  }
+
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-family: 'B Roya', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: $default-font-size;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
