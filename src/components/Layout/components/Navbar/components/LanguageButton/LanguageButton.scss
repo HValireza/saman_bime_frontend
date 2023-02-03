@@ -2,11 +2,11 @@
 
 .si-language-container{
   position: fixed;
-  top:5px;
-  left: 12px;
-  width: 18px;
-  height: 18px;
-  z-index: 500;
+  top: $navbar-icon-top;
+  left: $navbar-first-icon-left;
+  width: $navbar-icon-size;
+  height: $navbar-icon-size;
+  z-index: $navbar-items-z-index;
   
   .si-language-flag{
     height: 100%;
