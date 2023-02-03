@@ -1,0 +1,20 @@
+// importing font
+
+@font-face {
+    font-family: 'B Roya';
+    src: url(/fonts/B\ Roya_0.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'B Roya Bold';
+    src: url(/fonts/B\ Roya\ Bold_0.ttf) format('truetype');
+}
+
+// font sizes 
+
+$default-font-size: 14px;
+
+
+// language preset
+
+$direction:rtl;
