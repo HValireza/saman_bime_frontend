@@ -5,11 +5,13 @@ $ultra-small-space: 1px;
 $minimal-space: 2px;
 $small-space: 5px;
 $medium-space: 0.5rem;
+$big-space: 1rem;
 $large-space: 2rem;
 
 // radius
 $ultra-small-radius: 2px;
 $small-radius: 0.5rem;
+$medium-radius: 10px;
 $circle-radius: 50%;
 
 // z index
@@ -18,6 +20,9 @@ $navbar-items-z-index: 100;
 $burger-drop-z-index: 150;
 $burger-z-index: 200;
 $modal-z-index: 250;
+
+// shadow
+$search-shadow: 0 0 0 3px $lighten-gray;
 
 // animations:
 $fast-animation: 300ms;
@@ -47,3 +52,15 @@ $dropdown-item-height: 3.12rem;
 $dropdown-item-width: 3rem;
 $dropdown-icon-button-size: 1.875rem;
 $dropdown-icon-button-svg: 1.25rem;
+
+// navbar
+$navbar-icon-size: 18px;
+$navbar-icon-top: 5px;
+$navbar-first-icon-left: 12px;
+$navbar-second-icon-left: 38px;
+$navbar-search-width: 12.5rem;
+$navbar-search-icon-top: 0.5rem;
+$navbar-search-icon-left: 41px;
+$navbar-search-icon-size: 0.75rem;
+
+
