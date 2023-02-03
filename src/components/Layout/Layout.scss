@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+@import "../../styles/sizes";
+
+.si-layout-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 300vh;
+  height: auto;
+  padding-top: $navbar-height;
+
+  background: $background-color;
+}
