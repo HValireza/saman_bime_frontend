@@ -4,13 +4,18 @@ import LanguageButton from "./components/LanguageButton/LanguageButton";
 import SearchButton from "./components/SearchButton/SearchButton";
 import "./Navbar.scss";
 
-const Navbar: React.FC = () => {
+interface INavbar {
+  setLanguage: (language: string) => void;
+  language: string;
+}
+
+const Navbar: React.FC<INavbar> = ({ language, setLanguage }) => {
   return (
     <div className="si-navbar-container">
       <Header />
       <Burger />
       <SearchButton />
-      <LanguageButton />
+      <LanguageButton setLanguage={setLanguage} language={language} />
     </div>
   );
 };
