@@ -1,0 +1,49 @@
+@import "./colors";
+
+// spacings
+$ultra-small-space: 1px;
+$minimal-space: 2px;
+$small-space: 5px;
+$medium-space: 0.5rem;
+$large-space: 2rem;
+
+// radius
+$ultra-small-radius: 2px;
+$small-radius: 0.5rem;
+$circle-radius: 50%;
+
+// z index
+$navbar-z-index: 50;
+$navbar-items-z-index: 100;
+$burger-drop-z-index: 150;
+$burger-z-index: 200;
+$modal-z-index: 250;
+
+// animations:
+$fast-animation: 300ms;
+$normal-animation: 500ms;
+
+// border
+$navbar-border:1px solid $gray-color;
+
+// navbar
+$navbar-height: 1.75rem;
+$navbar-right-header-height: 1.5rem;
+$navbar-right-header-width: 25%;
+$navbar-right-triangle-width: 0.4rem;
+$navbar-left-header-width: 75%;
+$navbar-left-triangle-width: 0.5rem;
+
+// burger
+$burger-height: 1rem;
+$burger-width: 1rem;
+$burger-line-width: 1rem;
+$burger-line-height: 2px;
+$burger-animation-y:4px;
+$burger-animation-y-negative:-4px;
+
+// dropdown
+$dropdown-item-height: 3.12rem;
+$dropdown-item-width: 3rem;
+$dropdown-icon-button-size: 1.875rem;
+$dropdown-icon-button-svg: 1.25rem;
