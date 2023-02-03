@@ -1,0 +1,15 @@
+@import '../../../../../../styles/sizes';
+
+.si-language-container{
+  position: fixed;
+  top:5px;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  z-index: 500;
+  
+  .si-language-flag{
+    height: 100%;
+    width: auto;
+  }
+}
