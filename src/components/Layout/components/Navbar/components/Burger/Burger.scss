@@ -1,0 +1,124 @@
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/colors';
+
+.si-burger-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: calc(($navbar-right-header-height - $burger-height) / 2 - $ultra-small-space);
+  right: calc(($navbar-right-header-height - $burger-width) / 2);
+  width: $burger-width;
+  height: $burger-height;
+  z-index: $burger-z-index;
+  cursor: pointer;
+
+  .si-burger-line {
+    width: $burger-line-width;
+    height: $burger-line-height;
+    border-radius: $ultra-small-radius;
+    margin-top: $ultra-small-space;
+    background: $primary-color;
+  }
+}
+
+.si-burger-open {
+
+  .si-burger-line-top {
+    animation: slideBottomIn $fast-animation ease-out forwards;
+  }
+
+  .si-burger-line-middle {
+    animation: fadeOut $fast-animation ease-out forwards;
+  }
+
+  .si-burger-line-bottom {
+    animation: slideTopIn $fast-animation ease-out forwards;
+  }
+}
+
+.si-burger-close {
+
+  .si-burger-line-top {
+    animation: slideBottomOut $fast-animation ease-out forwards;
+  }
+
+  .si-burger-line-middle {
+    animation: fadeIn $fast-animation ease-out forwards;
+  }
+
+  .si-burger-line-bottom {
+    animation: slideTopOut $fast-animation ease-out forwards;
+  }
+}
+
+
+
+@keyframes slideBottomIn {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+    background: $primary-color;
+  }
+
+  100% {
+    transform: rotate(45deg) translateY($burger-animation-y);
+    background: $gray-color;
+  }
+}
+
+@keyframes slideTopIn {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+    background: $primary-color;
+  }
+
+  100% {
+    transform: rotate(-45deg) translateY($burger-animation-y-negative);
+    background: $gray-color;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideBottomOut {
+  0% {
+    transform: rotate(45deg) translateY(4px);
+    background: $gray-color;
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0px);
+    background: $primary-color;
+  }
+}
+
+@keyframes slideTopOut {
+  0% {
+    transform: rotate(-45deg) translateY(-4px);
+    background: $gray-color;
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0px);
+    background: $primary-color;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
