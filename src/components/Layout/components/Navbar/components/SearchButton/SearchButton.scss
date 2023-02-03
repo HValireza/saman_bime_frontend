@@ -1,0 +1,49 @@
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/colors';
+
+.si-search-box {
+  position: fixed;
+  left: $navbar-second-icon-left;
+  top: $navbar-icon-top;
+  height: $navbar-icon-size;
+  z-index: $navbar-items-z-index;
+  width: $navbar-icon-size;
+  transition: all $normal-animation ease-out;
+  direction: ltr;
+  border-radius: $medium-radius;
+  border: none;
+  cursor: pointer;
+  background: $secondary-font-color;
+  
+  &:hover {
+    background: $lighten-tertiary-color;
+    box-shadow: $search-shadow;
+  }
+  
+  &:focus {
+    transition: width $fast-animation cubic-bezier(0, 1.22, 0.66, 1.39), border-radius $fast-animation, background $fast-animation;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding-left: $big-space;
+    cursor: text;
+    width: $navbar-search-width;
+    border-radius: auto;
+    background: $secondary-font-color;
+    color: $primary-font-color;
+
+    &:not(:focus){
+      text-indent: -5000px;
+    }
+  }
+
+}
+
+.si-search-icon{
+  position: fixed;
+  top: $navbar-search-icon-top;
+  left: $navbar-search-icon-left;
+  z-index: $navbar-items-z-index;
+  width: $navbar-search-icon-size;
+  height: $navbar-search-icon-size;
+}
