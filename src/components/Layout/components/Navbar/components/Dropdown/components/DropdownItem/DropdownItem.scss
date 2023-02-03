@@ -1,0 +1,65 @@
+@import "../../../../../../../../styles/colors";
+@import "../../../../../../../../styles/sizes";
+
+// todo fix colors and styles
+
+.si-dropdown-item {
+  height: $dropdown-item-height;
+  display: flex;
+  align-items: center;
+  border-radius: $small-radius;
+  transition: background $normal-animation;
+  padding: $medium-space;
+  color: $secondary-font-color;
+  font-family: 'B Roya Bold', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+}
+
+.si-dropdown-item .si-dropdown-icon-button {
+  margin-left: $medium-space;
+}
+
+
+.si-dropdown-item .si-dropdown-icon-button:hover {
+  filter: none;
+}
+
+.si-dropdown-item:hover {
+  background-color: $primary-color;
+}
+
+.si-dropdown-icon-left {
+  margin-left: auto;
+}
+
+.si-dropdown-icon-button {
+  width: $dropdown-icon-button-size;
+  height: $dropdown-icon-button-size;
+  background-color: $darken-gray;
+  border-radius: $circle-radius;
+  padding: $small-space;
+  margin: $minimal-space;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter $fast-animation;
+}
+
+.si-dropdown-icon-button:hover {
+  filter: brightness(1.2);
+}
+
+.si-dropdown-icon-button svg { 
+  fill: $secondary-font-color;
+  width: $dropdown-icon-button-svg;
+  height: $dropdown-icon-button-svg;
+}
+
+.si-dropdown-icon{
+  height: 100%;
+  width: auto;
+}
+
+.si-icon-reverse{
+  transform: rotate(180deg);
+}
