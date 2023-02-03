@@ -1,0 +1,54 @@
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/colors';
+
+.si-header-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $navbar-height;
+  margin: 0;
+  z-index: $navbar-z-index;
+
+  .si-header-right {
+    display: flex;
+    flex-direction: row;
+    height: $navbar-right-header-height;
+    width: $navbar-right-header-width;
+
+    .si-header-right-box {
+      width: 99%;
+      height: $navbar-right-header-height;
+      background-color: $gray-color;
+    }
+
+    .si-header-right-triangle {
+      width: 0;
+      height: 0;
+      border-bottom: $navbar-right-header-height solid $gray-color;
+      border-left: $navbar-right-triangle-width solid transparent;
+    }
+  }
+
+  .si-header-left {
+    display: flex;
+    flex-direction: row-reverse;
+    width: $navbar-left-header-width;
+    height: $navbar-height;
+
+    .si-header-left-triangle {
+      width: 0;
+      height: 0;
+
+      border-top: $navbar-height solid $primary-color;
+      border-right: $navbar-left-triangle-width solid transparent;
+    }
+
+    .si-header-left-box {
+      width: 99%;
+      height: $navbar-height;
+      background: $primary-color;
+    }
+  }
+}
