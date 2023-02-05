@@ -14,7 +14,7 @@ $darken-background-color: darken($background-color, 10%);
 $darken-secondary-color: darken($secondary-color, 10%);
 $darken-error-color: darken($error-color, 10%);
 $darken-tertiary-color: darken($tertiary-color, 10%);
-$darken-gray: darken($gray-color , 10%);
+$darken-gray: darken($gray-color, 10%);
 
 // lighten colors
 
@@ -23,9 +23,18 @@ $lighten-background-color: lighten($background-color, 10%);
 $lighten-secondary-color: lighten($secondary-color, 10%);
 $lighten-error-color: lighten($error-color, 10%);
 $lighten-tertiary-color: lighten($tertiary-color, 10%);
-$lighten-gray: lighten($gray-color , 10%);
+$lighten-gray: lighten($gray-color, 10%);
 
 // font colors
 
 $primary-font-color: #0D306E;
 $secondary-font-color: #FFFFFF;
+
+// gradient
+$banner-gradient:linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+rgba(13, 48, 110, 0.5);
+
+// shadow
+$search-shadow: 0 0 0 3px $lighten-gray;
+$logo-fixed-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+$logo-hover-shadow: drop-shadow(2px 4px 8px rgba(0, 0, 0, 1));

@@ -11,10 +11,23 @@
 }
 
 // font sizes 
-
 $default-font-size: 14px;
+$medium-font: 1.25rem;
+$ultra-large-title: 2rem;
 
 
 // language preset
-
 $direction:rtl;
+
+// font family
+$normal-font:'B Roya',
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;
+
+$bold-font:'B Roya Bold',
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;

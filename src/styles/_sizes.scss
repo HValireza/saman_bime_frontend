@@ -1,12 +1,20 @@
 @import "./colors";
 
+// screen
+$tablet-support: 641px;
+$pc-support: 1008px;
+$max-support: 1920px;
+
 // spacings
 $ultra-small-space: 1px;
 $minimal-space: 2px;
 $small-space: 5px;
+$arrow-space: 0.25rem;
 $medium-space: 0.5rem;
+$two-third-space: 0.75rem;
 $big-space: 1rem;
 $large-space: 2rem;
+$extra-large-space: 4rem;
 
 // radius
 $ultra-small-radius: 2px;
@@ -21,23 +29,12 @@ $burger-drop-z-index: 150;
 $burger-z-index: 200;
 $modal-z-index: 250;
 
-// shadow
-$search-shadow: 0 0 0 3px $lighten-gray;
-
 // animations:
 $fast-animation: 300ms;
 $normal-animation: 500ms;
 
 // border
 $navbar-border:1px solid $gray-color;
-
-// navbar
-$navbar-height: 1.75rem;
-$navbar-right-header-height: 1.5rem;
-$navbar-right-header-width: 25%;
-$navbar-right-triangle-width: 0.4rem;
-$navbar-left-header-width: 75%;
-$navbar-left-triangle-width: 0.5rem;
 
 // burger
 $burger-height: 1rem;
@@ -54,6 +51,12 @@ $dropdown-icon-button-size: 1.875rem;
 $dropdown-icon-button-svg: 1.25rem;
 
 // navbar
+$navbar-height: 1.75rem;
+$navbar-right-header-height: 1.5rem;
+$navbar-right-header-width: 25%;
+$navbar-right-triangle-width: 0.4rem;
+$navbar-left-header-width: 75%;
+$navbar-left-triangle-width: 0.5rem;
 $navbar-icon-size: 18px;
 $navbar-icon-top: 5px;
 $navbar-first-icon-left: 12px;
@@ -63,4 +66,11 @@ $navbar-search-icon-top: 0.5rem;
 $navbar-search-icon-left: 41px;
 $navbar-search-icon-size: 0.75rem;
 
+// slider
+$arrow-height: 3rem;
+$bullet-size: 6px;
+$selected-bullet-size: 20px;
+$si-slider-logo-size: 6.25rem;
 
+// scrollbar
+$scroll-width: 0.5rem;
