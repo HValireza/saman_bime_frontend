@@ -1,5 +1,6 @@
 @import "../../../../../../../../styles/colors";
 @import "../../../../../../../../styles/sizes";
+@import '../../../../../../../../styles/fonts';
 
 // todo fix colors and styles
 
@@ -11,8 +12,8 @@
   transition: background $normal-animation;
   padding: $medium-space;
   color: $secondary-font-color;
-  font-family: 'B Roya Bold', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.25rem;
+  font-family: $bold-font;
+  font-size: $medium-font;
   cursor: pointer;
 }
 
