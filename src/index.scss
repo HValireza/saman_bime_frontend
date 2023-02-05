@@ -1,10 +1,16 @@
 @import "./styles/fonts";
 @import "./styles/colors";
+@import './styles/sizes';
+
+// todo fix more than 1920px support
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  // disable support for more than 1920px screens
+  max-width: $max-support;
 
   &:before {
     box-sizing: border-box;
@@ -16,7 +22,7 @@
 }
 
 html {
-  font-family: 'B Roya', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $normal-font;
 }
 
 body {
@@ -26,7 +32,7 @@ body {
   font-size: $default-font-size;
 
   &::-webkit-scrollbar {
-    width: 0.5rem;
+    width: $scroll-width;
   }
 
   &::-webkit-scrollbar-track {
@@ -35,7 +41,7 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background-color: $tertiary-color;
-    border-radius: 10px;
+    border-radius: $medium-radius;
   }
 }
 
