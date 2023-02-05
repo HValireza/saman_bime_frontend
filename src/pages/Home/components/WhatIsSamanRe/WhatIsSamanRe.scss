@@ -1,0 +1,31 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/sizes";
+@import "../../../../styles/fonts";
+
+.si-wis-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: $medium-space;
+  background: $lighten-primary-color;
+
+  .si-wis-title{
+    width: auto;
+    height: auto;
+    margin: 1rem 0;
+    color: $secondary-font-color;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+  }
+
+  .si-wis-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+  }
+}
