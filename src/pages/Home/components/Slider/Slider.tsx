@@ -59,9 +59,9 @@ const Slider: React.FC = () => {
         ))}
       </div>
 
-      <div className="si-slider-text-container">
+      <h1 className="si-slider-text-container">
         {images[currentIndex].caption}
-      </div>
+      </h1>
 
       {/* uncomment below in case of only wanting logo on first image */}
       {/* {currentIndex === 0 &&  */}
