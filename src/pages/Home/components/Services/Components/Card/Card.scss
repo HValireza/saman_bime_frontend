@@ -15,7 +15,12 @@
   cursor: default;
   box-shadow: $card-shadow;
 
-  // todo fix margin for desktop devices
+  @media screen and (min-width:$tablet-support){
+    margin: $large-space $extra-large-space;
+  }
+  @media screen and (min-width: 1500px){
+    margin: 2rem 6rem;
+  }
 
   .si-services-card-img {
     width: $card-image-width;
