@@ -2,7 +2,7 @@
 @import "../../../../styles/sizes";
 @import "../../../../styles/fonts";
 
-.si-wis-container{
+.si-services-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,16 +12,16 @@
   padding: $medium-space;
   background: $lighten-primary-color;
 
-  .si-wis-title{
+  .si-services-title{
     width: auto;
     height: auto;
-    margin: 1rem 0;
+    margin: $big-space 0;
     color: $secondary-font-color;
     font-family: $bold-font;
     font-size: $ultra-large-title;
   }
 
-  .si-wis-card-container{
+  .si-services-card-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
