@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { images } from "../../../../Mock/Home/Slider/SliderMock";
 import arrow from "../../../../assets/icons/tools/arrow.svg";
-import logo from "../../../../assets/logo/logo3.png";
+import logo from "../../../../assets/logo/saman_logo_2_no_padding.png";
 import "./Slider.scss";
 
 const Slider: React.FC = () => {
