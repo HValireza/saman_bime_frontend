@@ -42,7 +42,7 @@ const Card: React.FC<ICardData> = ({
       <SimpleButton
         background={buttonBackground}
         title={customButtonText}
-        color={"#fff"}
+        color={"#DBE4EE"}
         radius={"4px"}
         hoverBackground={buttonBackgroundHover}
       />

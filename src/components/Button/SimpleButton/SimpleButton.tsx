@@ -24,7 +24,7 @@ interface ISimpleButton {
 
 const SimpleButton: React.FC<ISimpleButton> = ({
   background = "#000",
-  color = "#fff",
+  color = "#DBE4EE",
   font = "B Roya",
   fontSize = "14px",
   height = "2rem",
@@ -34,7 +34,7 @@ const SimpleButton: React.FC<ISimpleButton> = ({
   hoverShadow,
   opacity = "1",
   radius = "0",
-  shadow = "0px 0px 0px #fff",
+  shadow = "0px 0px 0px #000000",
   title = "empty",
   transitionMod = "ease",
   transitionSpeed = "0.5s",
