@@ -13,7 +13,7 @@
   margin-bottom: $big-space;
   padding: $big-space;
   cursor: default;
-  box-shadow: $card-shadow ;
+  box-shadow: $card-shadow;
 
   // todo fix margin for desktop devices
 
@@ -32,6 +32,10 @@
 
   .si-services-card-description {
     text-align: justify;
+    overflow: hidden;
+    white-space: normal;
+    height: $card-text-height;
+    text-overflow: -o-ellipsis-lastline;
   }
 
 }
