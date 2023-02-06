@@ -57,7 +57,7 @@
     left: 50%;
     width: auto;
     height: auto;
-    transition: translateX(-50%);
+    transform: translateX(-50%);
     z-index: $navbar-z-index;
     direction: ltr;
 
