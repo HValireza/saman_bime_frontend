@@ -5,29 +5,29 @@
 .si-rc-container {
   display: flex;
   flex-direction: column;
-  width: 18rem;
-  height: 30rem;
-  background: linear-gradient(114.18deg, rgba(72, 85, 99, 0.85) 0%, rgba(41, 50, 60, 0.85) 100%);
-  border-radius: 8px;
-  margin: 2.5rem 0;
-  filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.24));
+  width: $recent-card-width;
+  height: $recent-card-height;
+  background: $recent-gradient;
+  border-radius: $small-radius;
+  margin: $slider-space 0;
+  filter: $card-shadow;
   color: $secondary-font-color;
 
   .si-rc-img {
-    width: 18rem;
-    height: 18rem;
-    border-radius: 8px;
+    width: $recent-card-width;
+    height: $recent-card-width;
+    border-radius: $small-radius;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 3px 8px 0px #0000003D;
+    box-shadow: $card-shadow;
   }
 
   .si-rc-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0.5rem;
+    padding: $medium-space;
 
     .si-rc-author-info {
       display: flex;
@@ -37,36 +37,36 @@
         content: '';
         display: block;
         position: absolute;
-        bottom: -12px;
+        bottom: $recent-before-position;
         width: 50%;
         left: 50%;
-        border-bottom: 2px solid $secondary-font-color;
+        border-bottom: $recent-before-border;
       }
 
       .si-rc-thumb {
-        width: 2rem;
-        height: 2rem;
+        width: $recent-thumb-size;
+        height: $recent-thumb-size;
         border-radius: 50%;
-        filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.24));
-        border-radius: 16px;
-        border: 1px solid $secondary-font-color;
+        filter: $card-shadow;
+        border-radius: $large-radius;
+        border: $recent-thumb-border;
       }
 
       .si-rc-author-info-wrapper {
-        margin-right: 0.25rem;
+        margin-right: $arrow-space;
 
         .si-rc-author-name {
           font-family: $bold-font;
-          font-size: 16px;
-          line-height: 15px;
+          font-size: $default-rem-font;
+          line-height: $small-line-hight;
           letter-spacing: 0em;
-          margin-bottom: 0.25rem;
+          margin-bottom: $arrow-space;
         }
 
         .si-rc-position {
           font-family: $normal-font;
-          font-size: 11px;
-          line-height: 15px;
+          font-size: $small-paragraph;
+          line-height: $small-line-hight;
           letter-spacing: 0em;
 
         }
@@ -77,15 +77,16 @@
   }
 
   .si-rc-description {
-    padding: 0.25rem 1rem;
+    padding: $arrow-space $big-space 0 $big-space;
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    white-space: normal;
-    height: $card-recent-text-height;
-    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
   }
 
   .si-rc-title {
-    padding: 1rem 1rem 0.25rem 0;
+    padding: $big-space $big-space $arrow-space 0;
   }
 }
