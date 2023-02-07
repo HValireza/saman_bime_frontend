@@ -35,12 +35,20 @@ $primary-font-color: #0D306E;
 $secondary-font-color: #F3F3F3;
 
 // gradient
-$banner-gradient:linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+$banner-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
 rgba(13, 48, 110, 0.5);
+$recent-gradient: linear-gradient(114.18deg, rgba(72, 85, 99, 0.85) 0%, rgba(41, 50, 60, 0.85) 100%);
+$card-slider-gradient: linear-gradient(151.39deg, #4371A8 -1%, #BDC3C7 -0.99%, #2C3E50 100%);
+$card-pagination-active-gradient: linear-gradient(0deg, rgba(13, 48, 110, 0.5), rgba(13, 48, 110, 0.5)),
+linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
 
 // shadow
 $search-shadow: 0 0 0 3px $lighten-gray;
 $logo-fixed-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 $logo-hover-shadow: drop-shadow(2px 4px 8px rgba(0, 0, 0, 1));
-$card-shadow: 0px 3px 8px 0px #0000003D;
-$map-shadow: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.35))
+$card-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.239);
+$map-shadow: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.35));
+$card-slider-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+$card-slider-image-shadow: 4px 13px 30px 1px rgba(26, 26, 26, 0.2);
+$card-slider-button-shadow: 0px 14px 80px rgba(80, 80, 80, 0.4);
+$card-pagination-active-shadow:  0px 0px 20px rgba(0, 0, 0, 0.3);
