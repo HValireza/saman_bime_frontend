@@ -22,7 +22,7 @@ const Brands: React.FC = () => {
           autoplay={{ delay: 2000 }}
         >
           {BrandsData.map((d) => (
-            <SwiperSlide>
+            <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
                 onClick={() => openLink(d.address)}
@@ -37,7 +37,7 @@ const Brands: React.FC = () => {
             </SwiperSlide>
           ))}
           {BrandsData.map((d) => (
-            <SwiperSlide>
+            <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
                 onClick={() => openLink(d.address)}
