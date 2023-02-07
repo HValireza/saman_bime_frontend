@@ -1,0 +1,12 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+
+.si-navbar-bg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $navbar-height;
+  margin: 0;
+  z-index: $navbar-background-z-index;
+  background: $background-color;
+}
