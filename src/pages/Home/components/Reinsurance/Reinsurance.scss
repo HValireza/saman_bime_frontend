@@ -12,10 +12,10 @@
   overflow: hidden;
 
   .si-reinsurance-title {
-    margin-top: 2.25rem;
+    margin-top: $large-space;
     font-family: $bold-font;
     font-size: $ultra-large-title;
-    line-height: 32px;
+    line-height: $title-line-hight;
     letter-spacing: 0em;
     text-align: justified;
   }
