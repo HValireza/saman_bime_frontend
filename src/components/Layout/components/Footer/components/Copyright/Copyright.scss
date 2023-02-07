@@ -1,0 +1,29 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+
+.si-footer-row {
+  width: 100%;
+  height: auto;
+  margin-top: $large-space;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .si-footer-cr-icon {
+    width: $copyright-icon-size;
+    height: $copyright-icon-size;
+    margin-left: $arrow-space;
+  }
+
+  .si-footer-cr {
+    margin: auto 0;
+    font-family: $normal-font;
+    font-size: $small-paragraph;
+    line-height: $small-line-hight;
+    letter-spacing: 0em;
+    text-align: justified;
+
+  }
+}
