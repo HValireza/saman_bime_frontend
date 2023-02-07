@@ -2,22 +2,32 @@
 @import '../../../../../../styles/sizes';
 @import '../../../../../../styles/fonts';
 
-.si-footer-about{
+.si-footer-about {
   display: flex;
   align-items: center;
   width: 100vw;
   height: auto;
   padding: 0 $arrow-space;
 
+  @media screen and (min-width: $tablet-support) {
+    width: 50vw;
+    padding: $big-space;
+  }
 
-  .si-footer-about-line{
+  @media screen and (min-width: $pc-support) {
+    width: 16vw;
+    max-width: 14rem;
+  }
+
+  .si-footer-about-line {
     width: $footer-line-size;
     height: 100%;
     border-radius: $small-radius;
     background: $secondary-font-color;
     margin: 0 $medium-space;
   }
-  .si-footer-about-text{
+
+  .si-footer-about-text {
     width: calc(100vw - 3rem);
     height: auto;
     text-align: justify;
