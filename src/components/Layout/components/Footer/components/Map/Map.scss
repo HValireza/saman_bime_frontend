@@ -1,0 +1,24 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-footer-map-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $arrow-space;
+  filter: $map-shadow;
+
+
+  .si-footer-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: $map-min-width;
+    height: auto;
+    border-radius: $small-radius;
+  }
+}
