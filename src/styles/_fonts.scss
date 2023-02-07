@@ -11,7 +11,9 @@
 }
 
 // font sizes 
+$small-paragraph: 11px;
 $default-font-size: 14px;
+$default-rem-font: 1rem;
 $medium-font: 1.25rem;
 $large-font: 1.5rem;
 $ultra-large-title: 2rem;
@@ -32,3 +34,8 @@ Tahoma,
 Geneva,
 Verdana,
 sans-serif;
+
+// line height
+$small-line-hight: 15px;
+$title-line-hight: 2rem;
+$card-line-height: 1.5rem;
