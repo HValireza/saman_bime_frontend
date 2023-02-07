@@ -12,8 +12,8 @@
 
   .si-footer-icon-bg {
     position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: $footer-icon-bg-size;
+    height: $footer-icon-bg-size;
     background: $secondary-font-color;
     border-radius: 50%;
     display: flex;
@@ -21,8 +21,8 @@
     align-items: center;
 
     .si-footer-icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: $footer-icon-size;
+      height: $footer-icon-size;
     }
   }
 }
