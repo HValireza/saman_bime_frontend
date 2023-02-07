@@ -1,0 +1,33 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-footer-contact-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+
+  .si-footer-contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 1rem 0 10px ;
+  }
+
+  .si-footer-contact-line{
+    width: 2px;
+    height: 28px;
+    border-radius: 10px;
+    background: $secondary-font-color;
+  }
+
+  .si-footer-contact-detail{
+    display: flex;
+    flex-grow: 10;
+    width: auto;
+    height: auto;
+    padding-right: 10px;
+  }
+
+}
