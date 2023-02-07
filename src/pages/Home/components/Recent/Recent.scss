@@ -1,0 +1,32 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/sizes";
+@import "../../../../styles/fonts";
+
+.si-recent-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: $large-space;
+  background: $super-lighten-primary;
+
+  .si-recent-title{
+    width: auto;
+    height: auto;
+    margin: $big-space 0;
+    color: $secondary-font-color;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+  }
+
+  .si-recent-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+  }
+}
+
