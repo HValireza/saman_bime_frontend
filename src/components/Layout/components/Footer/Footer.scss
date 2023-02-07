@@ -27,6 +27,9 @@
     width: 100%;
     height: auto;
 
+    @media screen and (min-width: $tablet-support) {
+      justify-content: space-evenly;
+    }
 
     // columns
     .si-footer-column {
@@ -36,9 +39,29 @@
       width: auto;
       height: auto;
       margin: $big-space 0;
+
+      @media screen and (min-width: $tablet-support) {
+        width: auto;
+      }
+
+      .si-footer-contact {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (min-width: $tablet-support) {
+          width: 30vw;
+        }
+
+        @media screen and (min-width: $pc-support) {
+          width: auto;
+        }
+      }
     }
   }
-
 }
 
 .si-footer-icon {
