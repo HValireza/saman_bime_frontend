@@ -1,0 +1,47 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/sizes';
+@import '../../../../styles/fonts';
+
+.si-footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: $footer-min-height;
+  padding: $box-space 0;
+  background: $super-lighten-primary;
+  color: $secondary-font-color;
+  font-family: $normal-font;
+  font-size: $small-paragraph;
+  line-height: $small-line-hight;
+  letter-spacing: 0em;
+  text-align: justified;
+
+  // column container
+  .si-footer-column-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 12;
+    width: 100%;
+    height: auto;
+
+
+    // columns
+    .si-footer-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+      height: auto;
+      margin: $big-space 0;
+    }
+  }
+
+}
+
+.si-footer-icon {
+  width: $footer-icon-size;
+  height: $footer-icon-size;
+}
