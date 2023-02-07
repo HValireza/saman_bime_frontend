@@ -1,0 +1,28 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+
+.si-footer-social-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .si-footer-icon-bg {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: $secondary-font-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .si-footer-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
