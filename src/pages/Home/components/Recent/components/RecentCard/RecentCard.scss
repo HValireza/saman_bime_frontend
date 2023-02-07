@@ -1,0 +1,91 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-rc-container {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 30rem;
+  background: linear-gradient(114.18deg, rgba(72, 85, 99, 0.85) 0%, rgba(41, 50, 60, 0.85) 100%);
+  border-radius: 8px;
+  margin: 2.5rem 0;
+  filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.24));
+  color: $secondary-font-color;
+
+  .si-rc-img {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 3px 8px 0px #0000003D;
+  }
+
+  .si-rc-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+
+    .si-rc-author-info {
+      display: flex;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -12px;
+        width: 50%;
+        left: 50%;
+        border-bottom: 2px solid $secondary-font-color;
+      }
+
+      .si-rc-thumb {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.24));
+        border-radius: 16px;
+        border: 1px solid $secondary-font-color;
+      }
+
+      .si-rc-author-info-wrapper {
+        margin-right: 0.25rem;
+
+        .si-rc-author-name {
+          font-family: $bold-font;
+          font-size: 16px;
+          line-height: 15px;
+          letter-spacing: 0em;
+          margin-bottom: 0.25rem;
+        }
+
+        .si-rc-position {
+          font-family: $normal-font;
+          font-size: 11px;
+          line-height: 15px;
+          letter-spacing: 0em;
+
+        }
+      }
+
+
+    }
+  }
+
+  .si-rc-description {
+    padding: 0.25rem 1rem;
+    text-align: justify;
+    overflow: hidden;
+    white-space: normal;
+    height: $card-recent-text-height;
+    text-overflow: -o-ellipsis-lastline;
+  }
+
+  .si-rc-title {
+    padding: 1rem 1rem 0.25rem 0;
+  }
+}
