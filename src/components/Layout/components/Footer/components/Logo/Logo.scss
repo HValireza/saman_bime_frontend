@@ -9,6 +9,15 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (min-width: $tablet-support) {
+    width: 30vw;
+    margin-top: $large-space;
+  }
+
+  @media screen and (min-width: $pc-support) {
+    width: auto;
+    margin: $large-space $medium-space;
+  }
 
   .si-footer-logo {
     width: $footer-logo-size;
