@@ -1,6 +1,10 @@
+import dayjs from "dayjs";
+import jalaliday from "jalaliday";
+
 import { useNavigate } from "react-router";
 import bigLogo from "../../../../../../assets/logo/logo2.png";
 import logo from "../../../../../../assets/logo/logo4.png";
+import "dayjs/locale/fa";
 import "./RecentCard.scss";
 
 interface IRecent {
@@ -15,7 +19,7 @@ interface IRecent {
 }
 
 const RecentCard: React.FC<IRecent> = ({
-  createdAt = "1500/13/32",
+  createdAt = new Date().toISOString(),
   description,
   id,
   image = bigLogo,
@@ -29,6 +33,8 @@ const RecentCard: React.FC<IRecent> = ({
     scrollTo(0, 0);
     navigate(`/news/${id}`);
   };
+
+  dayjs.extend(jalaliday);
 
   return (
     <div className="si-rc-container" onClick={navigation}>
@@ -49,7 +55,9 @@ const RecentCard: React.FC<IRecent> = ({
         </div>
 
         {/* created at time */}
-        <div className="si-rc-date">{createdAt}</div>
+        <div className="si-rc-date">
+          {dayjs(createdAt).calendar("jalali").format("YYYY/MM/DD")}
+        </div>
       </div>
 
       {/* post detail */}
