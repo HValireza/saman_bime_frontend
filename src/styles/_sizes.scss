@@ -2,28 +2,43 @@
 
 // screen
 $tablet-support: 641px;
+$screen-break: 1500px;
 $pc-support: 1008px;
 $max-support: 1920px;
 
 // spacings
+$slider-extra-small-space: -130px;
+$slider-small-space: -80px;
 $ultra-small-space: 1px;
 $minimal-space: 2px;
 $small-space: 5px;
+$box-space:10px;
 $arrow-space: 0.25rem;
 $medium-space: 0.5rem;
 $two-third-space: 0.75rem;
 $big-space: 1rem;
+$card-small-space: 1.25rem;
+$content-space: 25px;
+$card-medium-space: 30px;
 $large-space: 2rem;
+$slider-space: 2.5rem;
 $extra-large-space: 4rem;
+$ultra-large-space: 6rem;
+$large-card-space: 11.25rem;
 
 // radius
 $ultra-small-radius: 2px;
 $extra-small-radius: 0.25rem;
 $small-radius: 0.5rem;
 $medium-radius: 10px;
+$large-radius: 1rem;
+$extra-large-radius: 1.25rem;
+$card-radius: 25px;
+$card-large-radius: 50px;
 $circle-radius: 50%;
 
 // z index
+$navbar-background-z-index: 25;
 $navbar-z-index: 50;
 $navbar-items-z-index: 100;
 $burger-drop-z-index: 150;
@@ -32,10 +47,17 @@ $modal-z-index: 250;
 
 // animations:
 $fast-animation: 300ms;
+$medium-animation: 400ms;
 $normal-animation: 500ms;
 
 // border
 $navbar-border:1px solid $gray-color;
+$recent-before-border: 2px solid $secondary-font-color;
+$recent-thumb-border: 1px solid $secondary-font-color;
+
+// transform
+$card-image-x: 80px;
+$card-image-y: 25px;
 
 // burger
 $burger-height: 1rem;
@@ -81,3 +103,45 @@ $card-width: 18rem;
 $card-height: 27rem;
 $card-image-width: 7.75rem;
 $card-text-height: 10rem;
+$card-recent-text-height: 5rem;
+
+// footer
+$footer-min-height: 26rem;
+$footer-icon-size: 1.5rem;
+$footer-icon-bg-size: 2.5rem;
+$map-min-width: 18.5rem;
+$footer-logo-size: 11.25rem;
+$copyright-icon-size: 0.75rem;
+$footer-line-size: 2px;
+$footer-contact-line-height: 28px;
+
+// brands
+$brand-slider-width: 14rem;
+$brand-slider-max-with: 1000px;
+
+// recent
+$recent-card-width: 18rem;
+$recent-card-height: 30rem;
+$recent-before-position: -12px;
+$recent-thumb-size: 2rem;
+
+// card slider
+$card-slider-max-with: 800px;
+$card-slider-height: 400px;
+$card-slider-image-size: 300px;
+$card-button-width: 300px;
+$card-button-height: 25px;
+$card-pagination-width: 11px;
+$card-pagination-active: 30px;
+$card-slider-screen-large: 992px;
+$card-slider-screen-medium: 768px;
+$card-slider-screen-mobile: 576px;
+$card-slider-screen-small: 500px;
+
+$card-slider-large-max-with: 680px;
+$card-slider-large-height: 400px;
+
+$card-slider-medium-min-height: 500px;
+
+$card-slider-small-height: 350px;
+$card-slider-small-image: 270px;
