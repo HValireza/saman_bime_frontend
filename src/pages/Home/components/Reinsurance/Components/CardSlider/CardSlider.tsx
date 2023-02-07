@@ -1,12 +1,18 @@
-import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from "swiper";
+import { Pagination, A11y, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import "./CardSlider.scss";
 import { cardData } from "../../../../../../Mock/Home/Reinsurance/ReinsuranceMock";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CardSlider: React.FC = () => {
+  const navigate = useNavigate();
+  const navigation = (address?: string) => {
+    scrollTo(0, 0);
+    navigate(address ? address : "/no-page");
+  };
+
   return (
     <div className="si-card-slider">
       <Swiper
@@ -23,11 +29,15 @@ const CardSlider: React.FC = () => {
               <img src={d.icon} alt={d.title} />
             </div>
             <div className="si-card-slider__content">
-              <div className="si-card-slider__title">{d.title}</div>
-              <div className="si-card-slider__text">{d.description}</div>
-              <Link to={d.address ? d.address : ""}>
-                <div className="si-card-slider__button">بیشتر بخوانید</div>
-              </Link>
+              <h3 className="si-card-slider__title">{d.title}</h3>
+              <p className="si-card-slider__text">{d.description}</p>
+
+              <div
+                className="si-card-slider__button"
+                onClick={() => navigation(d.address)}
+              >
+                بیشتر بخوانید
+              </div>
             </div>
           </SwiperSlide>
         ))}
