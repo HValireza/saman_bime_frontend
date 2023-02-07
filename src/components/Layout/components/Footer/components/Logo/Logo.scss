@@ -1,0 +1,23 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-footer-logo-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .si-footer-logo {
+    width: 11.25rem;
+    cursor: pointer;
+    filter: $logo-fixed-shadow;
+    transition: all $normal-animation ease;
+
+    &:hover {
+      filter: $logo-hover-shadow;
+    }
+  }
+}
