@@ -1,0 +1,25 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-footer-about{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  padding: 0 $arrow-space;
+
+
+  .si-footer-about-line{
+    width: $footer-line-size;
+    height: 100%;
+    border-radius: $small-radius;
+    background: $secondary-font-color;
+    margin: 0 $medium-space;
+  }
+  .si-footer-about-text{
+    width: calc(100vw - 3rem);
+    height: auto;
+    text-align: justify;
+  }
+}
