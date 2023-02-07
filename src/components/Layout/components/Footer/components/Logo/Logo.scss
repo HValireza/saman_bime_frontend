@@ -11,7 +11,7 @@
 
 
   .si-footer-logo {
-    width: 11.25rem;
+    width: $footer-logo-size;
     cursor: pointer;
     filter: $logo-fixed-shadow;
     transition: all $normal-animation ease;
