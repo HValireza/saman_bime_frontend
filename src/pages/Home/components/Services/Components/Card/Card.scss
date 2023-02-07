@@ -15,11 +15,12 @@
   cursor: default;
   box-shadow: $card-shadow;
 
-  @media screen and (min-width:$tablet-support){
+  @media screen and (min-width:$tablet-support) {
     margin: $large-space $extra-large-space;
   }
-  @media screen and (min-width: 1500px){
-    margin: 2rem 6rem;
+
+  @media screen and (min-width: $screen-break) {
+    margin: $large-space $large-card-space;
   }
 
   .si-services-card-img {
@@ -30,17 +31,18 @@
   .si-services-card-title {
     font-family: $bold-font;
     font-size: $large-font;
-    line-height: 24px;
+    line-height: $card-line-height;
     letter-spacing: 0em;
     text-align: center;
   }
 
   .si-services-card-description {
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    white-space: normal;
-    height: $card-text-height;
-    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
   }
 
 }
