@@ -1,4 +1,5 @@
 // main colors
+// todo replace any possible px with rem
 
 $primary-color: #0D306E;
 $background-color: #F3F3F3;
@@ -6,6 +7,12 @@ $secondary-color: #81A4CD;
 $error-color: #CC2936;
 $tertiary-color: #478285;
 $gray-color:#808080;
+
+// footer:
+$instagram-color: #FF2828;
+$telegram-color: #0068B8;
+$linkedin: #46AFFF;
+$mail-color: #F3E016;
 
 // darken colors
 
@@ -26,13 +33,14 @@ $lighten-tertiary-color: lighten($tertiary-color, 10%);
 $lighten-gray: lighten($gray-color, 10%);
 $super-lighten-primary: #315083;
 
-// out ordered color
-
+// opacity color
+$gray-transparent-color:#0f0f0f9d;
 
 // font colors
 
 $primary-font-color: #0D306E;
 $secondary-font-color: #F3F3F3;
+$tertiary-font-color: #000000;
 
 // gradient
 $banner-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
