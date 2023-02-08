@@ -1,9 +1,12 @@
 @import "./colors";
 
+// todo replace any possible px with rem
+
 // screen
 $tablet-support: 641px;
-$screen-break: 1500px;
 $pc-support: 1008px;
+$screen-break: 1400px;
+$screen-lock: 1296px;
 $max-support: 1920px;
 
 // spacings
@@ -24,6 +27,7 @@ $large-space: 2rem;
 $slider-space: 2.5rem;
 $extra-large-space: 4rem;
 $ultra-large-space: 6rem;
+$ultra-large-card-space: 5rem;
 $large-card-space: 11.25rem;
 
 // radius
@@ -38,9 +42,11 @@ $card-large-radius: 50px;
 $circle-radius: 50%;
 
 // z index
+$middle-z-index: 10;
 $navbar-background-z-index: 25;
 $navbar-z-index: 50;
 $navbar-items-z-index: 100;
+$overlay-z-index: 125;
 $burger-drop-z-index: 150;
 $burger-z-index: 200;
 $modal-z-index: 250;
@@ -72,6 +78,7 @@ $dropdown-item-height: 3.12rem;
 $dropdown-item-width: 3rem;
 $dropdown-icon-button-size: 1.875rem;
 $dropdown-icon-button-svg: 1.25rem;
+$dropdown-width: 400px;
 
 // navbar
 $navbar-height: 1.75rem;
@@ -88,12 +95,15 @@ $navbar-search-width: 12.5rem;
 $navbar-search-icon-top: 0.5rem;
 $navbar-search-icon-left: 41px;
 $navbar-search-icon-size: 0.75rem;
+$navbar-expand-height: 4.5rem;
+$navbar-expand-icon-size: 3rem;
 
 // slider
 $arrow-height: 3rem;
 $bullet-size: 6px;
 $selected-bullet-size: 20px;
 $si-slider-logo-size: 6.25rem;
+$slider-logo-size: 10.5rem;
 
 // scrollbar
 $scroll-width: 0.5rem;
@@ -130,7 +140,7 @@ $card-slider-max-with: 800px;
 $card-slider-height: 400px;
 $card-slider-image-size: 300px;
 $card-button-width: 300px;
-$card-button-height: 25px;
+$card-button-height: 2rem;
 $card-pagination-width: 11px;
 $card-pagination-active: 30px;
 $card-slider-screen-large: 992px;
@@ -145,3 +155,4 @@ $card-slider-medium-min-height: 500px;
 
 $card-slider-small-height: 350px;
 $card-slider-small-image: 270px;
+$card-button-small-width: 260px;
