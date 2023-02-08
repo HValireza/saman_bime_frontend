@@ -1,0 +1,55 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-author {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: $medium-space;
+  transition: all $fast-animation ease;
+
+  .si-author-info {
+    display: flex;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: $recent-before-position;
+      width: 50%;
+      left: 50%;
+      border-bottom: $recent-before-border;
+    }
+
+    .si-author-thumb {
+      width: $recent-thumb-size;
+      height: $recent-thumb-size;
+      border-radius: 50%;
+      filter: $card-shadow;
+      border-radius: $large-radius;
+      border: $recent-thumb-border;
+    }
+
+    .si-author-info-wrapper {
+      margin-right: $arrow-space;
+
+      .si-author-name {
+        font-family: $bold-font;
+        font-size: $default-rem-font;
+        line-height: $small-line-hight;
+        letter-spacing: 0em;
+        margin-bottom: $arrow-space;
+      }
+
+      .si-author-position {
+        font-family: $normal-font;
+        font-size: $small-paragraph;
+        line-height: $small-line-hight;
+        letter-spacing: 0em;
+
+      }
+    }
+  }
+}
