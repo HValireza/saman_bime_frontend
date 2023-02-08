@@ -36,7 +36,9 @@ const CardSlider: React.FC = () => {
                 className="si-card-slider__button"
                 onClick={() => navigation(d.address)}
               >
-                بیشتر بخوانید
+                <div className="si-card-slider__button__text">
+                  بیشتر بخوانید
+                </div>
               </div>
             </div>
           </SwiperSlide>
