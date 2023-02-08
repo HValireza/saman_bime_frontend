@@ -5,6 +5,7 @@ import bigLogo from "../../../../../../assets/logo/logo2.png";
 import logo from "../../../../../../assets/logo/logo4.png";
 import "dayjs/locale/fa";
 import "./RecentCard.scss";
+import Author from "../../../../../../components/Author/Author";
 
 interface IRecent {
   id?: number;
@@ -45,18 +46,13 @@ const RecentCard: React.FC<IRecent> = ({
 
       {/* author info box */}
       <div className="si-rc-info">
-        <div className="si-rc-author-info">
-          <img src={thumb} alt="" className="si-rc-thumb" />
-          <div className="si-rc-author-info-wrapper">
-            <h4 className="si-rc-author-name">{name}</h4>
-            <h5 className="si-rc-author-position">{position}</h5>
-          </div>
-        </div>
-
-        {/* created at time */}
-        <div className="si-rc-date">
-          {dayjs(createdAt).calendar("jalali").format("YYYY/MM/DD")}
-        </div>
+        <Author
+          createdAt={createdAt}
+          name={name}
+          position={position}
+          thumb={thumb}
+          state={"recent"}
+        />
       </div>
 
       {/* post detail */}

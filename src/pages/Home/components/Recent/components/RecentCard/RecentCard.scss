@@ -43,7 +43,7 @@
 
     .si-rc-info {
       z-index: $middle-z-index;
-      margin-bottom: $extra-large-space;
+      margin-bottom: $large-space;
     }
 
     .si-rc-description {
@@ -73,57 +73,8 @@
   }
 
   .si-rc-info {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    padding: $medium-space;
     transition: all $fast-animation ease;
-
-    .si-rc-author-info {
-      display: flex;
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: $recent-before-position;
-        width: 50%;
-        left: 50%;
-        border-bottom: $recent-before-border;
-      }
-
-      .si-rc-thumb {
-        width: $recent-thumb-size;
-        height: $recent-thumb-size;
-        border-radius: 50%;
-        filter: $card-shadow;
-        border-radius: $large-radius;
-        border: $recent-thumb-border;
-      }
-
-      .si-rc-author-info-wrapper {
-        margin-right: $arrow-space;
-
-        .si-rc-author-name {
-          font-family: $bold-font;
-          font-size: $default-rem-font;
-          line-height: $small-line-hight;
-          letter-spacing: 0em;
-          margin-bottom: $arrow-space;
-        }
-
-        .si-rc-position {
-          font-family: $normal-font;
-          font-size: $small-paragraph;
-          line-height: $small-line-hight;
-          letter-spacing: 0em;
-
-        }
-      }
-
-
-    }
   }
 
   .si-rc-description {
