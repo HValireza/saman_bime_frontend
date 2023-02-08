@@ -1,0 +1,56 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-banner-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - $navbar-height);
+  background-position: center;
+  background-size: cover;
+
+  .si-banner-title-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $large-space $extra-large-space;
+    background: $banner-gradient;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+    line-height: $ultra-large-title;
+    color: $secondary-font-color;
+    text-align: center;
+    transition: all $normal-animation ease;
+
+    .si-banner-main-title {
+      margin-bottom: $content-space;
+      font-family: $bold-font;
+      font-size: $default-rem-font;
+      line-height: $small-line-hight;
+      letter-spacing: 0em;
+
+    }
+
+    .si-banner-secondary-title {
+      margin-bottom: $big-space;
+      font-family: $bold-font;
+      font-size: $large-font;
+      line-height: $card-line-height;
+      letter-spacing: 0em;
+    }
+
+    .si-banner-tertiary-title {
+      font-family: $bold-font;
+      font-size: $ultra-large-title;
+      line-height: $title-line-hight;
+      letter-spacing: 0em;
+    }
+  }
+}
