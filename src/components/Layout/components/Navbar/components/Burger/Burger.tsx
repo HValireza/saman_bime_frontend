@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "./components/Dropdown/Dropdown";
 import "./Burger.scss";
+import Overlay from "./components/Overlay/Overlay";
 
 const Burger: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -33,6 +34,7 @@ const Burger: React.FC = () => {
       </div>
 
       {open && <Dropdown closeMenu={setOpen} />}
+      {open && <Overlay />}
     </>
   );
 };
