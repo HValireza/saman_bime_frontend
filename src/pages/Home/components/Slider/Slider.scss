@@ -105,8 +105,8 @@
     transition: all $normal-animation ease;
     
     @media screen and (min-width: $pc-support) {
-      top: 16%;
-      left: 16%;
+      // top: 16%;
+      // left: 16%;
       width: $slider-logo-size;
     }
 
