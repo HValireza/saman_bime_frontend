@@ -34,3 +34,7 @@ const Layout: React.FC = () => {
 };
 
 export default Layout;
+
+// todos for layout
+// todo add animations for entering dropdown
+// todo add cursor pointer for language button

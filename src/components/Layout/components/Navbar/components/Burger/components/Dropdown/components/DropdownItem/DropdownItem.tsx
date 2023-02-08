@@ -33,7 +33,6 @@ const DropdownItem: React.FC<IDropdownItem> = ({
 }) => {
   const navigate = useNavigate();
 
-  // todo fix scroll behavior on navigation
   const selectOption = () => {
     secondMenuData && setSecondMenuData!(secondMenuData);
     goToMenu && setActiveMenu!(goToMenu);

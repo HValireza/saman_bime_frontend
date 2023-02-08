@@ -18,3 +18,7 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+// todos for home page
+// todo add animations to slider
+// todo cursor pointer for arrows and bullets in slider

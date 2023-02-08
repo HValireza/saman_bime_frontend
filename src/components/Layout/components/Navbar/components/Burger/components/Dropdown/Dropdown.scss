@@ -1,7 +1,6 @@
 @import '../../../../../../../../styles/colors';
 @import '../../../../../../../../styles/sizes';
 
-// todo fix colors and styles
 
 .si-dropdown-container {
   position: fixed;
@@ -14,7 +13,7 @@
   max-width: $tablet-support;
 
   @media screen and (min-width: $tablet-support){
-    max-width: 400px;
+    max-width: $dropdown-width;
   }
 
   // border-radius: $small-radius;

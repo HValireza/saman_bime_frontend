@@ -2,7 +2,6 @@
 @import '../../../../../../styles/sizes';
 @import '../../../../../../styles/fonts';
 
-// todo add variables instead
 .si-card-slider {
   width: 95%;
   position: relative;
@@ -233,7 +232,7 @@
 
 
     @media screen and (max-width: $card-slider-screen-mobile) {
-      width: $card-button-small-width;
+      width: 100%;
     }
 
   }

@@ -34,7 +34,7 @@ const Services: React.FC = () => {
         viewport={{ once: true }}
       >
         {cardData.map((d) => (
-          <motion.div variants={item}>
+          <motion.div variants={item} key={d.id}>
             <Card
               description={d.description}
               icon={d.icon}

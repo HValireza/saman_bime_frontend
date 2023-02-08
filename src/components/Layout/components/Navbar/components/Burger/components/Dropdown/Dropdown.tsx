@@ -12,7 +12,6 @@ interface IDropDown {
   closeMenu?: (onClose: boolean) => void;
 }
 
-// todo type safety
 const Dropdown: React.FC<IDropDown> = ({ closeMenu }) => {
   const [activeMenu, setActiveMenu] = useState("main");
   const mainRef = useRef(null);

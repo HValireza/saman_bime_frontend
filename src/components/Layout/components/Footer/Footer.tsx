@@ -10,8 +10,6 @@ import Copyright from "./components/Copyright/Copyright";
 import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
-  // todo add outer links
-
   const container = {
     hidden: { opacity: 1, scale: 0.7 },
     visible: {

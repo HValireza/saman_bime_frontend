@@ -37,7 +37,7 @@ const Recent: React.FC = () => {
         viewport={{ once: true }}
       >
         {RecentPosts.map((p) => (
-          <motion.div variants={item}>
+          <motion.div variants={item} key={p.id}>
             <RecentCard
               id={p.id}
               createdAt={p.createdAt}
