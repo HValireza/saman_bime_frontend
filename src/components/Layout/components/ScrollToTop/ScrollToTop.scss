@@ -1,0 +1,15 @@
+@import '../../../../styles/sizes';
+
+.si-scroll-to-top{
+  position: fixed;
+  right: $big-space;
+  bottom: $big-space;
+  width: $large-space;
+  height: auto;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (min-width: $pc-support){
+    display: block;
+  }
+}
