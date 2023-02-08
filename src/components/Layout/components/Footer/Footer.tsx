@@ -7,25 +7,53 @@ import Contact from "./components/Contact/Contact";
 import Map from "./components/Map/Map";
 import About from "./components/About/About";
 import Copyright from "./components/Copyright/Copyright";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
   // todo add outer links
+
+  const container = {
+    hidden: { opacity: 1, scale: 0.7 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <div className="si-footer-container">
       {/* columns */}
-      <div className="si-footer-column-container">
+      <motion.div
+        className="si-footer-column-container"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {/* first column */}
-        <div className="si-footer-column">
+        <motion.div className="si-footer-column" variants={item}>
           <Logo />
-        </div>
+        </motion.div>
 
         {/* second column */}
-        <div className="si-footer-column">
+        <motion.div className="si-footer-column" variants={item}>
           <Social />
-        </div>
+        </motion.div>
 
         {/* third column */}
-        <div className="si-footer-column">
+        <motion.div className="si-footer-column" variants={item}>
           {/* contact container' */}
           <div className="si-footer-contact">
             {contactData.map((d) => (
@@ -37,18 +65,18 @@ const Footer: React.FC = () => {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* fourth column */}
-        <div className="si-footer-column">
+        <motion.div className="si-footer-column" variants={item}>
           <Map />
-        </div>
+        </motion.div>
 
         {/* fifth column */}
-        <div className="si-footer-column">
+        <motion.div className="si-footer-column" variants={item}>
           <About />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* copyright row */}
       <Copyright />
