@@ -9,9 +9,6 @@
   padding: 0;
   box-sizing: border-box;
 
-  // disable support for more than 1920px screens
-  max-width: $max-support;
-
   &:before {
     box-sizing: border-box;
   }
@@ -27,6 +24,7 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
   overflow-x: hidden;
   direction: $direction;
   font-size: $default-font-size;
