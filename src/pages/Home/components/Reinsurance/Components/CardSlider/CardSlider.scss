@@ -10,10 +10,12 @@
   margin: $large-space 0;
   background: $secondary-font-color;
   box-shadow: $card-slider-shadow;
-  border-radius: $card-radius;
+  // border-radius: $card-radius;
+  border-radius: $small-radius;
   height: $card-slider-height;
   transition: all $fast-animation;
   background: $card-slider-gradient;
+  transform: translateX(calc($card-image-x / -2));
 
   @media screen and (max-width: $card-slider-screen-large) {
     max-width: $card-slider-large-max-with;
@@ -24,6 +26,7 @@
     min-height: $card-slider-medium-min-height;
     height: auto;
     margin: $large-card-space auto $slider-space auto;
+    transform: translateX(0);
   }
 
 
@@ -86,8 +89,12 @@
     height: $card-slider-image-size;
     background: $card-slider-gradient;
     box-shadow: $card-slider-image-shadow;
-    border-radius: $extra-large-radius;
+    // border-radius: $extra-large-radius;
+    border-radius: $small-radius;
     transform: translateX($card-image-x);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     overflow: hidden;
 
@@ -98,17 +105,19 @@
       right: 0;
       width: 100%;
       height: 100%;
-      border-radius: $extra-large-radius;
+      // border-radius: $extra-large-radius;
+      border-radius: $small-radius;
       opacity: 0.8;
     }
 
     img {
-      width: 100%;
-      height: 100%;
+      height: 90%;
+      width: auto;
       object-fit: cover;
       display: block;
       opacity: 0;
-      border-radius: $extra-large-radius;
+      // border-radius: $extra-large-radius;
+      border-radius: $small-radius;
       transition: all $fast-animation;
     }
 
@@ -126,7 +135,7 @@
       width: 95%;
     }
 
-    @media screen and (max-height:  $card-slider-screen-small) and (min-width: $card-slider-screen-large) {
+    @media screen and (max-height: $card-slider-screen-small) and (min-width: $card-slider-screen-large) {
       height: $card-slider-small-image;
     }
   }
@@ -134,6 +143,7 @@
   &__content {
     // width: 60%;
     padding-left: $content-space;
+    text-align: justify;
 
     @media screen and (max-width: $card-slider-screen-large) {
       // width: 55%;
@@ -141,7 +151,6 @@
 
     @media screen and (max-width: $card-slider-screen-medium) {
       margin-top: $slider-small-space;
-      text-align: center;
       padding: 0 $card-medium-space;
     }
 
@@ -178,7 +187,7 @@
   }
 
   &__text {
-    width: auto;
+    width: 100%;
     padding-left: $large-space;
     font-family: $normal-font;
     font-size: $default-rem-font;
@@ -187,12 +196,18 @@
     text-align: justified;
     color: $secondary-font-color;
     margin-bottom: $card-medium-space;
+
+    @media screen and (max-width: $card-slider-screen-mobile) {
+      margin-bottom: $two-third-space;
+      padding: 0;
+    }
   }
 
   &__button {
     width: $card-button-width;
     height: $card-button-height;
-    border-radius: $card-large-radius;
+    // border-radius: $card-large-radius;
+    border-radius: $small-radius;
     background: $secondary-font-color;
     color: $primary-font-color;
     box-shadow: $card-slider-button-shadow;
@@ -204,7 +219,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all $normal-animation ease;
+    transition: all $fast-animation ease;
+    cursor: pointer;
+
+    &__text {
+      margin-top: calc($minimal-space + 1px);
+    }
 
     &:hover {
       background: $darken-gray;
@@ -213,7 +233,7 @@
 
 
     @media screen and (max-width: $card-slider-screen-mobile) {
-      width: $card-button-width;
+      width: $card-button-small-width;
     }
 
   }
@@ -241,7 +261,7 @@
       transform: translateX(50%);
       right: 50% !important;
       top: unset !important;
-      bottom: $card-small-space!important;
+      bottom: $card-small-space !important;
       width: 100% !important;
       display: flex;
       justify-content: center;
