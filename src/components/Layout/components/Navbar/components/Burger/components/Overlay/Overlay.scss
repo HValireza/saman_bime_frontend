@@ -1,0 +1,12 @@
+@import '../../../../../../../../styles/colors';
+@import '../../../../../../../../styles/sizes';
+
+.si-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $gray-transparent-color;
+  z-index: $overlay-z-index; 
+}
