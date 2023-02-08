@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IMenuData } from "../../../../../../../../Mock/Dropdown/DropdownMock";
+import { IMenuData } from "../../../../../../../../../../Mock/Dropdown/DropdownMock";
 import "./DropdownItem.scss";
 
 interface IDropdownItem {

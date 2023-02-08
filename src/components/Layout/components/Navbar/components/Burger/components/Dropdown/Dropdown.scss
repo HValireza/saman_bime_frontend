@@ -1,18 +1,24 @@
-@import '../../../../../../styles/colors';
-@import '../../../../../../styles/sizes';
+@import '../../../../../../../../styles/colors';
+@import '../../../../../../../../styles/sizes';
 
 // todo fix colors and styles
 
 .si-dropdown-container {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   z-index: $burger-drop-z-index;
   transition: height $fast-animation ease;
+  max-width: $tablet-support;
+
+  @media screen and (min-width: $tablet-support){
+    max-width: 400px;
+  }
+
   // border-radius: $small-radius;
-  border: $navbar-border;
+  // border: $navbar-border;
   
   .si-dropdown {
     width: 100%;
@@ -22,7 +28,7 @@
     background: $lighten-primary-color;
     transition: height $fast-animation ease;
     // border-radius: $small-radius;
-    border: $navbar-border;
+    // border: $navbar-border;
   }
 
   /* CSSTransition classes  */

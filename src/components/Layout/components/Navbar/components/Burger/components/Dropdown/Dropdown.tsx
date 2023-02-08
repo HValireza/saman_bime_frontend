@@ -6,7 +6,7 @@ import "./Dropdown.scss";
 import {
   mainDropdownData,
   IMenuData,
-} from "../../../../../../Mock/Dropdown/DropdownMock";
+} from "../../../../../../../../Mock/Dropdown/DropdownMock";
 
 interface IDropDown {
   closeMenu?: (onClose: boolean) => void;
