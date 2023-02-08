@@ -10,17 +10,17 @@
   width: $card-width;
   height: $card-height;
   border-radius: $extra-small-radius;
-  margin-bottom: $big-space;
+  margin:0 $big-space $big-space;
   padding: $big-space;
   cursor: default;
   box-shadow: $card-shadow;
 
   @media screen and (min-width:$tablet-support) {
-    margin: $large-space $extra-large-space;
+    margin: $large-space $big-space;
   }
 
-  @media screen and (min-width: $screen-break) {
-    margin: $large-space $large-card-space;
+  @media screen and (min-width: $screen-lock) {
+    margin: $large-space $large-space;
   }
 
   .si-services-card-img {
