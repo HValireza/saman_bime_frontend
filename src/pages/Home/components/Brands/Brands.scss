@@ -3,6 +3,7 @@
 @import '../../../../styles/fonts';
 
 // todo fix or find a better carousel
+// todo fade sides
 .si-brands-container {
   display: flex;
   flex-direction: column;
@@ -13,6 +14,8 @@
   padding: $big-space 0;
   white-space: nowrap;
   overflow: hidden;
+  max-width: $screen-break;
+  margin: 0 auto;
 
   .si-brands-title {
     width: auto;
@@ -32,7 +35,7 @@
     margin: $slider-space 0;
     transition: all $fast-animation;
 
-    margin-right: 100%;
+    margin-right: calc(100% - $brand-slider-width);
 
     .si-brand-slider-swiper {
       display: flex;
@@ -45,8 +48,15 @@
         width: 100%;
         height: auto;
         flex-shrink: 0;
-
         overflow: hidden;
+        transition: all $normal-animation ease;
+        &:hover{
+          filter: none;
+        }
+        
+        @media screen and (min-width: $pc-support){
+          filter: grayscale(1);
+        }
 
       }
     }

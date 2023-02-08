@@ -19,7 +19,9 @@ const Brands: React.FC = () => {
           modules={[Autoplay, A11y]}
           effect={"fade"}
           loop={true}
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 1 }}
+          speed={10000}
+          initialSlide={10}
         >
           {BrandsData.map((d) => (
             <SwiperSlide key={d.id}>
