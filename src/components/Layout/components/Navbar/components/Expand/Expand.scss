@@ -1,0 +1,37 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/sizes';
+@import '../../../../../../styles/fonts';
+
+.si-expand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: $navbar-height;
+  left: 0;
+  width: 100%;
+  padding: 0 $large-space;
+  height: $navbar-expand-height;
+  background-color: $background-color;
+  z-index: $navbar-background-z-index;
+  font-family: $bold-font;
+  font-size: $responsive-navbar-font;
+  line-height: $card-line-height;
+  letter-spacing: 0em;
+  text-align: center;
+
+
+  @media screen and (max-width: $pc-support) {
+    display: none;
+  }
+
+  .si-expand-logo {
+    height: $navbar-expand-icon-size;
+  }
+
+  .si-expand-title {
+    width: auto;
+    padding: $big-space $arrow-space;
+    cursor: pointer;
+  }
+}
