@@ -28,6 +28,7 @@ body {
   overflow-x: hidden;
   direction: $direction;
   font-size: $default-font-size;
+  cursor: default;
 
   &::-webkit-scrollbar {
     width: $scroll-width;
