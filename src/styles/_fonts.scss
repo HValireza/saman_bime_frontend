@@ -1,4 +1,5 @@
 // importing font
+// todo replace any possible px with rem
 
 @font-face {
     font-family: 'B Roya';
@@ -17,6 +18,7 @@ $default-rem-font: 1rem;
 $medium-font: 1.25rem;
 $large-font: 1.5rem;
 $ultra-large-title: 2rem;
+$responsive-navbar-font: 1.1vw;
 
 
 // language preset
