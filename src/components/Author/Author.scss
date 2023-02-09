@@ -2,6 +2,8 @@
 @import '../../styles/sizes';
 @import '../../styles/fonts';
 
+
+// state recent
 .si-author {
   display: flex;
   justify-content: space-between;
@@ -29,6 +31,54 @@
       border-radius: 50%;
       filter: $card-shadow;
       border-radius: $large-radius;
+      border: $recent-thumb-border;
+    }
+
+    .si-author-info-wrapper {
+      margin-right: $arrow-space;
+
+      .si-author-name {
+        font-family: $bold-font;
+        font-size: $default-rem-font;
+        line-height: $small-line-hight;
+        letter-spacing: 0em;
+        margin-bottom: $arrow-space;
+      }
+
+      .si-author-position {
+        font-family: $normal-font;
+        font-size: $small-paragraph;
+        line-height: $small-line-hight;
+        letter-spacing: 0em;
+
+      }
+    }
+  }
+}
+
+// state post
+
+.si-post-author {
+  width: 95%;
+  align-items: center;
+  margin: 0 auto;
+  height: 5rem;
+  padding: $medium-space;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px black solid;
+
+  .si-author-info {
+    height: 100%;
+    align-items: center;
+    &::before {
+      bottom: $recent-before-position;
+      width: 50%;
+      left: 50%;
+    }
+
+    .si-author-thumb {
+      width: 4rem;
+      height: 4rem;
       border: $recent-thumb-border;
     }
 
