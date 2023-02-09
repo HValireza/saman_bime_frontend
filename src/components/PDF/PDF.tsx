@@ -15,6 +15,10 @@ const PDF: React.FC<IPDF> = ({ pdf }) => {
     setNumPages(pdf?.numPages);
   };
 
+  const deviceWidth = window.innerWidth;
+
+  const pdfWidth = deviceWidth < 800 ? deviceWidth - 32 : 768;
+
   return (
     <div className="si-pdf-container">
       {/* pdf */}
@@ -29,6 +33,8 @@ const PDF: React.FC<IPDF> = ({ pdf }) => {
           renderTextLayer={false}
           renderAnnotationLayer={false}
           className={"si-pdf-page"}
+          width={pdfWidth}
+          scale={1}
         />
       </Document>
 
