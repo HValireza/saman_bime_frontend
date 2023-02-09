@@ -1,0 +1,15 @@
+@import '../../styles/sizes';
+
+.si-manager-container{
+  width: 100%;
+
+  .si-manager-card-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    max-width: $screen-break;
+    margin-top: $extra-large-space;
+    flex-wrap: wrap;
+  }
+}
