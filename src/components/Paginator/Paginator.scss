@@ -36,6 +36,17 @@
     }
   }
 
+  .si-pagination-dots{
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+    cursor: default;
+    &:hover{
+      background: $background-color;
+      color: $primary-color;
+    }
+  }
+
   .si-paginator-page-selected{
     background: $primary-color;
     color: $secondary-font-color;
