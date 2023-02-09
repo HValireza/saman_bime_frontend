@@ -62,14 +62,15 @@
   width: 95%;
   align-items: center;
   margin: 0 auto;
-  height: 5rem;
+  height: $author-height;
   padding: $medium-space;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px black solid;
+  padding-bottom: $author-padding;
+  border-bottom: $burger-line-height black solid;
 
   .si-author-info {
     height: 100%;
     align-items: center;
+
     &::before {
       bottom: $recent-before-position;
       width: 50%;
@@ -78,8 +79,8 @@
     }
 
     .si-author-thumb {
-      width: 4rem;
-      height: 4rem;
+      width: $author-thumb;
+      height: $author-thumb;
       border: $recent-thumb-border;
     }
 
