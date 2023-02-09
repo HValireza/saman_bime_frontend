@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-keyword-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: $big-space 0;
+  color: $tertiary-font-color;
+
+  .si-keyword-title{
+    width: auto;
+    height: auto;
+    margin:$big-space $large-space;
+    font-family: $bold-font;
+  }
+
+  .si-keyword{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: $large-space;
+    padding: auto 0;
+    cursor: pointer;
+  }
+}
