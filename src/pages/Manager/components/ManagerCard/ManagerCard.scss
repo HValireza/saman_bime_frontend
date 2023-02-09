@@ -1,0 +1,78 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/sizes';
+@import '../../../../styles/fonts';
+
+.si-manager-card {
+  position: relative;
+  width: $manager-width;
+  height: $manager-height;
+  background-position: center;
+  background-size: cover;
+  margin: $big-space;
+  margin-top: 0;
+  border-radius: $small-radius;
+  box-shadow: $paginator-shadow;
+  font-family: $bold-font;
+  color: $secondary-font-color;
+  transition: all $normal-animation ease;
+  cursor: pointer; 
+  
+  @media screen and (min-width: $pc-support) {
+    margin: $slider-space;
+    margin-top: 0;
+    filter: grayscale(0.1);
+
+    &:hover{
+      filter: blur(0) grayscale(0);
+  
+      .si-manager-name{
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .si-manager-position{
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: $screen-break) {
+    margin: $extra-large-space;
+    margin-top: 0;
+  }
+
+  .si-manager-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: $slider-space;
+    width: 100%;
+    height: auto;
+    font-size: $large-font;
+    line-height: $card-line-height;
+    transition: all $normal-animation ease;
+    
+    @media screen and (min-width: $pc-support){
+      transform: translateY($text-space);
+      opacity: 0;
+    }
+  }
+
+  .si-manager-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: $big-space;
+    width: 100%;
+    height: auto;
+    font-size: $default-rem-font;
+    line-height: $small-line-hight;
+    transition: all $normal-animation ease;
+    @media screen and (min-width: $pc-support){
+      transform: translateY($text-space);
+      opacity: 0;
+    }
+  }
+}
