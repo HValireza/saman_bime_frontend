@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-pdf-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: $big-space 0;
+  padding: 0 $big-space;
+
+  .si-pdf-document{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: $big-space;
+
+    .si-pdf-page{
+      width: 100%;
+      height: auto;
+
+      & canvas{
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  }
+}
