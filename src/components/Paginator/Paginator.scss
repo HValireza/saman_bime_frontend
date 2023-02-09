@@ -1,0 +1,52 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-paginator{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  width: 100%;
+  height: $paginator-height;
+  margin: $big-space 0 $large-space;
+  color: $primary-font-color;
+  font-family: $bold-font;
+  font-size: $default-rem-font;
+  line-height: $small-line-hight;
+
+  & div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: $paginator-height; 
+    padding: 0 $box-space;
+    text-align: center;
+    border: $paginator-border;
+    box-shadow: $paginator-shadow;
+    border-radius: $extra-small-radius;
+    margin: 0 $small-space;
+    background: $background-color;
+    cursor: pointer;
+    transition: all $normal-animation ease;
+
+    &:hover{
+      background: $primary-color;
+      color: $secondary-font-color;
+    }
+  }
+
+  .si-paginator-page-selected{
+    background: $primary-color;
+    color: $secondary-font-color;
+    cursor: default;
+  }
+  
+  .pc-support {
+    display: none;
+
+    @media screen and (min-width:$pc-support) {
+      display: flex;
+    }
+  }
+}
