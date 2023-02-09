@@ -1,0 +1,17 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-text-box{
+  width: 100%;
+  height: auto;
+  margin: $big-space 0;
+  padding: 0 $big-space;
+  text-align: justify;
+  color: $tertiary-font-color;
+
+  @media screen and (min-width: $pc-support){
+    padding: 0 $text-space;
+  }
+
+}
