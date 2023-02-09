@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-box-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  .si-box{
+    transform:translateY($box-y);
+    width: 100%;
+    height: auto;
+    max-width: $box-max-width;
+    background: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: $small-radius;
+    transition: all $normal-animation ease;
+
+    &-scroll{
+      transform: translateY(0);
+    }
+  }
+}
