@@ -54,3 +54,14 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  display: inherit;
+  font-size: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: inherit;
+  display: inline;
+  margin: 0;
+}
