@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
+import Accordion from "./components/Accordion/Accordion";
 
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
@@ -29,6 +30,10 @@ function App() {
           {/* manager page */}
           {/* goes for both manager and board member */}
           <Route path="manager" element={<Manager />} />
+
+          {/* reports page */}
+          {/* reports and handbooks goes here */}
+          <Route path="reports" element={<Accordion />} />
 
           {/* 404 */}
           <Route path="*" element={<NoPage />} />
