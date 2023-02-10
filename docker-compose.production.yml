@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  front:
+    container_name: saman_bime_front
+    image: saman_bime_front:latest
+    restart: always
+    ports:
+      - 8083:80
