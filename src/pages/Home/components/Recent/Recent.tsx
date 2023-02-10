@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import NewsCard from "../../../../components/NewsCard/NewsCard";
 import { RecentPosts } from "../../../../Mock/Home/Recent/RecentMock";
-import RecentCard from "./components/RecentCard/RecentCard";
 import "./Recent.scss";
 
 const Recent: React.FC = () => {
@@ -38,7 +38,7 @@ const Recent: React.FC = () => {
       >
         {RecentPosts.map((p) => (
           <motion.div variants={item} key={p.id}>
-            <RecentCard
+            <NewsCard
               id={p.id}
               createdAt={p.createdAt}
               description={p.description}
@@ -48,6 +48,7 @@ const Recent: React.FC = () => {
               thumb={p.thumb}
               title={p.title}
               key={p.id}
+              state={"recent"}
             />
           </motion.div>
         ))}
