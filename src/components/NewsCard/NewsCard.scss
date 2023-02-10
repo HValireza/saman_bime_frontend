@@ -1,0 +1,136 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-rc-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: $recent-card-width;
+  height: $recent-card-height;
+  background: $recent-gradient;
+  border-radius: $small-radius;
+  filter: $card-shadow;
+  color: $secondary-font-color;
+  cursor: pointer;
+  transition: all $fast-animation ease;
+  margin: 0 $big-space $big-space;
+
+
+  @media screen and (min-width:$tablet-support) {
+    margin: $large-space $big-space;
+  }
+
+  @media screen and (min-width: $screen-lock) {
+    margin: $large-space $large-space;
+  }
+
+  &:hover {
+    justify-content: center;
+    align-items: center;
+
+    .si-rc-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: $recent-card-height;
+      width: $recent-card-width;
+      opacity: 0.3;
+      filter: blur(0.2) grayscale(0.4);
+    }
+
+    .si-rc-info {
+      z-index: $middle-z-index;
+      margin-bottom: $large-space;
+    }
+
+    .si-rc-description {
+      -webkit-line-clamp: 20;
+      z-index: $middle-z-index;
+    }
+
+    .si-rc-title {
+      z-index: $middle-z-index;
+      margin-bottom: $large-space;
+      padding: 0 $medium-space;
+      text-align: center;
+    }
+  }
+
+  .si-rc-img {
+    width: $recent-card-width;
+    height: $recent-card-width;
+    border-radius: $small-radius;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: $card-shadow;
+    opacity: 1;
+    filter: none;
+    transition: all $fast-animation ease;
+  }
+
+  .si-rc-info {
+    width: 100%;
+    transition: all $fast-animation ease;
+  }
+
+  .si-rc-description {
+    padding: $arrow-space $big-space 0 $big-space;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all $fast-animation ease;
+  }
+
+  .si-rc-title {
+    padding: $big-space $big-space $arrow-space 0;
+    transition: all $fast-animation ease;
+  }
+}
+
+.si-rc-container-dark{
+  width: $news-card-width;
+  height: $news-card-height;
+  max-width: 95%;
+  background: $lighten-max;
+  filter: $paginator-shadow;
+  color: $tertiary-font-color;
+  margin: $big-space $big-space $big-space;
+
+
+  &:hover {
+
+    .si-rc-img {
+      width: 100% ;
+      height: $news-card-height ;
+    }
+
+  }
+
+
+  .si-rc-img {
+    width: 100%;
+    height: $news-card-image;
+  }
+  .si-rc-info{
+    font-family: $bold-font;
+    line-height: $small-line-hight;
+  }
+
+  .si-rc-description {
+    -webkit-line-clamp: 5;
+    font-size: $default-font-size;
+    line-height: $small-line-hight;
+  }
+  .si-rc-title {
+    font-family: $bold-font;
+    font-size: $large-font;
+    line-height: $card-line-height;
+  }
+}
