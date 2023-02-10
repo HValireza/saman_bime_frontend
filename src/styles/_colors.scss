@@ -32,6 +32,8 @@ $lighten-error-color: lighten($error-color, 10%);
 $lighten-tertiary-color: lighten($tertiary-color, 10%);
 $lighten-gray: lighten($gray-color, 10%);
 $super-lighten-primary: #315083;
+$lighten-max: #DCDFE6;
+
 
 // opacity color
 $gray-transparent-color:#0f0f0f9d;
@@ -62,3 +64,4 @@ $card-pagination-active-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 $box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25),
 0px 6px 6px rgba(0, 0, 0, 0.23);
 $paginator-shadow: 0px 3px 8px 0px #0000003D;
+
