@@ -3,6 +3,8 @@ import "./App.scss";
 
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
+import Manager from "./pages/Manager/Manager";
+import News from "./pages/News/News";
 import NoPage from "./pages/NoPage/NoPage";
 import Post from "./pages/Post/Post";
 
@@ -16,9 +18,17 @@ function App() {
           {/* Home Page */}
           <Route index element={<Home />} />
 
+          {/* newsPage */}
+          {/* all the pagination and list of all kind of posts */}
+          <Route path="news" element={<News />} />
+
           {/* Post Page */}
           {/* it goes for news detail or any kind of post */}
           <Route path="post" element={<Post />} />
+
+          {/* manager page */}
+          {/* goes for both manager and board member */}
+          <Route path="manager" element={<Manager />} />
 
           {/* 404 */}
           <Route path="*" element={<NoPage />} />
