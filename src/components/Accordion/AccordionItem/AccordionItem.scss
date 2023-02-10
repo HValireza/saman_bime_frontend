@@ -1,0 +1,118 @@
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
+@import '../../../styles/fonts';
+
+.si-ac-item {
+  display: flex;
+  justify-content: space-between;
+  width: $accordion-width;
+  max-width: $accordion-max-width !important;
+  height: $accordion-height;
+  min-height: $accordion-min-height;
+  background: $recent-gradient;
+  border-radius: $ultra-small-radius;
+  filter: $card-shadow;
+  color: $secondary-font-color;
+  cursor: pointer;
+  transition: all $fast-animation ease;
+  padding: $box-space;
+  margin-top: $minimal-space;
+  z-index: $accordion-z-index;
+
+  &:hover {
+    background: $accordion-gradient;
+  }
+
+
+  .si-ac-item-title {
+    margin: auto $author-padding;
+    width: auto;
+    max-width: 90%;
+  }
+
+  .si-ac-item-icon {
+    width: $big-space;
+    height: $big-space;
+    transition: all $fast-animation ease;
+    transform: rotate(-90deg);
+  }
+
+  .icon-open {
+    transform: rotate(90deg);
+  }
+
+  
+}
+
+.si-ac-content {
+  display: flex;
+  flex-direction: column;
+  width: $accordion-width;
+  max-width: $accordion-max-width !important;
+  height: $accordion-height;
+  min-height: $accordion-min-height;
+  position: relative;
+  z-index: $middle-z-index;
+  margin-top: calc($accordion-min-height * -1);
+  transition: all $normal-animation ease;
+
+  .si-ac-sub-item {
+    display: flex;
+    justify-content: space-between;
+    width: $accordion-width;
+    max-width: $accordion-max-width !important;
+    background: $lighten-max;
+    border-radius: $ultra-small-radius;
+    filter: $card-shadow;
+    color: $tertiary-font-color;
+    cursor: pointer;
+    transition: all $normal-animation ease;
+    z-index: $middle-z-index;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+
+    &:hover {
+      background: $lighten-max-hover;
+    }
+
+
+    .si-ac-sub-item-title {
+      margin: auto $author-padding;
+      width: auto;
+      max-width: 90%;
+      visibility: inherit;
+      opacity: inherit;
+    }
+
+
+
+    .si-ac-sub-item-icon {
+      width: $big-space;
+      height: $big-space;
+      transition: all $fast-animation ease;
+      transform: rotate(-90deg);
+      visibility: inherit;
+      opacity: inherit;
+    }
+
+  }
+
+  .sub-open{
+    visibility: visible;
+    opacity: 1;
+    height: $accordion-height;
+    min-height: $accordion-min-height;
+    padding: $box-space;
+  }
+}
+
+.content-open {
+  height: auto;
+  margin-top: 0;
+}
+.item-open {
+  background: $accordion-gradient;
+}
