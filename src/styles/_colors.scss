@@ -33,6 +33,7 @@ $lighten-tertiary-color: lighten($tertiary-color, 10%);
 $lighten-gray: lighten($gray-color, 10%);
 $super-lighten-primary: #315083;
 $lighten-max: #DCDFE6;
+$lighten-max-hover: #a5a7ac;
 
 
 // opacity color
@@ -50,6 +51,7 @@ $recent-gradient: linear-gradient(114.18deg, rgba(72, 85, 99, 0.85) 0%, rgba(41,
 $card-slider-gradient: linear-gradient(151.39deg, #4371A8 -1%, #BDC3C7 -0.99%, #2C3E50 100%);
 $card-pagination-active-gradient: linear-gradient(0deg, rgba(13, 48, 110, 0.5), rgba(13, 48, 110, 0.5)),
 linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+$accordion-gradient: linear-gradient(74.18deg, rgba(27, 29, 31, 0.85) 0%, rgba(21, 35, 51, 0.85) 100%);
 
 // shadow
 $search-shadow: 0 0 0 3px $lighten-gray;

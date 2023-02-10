@@ -45,6 +45,7 @@ $circle-radius: 50%;
 
 // z index
 $middle-z-index: 10;
+$accordion-z-index:20;
 $navbar-background-z-index: 25;
 $navbar-z-index: 50;
 $navbar-items-z-index: 100;
@@ -178,3 +179,9 @@ $paginator-height: 2.75rem;
 // manager card
 $manager-width: 18rem;
 $manager-height: 24.5rem;
+
+// accordion 
+$accordion-width: 50rem;
+$accordion-max-width: 90vw;
+$accordion-height: auto;
+$accordion-min-height: 2rem;
