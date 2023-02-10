@@ -1,0 +1,44 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+
+.si-accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: $big-space 0 $large-space;
+
+  .si-accordion-title{
+    width: 100%;
+    text-align: justify;
+    margin: $big-space 0 0;
+    padding: 0 $big-space;
+    color: $tertiary-font-color;
+    font-family: $bold-font;
+    font-size: $large-font;
+    cursor: pointer;
+  }
+
+  .si-accordion-secondary-title{
+    width: 100%;
+    text-align: justify;
+    margin: $big-space 0;
+    color: $tertiary-font-color;
+    padding: 0 $big-space;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+  }
+  
+  .si-accordion-wrapper{
+    display: flex;
+    // todo check out for this line
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: $screen-break;
+    padding: 0 $big-space;
+  }
+}
