@@ -1,0 +1,51 @@
+@import '../../styles/sizes';
+@import '../../styles/fonts';
+@import '../../styles/colors';
+
+.si-news-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+
+  .si-news-title{
+    width: 100%;
+    text-align: justify;
+    margin: $big-space 0 0;
+    padding: 0 $big-space;
+    color: $tertiary-font-color;
+    font-family: $bold-font;
+    font-size: $large-font;
+    cursor: pointer;
+  }
+
+  .si-news-secondary-title{
+    width: 100%;
+    text-align: justify;
+    margin: $big-space 0;
+    padding: 0 $big-space;
+    color: $tertiary-font-color;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+  }
+
+  .si-news-wrapper{
+    width: 100%;
+    max-width: $screen-break;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .si-news-card-motion{
+      max-width: 100%;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+    }
+  }
+}
+
