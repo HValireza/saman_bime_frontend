@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import jalaliday from "jalaliday";
 import logo from "../../assets/logo/logo4.png";
+import blueLogo from "../../assets/logo/logo5.png";
 import "./Author.scss";
 
 export interface IAuthor {
@@ -20,12 +21,15 @@ const Author: React.FC<IAuthor> = ({
 }) => {
   dayjs.extend(jalaliday);
 
+  const thumbnail =
+    thumb === logo ? (state === "news" ? blueLogo : logo) : thumb;
+
   return (
     <div
       className={state === "post" ? "si-author si-post-author" : "si-author"}
     >
       <div className="si-author-info">
-        <img src={thumb} alt="" className="si-author-thumb" />
+        <img src={thumbnail} alt="" className="si-author-thumb" />
         <div className="si-author-info-wrapper">
           <h4 className="si-author-name">{name}</h4>
           <h5 className="si-author-position">{position}</h5>
