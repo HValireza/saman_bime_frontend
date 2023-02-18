@@ -4,28 +4,45 @@ interface IPaginator {
   currentPage: number;
   totalPages: number;
   setPage: (page: number) => void;
+  top?: number;
 }
 
 const Paginator: React.FC<IPaginator> = ({
   currentPage,
   totalPages,
   setPage,
+  top = 0,
 }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: top,
+      behavior: "smooth",
+    });
+  };
+
   const nextPage = () => {
+    scrollToTop();
     setPage(currentPage + 1);
   };
   const prevPage = () => {
+    scrollToTop();
     setPage(currentPage - 1);
   };
   const goToLastPage = () => {
     if (currentPage !== totalPages) {
+      scrollToTop();
       setPage(totalPages);
     }
   };
   const goToFirstPage = () => {
     if (currentPage !== 1) {
+      scrollToTop();
       setPage(1);
     }
+  };
+  const changePage = (to: number) => {
+    scrollToTop();
+    setPage(to);
   };
 
   return (
@@ -58,7 +75,7 @@ const Paginator: React.FC<IPaginator> = ({
       {currentPage + 2 < totalPages && (
         <div
           className="si-paginator-page pc-support"
-          onClick={() => setPage(currentPage + 2)}
+          onClick={() => changePage(currentPage + 2)}
         >
           {currentPage + 2}
         </div>
@@ -66,7 +83,7 @@ const Paginator: React.FC<IPaginator> = ({
       {currentPage + 1 < totalPages && (
         <div
           className="si-paginator-page pc-support"
-          onClick={() => setPage(currentPage + 1)}
+          onClick={() => changePage(currentPage + 1)}
         >
           {currentPage + 1}
         </div>
@@ -79,7 +96,7 @@ const Paginator: React.FC<IPaginator> = ({
       {currentPage - 1 > 1 && (
         <div
           className="si-paginator-page pc-support"
-          onClick={() => setPage(currentPage - 1)}
+          onClick={() => changePage(currentPage - 1)}
         >
           {currentPage - 1}
         </div>
@@ -87,7 +104,7 @@ const Paginator: React.FC<IPaginator> = ({
       {currentPage - 2 > 1 && (
         <div
           className="si-paginator-page pc-support"
-          onClick={() => setPage(currentPage - 2)}
+          onClick={() => changePage(currentPage - 2)}
         >
           {currentPage - 2}
         </div>
