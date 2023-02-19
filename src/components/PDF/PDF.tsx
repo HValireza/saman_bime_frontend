@@ -44,6 +44,7 @@ const PDF: React.FC<IPDF> = ({ pdf }) => {
           currentPage={pageNumber}
           totalPages={numPages}
           setPage={setPageNumber}
+          top={window.innerHeight - 100}
         />
       )}
     </div>
