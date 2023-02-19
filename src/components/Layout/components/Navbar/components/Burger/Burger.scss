@@ -14,6 +14,10 @@
   z-index: $burger-z-index;
   cursor: pointer;
 
+  @media screen and (min-width: $pc-support){
+    display: none;
+  }
+
 
   .si-burger-line {
     width: $burger-line-width;
