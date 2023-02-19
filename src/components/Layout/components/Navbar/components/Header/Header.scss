@@ -6,7 +6,10 @@
   justify-content: space-between;
   position: fixed;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: $max-support;
   height: $navbar-height;
   margin: 0;
   z-index: $navbar-z-index;
