@@ -16,6 +16,9 @@
     background-position: center;
     background-size: cover;
     animation: fadeIn $fast-animation ease forwards;
+    -webkit-animation: fadeIn $fast-animation ease forwards;
+    transition: background-image $normal-animation ease;
+    -webkit-transition: background-image $normal-animation ease;
   }
 
   .si-slider-arrow-left {
