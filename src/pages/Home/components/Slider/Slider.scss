@@ -30,7 +30,7 @@
     transform: translateY(-50%);
     opacity: 0.6;
     transition: all $normal-animation ease;
-    z-index: $navbar-z-index;
+    z-index: $middle-z-index;
 
     &:hover {
       opacity: 1;
@@ -46,7 +46,7 @@
     transform: translateY(-50%) rotate(180deg);
     opacity: 0.6;
     transition: all $normal-animation ease;
-    z-index: $navbar-z-index;
+    z-index: $middle-z-index;
 
     &:hover {
       opacity: 1;
@@ -61,7 +61,7 @@
     width: auto;
     height: auto;
     transform: translateX(-50%);
-    z-index: $navbar-z-index;
+    z-index: $middle-z-index;
     direction: ltr;
 
     .si-slider-bullet {
