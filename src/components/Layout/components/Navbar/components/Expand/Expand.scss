@@ -4,21 +4,26 @@
 
 .si-expand {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: $navbar-height;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   padding: 0 $large-space;
   height: $navbar-expand-height;
   background-color: $background-color;
   z-index: $navbar-background-z-index;
   font-family: $bold-font;
-  font-size: $responsive-navbar-font;
+  font-size: $large-font;
   line-height: $card-line-height;
   letter-spacing: 0em;
   text-align: center;
+
+  @media screen and (max-width: $screen-lock) {
+    font-size: $medium-font;
+    padding: 0 $medium-space;
+  }
 
 
   @media screen and (max-width: $pc-support) {
@@ -27,11 +32,60 @@
 
   .si-expand-logo {
     height: $navbar-expand-icon-size;
+    cursor: pointer;
+    transition: all $normal-animation ease;
+
+    &:hover {
+      filter: $logo-hover-shadow;
+    }
   }
+
+  .si-expand-title-wrapper {
+    display: flex;
+    margin: auto;
+    width: auto;
+  }
+
 
   .si-expand-title {
     width: auto;
-    padding: $big-space $arrow-space;
+    padding: $big-space 0;
+    margin: 0 $big-space;
     cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+
+    .si-expand-dropdown {
+      position: fixed;
+      // top: calc($navbar-height + $navbar-expand-height);
+      top: $navbar-expand-height;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: $max-support;
+      height: auto;
+      padding: $medium-space $big-space;
+      background: $background-color;
+      z-index: $burger-drop-z-index;
+      visibility: hidden;
+      opacity: 0;
+      transition: all $fast-animation ease;
+    }
+
+    &:hover {
+      .si-expand-dropdown {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    
+    @media screen and (max-width: $screen-lock) {
+      margin: 0 $medium-space;
+    }
   }
+  .si-cursor-default{
+    cursor: default;
+  }
+  
 }
