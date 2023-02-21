@@ -10,6 +10,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+  background: $lighten-primary-color;
 
   .si-reinsurance-title {
     margin-top: $large-space;
@@ -18,5 +19,6 @@
     line-height: $title-line-hight;
     letter-spacing: 0em;
     text-align: justified;
+    color: $secondary-font-color;
   }
 }
