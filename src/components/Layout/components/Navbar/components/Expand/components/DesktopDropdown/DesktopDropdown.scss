@@ -1,0 +1,58 @@
+@import '../../../../../../../../styles/colors';
+@import '../../../../../../../../styles/sizes';
+@import '../../../../../../../../styles/fonts';
+
+.si-dd-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  color: inherit;
+
+  .si-dd-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    margin-bottom: auto;
+    text-align: right;
+
+    .si-dd-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: right;
+
+      .si-dd-item-label{
+        margin-left: auto;
+        cursor: pointer;
+      }
+
+      .si-dd-sub-item-label{
+        cursor: pointer;
+      }
+
+      .si-dd-sub-item-wrapper{
+        margin-right: $big-space;
+        font-family: $normal-font;
+      }
+
+      .si-dd-cursor{
+        cursor: default;
+      }
+    }
+
+    .si-dd-return {
+      display: none;
+    }
+  }
+
+  .si-dd-vector {
+    height: $expand-dropdown-vector;
+    width: auto;
+    margin: $large-space;
+  }
+}
