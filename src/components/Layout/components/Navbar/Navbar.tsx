@@ -1,4 +1,5 @@
 import Burger from "./components/Burger/Burger";
+import Expand from "./components/Expand/Expand";
 import Header from "./components/Header/Header";
 import LanguageButton from "./components/LanguageButton/LanguageButton";
 import NavbarBG from "./components/NavbarBG/NavbarBG";
@@ -16,6 +17,7 @@ const Navbar: React.FC<INavbar> = ({ language, setLanguage }) => {
       <NavbarBG />
       <Header />
       <Burger />
+      <Expand />
       <SearchButton />
       <LanguageButton setLanguage={setLanguage} language={language} />
     </div>
