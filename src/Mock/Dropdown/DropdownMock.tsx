@@ -1,6 +1,16 @@
 // common
 import thickArrow from "../../assets/icons/tools/thick-arrow.svg";
 
+// main icons
+import aboutMain from "../../assets/icons/navbar/about-navbar.svg";
+import contactMain from "../../assets/icons/navbar/contact-navbar.svg";
+import mediaMain from "../../assets/icons/navbar/media-navbar.svg";
+import servicesMain from "../../assets/icons/navbar/services-navbar.svg";
+import shareMain from "../../assets/icons/navbar/share-navbar.svg";
+import homeMain from "../../assets/icons/navbar/home-navbar.svg";
+import regulationsMain from "../../assets/icons/navbar/regulations-navbar.svg";
+import reportsMain from "../../assets/icons/navbar/reports-navbar.svg";
+
 // services icons
 import zoom from "../../assets/icons/services/zoom.svg";
 import fire from "../../assets/icons/services/fire.svg";
@@ -312,14 +322,14 @@ export const mainDropdownData: IMenuData[] = [
   {
     id: 0,
     label: "خانه",
-    mainIcon: "",
+    mainIcon: homeMain,
     address: "/",
   },
   {
     id: 1,
     label: "درباره ما",
     selectMenu: "secondary",
-    mainIcon: "",
+    mainIcon: aboutMain,
     switchIcon: "",
     subMenuData: aboutDropdownData,
   },
@@ -327,7 +337,7 @@ export const mainDropdownData: IMenuData[] = [
     id: 2,
     label: "خدمات",
     selectMenu: "secondary",
-    mainIcon: "",
+    mainIcon: servicesMain,
     switchIcon: "",
     subMenuData: serviceDropdownData,
   },
@@ -335,7 +345,7 @@ export const mainDropdownData: IMenuData[] = [
     id: 3,
     label: "امور سهام",
     selectMenu: "secondary",
-    mainIcon: "",
+    mainIcon: shareMain,
     switchIcon: "",
     subMenuData: shareDropdownData,
   },
@@ -343,19 +353,19 @@ export const mainDropdownData: IMenuData[] = [
     id: 4,
     label: "گزارشگری و افشای اطلاعات",
     address: "/reports",
-    mainIcon: "",
+    mainIcon: reportsMain,
   },
   {
     id: 5,
     label: "آیین نامه های بیمه مرکزی",
     address: "/regulations",
-    mainIcon: "",
+    mainIcon: regulationsMain,
   },
   {
     id: 6,
     label: "رسانه",
     selectMenu: "secondary",
-    mainIcon: "",
+    mainIcon: mediaMain,
     switchIcon: "",
     subMenuData: mediaDropdownData,
   },
@@ -363,7 +373,7 @@ export const mainDropdownData: IMenuData[] = [
     id: 7,
     label: "تماس با ما",
     selectMenu: "secondary",
-    mainIcon: "",
+    mainIcon: contactMain,
     switchIcon: "",
     subMenuData: contactDropdownData,
   },
