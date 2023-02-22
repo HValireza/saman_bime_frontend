@@ -31,6 +31,7 @@
     opacity: 0.6;
     transition: all $normal-animation ease;
     z-index: $middle-z-index;
+    cursor: pointer;
 
     &:hover {
       opacity: 1;
@@ -47,6 +48,7 @@
     opacity: 0.6;
     transition: all $normal-animation ease;
     z-index: $middle-z-index;
+    cursor: pointer;
 
     &:hover {
       opacity: 1;
@@ -71,10 +73,12 @@
       background: $background-color;
       margin: 0 $minimal-space;
       transition: all $normal-animation ease;
+      cursor: pointer;
     }
 
     .si-slider-bullet-selected {
       width: $selected-bullet-size;
+      cursor: default;
     }
   }
 
@@ -106,9 +110,9 @@
     height: auto;
     filter: $logo-fixed-shadow;
     transition: all $normal-animation ease;
-    
+
     @media screen and (min-width: $pc-support) {
-      top: calc( $navbar-expand-height + $two-third-space );
+      top: calc($navbar-expand-height + $two-third-space);
       left: $two-third-space;
       width: $slider-logo-size;
     }
