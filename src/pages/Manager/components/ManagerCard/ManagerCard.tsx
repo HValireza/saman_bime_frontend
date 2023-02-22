@@ -8,8 +8,8 @@ const ManagerCard: React.FC<IManager> = ({ name, image, position }) => {
 
   return (
     <div className="si-manager-card" style={backgroundStyles}>
-      <div className="si-manager-name">{name}</div>
-      <div className="si-manager-position">{position}</div>
+      <h3 className="si-manager-name">{name}</h3>
+      <h4 className="si-manager-position">{position}</h4>
     </div>
   );
 };
