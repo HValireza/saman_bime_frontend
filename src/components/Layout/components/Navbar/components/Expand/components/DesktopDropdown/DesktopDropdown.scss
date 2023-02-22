@@ -29,10 +29,12 @@
       .si-dd-item-label{
         margin-left: auto;
         cursor: pointer;
+        line-height: $title-line-hight;
       }
 
       .si-dd-sub-item-label{
         cursor: pointer;
+        line-height: $card-line-height;
       }
 
       .si-dd-sub-item-wrapper{
