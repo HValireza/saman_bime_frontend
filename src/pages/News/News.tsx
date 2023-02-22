@@ -39,15 +39,15 @@ const News: React.FC<INews> = ({
 
   return (
     <div className="si-news-container">
-      <div className="si-news-title" onClick={() => navigation(mainTitle.link)}>
+      <h2 className="si-news-title" onClick={() => navigation(mainTitle.link)}>
         {mainTitle.title}
-      </div>
-      <div
+      </h2>
+      <h3
         className="si-news-secondary-title"
         onClick={() => navigation(secondaryTitle.link)}
       >
         {secondaryTitle.title}
-      </div>
+      </h3>
       <div className="si-news-wrapper">
         {NewsPosts.map((p) => (
           <motion.div
