@@ -9,9 +9,12 @@
   align-items: center;
   width: 100%;
   padding: $big-space 0 $large-space;
+  @media screen and (min-width: $pc-support){
+    margin-top: $navbar-expand-height;
+  }
 
   .si-accordion-title{
-    width: 100%;
+    width: auto;
     text-align: justify;
     margin: $big-space 0 0;
     padding: 0 $big-space;
@@ -22,7 +25,7 @@
   }
 
   .si-accordion-secondary-title{
-    width: 100%;
+    width: auto;
     text-align: justify;
     margin: $big-space 0;
     color: $tertiary-font-color;
@@ -37,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
+    width: auto;
     max-width: $screen-break;
     padding: 0 $big-space;
   }

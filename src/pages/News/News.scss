@@ -8,6 +8,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media screen and (min-width: $pc-support){
+    margin-top: $navbar-expand-height;
+  }
 
 
   .si-news-title{
