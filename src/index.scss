@@ -28,6 +28,8 @@ body {
   overflow-x: hidden;
   direction: $direction;
   font-size: $default-font-size;
+  line-height: $small-line-hight;
+  letter-spacing: 0em;
   cursor: default;
 
   &::-webkit-scrollbar {
