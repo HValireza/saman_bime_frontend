@@ -28,7 +28,7 @@ const Recent: React.FC = () => {
 
   return (
     <div className="si-recent-container">
-      <h1 className="si-recent-title">مقالات، اخبار و رویداد ها</h1>
+      <h2 className="si-recent-title">مقالات، اخبار و رویداد ها</h2>
       <motion.div
         className="si-recent-card-container"
         variants={container}
