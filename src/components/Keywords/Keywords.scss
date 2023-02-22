@@ -15,6 +15,7 @@
     height: auto;
     margin:$big-space $large-space;
     font-family: $bold-font;
+    line-height: $card-line-height;
   }
 
   .si-keyword{
@@ -24,5 +25,6 @@
     margin-left: $large-space;
     padding: auto 0;
     cursor: pointer;
+    line-height: $card-line-height;
   }
 }
