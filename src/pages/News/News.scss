@@ -21,6 +21,7 @@
     color: $tertiary-font-color;
     font-family: $bold-font;
     font-size: $large-font;
+    line-height: $title-line-hight;
     cursor: pointer;
   }
 
@@ -32,6 +33,7 @@
     color: $tertiary-font-color;
     font-family: $bold-font;
     font-size: $ultra-large-title;
+    line-height: $title-line-hight;
   }
 
   .si-news-wrapper{
