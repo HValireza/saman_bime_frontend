@@ -9,7 +9,7 @@
     align-items: center;  
     width: 100%;
     max-width: $screen-break;
-    margin-top: $extra-large-space;
+    margin: $extra-large-space auto;
     flex-wrap: wrap;
   }
 }
