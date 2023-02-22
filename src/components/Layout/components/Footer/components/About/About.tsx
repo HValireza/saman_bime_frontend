@@ -5,6 +5,7 @@ const About: React.FC = () => {
     <div className="si-footer-about">
       <div className="si-footer-about-line"></div>
       <div className="si-footer-about-text">
+        <div className="si-footer-about-title">درباره ما</div>
         شرکت بیمه اتکایی سامان فعالیت رسمی خود را در سال 1400 به عنوان سومین
         شرکت تخصصی بیمه اتکایی کشور آغاز نمود. این شرکت با اخذ پروانه فعالیت از
         بیمه مرکزی جمهوری اسلامی ایران در زمینه انجام کلیه عملیات اتکایی در

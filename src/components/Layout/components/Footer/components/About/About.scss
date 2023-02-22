@@ -31,5 +31,11 @@
     width: calc(100vw - 3rem);
     height: auto;
     text-align: justify;
+
+    .si-footer-about-title{
+      font-family: $bold-font;
+      font-size: $default-rem-font;
+      line-height: $card-line-height;
+    }
   }
 }
