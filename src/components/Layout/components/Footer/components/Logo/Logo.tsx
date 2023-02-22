@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../../../../../../assets/logo/logo3.png";
+import logo from "../../../../../../assets/logo/logo6.png";
 import "./Logo.scss";
 
 const Logo: React.FC = () => {
