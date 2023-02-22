@@ -4,8 +4,8 @@ import "./NoPage.scss";
 const NoPage: React.FC = () => {
   return (
     <div className="si-no-page">
-      <div>404</div>
-      <div>صفحه مورد نظر پیدا نشد</div>
+      <h2>404</h2>
+      <h3>صفحه مورد نظر پیدا نشد</h3>
     </div>
   );
 };
