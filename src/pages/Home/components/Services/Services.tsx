@@ -25,7 +25,7 @@ const Services: React.FC = () => {
   };
   return (
     <div className="si-services-container">
-      <h2 className="si-services-title">بیمه های اتکایی چیست؟</h2>
+      <h2 className="si-services-title">خدمات بیمه اتکایی</h2>
       <motion.div
         className="si-services-card-container"
         variants={container}
