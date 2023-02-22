@@ -47,8 +47,9 @@
     }
 
     .si-rc-description {
-      -webkit-line-clamp: 20;
+      -webkit-line-clamp: 18;
       z-index: $middle-z-index;
+      line-height: $small-line-hight;
     }
 
     .si-rc-title {
@@ -56,6 +57,7 @@
       margin-bottom: $large-space;
       padding: 0 $medium-space;
       text-align: center;
+      line-height: $card-line-height;
     }
   }
 
@@ -81,20 +83,22 @@
     padding: $arrow-space $big-space 0 $big-space;
     text-align: justify;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all $fast-animation ease;
+    line-height: $small-line-hight;
   }
 
   .si-rc-title {
     padding: $big-space $big-space $arrow-space 0;
     transition: all $fast-animation ease;
+    line-height: $card-line-height;
   }
 }
 
-.si-rc-container-dark{
+.si-rc-container-dark {
   width: $news-card-width;
   height: $news-card-height;
   max-width: 95%;
@@ -107,8 +111,8 @@
   &:hover {
 
     .si-rc-img {
-      width: 100% ;
-      height: $news-card-height ;
+      width: 100%;
+      height: $news-card-height;
     }
 
   }
@@ -118,16 +122,18 @@
     width: 100%;
     height: $news-card-image;
   }
-  .si-rc-info{
+
+  .si-rc-info {
     font-family: $bold-font;
     line-height: $small-line-hight;
   }
 
   .si-rc-description {
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     font-size: $default-font-size;
     line-height: $small-line-hight;
   }
+
   .si-rc-title {
     font-family: $bold-font;
     font-size: $large-font;
