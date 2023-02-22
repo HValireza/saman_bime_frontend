@@ -1,5 +1,6 @@
 @import '../../../../../../../../styles/colors';
 @import '../../../../../../../../styles/sizes';
+@import '../../../../../../../../styles/fonts';
 
 
 .si-dropdown-container {
@@ -11,6 +12,7 @@
   z-index: $burger-drop-z-index;
   transition: height $fast-animation ease;
   max-width: $tablet-support;
+  line-height: $card-line-height;
 
   @media screen and (min-width: $tablet-support){
     max-width: $dropdown-width;
