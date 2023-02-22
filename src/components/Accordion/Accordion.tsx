@@ -5,8 +5,8 @@ import AccordionItem from "./AccordionItem/AccordionItem";
 const Accordion: React.FC = () => {
   return (
     <div className="si-accordion">
-      <div className="si-accordion-title">گزارشگری و افشای اطلاعات</div>
-      <div className="si-accordion-secondary-title">صفحه تست</div>
+      <h2 className="si-accordion-title">گزارشگری و افشای اطلاعات</h2>
+      <h3 className="si-accordion-secondary-title">صفحه تست</h3>
 
       <div className="si-accordion-wrapper">
         {accordionList.map((a) => (
