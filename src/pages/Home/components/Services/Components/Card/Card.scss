@@ -38,6 +38,7 @@
 
   .si-services-card-description {
     text-align: justify;
+    line-height: $small-line-hight;
     display: -webkit-box;
     -webkit-line-clamp: 11;
     -webkit-box-orient: vertical;
