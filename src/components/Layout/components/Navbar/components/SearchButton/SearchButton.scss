@@ -14,12 +14,13 @@
   border: none;
   cursor: pointer;
   background: $secondary-font-color;
-  
+
   &:hover {
     background: $lighten-tertiary-color;
     box-shadow: $search-shadow;
+    cursor: pointer;
   }
-  
+
   &:focus {
     transition: width $fast-animation cubic-bezier(0, 1.22, 0.66, 1.39), border-radius $fast-animation, background $fast-animation;
     border: none;
@@ -32,18 +33,19 @@
     background: $secondary-font-color;
     color: $primary-font-color;
 
-    &:not(:focus){
+    &:not(:focus) {
       text-indent: -5000px;
     }
   }
 
 }
 
-.si-search-icon{
+.si-search-icon {
   position: fixed;
   top: $navbar-search-icon-top;
   left: $navbar-search-icon-left;
   z-index: $navbar-items-z-index;
   width: $navbar-search-icon-size;
   height: $navbar-search-icon-size;
+  cursor: pointer;
 }
