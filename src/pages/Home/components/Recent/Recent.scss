@@ -2,7 +2,7 @@
 @import "../../../../styles/sizes";
 @import "../../../../styles/fonts";
 
-.si-recent-container{
+.si-recent-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@
   padding: $large-space;
   background: $super-lighten-primary;
 
-  .si-recent-title{
+  .si-recent-title {
     width: auto;
     height: auto;
     margin: $big-space 0;
@@ -22,7 +22,7 @@
     line-height: $card-line-height;
   }
 
-  .si-recent-card-container{
+  .si-recent-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -30,5 +30,78 @@
     height: auto;
     max-width: $screen-break;
   }
+
+  .si-recent-more {
+    margin-top: $big-space;
+    width: $archive-button-width;
+    height: $archive-button-height;
+    color: $secondary-font-color;
+    border-radius: $extra-small-radius;
+    padding: auto;
+    background: transparent;
+    cursor: pointer;
+    transition: all $fast-animation ease;
+    position: relative;
+    box-shadow: $archive-button-shadow;
+    outline: none;
+
+    border: none;
+    background: $secondary-color;
+    background: $archive-button-gradient;
+    color: $secondary-font-color;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: $default-rem-font;
+    font-family: $bold-font;
+
+    &:hover {
+      text-decoration: none;
+      color: $secondary-font-color;
+      transform: scale(1.1);
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: -180px;
+      left: 0;
+      width: 30px;
+      height: 100%;
+      background-color: $secondary-font-color;
+      animation: shiny-btn1 3s ease-in-out infinite;
+    }
+
+    &:active {
+      box-shadow: $archive-button-shadow-active;
+    }
+
+  }
 }
 
+
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}

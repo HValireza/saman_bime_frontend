@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import NewsCard from "../../../../components/NewsCard/NewsCard";
 import { RecentPosts } from "../../../../Mock/Home/Recent/RecentMock";
 import "./Recent.scss";
 
 const Recent: React.FC = () => {
+  const navigate = useNavigate();
+
   const container = {
     hidden: { opacity: 1 },
     visible: {
@@ -53,6 +56,10 @@ const Recent: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="si-recent-more" onClick={() => navigate("news")}>
+        آرشیو
+      </div>
     </div>
   );
 };
