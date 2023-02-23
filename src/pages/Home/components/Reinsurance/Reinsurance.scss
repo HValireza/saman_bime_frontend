@@ -32,7 +32,7 @@
       left: 0;
       top: 0;
       opacity: 0;
-      width: calc(50% - $card-slider-large-max-with / 2);
+      width: calc(50% - $card-left-avoid-scroll);
       height: 100%;
       overflow-x: hidden;
     }
