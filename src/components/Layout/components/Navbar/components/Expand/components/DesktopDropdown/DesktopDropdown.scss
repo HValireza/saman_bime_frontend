@@ -29,10 +29,24 @@
       .si-dd-item-label {
         margin-left: auto;
         cursor: pointer;
-        line-height: $title-line-hight;
+        line-height: $card-line-height;
         font-family: $bold-font;
         font-size: $nav-font;
         letter-spacing: 0em;
+        margin-bottom: $medium-space;
+
+        &:after {
+          transition: all ease-in-out $fast-animation;
+          background: none repeat scroll 0 0 $primary-color;
+          content: "";
+          display: block;
+          height: 2px;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
 
         @media screen and (max-width: $screen-lock) {
           font-size: $nav-font;
@@ -45,6 +59,20 @@
         font-family: $normal-font;
         font-size: $default-rem-font;
         letter-spacing: 0em;
+        margin-bottom: $small-space;
+
+        &:after {
+          transition: all ease-in-out $fast-animation;
+          background: none repeat scroll 0 0 $primary-color;
+          content: "";
+          display: block;
+          height: 2px;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
 
         @media screen and (max-width: $screen-lock) {
           font-size: $default-rem-font;
@@ -58,6 +86,15 @@
 
       .si-dd-cursor {
         cursor: default;
+
+        &:after {
+          height: 0;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 0;
+        }
       }
     }
 
