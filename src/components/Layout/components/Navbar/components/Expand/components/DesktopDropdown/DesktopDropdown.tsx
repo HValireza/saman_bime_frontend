@@ -9,9 +9,10 @@ const DesktopDropdown: React.FC<IMenuData> = ({
 }) => {
   const navigate = useNavigate();
 
-  const navigation = (address?: string) => {
+  const navigation = (address?: string, outerLink?: string) => {
     address && scrollTo(0, 0);
     address && navigate(address);
+    outerLink && window.open(outerLink, "_blank");
   };
 
   return (
@@ -24,9 +25,11 @@ const DesktopDropdown: React.FC<IMenuData> = ({
           >
             <div
               className={
-                m.address ? "si-dd-item-label" : "si-dd-item-label si-dd-cursor"
+                m.address || m.outerLink
+                  ? "si-dd-item-label"
+                  : "si-dd-item-label si-dd-cursor"
               }
-              onClick={() => navigation(m.address)}
+              onClick={() => navigation(m.address, m.outerLink)}
             >
               {m.label}
             </div>
@@ -42,11 +45,11 @@ const DesktopDropdown: React.FC<IMenuData> = ({
                 >
                   <div
                     className={
-                      s.address
+                      s.address || s.outerLink
                         ? "si-dd-sub-item-label"
                         : "si-dd-sub-item-label si-dd-cursor"
                     }
-                    onClick={() => navigation(s.address)}
+                    onClick={() => navigation(s.address, s.outerLink)}
                   >
                     {s.label}
                   </div>
