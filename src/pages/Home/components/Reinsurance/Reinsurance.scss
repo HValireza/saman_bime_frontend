@@ -3,6 +3,7 @@
 @import '../../../../styles/colors';
 
 .si-reinsurance-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,5 +21,35 @@
     letter-spacing: 0em;
     text-align: justified;
     color: $secondary-font-color;
+  }
+
+  .si-reinsurance-scroll-left{
+    display: none;
+
+    @media screen and (min-width: $pc-support){
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: calc(50% - $card-slider-large-max-with / 2);
+      height: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  .si-reinsurance-scroll-right{
+    display: none;
+
+    @media screen and (min-width: $pc-support){
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0;
+      width: calc(50% - $card-slider-large-max-with / 2);
+      height: 100%;
+      overflow-x: hidden;
+    }
   }
 }
