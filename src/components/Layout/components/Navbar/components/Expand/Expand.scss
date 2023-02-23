@@ -52,8 +52,15 @@
     padding: $big-space 0;
     margin: 0 $big-space;
     cursor: pointer;
-    font-size: inherit;
-    font-weight: inherit;
+    font-family: $bold-font;
+    font-size: $large-font;
+    line-height: $card-line-height;
+    letter-spacing: 0em;
+    text-align: center;
+
+    @media screen and (max-width: $screen-lock) {
+      font-size: $medium-font;
+    }
 
     .si-expand-dropdown {
       position: fixed;
@@ -79,13 +86,14 @@
       }
     }
 
-    
+
     @media screen and (max-width: $screen-lock) {
       margin: 0 $medium-space;
     }
   }
-  .si-cursor-default{
+
+  .si-cursor-default {
     cursor: default;
   }
-  
+
 }

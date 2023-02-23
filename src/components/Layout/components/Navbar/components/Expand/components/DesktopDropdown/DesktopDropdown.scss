@@ -26,23 +26,37 @@
       justify-content: flex-start;
       text-align: right;
 
-      .si-dd-item-label{
+      .si-dd-item-label {
         margin-left: auto;
         cursor: pointer;
         line-height: $title-line-hight;
+        font-family: $bold-font;
+        font-size: $nav-font;
+        letter-spacing: 0em;
+
+        @media screen and (max-width: $screen-lock) {
+          font-size: $nav-font;
+        }
       }
 
-      .si-dd-sub-item-label{
+      .si-dd-sub-item-label {
         cursor: pointer;
         line-height: $card-line-height;
+        font-family: $normal-font;
+        font-size: $default-rem-font;
+        letter-spacing: 0em;
+
+        @media screen and (max-width: $screen-lock) {
+          font-size: $default-rem-font;
+        }
       }
 
-      .si-dd-sub-item-wrapper{
+      .si-dd-sub-item-wrapper {
         margin-right: $big-space;
         font-family: $normal-font;
       }
 
-      .si-dd-cursor{
+      .si-dd-cursor {
         cursor: default;
       }
     }
