@@ -32,3 +32,27 @@
     }
   }
 }
+
+.si-pdf-container-wide{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: $big-space 0;
+  padding: 0 $big-space;
+  overflow-x: auto;
+
+  .si-pdf-document-wide{
+    width: 100%;
+    height: auto;
+    margin-bottom: $big-space;
+
+    .si-pdf-page-wide{
+      width: 100%;
+      height: auto;
+    }
+  }
+}

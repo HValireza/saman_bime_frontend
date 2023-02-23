@@ -5,9 +5,10 @@ import "./PDF.scss";
 
 interface IPDF {
   pdf: string;
+  defaultSize?: boolean;
 }
 
-const PDF: React.FC<IPDF> = ({ pdf }) => {
+const PDF: React.FC<IPDF> = ({ pdf, defaultSize = true }) => {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -20,22 +21,33 @@ const PDF: React.FC<IPDF> = ({ pdf }) => {
   const pdfWidth = deviceWidth < 800 ? deviceWidth - 32 : 768;
 
   return (
-    <div className="si-pdf-container">
+    <div className={defaultSize ? "si-pdf-container-wide" : "si-pdf-container"}>
       {/* pdf */}
       <Document
         file={pdf}
         renderMode="canvas"
-        className={"si-pdf-document"}
+        className={defaultSize ? "si-pdf-document-wide" : "si-pdf-document"}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        <Page
-          pageNumber={pageNumber}
-          renderTextLayer={false}
-          renderAnnotationLayer={false}
-          className={"si-pdf-page"}
-          width={pdfWidth}
-          scale={1}
-        />
+        {defaultSize ? (
+          <Page
+            pageNumber={pageNumber}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            className={"si-pdf-page-wide"}
+            // width={pdfWidth}
+            scale={1}
+          />
+        ) : (
+          <Page
+            pageNumber={pageNumber}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            className={"si-pdf-page"}
+            width={pdfWidth}
+            scale={1}
+          />
+        )}
       </Document>
 
       {/* paginator */}
