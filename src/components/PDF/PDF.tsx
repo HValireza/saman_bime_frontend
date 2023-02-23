@@ -8,7 +8,7 @@ interface IPDF {
   defaultSize?: boolean;
 }
 
-const PDF: React.FC<IPDF> = ({ pdf, defaultSize = true }) => {
+const PDF: React.FC<IPDF> = ({ pdf, defaultSize = false }) => {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
