@@ -38,14 +38,6 @@ const Card: React.FC<ICardData> = ({
     >
       <img src={icon} alt={title} className="si-services-card-img" />
       <h3 className="si-services-card-title">{title}</h3>
-      <p className="si-services-card-description">{description}</p>
-      <SimpleButton
-        background={buttonBackground}
-        title={customButtonText}
-        color={"#DBE4EE"}
-        radius={"4px"}
-        hoverBackground={buttonBackgroundHover}
-      />
     </div>
   );
 };
