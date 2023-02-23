@@ -2,31 +2,44 @@
 @import "../../../../styles/sizes";
 @import "../../../../styles/fonts";
 
-.si-services-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.si-services-background {
   width: 100%;
   height: auto;
-  padding: $medium-space;
-  margin: $big-space 0;
 
-  .si-services-title{
-    width: auto;
-    height: auto;
-    margin: $big-space 0;
-    font-family: $bold-font;
-    font-size: $ultra-large-title;
-    line-height: $card-line-height;
-  }
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  .si-services-card-container{
+  .si-services-container {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
-    max-width: $screen-break;
+    padding: $big-space $medium-space;
+    backdrop-filter: blur(4px);
+
+    .si-services-title {
+      width: auto;
+      height: auto;
+      margin: $big-space 0;
+      font-family: $bold-font;
+      font-size: $ultra-large-title;
+      line-height: $card-line-height;
+      color: $secondary-font-color;
+    }
+
+    .si-services-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;
+      max-width: $screen-break;
+    }
   }
+
 }
