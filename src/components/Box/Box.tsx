@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
 import Author, { IAuthor } from "../Author/Author";
 import Banner from "../Banner/Banner";
 import Keywords from "../Keywords/Keywords";
 import PDF from "../PDF/PDF";
 import TextBox from "../TextBox/TextBox";
 import "./Box.scss";
+import Profile from "./components/Profile/Profile";
 
 interface IBox {
   author?: IAuthor;
@@ -12,9 +14,17 @@ interface IBox {
   pdf?: string;
   image?: string;
   keywords?: string[];
+  manager?: IManager;
 }
 
-const Box: React.FC<IBox> = ({ author, image, pdf, text, keywords }) => {
+const Box: React.FC<IBox> = ({
+  author,
+  image,
+  pdf,
+  text,
+  keywords,
+  manager,
+}) => {
   const [scrollDown, setScrollDown] = useState(false);
 
   useEffect(() => {
@@ -45,6 +55,17 @@ const Box: React.FC<IBox> = ({ author, image, pdf, text, keywords }) => {
 
         {/* image */}
         {image && <Banner image={image} />}
+
+        {/* manager */}
+        {manager && (
+          <Profile
+            data={manager.data}
+            id={manager.id}
+            image={manager.image}
+            name={manager.name}
+            position={manager.position}
+          />
+        )}
 
         {/* text */}
         {text && <TextBox>{text}</TextBox>}
