@@ -16,6 +16,7 @@ import mockPdf from "./assets/pdf/daftarche.pdf";
 import mockPdf2 from "./assets/pdf/org-chart.pdf";
 import mockBanner from "./assets/pictures/slider/3.jpg";
 import { NewsPosts } from "./Mock/News/NewsMock";
+import { ManagersData } from "./Mock/Managers/Managers/ManagersMock";
 
 // todo make routes dynamic
 function App() {
@@ -96,6 +97,10 @@ function App() {
           {/* manager page */}
           {/* goes for both manager and board member */}
           <Route path="manager" element={<Manager />} />
+          <Route
+            path="manager/2"
+            element={<Post manager={ManagersData[0]} />}
+          />
 
           {/* reports page */}
           {/* reports and handbooks goes here */}
