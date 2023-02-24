@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import defaultImage from "../../assets/pictures/slider/1.jpg";
+import logo from "../../assets/logo/logo2.png";
 import "./Banner.scss";
 
 interface IBanner {
@@ -11,7 +11,7 @@ interface IBanner {
 
 const Banner: React.FC<IBanner> = ({
   mainTitle,
-  image = defaultImage,
+  image = logo,
   secondaryTitle,
   tertiaryTitle,
 }) => {
