@@ -1,0 +1,62 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/fonts';
+@import '../../../../styles/sizes';
+
+.si-bp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: calc( 100% - $large-space);
+  height: auto;
+  margin: $big-space;
+  font-size: $default-rem-font;
+  line-height: $card-line-height;
+
+  @media screen and (min-width:$tablet-support) {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .si-bp-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: $bold-font;
+    
+    @media screen and (min-width: $tablet-support ){
+      width: 30%;  
+    }
+
+
+    .si-bp-image {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: $card-shadow;
+    }
+
+    .si-bp-name {
+      font-size: $medium-font;
+      line-height: $card-line-height;
+      margin: $medium-space 0;
+    }
+  }
+
+  .si-bp-data {
+    width: 90%;
+    margin-right: auto;
+
+    @media screen and (min-width: $tablet-support ){
+      width: 64%;  
+      margin-right: 0;
+    }
+
+    h1 {
+      font-size: $medium-font;
+      font-weight: bold;
+    }
+  }
+}
