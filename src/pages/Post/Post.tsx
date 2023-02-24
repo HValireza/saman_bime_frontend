@@ -1,6 +1,7 @@
 import { IAuthor } from "../../components/Author/Author";
 import Banner from "../../components/Banner/Banner";
 import Box from "../../components/Box/Box";
+import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
 import "./Post.scss";
 
 interface IPost {
@@ -13,6 +14,7 @@ interface IPost {
   pdf?: string;
   text?: React.ReactNode | string;
   keywords?: string[];
+  manager?: IManager;
 }
 
 const Post: React.FC<IPost> = ({
@@ -25,6 +27,7 @@ const Post: React.FC<IPost> = ({
   pdf,
   text,
   keywords,
+  manager,
 }) => {
   return (
     <div className="si-post-container">
@@ -40,6 +43,7 @@ const Post: React.FC<IPost> = ({
         keywords={keywords}
         pdf={pdf}
         text={text}
+        manager={manager}
       />
     </div>
   );
