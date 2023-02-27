@@ -15,13 +15,13 @@
   background-color: $background-color;
   z-index: $navbar-background-z-index;
   font-family: $bold-font;
-  font-size: $large-font;
+  font-size: $medium-font;
   line-height: $card-line-height;
   letter-spacing: 0em;
   text-align: center;
 
-  @media screen and (max-width: $screen-lock) {
-    font-size: $medium-font;
+  @media screen and (max-width: $screen-break) {
+    font-size: $default-rem-font;
     padding: 0 $medium-space;
   }
 
@@ -48,27 +48,27 @@
 
 
   .si-expand-title {
+    position: relative;
     width: auto;
     padding: $big-space 0;
     margin: 0 $big-space;
     cursor: pointer;
     font-family: $bold-font;
-    font-size: $large-font;
+    font-size: $medium-font;
     line-height: $card-line-height;
     letter-spacing: 0em;
     text-align: center;
 
-    @media screen and (max-width: $screen-lock) {
-      font-size: $medium-font;
+    @media screen and (max-width: $screen-break) {
+      font-size: $expand-font-size;
     }
 
     .si-expand-dropdown {
-      position: fixed;
-      // top: calc($navbar-height + $navbar-expand-height);
-      top: $navbar-expand-height;
+      position: absolute;
+      top: calc($navbar-expand-height - 8px);
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;
+      width: auto;
       max-width: $max-support;
       height: auto;
       padding: $medium-space $big-space;
