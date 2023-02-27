@@ -21,11 +21,11 @@
   }
 
   @media screen and (min-width:$tablet-support) {
-    margin: $big-space $big-space;
+    margin: $big-space $medium-space;
   }
 
   @media screen and (min-width: $screen-lock) {
-    margin: $big-space $large-space;
+    margin: $big-space $medium-space;
   }
 
   .si-services-card-img {
@@ -39,7 +39,18 @@
     line-height: $card-line-height;
     letter-spacing: 0em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .si-services-card-second-title{
+      font-family: $bold-font;
+      font-size: $medium-font;
+      line-height: $card-line-height;
+      letter-spacing: 0em;
+      text-align: center;
+    }
   }
+
 
   .si-services-card-description {
     text-align: justify;

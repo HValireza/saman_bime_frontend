@@ -11,6 +11,7 @@ interface ICardData {
   customButtonText?: string;
   buttonBackground?: string;
   buttonBackgroundHover?: string;
+  secondTitle?: string;
 }
 
 const Card: React.FC<ICardData> = ({
@@ -22,6 +23,7 @@ const Card: React.FC<ICardData> = ({
   address,
   buttonBackground,
   buttonBackgroundHover,
+  secondTitle,
 }) => {
   const navigate = useNavigate();
 
@@ -37,7 +39,10 @@ const Card: React.FC<ICardData> = ({
       onClick={() => navigation(address ? address : "/")}
     >
       <img src={icon} alt={title} className="si-services-card-img" />
-      <h3 className="si-services-card-title">{title}</h3>
+      <h3 className="si-services-card-title">
+        {title}
+        <h3 className="si-services-card-second-title">{secondTitle}</h3>
+      </h3>
     </div>
   );
 };
