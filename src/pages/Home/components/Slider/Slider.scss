@@ -7,6 +7,11 @@
   width: 100%;
   height: calc(100vh - $navbar-height);
 
+  @media screen and (min-width: $pc-support){
+    height: calc(100vh - $navbar-height - $navbar-expand-height);
+    margin-top: $navbar-expand-height;
+  }
+
   .si-slider-image {
     position: absolute;
     top: 0;
@@ -112,7 +117,7 @@
     transition: all $normal-animation ease;
 
     @media screen and (min-width: $pc-support) {
-      top: calc($navbar-expand-height + $two-third-space);
+      top: $two-third-space;
       left: $two-third-space;
       width: $slider-logo-size;
     }
