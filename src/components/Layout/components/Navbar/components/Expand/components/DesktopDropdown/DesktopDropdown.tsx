@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { IMenuData } from "../../../../../../../../Mock/Dropdown/DropdownMock";
 import "./DesktopDropdown.scss";
+import arrow from "../../../../../../../../assets/icons/tools/arrow-black.svg";
 
 const DesktopDropdown: React.FC<IMenuData> = ({
   label,
@@ -20,7 +21,13 @@ const DesktopDropdown: React.FC<IMenuData> = ({
       <div className="si-dd-item-wrapper">
         {subMenuData?.map((m) => (
           <div
-            className={m.id === 0 ? "si-dd-item si-dd-return" : "si-dd-item"}
+            className={
+              m.id === 0
+                ? "si-dd-item si-dd-return"
+                : m.address || m.outerLink
+                ? "si-dd-item"
+                : "si-dd-item si-dd-sub-open-af"
+            }
             key={m.id}
           >
             <div
@@ -32,34 +39,35 @@ const DesktopDropdown: React.FC<IMenuData> = ({
               onClick={() => navigation(m.address, m.outerLink)}
             >
               {m.label}
-            </div>
-            <div className="si-dd-sub-item-wrapper">
-              {m.subMenuData?.map((s) => (
-                <div
-                  className={
-                    s.id === 0
-                      ? "si-dd-sub-item si-dd-return"
-                      : "si-dd-sub-item"
-                  }
-                  key={s.id}
-                >
+              <img src={arrow} alt="arrow" className="si-dd-arrow" />
+              <div className="si-dd-sub-item-wrapper">
+                {m.subMenuData?.map((s) => (
                   <div
                     className={
-                      s.address || s.outerLink
-                        ? "si-dd-sub-item-label"
-                        : "si-dd-sub-item-label si-dd-cursor"
+                      s.id === 0
+                        ? "si-dd-sub-item si-dd-return"
+                        : "si-dd-sub-item"
                     }
-                    onClick={() => navigation(s.address, s.outerLink)}
+                    key={s.id}
                   >
-                    {s.label}
+                    <div
+                      className={
+                        s.address || s.outerLink
+                          ? "si-dd-sub-item-label"
+                          : "si-dd-sub-item-label si-dd-cursor"
+                      }
+                      onClick={() => navigation(s.address, s.outerLink)}
+                    >
+                      {s.label}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         ))}
       </div>
-      <img src={mainIcon} alt={label} className="si-dd-vector" />
+      {/* <img src={mainIcon} alt={label} className="si-dd-vector" /> */}
     </div>
   );
 };

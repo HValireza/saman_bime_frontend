@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: auto;
   height: auto;
   color: inherit;
 
@@ -18,22 +18,29 @@
     height: 100%;
     margin-bottom: auto;
     text-align: right;
+    width: 20rem;
+
 
     .si-dd-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       text-align: right;
+      width: auto;
 
       .si-dd-item-label {
         margin-left: auto;
         cursor: pointer;
-        line-height: $card-line-height;
+
         font-family: $bold-font;
-        font-size: $nav-font;
+        font-size: $medium-font;
+        line-height: $card-line-height;
+        letter-spacing: 0em;
+
+        @media screen and (max-width: $screen-break) {
+          font-size: $expand-font-size;
+        }
+
         letter-spacing: 0em;
         margin-bottom: $medium-space;
+        width: auto;
 
         &:after {
           transition: all ease-in-out $fast-animation;
@@ -53,6 +60,10 @@
         }
       }
 
+      .si-dd-arrow {
+        display: none !important;
+      }
+
       .si-dd-sub-item-label {
         cursor: pointer;
         line-height: $card-line-height;
@@ -60,6 +71,8 @@
         font-size: $default-rem-font;
         letter-spacing: 0em;
         margin-bottom: $small-space;
+        width: auto;
+
 
         &:after {
           transition: all ease-in-out $fast-animation;
@@ -80,12 +93,46 @@
       }
 
       .si-dd-sub-item-wrapper {
+        position: absolute;
+        top: -8px;
+        right: 11rem;
+        width: 20rem;
         margin-right: $big-space;
         font-family: $normal-font;
+        height: auto;
+        padding: $medium-space $big-space;
+        background: $background-color;
+        z-index: $burger-drop-z-index;
+        visibility: hidden;
+        opacity: 0;
+        transition: all $fast-animation ease;
       }
 
       .si-dd-cursor {
+        position: relative;
         cursor: default;
+        display: flex;
+
+        .si-dd-arrow {
+          display: block !important;
+          margin-top: 0.15rem;
+          margin-right: 1rem;
+          width: $big-space;
+          height: $big-space;
+          transition: all $fast-animation ease;
+          transform: rotate(90deg);
+        }
+
+        &:hover {
+          .si-dd-arrow {
+            transform: rotate(-90deg);
+          }
+          .si-dd-sub-item-wrapper{
+            visibility: visible;
+            opacity: 1;
+            border: 1px solid black;
+          }
+        }
 
         &:after {
           height: 0;
@@ -101,6 +148,7 @@
     .si-dd-return {
       display: none;
     }
+
   }
 
   .si-dd-vector {
@@ -108,4 +156,5 @@
     width: auto;
     margin: $large-space;
   }
+
 }
