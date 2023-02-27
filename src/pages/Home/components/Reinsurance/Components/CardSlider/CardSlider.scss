@@ -14,7 +14,7 @@
   height: $card-slider-height;
   transition: all $fast-animation;
   background: $card-slider-gradient;
-  transform: translateX(calc($card-image-x / -2));
+  transform: translateX(calc($card-image-x / -2 + 30px));
 
   @media screen and (max-width: $card-slider-screen-large) {
     max-width: $card-slider-large-max-with;
@@ -143,6 +143,7 @@
     // width: 60%;
     padding-left: $content-space;
     text-align: justify;
+    margin-right: -130px;
 
     @media screen and (max-width: $card-slider-screen-large) {
       // width: 55%;
