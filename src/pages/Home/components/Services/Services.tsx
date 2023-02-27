@@ -50,6 +50,7 @@ const Services: React.FC = () => {
                 buttonBackground={d.buttonBackground}
                 buttonBackgroundHover={d.buttonBackgroundHover}
                 key={d.id}
+                secondTitle={d.secondTitle}
               />
             </motion.div>
           ))}
