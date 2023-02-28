@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Banner from "../../components/Banner/Banner";
+import Title from "../../components/Title/Title";
 import {
   IManager,
   ManagersData,
@@ -10,12 +11,14 @@ import "./Manager.scss";
 interface IManagers {
   banner?: string;
   title?: string;
+  secondaryTitle?: string;
   managers?: IManager[];
 }
 
 const Manager: React.FC<IManagers> = ({
   banner,
   managers = ManagersData,
+  secondaryTitle,
   title,
 }) => {
   const container = {
@@ -43,7 +46,11 @@ const Manager: React.FC<IManagers> = ({
 
   return (
     <div className="si-manager-container">
-      <Banner tertiaryTitle={title} image={banner} />
+      {banner ? (
+        <Banner tertiaryTitle={title} image={banner} />
+      ) : (
+        <Title mainTitle={title} secondaryTitle={secondaryTitle} />
+      )}
       <motion.div
         className="si-manager-card-wrapper"
         variants={container}
