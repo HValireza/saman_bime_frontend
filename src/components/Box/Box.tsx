@@ -15,6 +15,7 @@ interface IBox {
   image?: string;
   keywords?: string[];
   manager?: IManager;
+  hasBanner?: boolean;
 }
 
 const Box: React.FC<IBox> = ({
@@ -24,6 +25,7 @@ const Box: React.FC<IBox> = ({
   text,
   keywords,
   manager,
+  hasBanner,
 }) => {
   const [scrollDown, setScrollDown] = useState(false);
 
@@ -41,7 +43,21 @@ const Box: React.FC<IBox> = ({
 
   return (
     <div className="si-box-container">
-      <div className={scrollDown ? "si-box si-box-scroll" : "si-box"}>
+      <div
+        className={
+          text || manager
+            ? hasBanner
+              ? scrollDown
+                ? "si-box-text-banner si-box-text-banner-scroll"
+                : "si-box-text-banner"
+              : scrollDown
+              ? "si-box-text si-box-text-scroll"
+              : "si-box-text"
+            : scrollDown
+            ? "si-box si-box-scroll"
+            : "si-box"
+        }
+      >
         {/* author */}
         {author && (
           <Author
