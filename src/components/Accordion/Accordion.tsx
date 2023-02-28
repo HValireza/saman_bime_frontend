@@ -1,12 +1,12 @@
 import { accordionList } from "../../Mock/Accordion/AccordionMock";
+import Title from "../Title/Title";
 import "./Accordion.scss";
 import AccordionItem from "./AccordionItem/AccordionItem";
 
 const Accordion: React.FC = () => {
   return (
     <div className="si-accordion">
-      <h2 className="si-accordion-title">گزارشگری و افشای اطلاعات</h2>
-      <h3 className="si-accordion-secondary-title">صفحه تست</h3>
+      <Title mainTitle="گزارشگری و افشای اطلاعات" secondaryTitle="صفحه تست" />
 
       <div className="si-accordion-wrapper">
         {accordionList.map((a) => (

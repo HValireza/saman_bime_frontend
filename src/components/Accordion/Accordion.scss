@@ -9,32 +9,6 @@
   align-items: center;
   width: 100%;
   padding: $big-space 0 $large-space;
-  @media screen and (min-width: $pc-support){
-    margin-top: $navbar-expand-height;
-  }
-
-  .si-accordion-title{
-    width: auto;
-    text-align: justify;
-    margin: $big-space 0 0;
-    padding: 0 $big-space;
-    color: $tertiary-font-color;
-    font-family: $bold-font;
-    font-size: $large-font;
-    line-height: $title-line-hight;
-    cursor: pointer;
-  }
-
-  .si-accordion-secondary-title{
-    width: auto;
-    text-align: justify;
-    margin: $big-space 0;
-    color: $tertiary-font-color;
-    padding: 0 $big-space;
-    font-family: $bold-font;
-    font-size: $ultra-large-title;
-    line-height: $card-line-height;
-  }
   
   .si-accordion-wrapper{
     display: flex;
