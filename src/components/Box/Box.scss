@@ -18,19 +18,21 @@
     box-shadow: $box-shadow;
     border-radius: $small-radius;
     transition: all $normal-animation ease;
+    margin-bottom: $big-space;
 
     &-scroll{
       transform: translateY(0);
     }
   }
   .si-box-text{
-    margin-top: $navbar-expand-height;
     transform:translateY($box-y);
     width: 100%;
     height: auto;
     max-width: $text-box-max-width;
     background: $background-color;
     transition: all $normal-animation ease;
+    margin-top: calc($navbar-expand-height + $big-space);
+    margin-bottom: $big-space;
 
     &-scroll{
       transform: translateY(0);
@@ -44,6 +46,24 @@
     max-width: $text-box-max-width;
     background: $background-color;
     transition: all $normal-animation ease;
+    margin-bottom: $big-space;
+
+    &-scroll{
+      transform: translateY(0);
+    }
+  }
+  
+  .si-box-no-banner{
+    transform:translateY($box-y);
+    width: 100%;
+    height: auto;
+    max-width: $box-max-width;
+    background: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: $small-radius;
+    transition: all $normal-animation ease;
+    margin-bottom: $big-space;
+    margin-top: calc($navbar-expand-height + $big-space);
 
     &-scroll{
       transform: translateY(0);

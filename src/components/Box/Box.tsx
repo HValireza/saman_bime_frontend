@@ -47,17 +47,21 @@ const Box: React.FC<IBox> = ({
     <div className="si-box-container">
       <div
         className={
-          text || manager
-            ? hasBanner
+          hasBanner
+            ? text || manager
               ? scrollDown
                 ? "si-box-text-banner si-box-text-banner-scroll"
                 : "si-box-text-banner"
               : scrollDown
+              ? "si-box si-box-scroll"
+              : "si-box"
+            : text || manager
+            ? scrollDown
               ? "si-box-text si-box-text-scroll"
               : "si-box-text"
             : scrollDown
-            ? "si-box si-box-scroll"
-            : "si-box"
+            ? "si-box-no-banner si-box-no-banner-scroll"
+            : "si-box-no-banner"
         }
       >
         {/* author */}
