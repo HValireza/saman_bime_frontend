@@ -121,17 +121,18 @@
           width: $big-space;
           height: $big-space;
           transition: all $fast-animation ease;
-          transform: rotate(90deg);
+          transform: rotate(-90deg);
         }
 
         &:hover {
           .si-dd-arrow {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
           }
           .si-dd-sub-item-wrapper{
             visibility: visible;
             opacity: 1;
-            border: 1px solid black;
+            // border: 1px solid black;
+            box-shadow: $card-shadow;
           }
         }
 
