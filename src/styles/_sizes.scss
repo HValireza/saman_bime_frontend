@@ -67,6 +67,7 @@ $paginator-border: 1px solid $primary-color;
 
 // transform
 $card-image-x: 180px;
+$card-image-small-x: 140px;
 $card-image-y: 25px;
 $box-y: -5.5rem;
 $card-left-avoid-scroll: 31.5rem;
@@ -150,6 +151,7 @@ $news-card-image: 20rem;
 $card-slider-max-with: 900px;
 $card-slider-height: 500px;
 $card-slider-image-size: 400px;
+$card-slider-image-small: 300px;
 $card-button-width: 300px;
 $card-button-height: 2rem;
 $card-pagination-width: 11px;
@@ -170,6 +172,7 @@ $card-button-small-width: 260px;
 
 // box
 $box-max-width: 50rem;
+$text-box-max-width: 60rem;
 
 // author
 $author-height: 5rem;
