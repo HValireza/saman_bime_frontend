@@ -23,4 +23,17 @@
       transform: translateY(0);
     }
   }
+  .si-box-text{
+    margin-top: $navbar-expand-height;
+    transform:translateY($box-y);
+    width: 100%;
+    height: auto;
+    max-width: $text-box-max-width;
+    background: $background-color;
+    transition: all $normal-animation ease;
+
+    &-scroll{
+      transform: translateY(0);
+    }
+  }
 }
