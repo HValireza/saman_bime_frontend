@@ -1,0 +1,38 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/sizes';
+
+.si-title-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $pc-support){
+    margin-top: $navbar-expand-height;
+  }
+
+  .si-title{
+    width: auto;
+    text-align: justify;
+    margin: $big-space 0 0;
+    padding: 0 $big-space;
+    color: $tertiary-font-color;
+    font-family: $bold-font;
+    font-size: $large-font;
+    line-height: $title-line-hight;
+    cursor: pointer;
+  }
+  
+  .si-secondary-title{
+    width: auto;
+    text-align: justify;
+    margin: $big-space 0;
+    padding: 0 $big-space;
+    color: $tertiary-font-color;
+    font-family: $bold-font;
+    font-size: $ultra-large-title;
+    line-height: $title-line-hight;
+  }
+  
+}
