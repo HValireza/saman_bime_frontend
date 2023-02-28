@@ -17,6 +17,7 @@
   cursor: pointer;
   transition: all $fast-animation ease;
   margin: 0 $big-space $big-space;
+  padding-bottom: $big-space ;
 
 
   @media screen and (min-width:$tablet-support) {
