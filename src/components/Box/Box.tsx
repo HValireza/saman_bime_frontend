@@ -16,6 +16,7 @@ interface IBox {
   keywords?: string[];
   manager?: IManager;
   hasBanner?: boolean;
+  pdfDefaultSize?: boolean;
 }
 
 const Box: React.FC<IBox> = ({
@@ -26,6 +27,7 @@ const Box: React.FC<IBox> = ({
   keywords,
   manager,
   hasBanner,
+  pdfDefaultSize,
 }) => {
   const [scrollDown, setScrollDown] = useState(false);
 
@@ -87,7 +89,7 @@ const Box: React.FC<IBox> = ({
         {text && <TextBox>{text}</TextBox>}
 
         {/* pdf */}
-        {pdf && <PDF pdf={pdf} />}
+        {pdf && <PDF pdf={pdf} defaultSize={pdfDefaultSize} />}
 
         {/* keywords */}
         {keywords && <Keywords keywords={keywords} />}

@@ -16,6 +16,7 @@ interface IPost {
   text?: React.ReactNode | string;
   keywords?: string[];
   manager?: IManager;
+  pdfDefaultSize?: boolean;
 }
 
 const Post: React.FC<IPost> = ({
@@ -29,6 +30,7 @@ const Post: React.FC<IPost> = ({
   text,
   keywords,
   manager,
+  pdfDefaultSize,
 }) => {
   return (
     <div className="si-post-container">
@@ -50,6 +52,7 @@ const Post: React.FC<IPost> = ({
         text={text}
         manager={manager}
         hasBanner={!!bannerImage}
+        pdfDefaultSize={pdfDefaultSize}
       />
     </div>
   );
