@@ -5,6 +5,7 @@
 .si-expand {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: fixed;
   top: $navbar-height;
   left: 50%;
@@ -19,6 +20,7 @@
   line-height: $card-line-height;
   letter-spacing: 0em;
   text-align: center;
+  
 
   @media screen and (max-width: $screen-break) {
     font-size: $default-rem-font;
@@ -34,6 +36,8 @@
     height: $navbar-expand-icon-size;
     cursor: pointer;
     transition: all $normal-animation ease;
+    position: absolute;
+    right: $medium-space;
 
     &:hover {
       filter: $logo-hover-shadow;
@@ -42,7 +46,6 @@
 
   .si-expand-title-wrapper {
     display: flex;
-    margin: auto;
     width: auto;
   }
 
