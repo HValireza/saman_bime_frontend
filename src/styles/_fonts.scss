@@ -11,6 +11,21 @@
     src: url(/fonts/B\ Roya\ Bold_0.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Shabnam ,Bold';
+    font-weight: bold;
+    src: url(/fonts/Shabnam-Bold-FD.ttf) format('truetype'),
+    url(/fonts/Shabnam-Bold-FD.woff) format('woff'),
+    url(/fonts/Shabnam-Bold-FD.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url(../../public/fonts/Shabnam-FD.ttf) format('truetype'),
+    url(../../public/fonts/Shabnam-FD.woff) format('woff'),
+    url(../../public/fonts/Shabnam-FD.woff2) format('woff2');
+}
+
 // font sizes 
 $small-paragraph: 11px;
 $default-font-size: 14px;
@@ -19,6 +34,7 @@ $expand-font-size: 1.1rem;
 $medium-font: 1.25rem;
 $nav-font: 1.4rem;
 $large-font: 1.5rem;
+$card-title-font:1.8rem;
 $ultra-large-title: 2rem;
 $responsive-navbar-font: 1.1vw;
 
@@ -28,12 +44,14 @@ $direction:rtl;
 
 // font family
 $normal-font:'B Roya',
+'Shabnam',
 Tahoma,
 Geneva,
 Verdana,
 sans-serif;
 
 $bold-font:'B Roya Bold',
+'Shabnam ,Bold',
 Tahoma,
 Geneva,
 Verdana,
@@ -43,3 +61,4 @@ sans-serif;
 $small-line-hight: 1.1rem;
 $title-line-hight: 2rem;
 $card-line-height: 1.5rem;
+$card-text-line-height: 1.7rem;
