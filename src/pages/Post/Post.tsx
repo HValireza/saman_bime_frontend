@@ -1,6 +1,7 @@
 import { IAuthor } from "../../components/Author/Author";
 import Banner from "../../components/Banner/Banner";
 import Box from "../../components/Box/Box";
+import Title from "../../components/Title/Title";
 import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
 import "./Post.scss";
 
@@ -31,12 +32,16 @@ const Post: React.FC<IPost> = ({
 }) => {
   return (
     <div className="si-post-container">
-      <Banner
-        image={bannerImage}
-        mainTitle={mainGroupTitle}
-        secondaryTitle={subGroupTitle}
-        tertiaryTitle={title}
-      />
+      {bannerImage ? (
+        <Banner
+          image={bannerImage}
+          mainTitle={mainGroupTitle}
+          secondaryTitle={subGroupTitle}
+          tertiaryTitle={title}
+        />
+      ) : (
+        <Title mainTitle={mainGroupTitle} secondaryTitle={title} />
+      )}
       <Box
         author={author}
         image={image}
@@ -44,6 +49,7 @@ const Post: React.FC<IPost> = ({
         pdf={pdf}
         text={text}
         manager={manager}
+        hasBanner={!!bannerImage}
       />
     </div>
   );
