@@ -6,6 +6,10 @@ import "./Recent.scss";
 
 const Recent: React.FC = () => {
   const navigate = useNavigate();
+  const navigation = (address: string) => {
+    window.scrollTo(0, 0);
+    navigate(address);
+  };
 
   const container = {
     hidden: { opacity: 1 },
@@ -57,7 +61,7 @@ const Recent: React.FC = () => {
         ))}
       </motion.div>
 
-      <div className="si-recent-more" onClick={() => navigate("news")}>
+      <div className="si-recent-more" onClick={() => navigation("news")}>
         آرشیو
       </div>
     </div>
