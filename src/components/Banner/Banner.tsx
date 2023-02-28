@@ -11,7 +11,7 @@ interface IBanner {
 
 const Banner: React.FC<IBanner> = ({
   mainTitle,
-  image = logo,
+  image,
   secondaryTitle,
   tertiaryTitle,
 }) => {
