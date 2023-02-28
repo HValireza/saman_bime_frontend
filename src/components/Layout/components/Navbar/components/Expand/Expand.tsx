@@ -1,15 +1,11 @@
 import { mainDropdownData } from "../../../../../../Mock/Dropdown/DropdownMock";
 import logo from "../../../../../../assets/logo/logo1.png";
 import "./Expand.scss";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DesktopDropdown from "./components/DesktopDropdown/DesktopDropdown";
-import { AnimatePresence, motion } from "framer-motion";
+import arrow from "../../../../../../assets/icons/tools/arrow-black.svg";
 
 const Expand: React.FC = () => {
-  const [toggleDropdown, setToggleDropdown] = useState(false);
-  const [currentDropdownId, setCurrentDropdownId] = useState(0);
-
   const navigate = useNavigate();
 
   const navigation = (address: string) => {
@@ -48,6 +44,7 @@ const Expand: React.FC = () => {
               ) : (
                 <h2 className="si-expand-title si-cursor-default">
                   {d.label}
+                  <img src={arrow} alt="arrow" className="si-dd-arrow" />
                   <div className="si-expand-dropdown" key={d.id}>
                     <DesktopDropdown
                       id={d.id}
