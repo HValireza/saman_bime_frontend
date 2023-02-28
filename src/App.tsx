@@ -91,15 +91,28 @@ function App() {
           />
           <Route
             path="org"
-            element={<Post pdf={mockPdf2} title="چارت سازمانی" />}
+            element={
+              <Post pdf={mockPdf2} pdfDefaultSize={true} title="چارت سازمانی" />
+            }
           />
 
           {/* manager page */}
           {/* goes for both manager and board member */}
-          <Route path="manager" element={<Manager />} />
+          <Route
+            path="manager"
+            element={
+              <Manager title="معرفی مدیران" secondaryTitle="اعضای هیئت مدیره" />
+            }
+          />
           <Route
             path="manager/2"
-            element={<Post manager={ManagersData[0]} />}
+            element={
+              <Post
+                manager={ManagersData[0]}
+                mainGroupTitle="معرفی مدیر"
+                title="اسم مدیر"
+              />
+            }
           />
 
           {/* reports page */}
