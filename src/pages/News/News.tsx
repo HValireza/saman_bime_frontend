@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import Paginator from "../../components/Paginator/Paginator";
+import Title from "../../components/Title/Title";
 import { NewsPosts } from "../../Mock/News/NewsMock";
 import "./News.scss";
 
@@ -39,15 +40,12 @@ const News: React.FC<INews> = ({
 
   return (
     <div className="si-news-container">
-      <h2 className="si-news-title" onClick={() => navigation(mainTitle.link)}>
-        {mainTitle.title}
-      </h2>
-      <h3
-        className="si-news-secondary-title"
-        onClick={() => navigation(secondaryTitle.link)}
-      >
-        {secondaryTitle.title}
-      </h3>
+      <Title
+        mainTitle={mainTitle.title}
+        mainTitleLink={mainTitle.link}
+        secondaryTitle={secondaryTitle.title}
+        secondaryTitleLink={secondaryTitle.link}
+      />
       <div className="si-news-wrapper">
         {NewsPosts.map((p) => (
           <motion.div
