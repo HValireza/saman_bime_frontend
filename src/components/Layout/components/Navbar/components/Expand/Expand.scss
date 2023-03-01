@@ -37,7 +37,7 @@
     cursor: pointer;
     transition: all $normal-animation ease;
     position: absolute;
-    right: $medium-space;
+    right: $big-space;
 
     &:hover {
       filter: $logo-hover-shadow;
