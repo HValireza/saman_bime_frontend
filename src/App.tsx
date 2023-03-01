@@ -17,9 +17,32 @@ import mockPdf2 from "./assets/pdf/org-chart.pdf";
 import mockBanner from "./assets/pictures/slider/3.jpg";
 import { NewsPosts } from "./Mock/News/NewsMock";
 import { ManagersData } from "./Mock/Managers/Managers/ManagersMock";
+import { useEffect } from "react";
 
 // todo make routes dynamic
-function App() {
+const App: React.FC = () => {
+  const usesDarkMode =
+    window.matchMedia("(prefers-color-scheme: dark)").matches || false;
+  const favicon: any = document.getElementById("favicon");
+
+  const switchIcon = (usesDarkMode: boolean) => {
+    if (usesDarkMode) {
+      favicon.href = "/logo_white.ico";
+    } else {
+      favicon.href = "/logo_blue.ico";
+    }
+  };
+
+  useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => switchIcon(e.matches));
+    switchIcon(usesDarkMode);
+
+    console.log(usesDarkMode);
+
+    return window.removeEventListener("change", (e) => {});
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
@@ -125,6 +148,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
