@@ -39,8 +39,6 @@ const App: React.FC = () => {
       .addEventListener("change", (e) => switchIcon(e.matches));
     switchIcon(usesDarkMode);
 
-    console.log(usesDarkMode);
-
     return window.removeEventListener("change", (e) => {});
   }, []);
   return (
