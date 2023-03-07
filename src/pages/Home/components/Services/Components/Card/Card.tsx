@@ -41,7 +41,7 @@ const Card: React.FC<ICardData> = ({
       <img src={icon} alt={title} className="si-services-card-img" />
       <h3 className="si-services-card-title">
         {title}
-        <h3 className="si-services-card-second-title">{secondTitle}</h3>
+        <span className="si-services-card-second-title">{secondTitle}</span>
       </h3>
     </div>
   );
