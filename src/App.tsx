@@ -18,6 +18,8 @@ import mockBanner from "./assets/pictures/slider/3.jpg";
 import { NewsPosts } from "./Mock/News/NewsMock";
 import { ManagersData } from "./Mock/Managers/Managers/ManagersMock";
 import { useEffect } from "react";
+import { useIsFetching, useIsMutating } from "react-query";
+import Loading from "./components/Loading/Loading";
 
 // todo make routes dynamic
 const App: React.FC = () => {
@@ -33,6 +35,10 @@ const App: React.FC = () => {
     }
   };
 
+  const isFetching = useIsFetching();
+  const isMutating = useIsMutating();
+  const isLoading = Boolean(isFetching) || Boolean(isMutating);
+
   useEffect(() => {
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -43,6 +49,7 @@ const App: React.FC = () => {
   }, []);
   return (
     <BrowserRouter>
+      {isLoading ?? <Loading />}
       <Routes>
         {/* Layout */}
         <Route path="/" element={<Layout />}>
