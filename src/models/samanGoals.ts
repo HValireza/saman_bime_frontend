@@ -9,4 +9,5 @@ export class SamanGoals extends Base {
   image_thumbnail?: string;
   page_id?: number;
   page?: Page;
+  index?: number;
 }
