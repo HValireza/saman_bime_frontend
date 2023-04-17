@@ -9,4 +9,5 @@ export class Category extends Base {
   parent_category?: Category;
   route?: string;
   page?: Page;
+  index?: number;
 }
