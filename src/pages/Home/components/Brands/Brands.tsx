@@ -1,11 +1,12 @@
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y } from "swiper";
-import { BrandsData } from "../../../../Mock/Home/Brands/BrandsMock";
 import "./Brands.scss";
 import "swiper/css";
 import "swiper/css/bundle";
+import { useGetCoworkers } from "../../../../api/coworkers/useGetCoworkers";
 const Brands: React.FC = () => {
+  const data = useGetCoworkers();
+
   const openLink = (address?: string) => {
     address && window.open(address, "_blank");
   };
@@ -23,7 +24,7 @@ const Brands: React.FC = () => {
           speed={10000}
           initialSlide={10}
         >
-          {BrandsData.map((d) => (
+          {data.data?.data.data.map((d) => (
             <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
@@ -31,14 +32,14 @@ const Brands: React.FC = () => {
                 key={d.id}
               >
                 <img
-                  src={d.icon}
-                  alt={d.alt}
+                  src={d.image}
+                  alt={d.id + ""}
                   className="si-brand-slide-image"
                 />
               </div>
             </SwiperSlide>
           ))}
-          {BrandsData.map((d) => (
+          {data.data?.data.data.map((d) => (
             <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
@@ -46,8 +47,8 @@ const Brands: React.FC = () => {
                 key={d.id}
               >
                 <img
-                  src={d.icon}
-                  alt={d.alt}
+                  src={d.image}
+                  alt={d.id + ""}
                   className="si-brand-slide-image"
                 />
               </div>
