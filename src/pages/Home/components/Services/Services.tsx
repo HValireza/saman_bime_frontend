@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { cardData } from "../../../../Mock/Home/Services/ServicesMock";
 import Card from "./Components/Card/Card";
 import servicesBackground from "../../../../assets/pictures/backgrounds/services-background.jpg";
 import "./Services.scss";
+import { useGetSamanServices } from "../../../../api/samanServices/useGetSamanServices";
 
 const Services: React.FC = () => {
+  const { data } = useGetSamanServices();
+
   const container = {
     hidden: { opacity: 1, scale: 0.7 },
     visible: {
@@ -38,19 +40,15 @@ const Services: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {cardData.map((d) => (
+          {data?.data.data.map((d) => (
             <motion.div variants={item} key={d.id}>
               <Card
-                description={d.description}
-                icon={d.icon}
+                icon={d.image ?? ""}
                 title={d.title}
-                background={d.background}
-                customButtonText={d.customButtonText}
+                background={d.color}
                 address={d.address}
-                buttonBackground={d.buttonBackground}
-                buttonBackgroundHover={d.buttonBackgroundHover}
                 key={d.id}
-                secondTitle={d.secondTitle}
+                secondTitle={d.subtitle}
               />
             </motion.div>
           ))}
