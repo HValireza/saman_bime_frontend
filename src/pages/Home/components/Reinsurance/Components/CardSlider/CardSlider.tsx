@@ -3,8 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import "./CardSlider.scss";
-import { cardData } from "../../../../../../Mock/Home/Reinsurance/ReinsuranceMock";
 import { useNavigate } from "react-router-dom";
+import { useGetSamanGoals } from "../../../../../../api/samanGoals/useGetSamanGoals";
+import Loading from "../../../../../../components/Loading/Loading";
 
 const CardSlider: React.FC = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ const CardSlider: React.FC = () => {
     scrollTo(0, 0);
     navigate(address ? address : "/no-page");
   };
+
+  const { data } = useGetSamanGoals();
 
   return (
     <div className="si-card-slider">
@@ -23,14 +26,14 @@ const CardSlider: React.FC = () => {
         loop={true}
         mousewheel={{ invert: false }}
       >
-        {cardData.map((d) => (
+        {data?.data.data.map((d) => (
           <SwiperSlide className="si-card-slider__item" key={d.id}>
             <div className="si-card-slider__img">
-              <img src={d.icon} alt={d.title} />
+              <img src={d.image} alt={d.title} />
             </div>
             <div className="si-card-slider__content">
               <h3 className="si-card-slider__title">{d.title}</h3>
-              <p className="si-card-slider__text">{d.description}</p>
+              <p className="si-card-slider__text">{d.text}</p>
 
               <div
                 className="si-card-slider__button"
