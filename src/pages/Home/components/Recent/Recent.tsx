@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useGetAllNews } from "../../../../api/news/useGetAllNews";
 import NewsCard from "../../../../components/NewsCard/NewsCard";
-import { RecentPosts } from "../../../../Mock/Home/Recent/RecentMock";
 import "./Recent.scss";
 
 const Recent: React.FC = () => {
+  const data = useGetAllNews({ count: 3 });
+
   const navigate = useNavigate();
   const navigation = (address: string) => {
     window.scrollTo(0, 0);
@@ -43,16 +45,14 @@ const Recent: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {RecentPosts.map((p) => (
+        {data.data?.data.data.map((p) => (
           <motion.div variants={item} key={p.id}>
             <NewsCard
               id={p.id}
-              createdAt={p.createdAt}
-              description={p.description}
+              createdAt={p.created_at}
+              description={p.text}
+              authorId={p.author_id}
               image={p.image}
-              name={p.name}
-              position={p.position}
-              thumb={p.thumb}
               title={p.title}
               key={p.id}
               state={"recent"}
