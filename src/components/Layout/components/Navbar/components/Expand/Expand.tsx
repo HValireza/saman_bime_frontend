@@ -4,8 +4,9 @@ import "./Expand.scss";
 import { useNavigate } from "react-router-dom";
 import DesktopDropdown from "./components/DesktopDropdown/DesktopDropdown";
 import arrow from "../../../../../../assets/icons/tools/arrow-black.svg";
+import { INavbarData } from "../../../../../../global/types";
 
-const Expand: React.FC = () => {
+const Expand: React.FC<INavbarData> = ({ data }) => {
   const navigate = useNavigate();
 
   const navigation = (address: string) => {
@@ -32,26 +33,21 @@ const Expand: React.FC = () => {
           onClick={goHome}
         />
         <div className="si-expand-title-wrapper">
-          {mainDropdownData.map((d) => (
+          {data?.map((d) => (
             <div key={d.id}>
-              {d.address ? (
+              {d.route ? (
                 <h2
                   className="si-expand-title"
-                  onClick={() => navigation(d.address!)}
+                  onClick={() => navigation(d.route!)}
                 >
-                  {d.label}
+                  {d.title}
                 </h2>
               ) : (
                 <h2 className="si-expand-title si-cursor-default">
-                  {d.label}
+                  {d.title}
                   <img src={arrow} alt="arrow" className="si-dd-arrow" />
                   <div className="si-expand-dropdown" key={d.id}>
-                    <DesktopDropdown
-                      id={d.id}
-                      label={d.label}
-                      subMenuData={d.subMenuData}
-                      mainIcon={d.mainIcon}
-                    />
+                    <DesktopDropdown data={d.sub_categories} />
                   </div>
                 </h2>
               )}
