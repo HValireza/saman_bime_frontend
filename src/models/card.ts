@@ -1,4 +1,5 @@
 import { Base } from "./base";
+import { Page } from "./page";
 
 export class Card extends Base {
   title!: string;
@@ -6,6 +7,8 @@ export class Card extends Base {
   image?: string;
   image_thumbnail?: string;
   address?: string;
+  sub_page?: Page;
   reference_page_id?: number;
+  index?: number;
   page_id?: number;
 }

@@ -18,24 +18,4 @@ export const images: ISliderImages[] = [
     title: "text1",
     caption: "پیشتاز در صنعت بیمه و پیشرو در مدیریت ریسک",
   },
-  {
-    url: image2,
-    title: "text2",
-    caption: "ارائه  پوشش اتکایی اختیاری و قراردادی در تمامی رشته های بیمه ای",
-  },
-  {
-    url: image3,
-    title: "text3",
-    caption: "ارائه خدمات طراحی و راهبری قرارداد های اتکایی",
-  },
-  {
-    url: image4,
-    title: "text4",
-    caption: "شرکت بیمه اتکایی مبتنی بر دانش فنی بیمه ای و علم اکچوئریال",
-  },
-  {
-    url: image5,
-    title: "text5",
-    caption: "ارائه خدمات نوین اتکایی بین المللی",
-  },
 ];

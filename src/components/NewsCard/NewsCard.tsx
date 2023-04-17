@@ -5,17 +5,16 @@ import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import jalaliday from "jalaliday";
 import Author from "../Author/Author";
+import { useGetAuthor } from "../../api/authors/useGetAuthor";
 
 interface IRecent {
   id?: number;
   image?: string;
-  thumb?: string;
-  name?: string;
-  position?: string;
   createdAt?: string;
   title?: string;
   description?: string;
   state?: string;
+  authorId?: number;
 }
 
 const NewsCard: React.FC<IRecent> = ({
@@ -23,11 +22,9 @@ const NewsCard: React.FC<IRecent> = ({
   description,
   id,
   image = bigLogo,
-  name = "بیمه اتکایی سامان",
-  position = "بیمه اتکایی سامان",
-  thumb = logo,
   title,
   state = "recent",
+  authorId,
 }) => {
   const navigate = useNavigate();
   const navigation = () => {
@@ -36,6 +33,8 @@ const NewsCard: React.FC<IRecent> = ({
   };
 
   dayjs.extend(jalaliday);
+
+  const authorData = authorId ? useGetAuthor(authorId) : null;
 
   return (
     <div
@@ -56,9 +55,9 @@ const NewsCard: React.FC<IRecent> = ({
       <div className="si-rc-info">
         <Author
           createdAt={createdAt}
-          name={name}
-          position={position}
-          thumb={thumb}
+          name={authorData?.data?.data.name ?? "بیمه اتکایی سامان"}
+          position={authorData?.data?.data.title ?? ""}
+          thumb={authorData?.data?.data.image ?? logo}
           state={state}
         />
       </div>
