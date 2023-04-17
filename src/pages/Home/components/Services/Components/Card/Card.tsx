@@ -5,7 +5,7 @@ import "./Card.scss";
 interface ICardData {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   address?: string;
   background?: string;
   customButtonText?: string;
