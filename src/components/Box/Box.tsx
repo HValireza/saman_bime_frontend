@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
 import Author, { IAuthor } from "../Author/Author";
 import Banner from "../Banner/Banner";
@@ -7,10 +7,12 @@ import PDF from "../PDF/PDF";
 import TextBox from "../TextBox/TextBox";
 import "./Box.scss";
 import Profile from "./components/Profile/Profile";
+import { HtmlViewer } from "../HtmlViewer/HtmlViewer";
 
 interface IBox {
   author?: IAuthor;
   text?: React.ReactNode | string;
+  html?: string;
   pdf?: string;
   image?: string;
   keywords?: string[];
@@ -24,6 +26,7 @@ const Box: React.FC<IBox> = ({
   image,
   pdf,
   text,
+  html,
   keywords,
   manager,
   hasBanner,
@@ -91,6 +94,9 @@ const Box: React.FC<IBox> = ({
 
         {/* text */}
         {text && <TextBox>{text}</TextBox>}
+
+        {/* HTML input */}
+        {html && <HtmlViewer html={html} />}
 
         {/* pdf */}
         {pdf && <PDF pdf={pdf} defaultSize={pdfDefaultSize} />}

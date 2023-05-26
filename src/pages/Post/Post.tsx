@@ -14,6 +14,7 @@ interface IPost {
   image?: string;
   pdf?: string;
   text?: React.ReactNode | string;
+  html?: string;
   keywords?: string[];
   manager?: IManager;
   pdfDefaultSize?: boolean;
@@ -28,6 +29,7 @@ const Post: React.FC<IPost> = ({
   image,
   pdf,
   text,
+  html,
   keywords,
   manager,
   pdfDefaultSize,
@@ -50,6 +52,7 @@ const Post: React.FC<IPost> = ({
         keywords={keywords}
         pdf={pdf}
         text={text}
+        html={html}
         manager={manager}
         hasBanner={!!bannerImage}
         pdfDefaultSize={pdfDefaultSize}
