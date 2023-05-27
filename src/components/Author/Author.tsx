@@ -3,6 +3,7 @@ import jalaliday from "jalaliday";
 import logo from "../../assets/logo/logo4.png";
 import blueLogo from "../../assets/logo/logo5.png";
 import "./Author.scss";
+import { API_BASE_URL } from "../../global/constans";
 
 export interface IAuthor {
   thumb?: string;
@@ -22,7 +23,11 @@ const Author: React.FC<IAuthor> = ({
   dayjs.extend(jalaliday);
 
   const thumbnail =
-    thumb === logo ? (state === "news" ? blueLogo : logo) : thumb;
+    thumb === logo
+      ? state === "news"
+        ? blueLogo
+        : logo
+      : `${API_BASE_URL}/${thumb}`;
 
   return (
     <div

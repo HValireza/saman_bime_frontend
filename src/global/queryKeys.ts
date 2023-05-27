@@ -20,7 +20,7 @@ interface IQueryIdVariable {
   id: number;
 }
 
-type QueryVariables = IPaginateQuery | IQueryIdVariable | undefined
+type QueryVariables = IPaginateQuery | IQueryIdVariable | string | undefined; 
 
 const _queryKeys = new Map<keyof typeof queries, QueryKey>()
 

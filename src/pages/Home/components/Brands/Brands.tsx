@@ -4,8 +4,9 @@ import "./Brands.scss";
 import "swiper/css";
 import "swiper/css/bundle";
 import { useGetCoworkers } from "../../../../api/coworkers/useGetCoworkers";
+import { API_BASE_URL } from "../../../../global/constans";
 const Brands: React.FC = () => {
-  const data = useGetCoworkers();
+  const { data } = useGetCoworkers();
 
   const openLink = (address?: string) => {
     address && window.open(address, "_blank");
@@ -24,7 +25,7 @@ const Brands: React.FC = () => {
           speed={10000}
           initialSlide={10}
         >
-          {data.data?.data.data.map((d) => (
+          {data?.data.data.map((d) => (
             <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
@@ -32,14 +33,14 @@ const Brands: React.FC = () => {
                 key={d.id}
               >
                 <img
-                  src={d.image}
+                  src={`${API_BASE_URL}/${d.image}`}
                   alt={d.id + ""}
                   className="si-brand-slide-image"
                 />
               </div>
             </SwiperSlide>
           ))}
-          {data.data?.data.data.map((d) => (
+          {data?.data.data.map((d) => (
             <SwiperSlide key={d.id}>
               <div
                 className="si-brand-slide"
@@ -47,7 +48,7 @@ const Brands: React.FC = () => {
                 key={d.id}
               >
                 <img
-                  src={d.image}
+                  src={`${API_BASE_URL}/${d.image}`}
                   alt={d.id + ""}
                   className="si-brand-slide-image"
                 />

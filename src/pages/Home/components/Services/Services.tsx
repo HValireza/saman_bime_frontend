@@ -3,9 +3,11 @@ import Card from "./Components/Card/Card";
 import servicesBackground from "../../../../assets/pictures/backgrounds/services-background.jpg";
 import "./Services.scss";
 import { useGetSamanServices } from "../../../../api/samanServices/useGetSamanServices";
+import { API_BASE_URL } from "../../../../global/constans";
 
 const Services: React.FC = () => {
   const { data } = useGetSamanServices();
+  console.log(data?.data);
 
   const container = {
     hidden: { opacity: 1, scale: 0.7 },
@@ -43,7 +45,7 @@ const Services: React.FC = () => {
           {data?.data.data.map((d) => (
             <motion.div variants={item} key={d.id}>
               <Card
-                icon={d.image ?? ""}
+                icon={`${API_BASE_URL}/${d.image}` ?? ""}
                 title={d.title}
                 background={d.color}
                 address={d.address}
