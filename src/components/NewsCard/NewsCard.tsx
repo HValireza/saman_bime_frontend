@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import jalaliday from "jalaliday";
 import Author from "../Author/Author";
 import { useGetAuthor } from "../../api/authors/useGetAuthor";
+import { API_BASE_URL } from "../../global/constans";
 
 interface IRecent {
   id?: number;
@@ -48,7 +49,7 @@ const NewsCard: React.FC<IRecent> = ({
       {/* main image */}
       <div
         className="si-rc-img"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${API_BASE_URL}/${image})` }}
       ></div>
 
       {/* author info box */}

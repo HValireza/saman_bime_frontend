@@ -5,7 +5,7 @@ import NewsCard from "../../../../components/NewsCard/NewsCard";
 import "./Recent.scss";
 
 const Recent: React.FC = () => {
-  const data = useGetAllNews({ count: 3 });
+  const { data } = useGetAllNews({ count: 3 });
 
   const navigate = useNavigate();
   const navigation = (address: string) => {
@@ -45,7 +45,7 @@ const Recent: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {data.data?.data.data.map((p) => (
+        {data?.data.data.map((p) => (
           <motion.div variants={item} key={p.id}>
             <NewsCard
               id={p.id}

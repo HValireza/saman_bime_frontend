@@ -9,5 +9,5 @@ export class Page extends Base {
   cards?: Card[];
   content?: Content;
   news?: News[];
-  accordion?: Accordion;
+  accordions?: Accordion[];
 }

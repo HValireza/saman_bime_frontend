@@ -6,6 +6,7 @@ import "./CardSlider.scss";
 import { useNavigate } from "react-router-dom";
 import { useGetSamanGoals } from "../../../../../../api/samanGoals/useGetSamanGoals";
 import Loading from "../../../../../../components/Loading/Loading";
+import { API_BASE_URL } from "../../../../../../global/constans";
 
 const CardSlider: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const CardSlider: React.FC = () => {
         {data?.data.data.map((d) => (
           <SwiperSlide className="si-card-slider__item" key={d.id}>
             <div className="si-card-slider__img">
-              <img src={d.image} alt={d.title} />
+              <img src={`${API_BASE_URL}/${d.image}`} alt={d.title} />
             </div>
             <div className="si-card-slider__content">
               <h3 className="si-card-slider__title">{d.title}</h3>
