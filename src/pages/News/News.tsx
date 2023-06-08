@@ -29,7 +29,7 @@ const News: React.FC<INews> = ({
 
   const { data } = useGetAllNews({ page: pageNumber, count: 10 });
   const dataCount = data?.data.count ?? 0;
-  const pagenum = Math.ceil(dataCount! / 10) ?? 1;
+  const pageNum = Math.ceil(dataCount! / 10) ?? 1;
 
   const navigation = (address?: string) => {
     address && window.scrollTo(0, 0);
@@ -67,10 +67,10 @@ const News: React.FC<INews> = ({
       </div>
 
       {/* paginator */}
-      {pagenum !== 1 && pagenum !== 0 && (
+      {pageNum !== 1 && pageNum !== 0 && (
         <Paginator
           currentPage={pageNumber}
-          totalPages={pagenum}
+          totalPages={pageNum}
           setPage={setPageNumber}
         />
       )}
