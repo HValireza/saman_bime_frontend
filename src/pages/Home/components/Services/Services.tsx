@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../../../../global/constans";
 
 const Services: React.FC = () => {
   const { data } = useGetSamanServices();
-  console.log(data?.data);
+
 
   const container = {
     hidden: { opacity: 1, scale: 0.7 },
