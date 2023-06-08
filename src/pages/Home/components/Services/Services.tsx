@@ -51,6 +51,7 @@ const Services: React.FC = () => {
                 address={d.address}
                 key={d.id}
                 secondTitle={d.subtitle}
+                page_id={d.page_id}
               />
             </motion.div>
           ))}
