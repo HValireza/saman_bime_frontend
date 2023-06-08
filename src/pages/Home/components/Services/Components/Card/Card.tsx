@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import SimpleButton from "../../../../../../components/Button/SimpleButton/SimpleButton";
+import { useGetFindePageRoute } from "../../../../../../api/pages/useGetFindPageRoute";
 import "./Card.scss";
 
 interface ICardData {
@@ -12,31 +13,47 @@ interface ICardData {
   buttonBackground?: string;
   buttonBackgroundHover?: string;
   secondTitle?: string;
+  page_id?: number;
 }
 
 const Card: React.FC<ICardData> = ({
-  description,
   icon,
   title,
   background = "#000",
-  customButtonText = "بیشتر بخوانید",
   address,
-  buttonBackground,
-  buttonBackgroundHover,
   secondTitle,
+  page_id,
 }) => {
   const navigate = useNavigate();
 
-  const navigation = (address: string) => {
-    navigate(address);
-    window.scrollTo(0, 0);
+  const [pageId, setPageId] = useState(-1);
+
+  const { refetch } = useGetFindePageRoute(pageId, {
+    onSuccess: (res) => {
+      navigate(res.data.route);
+      window.scrollTo(0, 0);
+    },
+  });
+
+  useEffect(() => {
+    if (pageId !== -1) refetch();
+  }, [pageId]);
+
+  const navigation = (address?: string, page_id?: number) => {
+    console.log(page_id);
+
+    if (address) {
+      navigate(address);
+    } else if (page_id) {
+      setPageId(page_id);
+    }
   };
 
   return (
     <div
       className="si-services-card"
       style={{ background: background }}
-      onClick={() => navigation(address ? address : "/")}
+      onClick={() => navigation(address, page_id)}
     >
       <img src={icon} alt={title} className="si-services-card-img" />
       <h3 className="si-services-card-title">
