@@ -3,7 +3,8 @@ import arrow from "../../../../assets/icons/tools/arrow.svg";
 import logo from "../../../../assets/logo/saman_logo_2_no_padding.png";
 import "./Slider.scss";
 import { Intro } from "../../../../models/intro";
-import { images } from "../../../../Mock/Home/Slider/SliderMock";
+import { API_BASE_URL } from "../../../../global/constans";
+
 interface ISlider {
   sliderImages?: Intro[];
   count?: number;
@@ -15,20 +16,16 @@ const Slider: React.FC<ISlider> = ({ count, sliderImages }) => {
   const sliderImageStyles = {
     backgroundImage: `url(${
       sliderImages && sliderImages.length > 0
-        ? sliderImages[currentIndex].image
-        : images[0].url
+        ? API_BASE_URL + "/" + sliderImages[currentIndex].image
+        : "none"
     })`,
   };
 
   const nextImage = () => {
-    currentIndex === count ?? 1 - 1
-      ? setCurrentIndex(0)
-      : setCurrentIndex(currentIndex + 1);
+    setCurrentIndex((currentIndex + 1) % (count ?? 1));
   };
   const previousImage = () => {
-    currentIndex === 0
-      ? setCurrentIndex(count ?? 1 - 1)
-      : setCurrentIndex(currentIndex - 1);
+    setCurrentIndex((currentIndex - 1) % (count ?? 1));
   };
 
   useEffect(() => {
@@ -55,35 +52,22 @@ const Slider: React.FC<ISlider> = ({ count, sliderImages }) => {
         onClick={nextImage}
       />
       <div className="si-slider-bullet-wrapper">
-        {sliderImages && sliderImages.length > 0
-          ? sliderImages.map((i, index) => (
-              <div
-                key={index}
-                className={
-                  currentIndex === index
-                    ? "si-slider-bullet si-slider-bullet-selected"
-                    : "si-slider-bullet"
-                }
-                onClick={() => setCurrentIndex(index)}
-              ></div>
-            ))
-          : images.map((i, index) => (
-              <div
-                key={index}
-                className={
-                  currentIndex === index
-                    ? "si-slider-bullet si-slider-bullet-selected"
-                    : "si-slider-bullet"
-                }
-                onClick={() => setCurrentIndex(index)}
-              ></div>
-            ))}
+        {sliderImages &&
+          sliderImages.map((i, index) => (
+            <div
+              key={index}
+              className={
+                currentIndex === index
+                  ? "si-slider-bullet si-slider-bullet-selected"
+                  : "si-slider-bullet"
+              }
+              onClick={() => setCurrentIndex(index)}
+            ></div>
+          ))}
       </div>
 
       <h1 className="si-slider-text-container">
-        {sliderImages && sliderImages.length > 0
-          ? sliderImages[currentIndex].title
-          : images[0].caption}
+        {sliderImages && sliderImages[currentIndex]?.title}
       </h1>
 
       {/* uncomment below in case of only wanting logo on first image */}
