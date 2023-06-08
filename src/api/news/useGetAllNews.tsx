@@ -16,7 +16,7 @@ export const useGetAllNews = (
   params?: IPaginateQuery,
   querySuccessError?: IQuerySuccessError<IPaginateResponse<News>>
 ) => {
-  return useQuery(queryKeys().get("NEWS")!, () => getAllNews(params), {
+  return useQuery(queryKeys(params).get("NEWS")!, () => getAllNews(params), {
     onError: querySuccessError?.onError,
     onSuccess: querySuccessError?.onSuccess,
   });

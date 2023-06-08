@@ -8,5 +8,5 @@ const getOneNews = (id: number) => {
 };
 
 export const useGetOneNews = (id: number) => {
-  return useQuery(queryKeys().get("NEWS")!, () => getOneNews(id));
+  return useQuery(queryKeys({ id }).get("NEWS")!, () => getOneNews(id));
 };
