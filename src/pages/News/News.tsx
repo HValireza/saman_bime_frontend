@@ -19,11 +19,9 @@ interface INews {
 const News: React.FC<INews> = ({
   mainTitle = {
     title: "رسانه",
-    link: "/",
   },
   secondaryTitle = {
     title: "اخبار شرکت",
-    link: "/",
   },
 }) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -42,9 +40,7 @@ const News: React.FC<INews> = ({
     <div className="si-news-container">
       <Title
         mainTitle={mainTitle.title}
-        mainTitleLink={mainTitle.link}
         secondaryTitle={secondaryTitle.title}
-        secondaryTitleLink={secondaryTitle.link}
       />
       <div className="si-news-wrapper">
         {data?.data.data.map((p) => (
