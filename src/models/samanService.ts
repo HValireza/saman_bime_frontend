@@ -10,6 +10,6 @@ export class SamanService extends Base {
   image?: string;
   image_thumbnail?: string;
   index?: number;
-  page_id?: string;
+  page_id?: number;
   page?: Page;
 }
