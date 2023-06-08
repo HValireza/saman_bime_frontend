@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import Paginator from "../../components/Paginator/Paginator";
 import Title from "../../components/Title/Title";
-import { NewsPosts } from "../../Mock/News/NewsMock";
+import { useGetAllNews } from "../../api/news/useGetAllNews";
 import "./News.scss";
 
 interface ITitle {
@@ -16,7 +16,6 @@ interface INews {
   mainTitle?: ITitle;
   secondaryTitle?: ITitle;
 }
-
 const News: React.FC<INews> = ({
   mainTitle = {
     title: "رسانه",
@@ -27,11 +26,12 @@ const News: React.FC<INews> = ({
     link: "/",
   },
 }) => {
-  // todo changed numPages based on api data
-  const [numPages, setNumPages] = useState(20);
   const [pageNumber, setPageNumber] = useState(1);
-
   const navigate = useNavigate();
+
+  const { data } = useGetAllNews({ page: pageNumber, count: 10 });
+  const dataCount = data?.data.count ?? 0;
+  const pagenum = Math.ceil(dataCount! / 10) ?? 1;
 
   const navigation = (address?: string) => {
     address && window.scrollTo(0, 0);
@@ -47,7 +47,7 @@ const News: React.FC<INews> = ({
         secondaryTitleLink={secondaryTitle.link}
       />
       <div className="si-news-wrapper">
-        {NewsPosts.map((p) => (
+        {data?.data.data.map((p) => (
           <motion.div
             onClick={() => navigation(`${p.id}`)}
             initial={{ opacity: 0, y: 40 }}
@@ -59,8 +59,8 @@ const News: React.FC<INews> = ({
           >
             <NewsCard
               id={p.id}
-              createdAt={p.createdAt}
-              description={p.description}
+              createdAt={p.created_at}
+              description={p.text}
               image={p.image}
               title={p.title}
               key={p.id}
@@ -71,10 +71,10 @@ const News: React.FC<INews> = ({
       </div>
 
       {/* paginator */}
-      {numPages !== 1 && numPages !== 0 && (
+      {pagenum !== 1 && pagenum !== 0 && (
         <Paginator
           currentPage={pageNumber}
-          totalPages={numPages}
+          totalPages={pagenum}
           setPage={setPageNumber}
         />
       )}
