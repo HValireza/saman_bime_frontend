@@ -14,6 +14,7 @@ enum queries {
   NEWS,
   SAMANGOALS,
   SAMANSERVICES,
+  PAGEROUTE,
 }
 
 interface IQueryIdVariable {
