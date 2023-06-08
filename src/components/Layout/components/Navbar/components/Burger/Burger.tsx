@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Dropdown from "./components/Dropdown/Dropdown";
 import "./Burger.scss";
 import Overlay from "./components/Overlay/Overlay";
+import { INavbarData } from "../../../../../../global/types";
 
-const Burger: React.FC = () => {
+const Burger: React.FC<INavbarData> = ({ data }) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -33,7 +34,7 @@ const Burger: React.FC = () => {
         <span className="si-burger-line si-burger-line-bottom"></span>
       </div>
 
-      {open && <Dropdown closeMenu={setOpen} />}
+      {open && <Dropdown data={data} closeMenu={setOpen} />}
       {open && <Overlay />}
     </>
   );

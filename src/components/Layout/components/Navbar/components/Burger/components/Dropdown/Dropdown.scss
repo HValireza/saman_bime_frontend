@@ -17,9 +17,6 @@
   @media screen and (min-width: $tablet-support){
     max-width: $dropdown-width;
   }
-
-  // border-radius: $small-radius;
-  // border: $navbar-border;
   
   .si-dropdown {
     width: 100%;
@@ -28,10 +25,13 @@
     z-index: $burger-drop-z-index;
     background: $lighten-primary-color;
     transition: height $fast-animation ease;
-    // border-radius: $small-radius;
-    // border: $navbar-border;
   }
 
+  .si-dropdown-prev-icon{
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
   /* CSSTransition classes  */
   .si-dropdown-secondary-enter {
     transform: translateX(-100%);

@@ -2,31 +2,24 @@ import { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import DropdownItem from "./components/DropdownItem/DropdownItem";
 import "./Dropdown.scss";
-
-import {
-  mainDropdownData,
-  IMenuData,
-} from "../../../../../../../../Mock/Dropdown/DropdownMock";
+import thickArrow from "../../../../../../../../assets/icons/tools/thick-arrow.svg";
+import { Category } from "../../../../../../../../models/category";
 
 interface IDropDown {
   closeMenu?: (onClose: boolean) => void;
+  data?: Category[];
 }
 
-const Dropdown: React.FC<IDropDown> = ({ closeMenu }) => {
+const Dropdown: React.FC<IDropDown> = ({ closeMenu, data }) => {
   const [activeMenu, setActiveMenu] = useState("main");
   const mainRef = useRef(null);
   const nodeRefT = useRef(null);
-  const [secondMenuData, setSecondMenuData] = useState<IMenuData[]>([
-    { id: 0, label: "بازگشت" },
-  ]);
-  const [thirdMenuData, setThirdMenuData] = useState<IMenuData[]>([
-    { id: 0, label: "بازگشت" },
-  ]);
+  const [secondMenuData, setSecondMenuData] = useState<Category[]>([]);
+  const [thirdMenuData, setThirdMenuData] = useState<Category[]>([]);
 
   return (
     <div className="si-dropdown-container">
       {/* main dropdown */}
-
       <CSSTransition
         nodeRef={mainRef}
         in={activeMenu === "main"}
@@ -35,29 +28,27 @@ const Dropdown: React.FC<IDropDown> = ({ closeMenu }) => {
         unmountOnExit
       >
         <div className="si-dropdown" ref={mainRef}>
-          {mainDropdownData.map((d) => (
+          {data?.map((d) => (
             <DropdownItem
-              goToMenu={d.selectMenu}
+              goToMenu={d.sub_categories?.length ? "secondary" : undefined}
               key={d.id}
-              leftIcon={d.switchIcon}
-              mainIcon={d.mainIcon}
+              leftIcon={d.sub_categories?.length ? thickArrow : ""}
+              mainIcon={d.icon}
               setActiveMenu={setActiveMenu}
-              address={d.address}
-              secondMenuData={d.subMenuData}
+              address={d.route}
+              secondMenuData={d.sub_categories}
               setSecondMenuData={setSecondMenuData}
               closeMenu={closeMenu}
-              outerLink={d.outerLink}
-              mainIconReverse={d.mainIconReverse}
-              leftIconReverse={d.switchIconReverse}
+              mainIconReverse={d.parent_category_id ? true : false}
+              leftIconReverse={d.sub_categories?.length ? false : true}
             >
-              {d.label}
+              {d.title}
             </DropdownItem>
           ))}
         </div>
       </CSSTransition>
 
       {/* secondary dropdown */}
-
       <CSSTransition
         nodeRef={nodeRefT}
         in={activeMenu === "secondary"}
@@ -66,22 +57,31 @@ const Dropdown: React.FC<IDropDown> = ({ closeMenu }) => {
         unmountOnExit
       >
         <div className="si-dropdown" ref={nodeRefT}>
+          <span
+            className="si-dropdown-prev-icon si-dropdown-icon-button"
+            onClick={() => setActiveMenu("main")}
+          >
+            <img
+              src={thickArrow}
+              alt="dropdown icon"
+              className="si-dropdown-icon si-icon-reverse"
+            />
+          </span>
           {secondMenuData.map((s) => (
             <DropdownItem
-              address={s.address}
-              goToMenu={s.selectMenu}
+              address={s.route}
+              goToMenu={s.sub_categories?.length ? "secondary" : "main"}
               key={s.id}
-              leftIcon={s.switchIcon}
-              mainIcon={s.mainIcon}
-              secondMenuData={s.subMenuData}
+              leftIcon={s.sub_categories?.length ? thickArrow : ""}
+              mainIcon={s.icon}
+              secondMenuData={s.sub_categories}
               setSecondMenuData={setThirdMenuData}
               setActiveMenu={setActiveMenu}
               closeMenu={closeMenu}
-              outerLink={s.outerLink}
-              mainIconReverse={s.mainIconReverse}
-              leftIconReverse={s.switchIconReverse}
+              mainIconReverse={s.parent_category_id ? true : false}
+              leftIconReverse={s.sub_categories?.length ? false : true}
             >
-              {s.label}
+              {s.title}
             </DropdownItem>
           ))}
         </div>
@@ -97,20 +97,29 @@ const Dropdown: React.FC<IDropDown> = ({ closeMenu }) => {
         unmountOnExit
       >
         <div className="si-dropdown" ref={nodeRefT}>
+          <span
+            className="si-dropdown-prev-icon si-dropdown-icon-button"
+            onClick={() => setActiveMenu("secondary")}
+          >
+            <img
+              src={thickArrow}
+              alt="dropdown icon"
+              className="si-dropdown-icon si-icon-reverse"
+            />
+          </span>
           {thirdMenuData.map((t) => (
             <DropdownItem
-              address={t.address}
-              goToMenu={t.selectMenu}
+              address={t.route}
+              goToMenu={t.sub_categories?.length ? "tertiary" : "secondary"}
               key={t.id}
-              leftIcon={t.switchIcon}
-              mainIcon={t.mainIcon}
+              leftIcon={t.sub_categories?.length ? thickArrow : ""}
+              mainIcon={t.icon}
               setActiveMenu={setActiveMenu}
               closeMenu={closeMenu}
-              outerLink={t.outerLink}
-              mainIconReverse={t.mainIconReverse}
-              leftIconReverse={t.switchIconReverse}
+              mainIconReverse={t.parent_category_id ? true : false}
+              leftIconReverse={t.sub_categories?.length ? false : true}
             >
-              {t.label}
+              {t.title}
             </DropdownItem>
           ))}
         </div>

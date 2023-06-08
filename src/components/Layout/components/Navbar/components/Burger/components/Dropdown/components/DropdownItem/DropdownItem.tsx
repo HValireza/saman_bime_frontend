@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { IMenuData } from "../../../../../../../../../../Mock/Dropdown/DropdownMock";
 import "./DropdownItem.scss";
+import { Category } from "../../../../../../../../../../models/category";
+import { API_BASE_URL } from "../../../../../../../../../../global/constans";
 
 interface IDropdownItem {
   address?: string;
@@ -11,10 +12,10 @@ interface IDropdownItem {
   children?: React.ReactNode;
   mainIconReverse?: boolean;
   leftIconReverse?: boolean;
-  secondMenuData?: IMenuData[];
+  secondMenuData?: Category[];
   closeMenu?: (close: boolean) => void;
   setActiveMenu?: (goToMenu: string) => void;
-  setSecondMenuData?: (secondMenuData: IMenuData[]) => void;
+  setSecondMenuData?: (secondMenuData: Category[]) => void;
 }
 
 const DropdownItem: React.FC<IDropdownItem> = ({
@@ -34,7 +35,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
   const navigate = useNavigate();
 
   const selectOption = () => {
-    secondMenuData && setSecondMenuData!(secondMenuData);
+    secondMenuData?.length && setSecondMenuData!(secondMenuData);
     goToMenu && setActiveMenu!(goToMenu);
     address && closeMenu!(false);
     address && window.scrollTo(0, 0);
@@ -47,7 +48,7 @@ const DropdownItem: React.FC<IDropdownItem> = ({
       <span className="si-dropdown-icon-button">
         {mainIcon && (
           <img
-            src={mainIcon}
+            src={API_BASE_URL + "/" + mainIcon}
             alt="dropdown icon"
             className={
               mainIconReverse

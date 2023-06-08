@@ -18,13 +18,12 @@ const Navbar: React.FC<INavbar> = ({ language, setLanguage }) => {
   const [count, setCount] = useState(30);
 
   const { data } = useGetCategories({ page, count });
-  console.log(data);
 
   return (
     <div className="si-navbar-container">
       <NavbarBG />
       <Header />
-      <Burger />
+      <Burger data={data?.data.data} />
       <Expand data={data?.data.data} />
       <SearchButton />
       <LanguageButton setLanguage={setLanguage} language={language} />
