@@ -8,5 +8,5 @@ const getContent = (id: number) => {
 };
 
 export const useGetContent = (id: number) => {
-  return useQuery(queryKeys().get("CONTENTS")!, () => getContent(id));
+  return useQuery(queryKeys({ id }).get("CONTENTS")!, () => getContent(id));
 };
