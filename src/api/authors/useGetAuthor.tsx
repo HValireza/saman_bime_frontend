@@ -8,5 +8,5 @@ const getAuthor = (id: number) => {
 };
 
 export const useGetAuthor = (id: number) => {
-  return useQuery(queryKeys().get("AUTHORS")!, () => getAuthor(id));
+  return useQuery(queryKeys({ id }).get("AUTHORS")!, () => getAuthor(id));
 };
