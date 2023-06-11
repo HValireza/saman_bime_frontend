@@ -8,5 +8,7 @@ const getSamanService = (id: number) => {
 };
 
 export const useGetSamanService = (id: number) => {
-  return useQuery(queryKeys().get("SAMANSERVICES")!, () => getSamanService(id));
+  return useQuery(queryKeys({ id }).get("SAMANSERVICES")!, () =>
+    getSamanService(id)
+  );
 };
