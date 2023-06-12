@@ -12,10 +12,11 @@ interface IRecent {
   id?: number;
   image?: string;
   createdAt?: string;
-  title?: string;
   description?: string;
+  title?: string;
   state?: string;
   authorId?: number;
+  subtitle?: string;
 }
 
 const NewsCard: React.FC<IRecent> = ({
@@ -26,6 +27,7 @@ const NewsCard: React.FC<IRecent> = ({
   title,
   state = "recent",
   authorId,
+  subtitle,
 }) => {
   const navigate = useNavigate();
   const navigation = () => {
@@ -44,7 +46,7 @@ const NewsCard: React.FC<IRecent> = ({
           ? "si-rc-container"
           : "si-rc-container si-rc-container-dark"
       }
-      onClick={navigation}
+      // onClick={navigation}
     >
       {/* main image */}
       <div
@@ -65,7 +67,7 @@ const NewsCard: React.FC<IRecent> = ({
 
       {/* post detail */}
       <h3 className="si-rc-title">{title}</h3>
-      <p className="si-rc-description">{description}</p>
+      <p className="si-rc-description">{subtitle}</p>
     </div>
   );
 };
