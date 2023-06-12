@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.vite";
 import Paginator from "../Paginator/Paginator";
 import "./PDF.scss";
+import { API_BASE_URL } from "../../global/constans";
 
 interface IPDF {
   pdf: string;
@@ -24,7 +25,7 @@ const PDF: React.FC<IPDF> = ({ pdf, defaultSize = false }) => {
     <div className={defaultSize ? "si-pdf-container-wide" : "si-pdf-container"}>
       {/* pdf */}
       <Document
-        file={pdf}
+        file={{ URL: `${API_BASE_URL}/${pdf}` }}
         renderMode="canvas"
         className={defaultSize ? "si-pdf-document-wide" : "si-pdf-document"}
         onLoadSuccess={onDocumentLoadSuccess}
