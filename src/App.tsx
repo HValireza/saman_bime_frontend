@@ -9,6 +9,7 @@ import Loading from "./components/Loading/Loading";
 import "./App.scss";
 import { DynamicCategoriesRoute } from "./helpers/DynamicCategoriesRoute";
 import { DynamicPage } from "./pages/DynamicPage/DynamicPage";
+import SingleNews from "./pages/SingleNews/SingleNews";
 
 const App: React.FC = () => {
   const usesDarkMode =
@@ -58,7 +59,8 @@ const App: React.FC = () => {
                 element={<DynamicPage />}
               />
             ))}
-
+          {/* news */}
+          <Route path="/*" element={<SingleNews />} />
           {/* 404 */}
           <Route path="*" element={<NoPage />} />
         </Route>
