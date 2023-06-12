@@ -9,4 +9,5 @@ export class News extends Base {
   tags?: string[];
   page_id?: number;
   author_id?: number;
+  subtitle?: string;
 }
