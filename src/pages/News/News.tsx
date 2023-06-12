@@ -19,11 +19,9 @@ interface INews {
 const News: React.FC<INews> = ({
   mainTitle = {
     title: "رسانه",
-    link: "/",
   },
   secondaryTitle = {
     title: "اخبار شرکت",
-    link: "/",
   },
 }) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -35,7 +33,7 @@ const News: React.FC<INews> = ({
   let thisRoute = urlSplit[urlSplit.length - 1];
 
   const dataCount = data?.data.count ?? 0;
-  const pagenum = Math.ceil(dataCount! / 10) ?? 1;
+  const pageNum = Math.ceil(dataCount! / 10) ?? 1;
 
   // const navigation = (address?: string) => {
   //   address && window.scrollTo(0, 0);
@@ -46,9 +44,7 @@ const News: React.FC<INews> = ({
     <div className="si-news-container">
       <Title
         mainTitle={mainTitle.title}
-        mainTitleLink={mainTitle.link}
         secondaryTitle={secondaryTitle.title}
-        secondaryTitleLink={secondaryTitle.link}
       />
       <div className="si-news-wrapper">
         {data?.data.data.map((p) => (
@@ -79,10 +75,10 @@ const News: React.FC<INews> = ({
       </div>
 
       {/* paginator */}
-      {pagenum !== 1 && pagenum !== 0 && (
+      {pageNum !== 1 && pageNum !== 0 && (
         <Paginator
           currentPage={pageNumber}
-          totalPages={pagenum}
+          totalPages={pageNum}
           setPage={setPageNumber}
         />
       )}
