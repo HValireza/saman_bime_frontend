@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import logo from "../../assets/logo/logo2.png";
 import "./Banner.scss";
+import { API_BASE_URL } from "../../global/constans";
 
 interface IBanner {
   image?: string;
@@ -53,7 +54,7 @@ const Banner: React.FC<IBanner> = ({
   return (
     <motion.div
       className="si-banner-container"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${API_BASE_URL}/${image})` }}
       variants={container}
       initial="hidden"
       animate="visible"
