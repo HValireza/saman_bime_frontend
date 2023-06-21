@@ -8,5 +8,5 @@ const getPage = (id: number) => {
 };
 
 export const useGetPage = (id: number) => {
-  return useQuery(queryKeys().get("PAGES")!, () => getPage(id));
+  return useQuery(queryKeys({ id }).get("PAGES")!, () => getPage(id));
 };
