@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import Banner from "../../components/Banner/Banner";
 import Title from "../../components/Title/Title";
-import {
-  IManager,
-  ManagersData,
-} from "../../Mock/Managers/Managers/ManagersMock";
+import { IManager } from "../../models/manager";
 import ManagerCard from "./components/ManagerCard/ManagerCard";
 import "./Manager.scss";
+import { useGetCards } from "../../api/cards/useGetCards";
 
 interface IManagers {
+  pageId?: number;
   banner?: string;
   title?: string;
   secondaryTitle?: string;
@@ -16,8 +15,9 @@ interface IManagers {
 }
 
 const Manager: React.FC<IManagers> = ({
+  pageId,
   banner,
-  managers = ManagersData,
+  managers,
   secondaryTitle,
   title,
 }) => {
@@ -44,6 +44,9 @@ const Manager: React.FC<IManagers> = ({
     },
   };
 
+  const { data: cardsData } = useGetCards({ page_id: pageId! });
+  const managerData = cardsData?.data.data;
+
   return (
     <div className="si-manager-container">
       {banner ? (
@@ -58,14 +61,14 @@ const Manager: React.FC<IManagers> = ({
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {managers?.map((m, index) => (
-          <motion.div variants={item}>
+        {managerData?.map((m, index) => (
+          <motion.div variants={item} key={index}>
             <ManagerCard
               key={m.id}
-              data={m.data}
+              address={m.address}
               image={m.image}
-              name={m.name}
-              position={m.position}
+              title={m.title}
+              subtitle={m.subtitle}
               id={m.id}
             />
           </motion.div>
