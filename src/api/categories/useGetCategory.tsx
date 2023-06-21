@@ -8,5 +8,5 @@ const getCategory = (id: number) => {
 };
 
 export const useGetCategory = (id: number) => {
-  return useQuery(queryKeys().get("CATEGORIES")!, () => getCategory(id));
+  return useQuery(queryKeys({ id }).get("CATEGORIES")!, () => getCategory(id));
 };
