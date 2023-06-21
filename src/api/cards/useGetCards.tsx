@@ -6,14 +6,18 @@ import { IPaginateQuery } from "../../models/paginateQuery";
 import { IPaginateResponse } from "../../models/paginateResponse";
 import { IQuerySuccessError } from "../../models/querySuccessError";
 
-const getCards = (params?: IPaginateQuery) => {
+interface IPageId {
+  page_id: number;
+}
+
+const getCards = (params?: IPageId) => {
   return axiosInstance.get<IPaginateResponse<Card>>("/cards", {
     params,
   });
 };
 
 export const useGetCards = (
-  params?: IPaginateQuery,
+  params?: IPageId,
   querySuccessError?: IQuerySuccessError<IPaginateResponse<Card>>
 ) => {
   return useQuery(queryKeys().get("CARDS")!, () => getCards(params), {
