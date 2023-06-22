@@ -48,7 +48,7 @@ const News: React.FC<INews> = ({
       />
       <div className="si-news-wrapper">
         {data?.data.data.map((p) => (
-          <Link to={`${thisRoute}-${p.id}`} key={p.address}>
+          <Link to={`/${thisRoute}/${thisRoute}-${p.id}`} key={p.address}>
             <motion.div
               // onClick={() => navigation(`${p.id}`)}
               initial={{ opacity: 0, y: 40 }}
