@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useIsFetching, useIsMutating } from "react-query";
 import { useGetCategories } from "./api/categories/useGetCategories";
+import { useGetCategory } from "./api/categories/useGetCategory";
+import { useGetAllNews } from "./api/news/useGetAllNews";
+import { useGetPage } from "./api/pages/useGetPage";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/NoPage";
@@ -39,6 +42,12 @@ const App: React.FC = () => {
 
   // make routes dynamic
   const { data } = useGetCategories();
+  const { data: OneNews } = useGetAllNews({ count: 1 });
+  const newsPageId = OneNews?.data.data[0].page_id;
+  const { data: newsPage } = useGetPage(newsPageId!);
+  const newsCategoryId = newsPage?.data.category_id;
+  const { data: newsCategory } = useGetCategory(newsCategoryId!);
+  const newsRoute = newsCategory?.data.route;
 
   return (
     <BrowserRouter>
@@ -48,7 +57,6 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           {/* Home Page */}
           <Route index element={<Home />} />
-
           {data?.data.data
             .map((category) => DynamicCategoriesRoute(category))
             .flat()
@@ -60,7 +68,7 @@ const App: React.FC = () => {
               />
             ))}
           {/* news */}
-          <Route path="/*" element={<SingleNews />} />
+          <Route path={`/${newsRoute}/*`} element={<SingleNews />} />
           {/* 404 */}
           <Route path="*" element={<NoPage />} />
         </Route>
