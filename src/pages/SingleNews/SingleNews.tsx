@@ -20,7 +20,7 @@ const SingleNews = () => {
     <Post
       title={news?.title}
       text={news?.text}
-      image={news?.image}
+      bannerImage={news?.image}
       authorId={news?.author_id}
     />
   );
