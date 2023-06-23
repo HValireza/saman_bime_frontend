@@ -55,6 +55,7 @@ const Recent: React.FC = () => {
               image={p.image}
               title={p.title}
               key={p.id}
+              subtitle={p.subtitle}
               state={"recent"}
             />
           </motion.div>
