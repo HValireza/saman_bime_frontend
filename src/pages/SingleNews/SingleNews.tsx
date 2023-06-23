@@ -8,15 +8,21 @@ const SingleNews = () => {
   const newsIdArray = window.location.pathname.split("-");
   const newsId = Number(newsIdArray[newsIdArray.length - 1]);
   const { data, isLoading, isError } = useGetOneNews(newsId);
+
   if (isLoading) {
     return <Loading />;
   }
   if (isError) {
     return <NoPage />;
   }
-
   const news = data?.data;
-
-  return <Post title={news?.title} text={news?.text} image={news?.image} />;
+  return (
+    <Post
+      title={news?.title}
+      text={news?.text}
+      image={news?.image}
+      authorId={news?.author_id}
+    />
+  );
 };
 export default SingleNews;
