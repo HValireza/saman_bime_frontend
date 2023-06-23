@@ -2,7 +2,7 @@ import { IAuthor } from "../../components/Author/Author";
 import Banner from "../../components/Banner/Banner";
 import Box from "../../components/Box/Box";
 import Title from "../../components/Title/Title";
-import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
+import { IManager } from "../../models/manager";
 import "./Post.scss";
 
 interface IPost {
@@ -11,6 +11,7 @@ interface IPost {
   subGroupTitle?: string;
   title?: string;
   author?: IAuthor;
+  authorId?: number;
   image?: string;
   pdf?: string;
   text?: React.ReactNode | string;
@@ -26,6 +27,7 @@ const Post: React.FC<IPost> = ({
   subGroupTitle,
   title,
   author,
+  authorId,
   image,
   pdf,
   text,
@@ -48,6 +50,7 @@ const Post: React.FC<IPost> = ({
       )}
       <Box
         author={author}
+        authorId={authorId}
         image={image}
         keywords={keywords}
         pdf={pdf}
