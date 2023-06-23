@@ -43,11 +43,12 @@ const App: React.FC = () => {
   // make routes dynamic
   const { data } = useGetCategories();
   const { data: OneNews } = useGetAllNews({ count: 1 });
-  const newsPageId = OneNews?.data.data[0].page_id;
+  let newsPageId = null;
+  if (OneNews?.data.data.length) newsPageId = OneNews?.data.data[0].page_id;
   const { data: newsPage } = useGetPage(newsPageId!);
-  const newsCategoryId = newsPage?.data.category_id;
+  const newsCategoryId = newsPage?.data.category_id ?? null;
   const { data: newsCategory } = useGetCategory(newsCategoryId!);
-  const newsRoute = newsCategory?.data.route;
+  const newsRoute = newsCategory?.data.route ?? null;
 
   return (
     <BrowserRouter>
@@ -68,7 +69,9 @@ const App: React.FC = () => {
               />
             ))}
           {/* news */}
-          <Route path={`/${newsRoute}/*`} element={<SingleNews />} />
+          {newsRoute && (
+            <Route path={`/${newsRoute}/*`} element={<SingleNews />} />
+          )}
           {/* 404 */}
           <Route path="*" element={<NoPage />} />
         </Route>
