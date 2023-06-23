@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { IManager } from "../../Mock/Managers/Managers/ManagersMock";
+import { IManager } from "../../models/manager";
 import Author, { IAuthor } from "../Author/Author";
 import Banner from "../Banner/Banner";
 import Keywords from "../Keywords/Keywords";
@@ -8,9 +8,11 @@ import TextBox from "../TextBox/TextBox";
 import "./Box.scss";
 import Profile from "./components/Profile/Profile";
 import { HtmlViewer } from "../HtmlViewer/HtmlViewer";
+import { useGetAuthor } from "../../api/authors/useGetAuthor";
 
 interface IBox {
   author?: IAuthor;
+  authorId?: number;
   text?: React.ReactNode | string;
   html?: string;
   pdf?: string;
@@ -23,6 +25,7 @@ interface IBox {
 
 const Box: React.FC<IBox> = ({
   author,
+  authorId,
   image,
   pdf,
   text,
@@ -33,7 +36,7 @@ const Box: React.FC<IBox> = ({
   pdfDefaultSize,
 }) => {
   const [scrollDown, setScrollDown] = useState(false);
-
+  const authorData = authorId ? useGetAuthor(authorId) : null;
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -68,13 +71,13 @@ const Box: React.FC<IBox> = ({
         }
       >
         {/* author */}
-        {author && (
+        {authorData && (
           <Author
-            createdAt={author.createdAt}
-            name={author.name}
-            position={author.position}
-            state={"post"}
-            thumb={author.thumb}
+            createdAt={authorData?.data?.data.created_at}
+            name={authorData?.data?.data.name ?? "بیمه اتکایی سامان"}
+            position={authorData?.data?.data.title ?? ""}
+            thumb={authorData?.data?.data.image}
+            state={"news"}
           />
         )}
 
@@ -84,11 +87,11 @@ const Box: React.FC<IBox> = ({
         {/* manager */}
         {manager && (
           <Profile
-            data={manager.data}
+            // data={manager.data}
             id={manager.id}
             image={manager.image}
-            name={manager.name}
-            position={manager.position}
+            title={manager.title}
+            subtitle={manager.subtitle}
           />
         )}
 
